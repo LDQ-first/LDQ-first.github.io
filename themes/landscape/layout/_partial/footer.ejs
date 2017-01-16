@@ -1,0 +1,20 @@
+<footer id="footer">
+  <% if (theme.sidebar === 'bottom'){ %>
+    <%- partial('_partial/sidebar') %>
+  <% } %>
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %><br>
+      <%= __('powered_by') %> <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+    <span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次<br>
+    您是本站的第<span id="busuanzi_value_site_uv"></span>个小伙伴<br>
+    本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  </div>
+  <!-- 不蒜子统计 -->
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <!-- Jiathis分享 -->
+  <script type="text/javascript" src="//v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+</footer>
