@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # site        网站          
-title: 刘德铨的博客         #网站
+title: LDQ的博客         #网站
 subtitle: 前端              #网站副标题
-description: 热爱前端,刘德铨的博客     
+description: 热爱前端     
 #网站描述,给搜索引擎用的，在生成html中的head->meta中可看到
 author: 刘德铨              #作者
-language: zh-CN             #语言
+language: zh-Hans             #语言
 timezone:                   #网站时区
 
 # URL         网址
@@ -36,7 +36,7 @@ titlecase: false         # Transform title into titlecase 把标题转换为 tit
 external_link: true      # Open external links in new tab 在新标签中打开链接
 filename_case: 0         # 把文件名称转换为 (1) 小写或 (2) 大写
 render_drafts: false     # 显示草稿
-post_asset_folder: true  # 启动 Asset 文件夹
+post_asset_folder: false  # 启动 Asset 文件夹
 relative_link: false     # 把链接改为与根目录的相对位址
 future: true             # 显示未来的文章
 highlight:               # 代码块的设置,代码高亮
@@ -66,7 +66,7 @@ pagination_dir: page        #  分页目录
 # Extensions    扩展
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape             #当前主题名称。值为false时禁用主题
+theme: yelee             #当前主题名称。值为false时禁用主题
 
 # Deployment    部署
 ## Docs: https://hexo.io/docs/deployment.html
@@ -80,4 +80,4 @@ deploy:
 # comment
 ## 如果报错 post is not defined，请将post改为 page。
 ## hexo 版本 3.2.0.可能是作者修改了字段
-duoshuo_shortname: ldq-first
+#duoshuo_shortname: ldq-first
