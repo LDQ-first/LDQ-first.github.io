@@ -232,8 +232,7 @@ tab_title_change:
 search: 
   on: true
   onload: false
-  path: search.xml
-  field: post
+  field: all
   ## true: get search.xml file when the page has loaded
   ## false: get the file when search box gets focus
 
