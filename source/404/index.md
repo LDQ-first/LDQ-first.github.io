@@ -1,6 +1,6 @@
+---
 title: 404 Not Found：该页无法显示
 permalink: /404
-layout: false
 ---
 
 <style type="text/css">
