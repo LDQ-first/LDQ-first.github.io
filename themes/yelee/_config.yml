@@ -205,7 +205,7 @@ open_in_new:
   menu: false # 边栏菜单
   friends: true  # 友情链接
   socail: true # 社交图标
-
+  external_link: true # 在新标签中打开站外链接
 # Customize feed link 自定义订阅地址
 rss: /atom.xml
 
@@ -219,7 +219,7 @@ ie_updater:
 
 # Tab Title Change | 标签页标题切换
 tab_title_change: 
-  on: false
+  on: true
   left_tab_title: '(つェ⊂) 我藏好了哦~ '
   return_tab_title: '(*´∇｀*) 被你发现啦~ '
 
@@ -242,7 +242,7 @@ fancybox: true
 
 # Display Math(LaTeX, MathML...) | 数学公式支持
 ## https://www.mathjax.org/
-mathjax: false
+mathjax: true
 
 # Socail Share | 是否开启分享
 share: 
@@ -274,7 +274,7 @@ visit_counter:
 
 # GitHub Repo Widget
 # https://github.com/hustcc/GitHub-Repo-Widget.js
-github_widget: false
+github_widget: true
 
 # Progress Bar | 页面加载进度条
 # Demo: http://github.hubspot.com/pace/docs/welcome/
