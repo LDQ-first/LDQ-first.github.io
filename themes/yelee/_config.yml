@@ -127,7 +127,7 @@ base_font_size: 16  #px, 16 - 24
 color_scheme: 
 
 highlight_style:
-  #on: true
+  on: true
   inline_code: 1  # Value: 0 - 9 可选
   code_block: 1  # Value: 0 - 4 
   # Set inline_code to style highlight text
@@ -136,7 +136,7 @@ highlight_style:
   # 通过 code_block 切换内置代码高亮配色主题
 
 blockquote_style:
-  #on: true
+  on: true
   blockquote: 1  # Value: 0 - 7 可选
   # 自定义文章「引用部分」的样式
 
@@ -166,7 +166,7 @@ animate: true
 
 # Load jQuery UI to style tooltips
 # 工具提示框样式美化
-jquery_ui: false
+jquery_ui: true
 
 # Max width of right cloumn | 限制右侧内容的宽带 
 limit_article_width: 
