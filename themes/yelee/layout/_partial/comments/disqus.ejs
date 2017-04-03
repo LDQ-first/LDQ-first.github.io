@@ -1,6 +1,8 @@
 <section id="comments">
     <style> aside.comment-bar { margin: auto 30px; }</style>
-    <div id="disqus_thread"></div>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
     <script>
         var disqus_config = function(){
             this.page.url = '<%= page.permalink %>';
@@ -17,8 +19,8 @@
 </section>
 
 <% if (!theme.preload_comment) { %>
-    // Add comment count
-    <script id="dsq-count-scr" src="//<%= shortname%>.disqus.com/count.js" async></script>
+    <!--  Add comment count -->
+    <!-- <script id="dsq-count-scr" src="//<%= shortname%>.disqus.com/count.js" async></script> -->
     <span class="disqus-comment-count" data-disqus-identifier="<%= page.path %>"></span>
     <span class="disqus-comment-count" data-disqus-url="<%= page.permalink %>"></span>
     <script>

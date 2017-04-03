@@ -7,7 +7,7 @@ title: LDQ的博客         #网站
 subtitle: 前端              #网站副标题
 description: 热爱前端     
 #网站描述,给搜索引擎用的，在生成html中的head->meta中可看到
-author: 刘德铨              #作者
+author: ldq              #作者
 language: zh-Hans             #语言
 timezone:                   #网站时区
 
