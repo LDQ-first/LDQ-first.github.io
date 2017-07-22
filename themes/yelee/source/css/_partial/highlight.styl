@@ -81,10 +81,40 @@ $line-numbers
           padding: 0 20px 0 0
         .line-data
           padding: 0 !important
+      .highlight::before
+          content: attr(data-lang) " code"
+          display: block
+          background-color: #0083A0
+          margin: 0 -10px 16px -10px
+          padding: 8px 16px
+          color: #EFEFEF
+          font-family: Lato,"Microsoft YaHei",sans-serif
+          font-size: 1.1rem
+          text-shadow: none
+          border-bottom: dashed 1px #000
+          text-transform: capitalize
       .highlight
         margin: 0
-        padding: 0
-        border: none
+        border-radius: 4px
+        padding: 0 10px
+        pre
+          border: none
+          margin: 0
+          padding: 0
+        table
+          margin: 20px 0
+          width: auto
+          color: #FFF
+          thead 
+            tr
+              background: #2D2D2D
+            tr:hover
+              background: #151414
+        td
+          border: none
+          padding: 0
+        th
+          border: 1.5px dashed #020202
       .gist-meta
         background: highlight-background
         color: highlight-comment
