@@ -2,7 +2,7 @@
   position: relative;
   margin: 0 30px;
   padding-right: 1.5em;
-  border-bottom: 1px solid #eee;
+ /* border-bottom: 1px solid #eee;*/
   background: #fff;
   &:first-child{
     margin-top: 30px;
@@ -25,15 +25,19 @@
 }
 
 .archives {
-  position:relative;
+  position: relative;
+  margin-left: 140px;
+  padding-left: 20px;
+  border-left: 4px solid rgba(250, 250, 250, 0.5);
   .article-info{
+    margin: 1em 0;
     border: none;
   }
   .archive-article {
-    margin-left:160px;
+    /*margin-left:160px;*/
     padding:0.5em 0;
-    border-bottom: 1px solid #eee;
-    border-top: 1px solid #fff;
+   /* border-bottom: 1px solid #eee;
+    border-top: 1px solid #fff;*/
     position: relative;
     &:first-child{
       border-top: 1em;
@@ -42,14 +46,53 @@
     &:last-child{
       border-bottom: none;
     }
+
+    .dot {
+      position: absolute;
+      top: 50%;
+      width: 14px;
+      height: 14px;
+      margin-top: -10px;
+      margin-left: -29px;
+      content: ' ';
+      border-radius: 50%;
+      &.dot-0 {
+        background: #1abc9c;
+      }
+      &.dot-1 {
+        background: #3498db;
+      }
+      &.dot-2 {
+        background: #9b59b6;
+      }
+      &.dot-3 {
+        background: #e67e22;
+      }
+      &.dot-4 {
+        background: #e74c3c;
+      }
+      &.dot-5 {
+        background: #59E066;
+      }
+      &.dot-6 {
+        background: #59E0CE;
+      }
+      &.dot-7 {
+        background: #E773CD;
+      }
+      &.dot-8 {
+        background: #FEDC7E;
+      }
+    }
   }
+
 
   .archive-article-title {
     font-size: (18/16)rem;
     color: #333;
     transition: color 0.3s;
     &:hover{
-      color: #657b83;
+      color: #2C83CF;
     }
     span{
       display: block;
@@ -143,6 +186,7 @@
 
 .archives-wrap {
   background: archives-color;
+  padding: 1em 0;
   .archives {
     background: transparent;
   }

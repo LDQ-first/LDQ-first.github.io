@@ -3,7 +3,8 @@
     <header class="archive-article-header">
           <div class="article-meta">
               <%- partial('post/date', {class_name: 'archive-article-date', date_format: 'MM-DD'}) %>
-        </div>
+          </div>
+          <i class="dot dot-<%= Math.floor(Math.random() * 4) %>"></i>
          <%- partial('post/title', {class_name: 'archive-article-title'}) %>
         <div class="article-info info-on-archive">
           <%- partial('post/category') %>
