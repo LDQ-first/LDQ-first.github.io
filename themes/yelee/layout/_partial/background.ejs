@@ -10,7 +10,9 @@
             else {
                 var backgroundnum = <%= theme.background_image %>;
                 var backgroundimg = "url(<%- theme.root_url %>/background/bgs-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
-                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+                //$("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+                $("#container #mobile-nav").css({"background": backgroundimg,"background-size": "cover","background-position": "center"});
+                $("#container .left-col").css({"background": backgroundimg,"background-size": "cover","background-position": "center"});
             }
         })
     </script>

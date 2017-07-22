@@ -7,7 +7,7 @@
             height: 110px;
             position: absolute;
             width: 100%;
-            background: #209AE5;
+            background: transparent;
             &.fixed{
                 position: fixed;
                 height: 42px;
@@ -46,7 +46,7 @@
         .overlay{
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.2);
+            background-color: rgba(0, 0, 0, 0.6);
             position: absolute;
             opacity: 0.7;
             z-index: -1;
@@ -65,7 +65,7 @@
         position:absolute;
         right:0;
         min-height:100%;
-        background: mid-col-color;
+        /*background: mid-col-color;*/
         left: left-col-width;
         width: auto;
     }
@@ -86,7 +86,7 @@
 #header{
     width:100%;
     a {
-        color: #444;
+        color: #FFF;
         &:hover:not(.profilepic) {
             color: #fff;
             background: #258fb8;
@@ -549,7 +549,7 @@
     }
     .header-subtitle{
         text-align: center;
-        color:#555;
+        color: #FFF;
         font-size: (14/16)rem;
         line-height: 1.75;
         overflow: hidden;
@@ -588,6 +588,7 @@
         overflow: hidden;
         min-height: 260px;
         font-size: (14/16)rem;
+        color: #FFF;
         .switch-wrap{
             transition: transform .3s ease-in;
             position: relative;
@@ -664,12 +665,12 @@
         font-size: 28px;
         background: rgba(215, 216, 215, .4);
         .fa {
-            color: rgba(255, 255, 255, .8);
+            color: rgba(0, 0, 0, .8);
         }
         &:hover {
             background: rgba(147, 181, 224, .3) !important; 
             .fa {
-                color: white;
+                color: #3678C5;
             }
         }
     }

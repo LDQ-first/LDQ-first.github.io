@@ -1,29 +1,37 @@
 #tocButton 
     position fixed
-    left left-col-width - 80px
-    top toc-top + 7
+    left left-col-width - 100px
+    top toc-top + 30px
+    border-radius 6px
+    width 71px
+    height 29px
     font-size .9em
+    text-align center
     font-weight bold
     font-family inherit
-    color lightgray
+    color #FFF
     cursor pointer
-    background none
+    background #ee6252
     border none
     outline none
     -webkit-appearance none
     &:hover 
         color: #88acdb
+  
 
 .toc-article 
     position fixed
-    width left-col-width - 70px
+    width left-col-width - 40px
     top toc-top
     bottom 1em
     left 0
-    margin-left 0
-    padding 6px 10px 10px 50 - (base-font-size - 16)*2
+    margin 20px 10px 10px 10px
+    padding 10px
+    //padding 6px 10px 10px 50 - (base-font-size - 16)*2
     border-radius 2.8%
     overflow auto
+    background: #272822
+    
 
 #toc 
     font-size .9rem
@@ -31,6 +39,7 @@
     .toc-title 
         font-weight bold
         color gray
+        margin-left 2em
         &.clickable 
             cursor pointer
             &:hover 
@@ -40,8 +49,8 @@
 
     ol.toc
         margin-left 0 
-        padding .7em
-        padding-right 0
+        padding 1em 1.5em
+        /*padding-right 0*/
         li.toc-item
             list-style-type none
             i
@@ -59,7 +68,7 @@
                 background none
 
         a.toc-link
-            color: gray
+            color #eee
             &:visited 
                 color rgba(244, 131, 133, 1)
             &:hover 
