@@ -1,11 +1,7 @@
-
-
-console.log('photoswipe.js');
-
 /*
+console.log('photoswipe.js');
 console.log(PhotoSwipe)
 console.log(PhotoSwipeUI_Default)*/
-
 
 function init() {
 	let pswpElement = document.querySelectorAll('.pswp')[0];
@@ -29,11 +25,10 @@ function init() {
 				})
 			})
 			var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
-				index: parseInt(i)
+				index: parseInt(i),
 			});
 			gallery.init()
 		}
 	})
 }
-
 init() 
