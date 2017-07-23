@@ -11,6 +11,7 @@ addthis-share = hexo-config("share.addthis")
 if baidu-share
     .bdsharebuttonbox
         a, .bds_more
+            border-radius: 50%;
             width 30px
             height @width !important
             line-height @height
@@ -20,9 +21,11 @@ if baidu-share
             text-decoration none
             color white !important
             box-shadow 1px 1px 1px rgba(0,0,0, .1), 1px 1px 1px rgba(0,0,0, .3)
-            &:hover
-                transform scale(1.1)
-                color @color
+            &:hover {
+                -webkit-animation: btnGroups 1s linear;
+                animation: btnGroups 1s linear;
+            }
+            
 
         // http://share.baidu.com/help/webid
         font-logo = bds_tsina #db332f, 

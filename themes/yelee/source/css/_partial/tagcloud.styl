@@ -245,8 +245,8 @@
     border-radius 0 5px 5px 0
     margin 5px 9px 5px 8px
     opacity i-opacity
-    font-family font-chs font-sans
-
+    font-family font-first
+    transition: all 0.6s;
     for color, i in color-list
         &.color{i}
             background color
@@ -258,6 +258,7 @@
         transform scale(1.4)
         background-color #3F51B5
         border-color #3F51B5
+        color #FF914E
         &::before
             border-right-color hover-color
     &:before
