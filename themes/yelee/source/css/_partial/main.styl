@@ -3,6 +3,7 @@
     min-height:100%;
     #mobile-nav{
         display: none;
+       /* z-index: 1;*/
         .overlay{
             height: 110px;
             position: absolute;
@@ -13,6 +14,10 @@
                 height: 42px;
                 z-index: 99;
             }
+        }
+        .intrude-less {
+           position: relative;
+           z-index: 1;
         }
         #header{
             padding: 10px 0 0 0;
@@ -69,6 +74,15 @@
         background linear-gradient(200deg, #a0cfe4,#e8c37e)
         left: left-col-width;
         width: auto;
+        #particles-oli-wrapper {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%
+            z-index: 0;
+        }
     }
 
     @media screen and (max-width:1040px) {
@@ -727,20 +741,14 @@
     line-height: 1.3em;
     list-style: decimal;
     li {
-        margin: .4em 0 .1em .7em;
+        margin: .4em 0 .1em 2em;
         a {
-            color: gray;
+            color: #457eca;
             &:hover {
-                color: ;
+                color: #e84f51;
                 text-decoration: none;
             }
         }
-        &:hover {
-            background: ;
-            a {
-                color: #88acdb;
-            }
-        };
    }
 }
 
