@@ -16,10 +16,11 @@
         opacity i-opacity
         box-shadow 1px 2px 2px rgba(0,0,0, .1), 1px 1px 3px rgba(0,0,0, .3)
         border 2px solid rgba(0,150,136,1)
-        &:hover
-            opacity 1
-            transform scale(1.4)
+        &:hover {
             border 2px solid rgba(30,136,229 ,1)
+            -webkit-animation: btnGroups 1s linear;
+            animation: btnGroups 1s linear;
+        }
 
     img-logo = "新浪微博" #ecc260 80,
                 "知乎" #0078d8 90,

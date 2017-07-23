@@ -48,7 +48,10 @@
 
 
 .gitment-root-container, .gitment-header-container {
-  margin: 19px 40px;
+  margin: 19px 2em;
+  @media screen and (max-width:600px) {
+    margin: 19px 5px;
+  }
 }
 
 .gitment-header-like-btn {
@@ -119,14 +122,24 @@ a.gitment-header-issue-link {
 .gitment-comment-avatar, .gitment-comment-avatar-img, .gitment-comment-avatar, .gitment-editor-avatar-img {
   width: 44px;
   height: 44px;
-  border-radius: 3px;
+  border-radius: 50%;
+  border: 2px solid rgba(30,136,229 ,1);
+  &:hover {
+      -webkit-animation: btnGroups 1s linear;
+      animation: btnGroups 1s linear;
+  }
 }
 
 .gitment-editor-avatar {
+  &:hover {
+      -webkit-animation: btnGroups 1s linear;
+      animation: btnGroups 1s linear;
+  }
   svg {
     width: 44px;
     height: 44px;
-    border-radius: 3px;
+    border-radius: 50%;
+    border: 2px solid rgba(30,136,229 ,1);
   }
   .gitment-github-icon {
     fill: #fff;
@@ -139,13 +152,14 @@ a.gitment-header-issue-link {
   position: relative;
   border: 1px solid #262626;
   border-radius: 0;
+  background: #3F3F3F;
 }
 
 .gitment-editor-main {
   position: relative;
   border: 1px solid #262626;
   border-radius: 0;
-  background: #A3CCE7;
+  /*background: #A3CCE7;*/
   &::before, &::after {
     position: absolute;
     top: 11px;
