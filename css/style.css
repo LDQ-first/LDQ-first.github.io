@@ -120,8 +120,11 @@ button::-moz-focus-inner {
 html {
   font-size: 16px;
 }
+* {
+  font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
 body {
-  font-family: "Lucida Grande", Verdana, "Helvetica Neue", Arial, "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+  min-width: 320px;
   background: #5bbfe5;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
@@ -213,7 +216,6 @@ video {
 }
 #container #mobile-nav {
   display: none;
-/* z-index: 1;*/
 }
 #container #mobile-nav .overlay {
   height: 110px;
@@ -225,6 +227,7 @@ video {
   position: fixed;
   height: 42px;
   z-index: 99;
+  background: rgba(109,178,255,0.4);
 }
 #container #mobile-nav .intrude-less {
   position: relative;
@@ -261,10 +264,6 @@ video {
   transition: all 0.2s ease-in;
   height: 100%;
   overflow-y: auto;
-/*li:hover {
-            background: none;
-            font-weight: bold;
-        };*/
 }
 #container .left-col .overlay {
   width: 100%;
@@ -280,10 +279,10 @@ video {
   margin: 112px auto 0;
 }
 #container .mid-col {
+  min-width: 320px;
   position: absolute;
   right: 0;
   min-height: 100%;
-/*background: mid-col-color;*/
   background: -webkit-linear-gradient(250deg, #a0cfe4, #e8c37e);
   background: -moz-linear-gradient(250deg, #a0cfe4, #e8c37e);
   background: -ms-linear-gradient(250deg, #a0cfe4, #e8c37e);
@@ -2153,12 +2152,12 @@ video {
   border: 2px solid #009688;
 }
 #header .header-nav .social a:hover {
-  opacity: 1;
-  -webkit-transform: scale(1.4);
-  -moz-transform: scale(1.4);
-  -ms-transform: scale(1.4);
-  transform: scale(1.4);
   border: 2px solid #1e88e5;
+  -webkit-animation: btnGroups 1s linear;
+  -webkit-animation: btnGroups 1s linear;
+  -moz-animation: btnGroups 1s linear;
+  -ms-animation: btnGroups 1s linear;
+  animation: btnGroups 1s linear;
 }
 #header .header-nav .social .新浪微博 {
   background: url("/img/新浪微博.png") center no-repeat #ecc260;
@@ -2518,8 +2517,6 @@ body .ui-tooltip {
   position: relative;
   margin: 0 30px;
   padding-right: 1.5em;
-/* border-bottom: 1px solid #eee;*/
-/* background: #fff;*/
 }
 .archives-wrap:first-child {
   margin-top: 30px;
@@ -2545,15 +2542,17 @@ body .ui-tooltip {
   padding-left: 20px;
   border-left: 4px solid rgba(250,250,250,0.5);
 }
+@media screen and (max-width: 800px) {
+  .archives {
+    margin-left: 50px;
+  }
+}
 .archives .article-info {
   margin: 1em 0;
   border: none;
 }
 .archives .archive-article {
-/*margin-left:160px;*/
   padding: 0.5em 0;
-/* border-bottom: 1px solid #eee;
-    border-top: 1px solid #fff;*/
   position: relative;
 }
 .archives .archive-article:first-child {
@@ -2745,7 +2744,13 @@ body .ui-tooltip {
 }
 .gitment-root-container,
 .gitment-header-container {
-  margin: 19px 40px;
+  margin: 19px 2em;
+}
+@media screen and (max-width: 600px) {
+  .gitment-root-container,
+  .gitment-header-container {
+    margin: 19px 5px;
+  }
 }
 .gitment-header-like-btn {
   cursor: pointer;
@@ -2812,12 +2817,30 @@ a.gitment-header-issue-link:hover {
 .gitment-editor-avatar-img {
   width: 44px;
   height: 44px;
-  border-radius: 3px;
+  border-radius: 50%;
+  border: 2px solid #1e88e5;
+}
+.gitment-comment-avatar:hover,
+.gitment-comment-avatar-img:hover,
+.gitment-editor-avatar-img:hover {
+  -webkit-animation: btnGroups 1s linear;
+  -webkit-animation: btnGroups 1s linear;
+  -moz-animation: btnGroups 1s linear;
+  -ms-animation: btnGroups 1s linear;
+  animation: btnGroups 1s linear;
+}
+.gitment-editor-avatar:hover {
+  -webkit-animation: btnGroups 1s linear;
+  -webkit-animation: btnGroups 1s linear;
+  -moz-animation: btnGroups 1s linear;
+  -ms-animation: btnGroups 1s linear;
+  animation: btnGroups 1s linear;
 }
 .gitment-editor-avatar svg {
   width: 44px;
   height: 44px;
-  border-radius: 3px;
+  border-radius: 50%;
+  border: 2px solid #1e88e5;
 }
 .gitment-editor-avatar .gitment-github-icon {
   fill: #fff;
@@ -2828,12 +2851,13 @@ a.gitment-header-issue-link:hover {
   position: relative;
   border: 1px solid #262626;
   border-radius: 0;
+  background: #3f3f3f;
 }
 .gitment-editor-main {
   position: relative;
   border: 1px solid #262626;
   border-radius: 0;
-  background: #a3cce7;
+/*background: #A3CCE7;*/
 }
 .gitment-editor-main::before,
 .gitment-editor-main::after {
