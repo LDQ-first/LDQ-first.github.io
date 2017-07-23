@@ -176,6 +176,12 @@ a {
   color: #0475a1;
   outline: none;
 }
+audio,
+canvas,
+img,
+video {
+  vertical-align: middle;
+}
 .alignleft {
   float: left;
 }
@@ -207,6 +213,7 @@ a {
 }
 #container #mobile-nav {
   display: none;
+/* z-index: 1;*/
 }
 #container #mobile-nav .overlay {
   height: 110px;
@@ -218,6 +225,10 @@ a {
   position: fixed;
   height: 42px;
   z-index: 99;
+}
+#container #mobile-nav .intrude-less {
+  position: relative;
+  z-index: 1;
 }
 #container #mobile-nav #header {
   padding: 10px 0 0 0;
@@ -258,7 +269,7 @@ a {
 #container .left-col .overlay {
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(0,0,0,0.34);
   position: absolute;
   opacity: 0.7;
   z-index: -1;
@@ -279,6 +290,15 @@ a {
   background: linear-gradient(200deg, #a0cfe4, #e8c37e);
   left: 300px;
   width: auto;
+}
+#container .mid-col #particles-oli-wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 0;
 }
 @media screen and (max-width: 800px) {
   #container .left-col {
@@ -2432,17 +2452,14 @@ a {
   list-style: decimal;
 }
 .post-list li {
-  margin: 0.4em 0 0.1em 0.7em;
+  margin: 0.4em 0 0.1em 2em;
 }
 .post-list li a {
-  color: #808080;
+  color: #457eca;
 }
 .post-list li a:hover {
-color
+  color: #e84f51;
   text-decoration: none;
-}
-.post-list li:hover a {
-  color: #88acdb;
 }
 .article-entry .github-widget h3::after {
   content: none;
@@ -3600,33 +3617,38 @@ a.gitment-editor-footer-tip:hover {
 }
 .toc-article {
   position: fixed;
-  width: 260px;
+  width: 250px;
   top: 340px;
   bottom: 1em;
   left: 0;
   margin: 20px 10px 10px 10px;
-  padding: 10px;
+  padding: 15px;
   border-radius: 10px;
   overflow: auto;
-  background: #1051bf;
+  background: -webkit-linear-gradient(250deg, #95c6d2, #ddbd73);
+  background: -moz-linear-gradient(250deg, #95c6d2, #ddbd73);
+  background: -ms-linear-gradient(250deg, #95c6d2, #ddbd73);
+  background: linear-gradient(200deg, #95c6d2, #ddbd73);
 }
 #toc {
   font-size: 0.9rem;
   line-height: 1.65em;
+  -webkit-box-shadow: 0 0 6px 2px rgba(0,183,253,0.5);
+  box-shadow: 0 0 6px 2px rgba(0,183,253,0.5);
 }
 #toc .toc-title {
   font-weight: bold;
-  color: #808080;
+  color: #457eca;
   margin-left: 2em;
 }
 #toc .toc-title.clickable {
   cursor: pointer;
 }
 #toc .toc-title.clickable:hover {
-  color: #88acdb;
+  color: #786dff;
 }
 #toc .toc-title.clickable:active {
-  color: #d3d3d3;
+  color: #e84f51;
 }
 #toc ol.toc {
   margin-left: 0;
@@ -3657,10 +3679,10 @@ a.gitment-editor-footer-tip:hover {
   color: #eee;
 }
 #toc ol.toc a.toc-link:visited {
-  color: #f48385;
+  color: #e84f51;
 }
 #toc ol.toc a.toc-link:hover {
-  color: #88acdb;
+  color: #568eda;
   text-decoration: none;
   background: rgba(158,188,226,0.21);
 }
@@ -4032,7 +4054,7 @@ aside.comment-bar:active {
 .article-entry .highlight {
   background: rgba(51,51,51,0.85);
   margin: auto;
-  padding: 0.35em 1.5em;
+  padding: 0 10px;
   border-style: solid;
   border-color: #ddd;
   border-width: 1px;
@@ -4105,6 +4127,19 @@ aside.comment-bar:active {
 .article-entry .highlight .line {
   line-height: 1.3rem;
 }
+.article-entry .highlight::before {
+  content: attr(data-lang) " code";
+  display: block;
+  background-color: #0083a0;
+  margin: 0 -10px 16px -10px;
+  padding: 8px 16px;
+  color: #efefef;
+  font-family: Lato, "Microsoft YaHei", sans-serif;
+  font-size: 1.1rem;
+  text-shadow: none;
+  border-bottom: dashed 1px #000;
+  text-transform: capitalize;
+}
 .article-entry .gist {
   margin: 0 -20px;
   border-style: solid;
@@ -4129,19 +4164,6 @@ aside.comment-bar:active {
 }
 .article-entry .gist .gist-file .gist-data .line-data {
   padding: 0 !important;
-}
-.article-entry .gist .gist-file .highlight::before {
-  content: attr(data-lang) " code";
-  display: block;
-  background-color: #0083a0;
-  margin: 0 -10px 16px -10px;
-  padding: 8px 16px;
-  color: #efefef;
-  font-family: Lato, "Microsoft YaHei", sans-serif;
-  font-size: 1.1rem;
-  text-shadow: none;
-  border-bottom: dashed 1px #000;
-  text-transform: capitalize;
 }
 .article-entry .gist .gist-file .highlight {
   margin: 0;
@@ -4261,7 +4283,6 @@ pre .javascript .function {
 /*text-shadow: 0 1px #fff;*/
   position: absolute;
   bottom: 20px;
-  opacity: 0.75;
   width: 100%;
   text-align: center;
 }
