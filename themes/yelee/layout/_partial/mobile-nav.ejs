@@ -14,6 +14,16 @@
             <% if (theme.subtitle){ %>
             <p class="header-subtitle"><%=theme.subtitle%></p>
             <%}%>
+
+            <% if (theme.search.on){ %>
+                <form id="search-form">
+                <input type="text" id="local-search-inputs" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="<%= theme.search.onload %>" />
+                <i class="fa fa-times" onclick="resetSearch()"></i>
+                </form>
+                <div id="local-search-results"></div>
+                <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+            <%}%>
+
             <nav class="header-menu">
                 <ul>
                 <% for (var i in theme.menu){ %>
