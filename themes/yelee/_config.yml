@@ -341,3 +341,7 @@ CDN:
   scrollreveal: //cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js
   particles: //cdn.bootcss.com/particles.js/2.0.0/particles.min.js
   zepto: //cdn.bootcss.com/zepto/1.2.0/zepto.min.js
+  default_skin: //cdn.bootcss.com/photoswipe/4.1.2/default-skin/default-skin.min.css
+  photoswipe_ui_default: //cdn.bootcss.com/photoswipe/4.1.2/photoswipe-ui-default.min.js
+  photoswipe_css: //cdn.bootcss.com/photoswipe/4.1.2/photoswipe.min.css
+  photoswipe_js: //cdn.bootcss.com/photoswipe/4.1.2/photoswipe.min.js

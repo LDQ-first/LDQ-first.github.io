@@ -50,6 +50,7 @@
 
 <link href="<%- theme.CDN.fontawesome %>" rel="stylesheet">
 
+
 <%  var title = page.title;
 if ( is_archive() ) {
         title = 'Archives';
@@ -67,6 +68,7 @@ if ( is_archive() ) {
 
 <script src="<%- theme.CDN.jquery %>"></script>
 <script src="<%- theme.CDN.clipboard %>"></script>
+
 
 <script>
     var yiliaConfig = {
@@ -112,10 +114,8 @@ if ( is_archive() ) {
         })();
     </script>
 <% } %>
-   
-   <link rel="stylesheet" href="<%- config.root %>js/dist/photoswipe.css">
-   <link rel="stylesheet" href="<%- config.root %>js/dist/default-skin/default-skin.css">
-   <script src="<%- config.root %>js/dist/photoswipe.min.js"></script>
-   <script src="<%- config.root %>js/dist/photoswipe-ui-default.min.js"></script>
-
+  <link  href="<%- theme.CDN.photoswipe_css %>" rel="stylesheet">
+  <link  href="<%- theme.CDN.default_skin %>" rel="stylesheet">
+  <script src="<%- theme.CDN.photoswipe_js %>"></script>
+  <script src="<%- theme.CDN.photoswipe_ui_default %>"></script>
 </head>
