@@ -5,9 +5,11 @@
     <%- partial('_partial/left-col', null, {cache: !config.relative_link}) %>
     </div>
     <div class="mid-col">
-      <div id="particles-oli-wrapper">
-        <canvas class="particles-js-canvas-el"></canvas>
-      </div>
+      <% if(theme.particles.on) { %>
+        <div id="particles-oli-wrapper">
+          <canvas class="particles-js-canvas-el"></canvas>
+        </div>
+      <% } %>
       <%- partial('_partial/mobile-nav', null, {cache: !config.relative_link}) %>
       <div class="body-wrap"><%- body %></div>
       <%- partial('_partial/footer') %>
