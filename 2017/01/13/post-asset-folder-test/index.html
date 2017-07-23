@@ -563,10 +563,22 @@
 
     <script>
         $(document).ready(function() {
+            var w, h;
+            if(window.innerWidth > 800) {
+               w = 600;
+               h = window.innerHeight;
+            } else {
+                w = window.outerWidth;
+                h = window.outerHeight;
+            } 
+            var imgSrc = 'https://unsplash.it/' + w + '/' + h + '/?random';
             var backgroundnum = 5;
-                var backgroundimg = "url(/background/bgs-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
-                $("#container #mobile-nav").css({"background": backgroundimg,"background-size": "cover","background-position": "center"});
-                $("#container .left-col").css({"background": backgroundimg,"background-size": "cover","background-position": "center"});
+               // var backgroundimg = "url(/background/bgs-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("#container #mobile-nav").css({"background": 'url(' + imgSrc + ')',"background-size": "cover","background-position": "center"});
+                $("#container .left-col").css({"background": 'url(' + imgSrc + ')',"background-size": "cover","background-position": "center"});
+            
+            
+            
             /*var iPad = window.navigator.userAgent.indexOf('iPad');
             if (iPad > -1 || $(".left-col").css("display") === "none") {
                 var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];

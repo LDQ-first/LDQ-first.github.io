@@ -145,10 +145,7 @@ define([], function(){
                 var inputArea = document.querySelector("#local-search-inputs");
                 var $HideWhenSearch = $("#toc, #tocButton, .post-list, #post-nav-button a:nth-child(2)");
                 var $resetButton = $("#mobile-nav #search-form .fa-times");
-                
                 var $resultArea = $("#local-search-results");
-                console.log(inputArea)
-                console.log($resetButton)
 
                 var getSearchFile = function(){
                     var search_path = "search.xml";
