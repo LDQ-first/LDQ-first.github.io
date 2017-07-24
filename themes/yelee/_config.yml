@@ -266,7 +266,10 @@ search:
 
 # images viewer | 图片浏览器
 ## http://www.fancyapps.com/fancybox/
+## http://photoswipe.com/
 # fancybox: true
+photoswipe: true
+
 
 
 # Display Math(LaTeX, MathML...) | 数学公式支持

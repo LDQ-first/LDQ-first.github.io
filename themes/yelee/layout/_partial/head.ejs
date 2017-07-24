@@ -114,8 +114,10 @@ if ( is_archive() ) {
         })();
     </script>
 <% } %>
+<% if(theme.photoswipe) { %>
   <link  href="<%- theme.CDN.photoswipe_css %>" rel="stylesheet">
   <link  href="<%- theme.CDN.default_skin %>" rel="stylesheet">
   <script src="<%- theme.CDN.photoswipe_js %>"></script>
   <script src="<%- theme.CDN.photoswipe_ui_default %>"></script>
+<% } %>
 </head>
