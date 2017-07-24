@@ -32,6 +32,7 @@ define([], function(){
         $(".icon-wrap").eq(idx).removeClass("hide");
     }
 
+    
     var bind = function(){
         var switchBtn = $("#myonoffswitch");
         var tagcloud = $(".second-part");
@@ -82,6 +83,8 @@ define([], function(){
             slide(idx);
             Tips.hide();
         });
+
+       
     }
 
     var miniArchives = function(){
