@@ -9,7 +9,11 @@
                 w = window.outerWidth;
                 h = window.outerHeight;
             } 
-            var imgSrc = 'https://unsplash.it/' + w + '/' + h + '/?random';
+
+
+          //  var imgSrc = 'https://unsplash.it/' + w + '/' + h + '/?random';
+          //  var imgSrc = 'http://lorempixel.com/' + w + '/' + h;
+            var imgSrc = 'https://source.unsplash.com/random/' + w + 'x' + h;
             var backgroundnum = <%= theme.background_image %>;
                // var backgroundimg = "url(<%- theme.root_url %>/background/bgs-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
                 $("#container #mobile-nav").css({"background": 'url(' + imgSrc + ')',"background-size": "cover","background-position": "center"});

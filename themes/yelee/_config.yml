@@ -272,6 +272,7 @@ search:
 ## http://www.fancyapps.com/fancybox/
 # fancybox: true
 
+
 # Display Math(LaTeX, MathML...) | 数学公式支持
 ## https://www.mathjax.org/
 mathjax: true
@@ -323,6 +324,8 @@ progressBar:
 # on: true | false
 particles:
   on: true
+
+
 
 
 
