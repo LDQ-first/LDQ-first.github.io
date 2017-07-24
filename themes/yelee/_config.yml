@@ -145,11 +145,7 @@ youyan:
 
 # >>> Style Customisation 样式自定义 <<<
 
-# Background | 背景
-## "5": show images form bg-1.jpg to bg-5.jpg in `/yelee/source/background/`
-## "5": 显示`/yelee/source/background/`文件夹中 bg-1.jpg 到 bg-5.jpg 这5张图片
-## "0": white-gray background | 淳朴灰白背景
-background_image: 5
+
 
 # Base Font Size | 字号调节
 base_font_size: 16  #px, 16 - 24
@@ -326,6 +322,18 @@ particles:
   on: true
 
 
+# 侧边栏或头部随机背景图片 | 背景
+# type：1 | 2 | 3 | 4
+# 1：https://unsplash.it 
+# 2：http://lorempixel.com
+# 3：https://source.unsplash.com
+# 4: 自定义背景
+  ## "5": show images form bg-1.jpg to bg-5.jpg in `/yelee/source/background/`
+  ## "5": 显示`/yelee/source/background/`文件夹中 bg-1.jpg 到 bg-5.jpg 这5张图片
+background: 
+  on: true
+  type: 1
+  background_image: 5
 
 
 
