@@ -2032,7 +2032,7 @@ video {
   -webkit-box-orient: vertical;
 }
 #header .header-menu {
-  font-weight: 550;
+  font-weight: 600;
   line-height: 1.75rem;
   font-family: inherit;
   cursor: pointer;
@@ -2047,14 +2047,11 @@ video {
   -webkit-box-pack: center;
   -webkit-box-align: center;
 }
-#header .header-menu a {
-  text-shadow: 0 0 8px #3a9aee, 0 0 10px #3a9aee, 0 0 12px #3a9aee;
-}
 #header .header-menu li {
   cursor: default;
-  padding: 3px;
+  padding: 3px 0.5em;
   margin: 2px;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 #header .header-menu li:hover {
   color: #fff;
@@ -2063,6 +2060,7 @@ video {
 #header .header-menu li a {
   font-size: 0.875rem;
   min-width: 240px;
+  text-shadow: 0 0 8px #3a9aee, 0 0 10px #3a9aee, 0 0 12px #3a9aee;
 }
 #header .switch-area {
   position: relative;
@@ -2119,13 +2117,23 @@ video {
   padding: 5px;
 }
 #header .switch-part3 .switch-friends-link:hover {
-  background: #88acdb;
+  background: #5b90d6;
   color: #fff;
+}
+#header .switch-part3 #js-friends {
+  background: rgba(137,146,220,0.3);
+  padding: 10px;
+  border-radius: 10px;
 }
 #header .switch-part4 {
   left: 300%;
   text-align: left;
   line-height: 30px;
+}
+#header .switch-part4 #js-aboutme {
+  background: rgba(137,146,220,0.3);
+  padding: 10px;
+  border-radius: 10px;
 }
 #header .header-nav .social {
   margin-top: 10px;
@@ -4593,6 +4601,7 @@ pre .javascript .function {
   position: relative;
   top: -30px;
   left: -2px;
+  display: none;
 }
 .switch-btn .tips-box .tips-arrow {
   width: 0;

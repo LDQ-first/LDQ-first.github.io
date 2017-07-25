@@ -6,10 +6,10 @@ define([], function(){
 
         return {
             show: function(){
-                $tipBox.removeClass("hide");
+               $tipBox.fadeIn(200);
             },
             hide: function(){
-                $tipBox.addClass("hide");
+                $tipBox.fadeOut(200);
             },
             init: function(){
                 
