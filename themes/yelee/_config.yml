@@ -8,7 +8,7 @@ Yelee: "3.5"
 ## Tags Cloud Page: `hexo new page tags`
 menu:
   主页: /
-  所有文章: /archives/
+  时光机: /archives/
   #随笔: /tags/随笔
   标签云: /tags/
   关于我: /about/
@@ -44,7 +44,7 @@ subnav:
   GitHub: "https://github.com/LDQ-first"
   #新浪微博: "sina weibo"
   #V2EX: "#"
-  #RSS: "/atom.xml"
+  RSS: "/atom.xml"
   #知乎: "zhihu"
   #简书: "jianshu"
   #SegmentFault: ""
