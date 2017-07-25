@@ -125,7 +125,7 @@ html {
 }
 body {
   min-width: 320px;
-  background: rgba(91,191,229,0.8);
+  background: rgba(91,191,229,0.6);
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
   -moz-font-feature-settings: "liga" on;
@@ -265,6 +265,10 @@ video {
   transition: all 0.2s ease-in;
   height: 100%;
   overflow-y: auto;
+  background: -webkit-linear-gradient(270deg, #a0cfe4, #e8c37e);
+  background: -moz-linear-gradient(270deg, #a0cfe4, #e8c37e);
+  background: -ms-linear-gradient(270deg, #a0cfe4, #e8c37e);
+  background: linear-gradient(180deg, #a0cfe4, #e8c37e);
 }
 #container .left-col .overlay {
   width: inherit;
@@ -274,7 +278,7 @@ video {
   z-index: -1;
 }
 #container .left-col .intrude-less {
-  width: 76%;
+  width: 100%;
   text-align: center;
   margin: 50px auto 0;
 }
@@ -618,8 +622,8 @@ video {
   border-right: 5px solid #3a9aee;
   border-bottom: 5px solid #3a9aee;
   border-radius: 50%;
-  width: 128px;
-  height: 128px;
+  width: 100px;
+  height: 100px;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
@@ -633,8 +637,8 @@ video {
 }
 @media screen and (max-width: 800px) {
   #header .profilepic {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
   }
 }
 #header .profilepic img {
@@ -2039,7 +2043,6 @@ video {
   text-transform: uppercase;
   float: none;
   min-height: 5.25rem;
-  max-height: 8.75rem;
   overflow: visible;
   text-align: center;
   display: -webkit-box;
@@ -2939,13 +2942,8 @@ a.gitment-comment-name {
 }
 .gitment-editor-tabs {
   margin-top: -1px;
-  margin-bottom: -1px;
+  margin-bottom: -2px;
   margin-left: -1px;
-}
-@media screen and (max-width: 800px) {
-  .gitment-editor-tabs {
-    margin-bottom: -2px;
-  }
 }
 .gitment-editor-tab {
   display: inline-block;
@@ -4600,7 +4598,7 @@ pre .javascript .function {
 }
 .switch-btn {
   margin: 0 auto;
-  margin-top: 23px;
+  margin-top: 10px;
   position: relative;
   width: 70px;
   text-align: center;
@@ -5137,6 +5135,9 @@ pre .javascript .function {
   -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.3);
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
+.search:focus {
+  background: rgba(64,148,199,0.8);
+}
 #search-form .fa-times {
   display: none;
   padding: 1px 0.7em;
@@ -5158,7 +5159,7 @@ pre .javascript .function {
 #local-search-result,
 #local-search-results {
   background: #eee;
-  margin: 1em -12% auto -6%;
+  margin: 1em;
   font-size: 0.9rem;
   text-align: left;
   word-break: break-all;
