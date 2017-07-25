@@ -215,10 +215,9 @@
     left: .5em;
     top: auto; /*In order to cover style in article.styl*/
     bottom: 10px;
-    padding: .2em .4em;
     border-radius: 6px;
     border-style : outset;
-    background: rgba(255, 255, 255, .7);
+    background: rgba(255, 255, 255, .8);
     font-size: 1em;
     font-weight: bold;
     color: gray;
@@ -230,13 +229,12 @@
 
 .toc-article {
     display: none;
-    z-index: 99
-    left: 0;
+    z-index: 110
+    left: 0.5em;
     top: 38%;
-    bottom: 1em;
+    bottom: 2.5em;
     height: auto;
     max-height: 58%;
-    width: none;
     width: auto;
     min-width: 7em;
     max-width: 61.8%;
@@ -248,11 +246,11 @@
     background: none;
     font-size: 1em;
     line-height: 1.25em;
+    background: linear-gradient(200deg, #95C6D2, #DDBD73);
     .toc-title {
         display: none;
         padding: .3em;
-        color: white;
-        background: lightgray;
+        color: #457eca;
         border-radius 3px
     }
     .toc {
@@ -262,7 +260,6 @@
         margin: 0;
         padding: 0.5em;
         border-radius: 5px;
-        background: rgba(255, 255, 255, .85);
         ol {
             padding: 0.1em 0;
             padding-left: 1.2em;

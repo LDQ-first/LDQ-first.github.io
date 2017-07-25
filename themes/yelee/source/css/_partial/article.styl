@@ -268,7 +268,7 @@
 
 .article-more-link {
     float: right;
-    /*margin-top: 5px;*/
+    transition: all 0.6s;
     a {
         display: inline-block;
         padding: 8px;
@@ -280,18 +280,18 @@
         font-size: .9rem;
         line-height: 1em;
         white-space: nowrap;
-        transition: background 0.3s;
         opacity: i-opacity;
-        &:hover {
-            background: hover-color;
-            opacity: 1;
-        }
+        transition: all 0.6s;
         &.hidden {
             visibility: hidden;
         }
     }
     &:hover {
-        transform: scale(1.06);
+        a {
+          background: hover-color;
+          opacity: 1;
+        } 
+        transform: scale(1.2);
     }
 }
 
