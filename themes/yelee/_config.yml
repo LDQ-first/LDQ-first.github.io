@@ -100,8 +100,8 @@ gitment:
   on: true
   owner: LDQ-first
   repo: ldq-first.github.io
-  client_id: 
-  client_secret: 
+  client_id: 20b5b063fd83c9fee396
+  client_secret: 98c7739adae2875d0818a788a78a5df4fcaaa724
 
 # 打赏
 # 请在需要打赏的文章的md文件头部，设置属性reward: true
