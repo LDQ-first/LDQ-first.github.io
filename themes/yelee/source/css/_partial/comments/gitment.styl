@@ -72,16 +72,23 @@
   vertical-align: middle;
   height: 30px;
   width: 30px;
+  &:hover {
+      animation: btnGroups 1s linear;
+  }
 }
 
 .gitment-comment-like-btn svg {
   vertical-align: middle;
   height: 20px;
   width: 20px;
+  &:hover {
+      animation: btnGroups 1s linear;
+  }
 }
 
 .gitment-header-like-btn.liked svg, .gitment-comment-like-btn.liked svg {
-  fill: #F44336;
+  fill: #3699F4;
+  stroke: #F44336;
 }
 
 a.gitment-header-issue-link {
@@ -129,11 +136,15 @@ a.gitment-header-issue-link {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  border: 2px solid rgba(30,136,229 ,1);
+ 
   &:hover {
       -webkit-animation: btnGroups 1s linear;
       animation: btnGroups 1s linear;
   }
+}
+
+.gitment-comment-avatar-img {
+   border: 2px solid rgba(30,136,229 ,1);
 }
 
 .gitment-editor-avatar {
@@ -222,11 +233,7 @@ a.gitment-header-issue-link {
 
 a.gitment-comment-name {
   font-weight: 600;
-  color: #666;
-  &:visited {
-    font-weight: 600;
-    color: #666;
-  }
+  color: #218de4;
 }
 
 .gitment-editor-tabs {
