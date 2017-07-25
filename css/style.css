@@ -2842,7 +2842,8 @@ a.gitment-header-issue-link:hover {
   -ms-animation: btnGroups 1s linear;
   animation: btnGroups 1s linear;
 }
-.gitment-comment-avatar-img {
+.gitment-comment-avatar-img,
+.gitment-editor-avatar-img {
   border: 2px solid #1e88e5;
 }
 .gitment-editor-avatar:hover {
