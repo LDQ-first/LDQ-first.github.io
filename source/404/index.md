@@ -40,7 +40,7 @@ permalink: /404
 
 <body>
     <div class="pic">
-        <img class="errorImg" alt="">
+        <img class="errorImg" src="404/img/001.gif" alt="">
     </div>
     <p class="center">很抱歉，您所访问的地址并不存在</p>
     <p class="center">
@@ -51,13 +51,6 @@ permalink: /404
     <p class="center">                      
         可在边栏搜索框中对本站进行检索，以获取相关信息。
     </p>
-
-    <script>
-        var bgnum = Math.ceil(Math.random() * 1)
-        $('.errorImg').attr({
-            src: '404/img/00' + bgnum + '.gif'
-        })
-    </script>
 </body>
 
 
