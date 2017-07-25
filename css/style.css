@@ -2942,6 +2942,11 @@ a.gitment-comment-name {
   margin-bottom: -1px;
   margin-left: -1px;
 }
+@media screen and (max-width: 800px) {
+  .gitment-editor-tabs {
+    margin-bottom: -2px;
+  }
+}
 .gitment-editor-tab {
   display: inline-block;
   padding: 11px 12px;
