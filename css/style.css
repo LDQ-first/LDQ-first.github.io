@@ -2783,18 +2783,9 @@ body .ui-tooltip {
   -ms-animation: btnGroups 1s linear;
   animation: btnGroups 1s linear;
 }
-.gitment-header-like-btn.liked svg,
-.gitment-comment-like-btn.liked svg {
-  fill: #3699f4;
-  stroke: #f44336;
-  -webkit-transition: all 0.6s;
-  -moz-transition: all 0.6s;
-  -ms-transition: all 0.6s;
-  transition: all 0.6s;
-  -webkit-transform: scale(1.4);
-  -moz-transform: scale(1.4);
-  -ms-transform: scale(1.4);
-  transform: scale(1.4);
+.gitment-header-like-btn.liked svg path,
+.gitment-comment-like-btn.liked svg path {
+  fill: #f44336;
 }
 a.gitment-header-issue-link {
   float: right;
