@@ -372,6 +372,9 @@ video {
   #container #viewer-box .viewer-box-l {
     font-size: 14px;
   }
+  #container .body-wrap {
+    padding-top: 30px;
+  }
   #container .article {
     margin: 20px 10px;
   }
@@ -2763,14 +2766,35 @@ body .ui-tooltip {
   height: 30px;
   width: 30px;
 }
+.gitment-header-like-btn svg:hover {
+  -webkit-animation: btnGroups 1s linear;
+  -moz-animation: btnGroups 1s linear;
+  -ms-animation: btnGroups 1s linear;
+  animation: btnGroups 1s linear;
+}
 .gitment-comment-like-btn svg {
   vertical-align: middle;
   height: 20px;
   width: 20px;
 }
+.gitment-comment-like-btn svg:hover {
+  -webkit-animation: btnGroups 1s linear;
+  -moz-animation: btnGroups 1s linear;
+  -ms-animation: btnGroups 1s linear;
+  animation: btnGroups 1s linear;
+}
 .gitment-header-like-btn.liked svg,
 .gitment-comment-like-btn.liked svg {
-  fill: #f44336;
+  fill: #3699f4;
+  stroke: #f44336;
+  -webkit-transition: all 0.6s;
+  -moz-transition: all 0.6s;
+  -ms-transition: all 0.6s;
+  transition: all 0.6s;
+  -webkit-transform: scale(1.4);
+  -moz-transform: scale(1.4);
+  -ms-transform: scale(1.4);
+  transform: scale(1.4);
 }
 a.gitment-header-issue-link {
   float: right;
@@ -2817,7 +2841,6 @@ a.gitment-header-issue-link:hover {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  border: 2px solid #1e88e5;
 }
 .gitment-comment-avatar:hover,
 .gitment-comment-avatar-img:hover,
@@ -2827,6 +2850,9 @@ a.gitment-header-issue-link:hover {
   -moz-animation: btnGroups 1s linear;
   -ms-animation: btnGroups 1s linear;
   animation: btnGroups 1s linear;
+}
+.gitment-comment-avatar-img {
+  border: 2px solid #1e88e5;
 }
 .gitment-editor-avatar:hover {
   -webkit-animation: btnGroups 1s linear;
@@ -2909,11 +2935,7 @@ a.gitment-header-issue-link:hover {
 }
 a.gitment-comment-name {
   font-weight: 600;
-  color: #666;
-}
-a.gitment-comment-name:visited {
-  font-weight: 600;
-  color: #666;
+  color: #218de4;
 }
 .gitment-editor-tabs {
   margin-bottom: -1px;
@@ -3186,7 +3208,6 @@ a.gitment-editor-footer-tip:hover {
 .body-wrap {
   max-width: 50em;
   margin: auto;
-  padding-top: 30px;
   padding-bottom: 126px;
   overflow: hidden;
 }
@@ -4406,6 +4427,12 @@ pre .javascript .function {
   -moz-animation: btnGroups 1s linear;
   -ms-animation: btnGroups 1s linear;
   animation: btnGroups 1s linear;
+}
+.bdsharebuttonbox .bds_fbook {
+  background: #4d78de !important;
+}
+.bdsharebuttonbox .bds_linkedin {
+  background: #0077b5 !important;
 }
 .bdsharebuttonbox .bds_tsina {
   background: #db332f !important;
