@@ -12,6 +12,7 @@ menu:
   #随笔: /tags/随笔
   标签云: /tags/
   关于我: /about/
+  照片流: /favorite/
 
 # Link to your avatar | 填写头像地址
 avatar: /img/avatar.png
@@ -338,6 +339,11 @@ background:
   type: 1
   background_image: 5
 
+
+image_stream:
+  jquery: false
+  jquery_lazyload: //cdn.bootcss.com/jquery.lazyload/1.9.1/jquery.lazyload.min.js
+  img_placeholder: //ww4.sinaimg.cn/large/e724cbefgw1etyppy7bgwg2001001017.gif
 
 
 CDN:
