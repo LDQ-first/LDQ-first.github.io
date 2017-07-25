@@ -14,7 +14,6 @@ permalink: /404
         font-size: 2.1em;
     }
     .article-entry  {
-        border-top: 2px solid #CCC;
         padding: 0;
         margin: 32px;
     }
