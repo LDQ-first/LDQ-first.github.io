@@ -489,10 +489,9 @@ video {
     left: 0.5em;
     top: auto; /*In order to cover style in article.styl*/
     bottom: 10px;
-    padding: 0.2em 0.4em;
     border-radius: 6px;
     border-style: outset;
-    background: rgba(255,255,255,0.7);
+    background: rgba(255,255,255,0.8);
     font-size: 1em;
     font-weight: bold;
     color: #808080;
@@ -503,13 +502,12 @@ video {
   }
   #container .toc-article {
     display: none;
-    z-index: 99;
-    left: 0;
+    z-index: 110;
+    left: 0.5em;
     top: 38%;
-    bottom: 1em;
+    bottom: 2.5em;
     height: auto;
     max-height: 58%;
-    width: none;
     width: auto;
     min-width: 7em;
     max-width: 61.8%;
@@ -521,12 +519,15 @@ video {
     background: none;
     font-size: 1em;
     line-height: 1.25em;
+    background: -webkit-linear-gradient(250deg, #95c6d2, #ddbd73);
+    background: -moz-linear-gradient(250deg, #95c6d2, #ddbd73);
+    background: -ms-linear-gradient(250deg, #95c6d2, #ddbd73);
+    background: linear-gradient(200deg, #95c6d2, #ddbd73);
   }
   #container .toc-article .toc-title {
     display: none;
     padding: 0.3em;
-    color: #fff;
-    background: #d3d3d3;
+    color: #457eca;
     border-radius: 3px;
   }
   #container .toc-article .toc {
@@ -536,7 +537,6 @@ video {
     margin: 0;
     padding: 0.5em;
     border-radius: 5px;
-    background: rgba(255,255,255,0.85);
   }
   #container .toc-article ol ol {
     padding: 0.1em 0;
@@ -2938,6 +2938,7 @@ a.gitment-comment-name {
   color: #218de4;
 }
 .gitment-editor-tabs {
+  margin-top: -1px;
   margin-bottom: -1px;
   margin-left: -1px;
 }
@@ -3544,7 +3545,10 @@ a.gitment-editor-footer-tip:hover {
 }
 .article-more-link {
   float: right;
-/*margin-top: 5px;*/
+  -webkit-transition: all 0.6s;
+  -moz-transition: all 0.6s;
+  -ms-transition: all 0.6s;
+  transition: all 0.6s;
 }
 .article-more-link a {
   display: inline-block;
@@ -3557,24 +3561,24 @@ a.gitment-editor-footer-tip:hover {
   font-size: 0.9rem;
   line-height: 1em;
   white-space: nowrap;
-  -webkit-transition: background 0.3s;
-  -moz-transition: background 0.3s;
-  -ms-transition: background 0.3s;
-  transition: background 0.3s;
   opacity: 0.75;
-}
-.article-more-link a:hover {
-  background: #9c9;
-  opacity: 1;
+  -webkit-transition: all 0.6s;
+  -moz-transition: all 0.6s;
+  -ms-transition: all 0.6s;
+  transition: all 0.6s;
 }
 .article-more-link a.hidden {
   visibility: hidden;
 }
 .article-more-link:hover {
-  -webkit-transform: scale(1.06);
-  -moz-transform: scale(1.06);
-  -ms-transform: scale(1.06);
-  transform: scale(1.06);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+.article-more-link:hover a {
+  background: #9c9;
+  opacity: 1;
 }
 #article-nav {
   display: table;
@@ -3701,7 +3705,6 @@ a.gitment-editor-footer-tip:hover {
 #toc ol.toc {
   margin-left: 0;
   padding: 1em 1.5em;
-/*padding-right 0*/
 }
 #toc ol.toc li.toc-item {
   list-style-type: none;
