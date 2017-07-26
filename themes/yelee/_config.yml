@@ -340,10 +340,18 @@ background:
   background_image: 5
 
 
+# 照片流
 image_stream:
   jquery: false
   jquery_lazyload: //cdn.bootcss.com/jquery.lazyload/1.9.1/jquery.lazyload.min.js
   img_placeholder: //ww4.sinaimg.cn/large/e724cbefgw1etyppy7bgwg2001001017.gif
+
+
+# 一个网页浮动动画小人
+live2d: 
+  on: true
+
+
 
 
 CDN:

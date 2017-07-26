@@ -76,6 +76,20 @@ define([], function(){
         }
     }
 
+    var IsPC =  function() {  
+        var userAgentInfo = navigator.userAgent;  
+        var Agents = ['Android', 'iPhone', 'Windows Phone', 'iPad'];  
+        var flag = true;  
+        for (var i = 0; i < Agents.length; i++) {  
+            if (userAgentInfo.indexOf(Agents[i]) != -1) {  
+                flag = false;  
+                break;  
+            }  
+        }  
+        return flag;  
+    }  
+
+
     //第四步 -- 绑定 DOM 事件
     var bindDOM = function(){
         var scaleW = scaleW;
@@ -111,12 +125,15 @@ define([], function(){
             touchEndTime = 0;
         }, false);
 
-        $(".slider-trigger").click(function(){
-            show();
-        })
-        $(".viewer-box-r").click(function(){
-            hide();
-        })
+        if(IsPC()) {
+            $(".slider-trigger").click(function(){
+                show();
+            })
+            $(".viewer-box-r").click(function(){
+                hide();
+            })
+        }
+        
 
         //滚动样式
         var $overlay = $("#mobile-nav .overlay");
@@ -138,53 +155,6 @@ define([], function(){
             $('html, body').animate({scrollTop:0}, 'slow');
         }, false);
     };
-
-      if (yiliaConfig.search) {
-        var search = function(){
-            require([yiliaConfig.rootUrl + 'js/search.js'], function(){
-                var inputArea = document.querySelector("#local-search-inputs");
-                var $HideWhenSearch = $("#toc, #tocButton, .post-list, #post-nav-button a:nth-child(2)");
-                var $resetButton = $("#mobile-nav #search-form .fa-times");
-                var $resultArea = $("#local-search-results");
-
-                var getSearchFile = function(){
-                    var search_path = "search.xml";
-                    var path = yiliaConfig.rootUrl + search_path;
-                    searchFunc(path, 'local-search-inputs', 'local-search-results');
-                }
-
-                var getFileOnload = inputArea.getAttribute('searchonload');
-                if (yiliaConfig.search && getFileOnload === "true") {
-                    getSearchFile();
-                } else {
-                    inputArea.onfocus = function(){ getSearchFile() }
-                }
-
-                var HideTocArea = function(){
-                    $HideWhenSearch.css("visibility","hidden");
-                    $resetButton.show();
-                }
-                inputArea.oninput = function(){ HideTocArea() }
-                inputArea.onkeydown = function(){ if(event.keyCode==13) return false}
-
-                resetSearch = function(){
-                    $HideWhenSearch.css("visibility","initial");
-                    $resultArea.html("");
-                    document.querySelector("#mobile-nav #search-form").reset();
-                    $resetButton.hide();
-                    $("#mobile-nav .no-result").hide();
-                }
-
-                $resultArea.bind("DOMNodeRemoved DOMNodeInserted", function(e) {
-                    if (!$(e.target).text()) {
-                        $("#mobile-nav .no-result").show(200);
-                    } else {
-                      $("#mobile-nav .no-result").hide();
-                    }
-                })
-            })
-        }()
-      }
 
     return{
         init: function(){
