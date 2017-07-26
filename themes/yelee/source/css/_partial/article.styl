@@ -131,6 +131,15 @@
   &:hover {
     border-left: 5px solid #9c9;
   };
+  #busuanzi_container_page_pv {
+    position absolute
+    left 0
+    top 23px
+    padding-left 1.2rem
+    font-size 0.875rem
+    text-align right
+    z-index 1
+  }
 }
 .article-info {
   li:hover {
@@ -256,15 +265,16 @@
             font 1em FontAwesome
             color #333
     a:nth-child(2)
+        font-size 18px
         &:hover
             color #258fb8
-            font-size 110%
+            animation: btnGroups 1s linear
         i
             vertical-align top
         clear right
         float right
         padding-top .45rem
-        color #999
+        color #333
 
 .article-more-link {
     float: right;
