@@ -394,7 +394,7 @@
             </div>
           </div>
         </div>
-        <script type="text/javascript" src="//cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+       <!-- <script type="text/javascript" src="//cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script> -->
         <script type="text/javascript">
           $(".pay_item").click(function(){
             $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
@@ -656,6 +656,8 @@
     
         <script src="/js/photoswipe.js"></script>
     
+
+    
 </footer>
     </div>
     
@@ -770,6 +772,25 @@ MathJax.Hub.Queue(function() {
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
   </div>
+    
+        <script type='text/javascript' src='/js/live2d.js'></script>
+        <canvas id="live2dcanvas" width="120" height="240" class="live2d"></canvas>
+        <style>
+        #live2dcanvas {
+            position: fixed;
+            right: 0px;
+            z-index: 999;
+            bottom: -60px;
+            opacity: 0.5;   
+        }
+        #live2dcanvas:hover {
+            cursor: -moz-grab;
+            cursor: -webkit-grab;
+            cursor: grab;
+            opacity: 0.8;
+        }
+        </style>
+        <script>loadlive2d("live2dcanvas" ,"/js/koharu.model.json")</script>
     
 </body>
 </html>
