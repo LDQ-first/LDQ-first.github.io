@@ -2067,7 +2067,8 @@ video {
 }
 #header .switch-area {
   position: relative;
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
   overflow: hidden;
   min-height: 260px;
   font-size: 0.875rem;
@@ -3319,6 +3320,15 @@ a.gitment-editor-footer-tip:hover {
 .article-header:hover {
   border-left: 5px solid #9c9;
 }
+.article-header #busuanzi_container_page_pv {
+  position: absolute;
+  left: 0;
+  top: 23px;
+  padding-left: 1.2rem;
+  font-size: 0.875rem;
+  text-align: right;
+  z-index: 1;
+}
 .article-info li:hover {
   background: none;
 }
@@ -3534,14 +3544,18 @@ a.gitment-editor-footer-tip:hover {
   color: #333;
 }
 .article-meta a:nth-child(2) {
+  font-size: 18px;
   clear: right;
   float: right;
   padding-top: 0.45rem;
-  color: #999;
+  color: #333;
 }
 .article-meta a:nth-child(2):hover {
   color: #258fb8;
-  font-size: 110%;
+  -webkit-animation: btnGroups 1s linear;
+  -moz-animation: btnGroups 1s linear;
+  -ms-animation: btnGroups 1s linear;
+  animation: btnGroups 1s linear;
 }
 .article-meta a:nth-child(2) i {
   vertical-align: top;
