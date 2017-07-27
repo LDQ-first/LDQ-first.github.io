@@ -464,6 +464,9 @@ video {
     padding: 10px 0;
     margin-left: 0;
   }
+  #container #footer {
+    text-align: center;
+  }
   #container #footer .footer-left {
     float: initial;
     margin-bottom: 0.5em;
@@ -471,9 +474,6 @@ video {
   #container #footer .footer-right {
     float: initial;
     margin-bottom: 1em;
-  }
-  #container #footer .visit {
-    margin: 0;
   }
   #container .article-category::before {
     display: none;
@@ -4374,17 +4374,24 @@ pre .javascript .function {
   color: #000;
   font-size: 0.8rem;
   font-family: "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
-/*text-shadow: 0 1px #fff;*/
   position: absolute;
   bottom: 20px;
   width: 100%;
-  text-align: center;
+  max-width: 50em;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 #footer a {
   color: #424bbe;
 }
 #footer .footer-left {
   float: left;
+}
+#footer .fa-license {
+  margin: 6px 0;
 }
 #footer .footer-right {
   float: right;
@@ -4405,6 +4412,7 @@ pre .javascript .function {
 }
 #footer .visit {
   font-size: 0.88rem;
+  margin: 6px 0;
 }
 #footer .visit .fa {
   padding-right: 0.25em;
@@ -5033,6 +5041,7 @@ pre .javascript .function {
   background: url("../img/scrollbar_arrow.png") no-repeat -30px -18px;
 }
 #viewer {
+/* display: none;*/
   position: fixed;
   z-index: 1000000;
   top: 0;
