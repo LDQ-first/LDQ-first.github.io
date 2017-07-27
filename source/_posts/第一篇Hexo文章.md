@@ -7,5 +7,6 @@ tags:
 categories:
 - 技术
 - Hexo
+top: 1
 ---
 - 第一次写Hexo博客
