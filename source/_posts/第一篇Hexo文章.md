@@ -8,5 +8,6 @@ categories:
 - 技术
 - Hexo
 top: 1
+mathjax: true
 ---
 - 第一次写Hexo博客

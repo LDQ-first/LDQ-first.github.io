@@ -8,8 +8,8 @@
     <% } else { %>
         <a href="<%- url_for(post.path) %>#comments" title="<%= __('tooltip.jump2comments') %>">
     <% } %>
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
         <span class="count-comment"></span>
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
         <% if (theme.duoshuo.on) { %>
             <span class="ds-thread-count" <% if (index) { %> data-thread-key="<%=post.path%>" <% } %>></span>
         <% } %>

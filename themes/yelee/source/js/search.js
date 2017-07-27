@@ -56,7 +56,7 @@ var searchFunc = function(path, search_id, content_id) {
                     }
                     // show search results
                     if (isMatch) {
-                        str += "<li><a href='"+ data_url +"' class='search-result-title' target='_blank'>"+ '<i class="fa fa-external-link" aria-hidden="true"></i> ' + data_title +"</a>";
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ '<i class="fa fa-external-link" aria-hidden="true"></i> ' + data.title +"</a>";
                         var content = data.content.trim().replace(/<[^>]+>/g,"");
                         if (first_occur >= 0) {
                             // cut out characters
