@@ -365,7 +365,8 @@
 <p class="count"></p>
 
 <div class="tags">
-    <a href="/tags/Hexo/" style="font-size: 16px; color: #808080">Hexo</a> <a href="/tags/Test/" style="font-size: 16px; color: #808080">Test</a> <a href="/tags/前端/" style="font-size: 16px; color: #808080">前端</a>
+    
+    <a href="/tags/Hexo/" style="font-size: 16px; color: #9071c8">Hexo</a> <a href="/tags/Test/" style="font-size: 16px; color: #9071c8">Test</a> <a href="/tags/前端/" style="font-size: 16px; color: #9071c8">前端</a>
 </div>
 <style>
     .category-list li{
@@ -375,9 +376,17 @@
         border: 1px solid lightgray;
         font-size: 1.2rem;
     }
-    .category-list a { color: gray; }
-    .category-list-item:hover a {
-        color: gray;
+    .category-list-item {
+        color: #0475a1;
+        background: rgba(64, 148, 199, 0.5);
+        box-shadow: 0 2px 5px 0 rgba(0,183,253,.16), 0 2px 10px 0 rgba(0,183,253,.12);
+    }
+    li.category-list-item:hover {
+        background: rgba(64, 148, 199, 0.5);
+        box-shadow: 0 4px 5px 0 rgba(0,183,253,.3), 0 4px 10px 0 rgba(0,183,253,.5);
+    }
+    li.category-list-item:hover a.category-list-link {
+        color: #0475a1;
         text-decoration: none;
     }
     .category-list-count {
