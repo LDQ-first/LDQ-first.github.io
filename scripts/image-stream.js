@@ -3,7 +3,7 @@
 var config = {
   'jquery': '//cdn.bootcss.com/jquery/2.2.4/jquery.min.js',
   'jquery_lazyload': '//cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js',
-  'img_placeholder': 'http://ww4.sinaimg.cn/large/e724cbefgw1etyppy7bgwg2001001017.gif'
+  'img_placeholder': '//i2.tiimg.com/1949/824a3063fe15d469.gif'
 }
 
 if (hexo.config.image_stream) {
@@ -48,5 +48,4 @@ hexo.extend.tag.register('figure', function(args){
   return result;
 });
 
-);
 
