@@ -5,13 +5,14 @@
 <p class="count"></p>
 
 <div class="tags">
+    <% var rdColor = ['#0475a1', '#9071C8', '#CE4DD3', '#F26E58', '#4DC1D3', '#F0575B', '#3dab34' ]; %>
     <%- tagcloud({
         min_font: 16, 
         max_font: 35, 
         amount: 999, 
         color: true, 
-        start_color: 'gray', 
-        end_color: 'black',
+        start_color: rdColor[Math.floor( Math.random() * (rdColor.length - 1) )], 
+        end_color: rdColor[Math.floor( Math.random() * (rdColor.length - 1) )],
     }) %>
 </div>
 <style>
@@ -22,9 +23,17 @@
         border: 1px solid lightgray;
         font-size: 1.2rem;
     }
-    .category-list a { color: gray; }
-    .category-list-item:hover a {
-        color: gray;
+    .category-list-item {
+        color: #0475a1;
+        background: rgba(64, 148, 199, 0.5);
+        box-shadow: 0 2px 5px 0 rgba(0,183,253,.16), 0 2px 10px 0 rgba(0,183,253,.12);
+    }
+    li.category-list-item:hover {
+        background: rgba(64, 148, 199, 0.5);
+        box-shadow: 0 4px 5px 0 rgba(0,183,253,.3), 0 4px 10px 0 rgba(0,183,253,.5);
+    }
+    li.category-list-item:hover a.category-list-link {
+        color: #0475a1;
         text-decoration: none;
     }
     .category-list-count {
