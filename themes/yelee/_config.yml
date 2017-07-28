@@ -7,12 +7,13 @@ Yelee: "3.5"
 ## About Page: `hexo new page about`
 ## Tags Cloud Page: `hexo new page tags`
 menu:
-  主页: /
+  博客: /
   时光机: /archives/
   #随笔: /tags/随笔
   标签云: /tags/
   关于我: /about/
   照片流: /favorite/
+  #自定义: /myPage/
 
 # Link to your avatar | 填写头像地址
 avatar: /img/avatar.png
