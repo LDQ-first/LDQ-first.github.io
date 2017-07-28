@@ -10,7 +10,7 @@
     <% } %>
     <% if (post.link || post.title){ %>
       <header class="article-header">
-        <% if (theme.visit_counter.page_visit && !is_home() ) { %>
+        <% if (theme.visit_counter.page_visit && !is_home() && !is_current('tags')) { %>
             <span id="busuanzi_container_page_pv" style='display:none'>
                 <span id="page-visit"  title="<%= __('visit_counter.page') %>"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i>
                   阅读次数
@@ -115,12 +115,12 @@
 </article>
 <%- partial('_partial/toc') %>
 
-<% if (!index && theme.share.on && (post.share != false || post.share)){ %>
+<% if (!index && theme.share.on && (post.share != false || post.share) && !is_current('tags')){ %>
     <%- partial('post/share') %>
 <% } %>
 
-<% if (!index && post.comments){ %>
-    <% if (theme.gitment.on) { %>
+<% if (!index && post.comments && !is_home() ){ %>
+    <% if (theme.gitment.on ) { %>
       <%- partial('comments/gitment', {
           owner: theme.gitment.owner,
           repo: theme.gitment.repo,

@@ -46,7 +46,7 @@
         <% } %>
         <script src='<%- config.root %>js/particles/particles.oli.js'></script>
     <% } %>
-    <% if(theme.photoswipe) { %>
+    <% if(theme.photoswipe && is_post() || is_home() || is_current('about')) { %>
         <script src="<%- config.root %>js/photoswipe.js"></script>
     <% } %>
 
