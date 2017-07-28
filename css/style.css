@@ -136,14 +136,23 @@ body {
   background: rgba(147,181,224,0.6);
   color: #fff;
 }
-::-moz-placeholder {
+input::-moz-placeholder {
   color: #333;
 }
-::-webkit-input-placeholder {
+input::-webkit-input-placeholder {
   color: #333;
 }
-:-ms-input-placeholder {
+input:-ms-input-placeholder {
   color: #333;
+}
+textarea::-moz-placeholder {
+  color: #fff;
+}
+textarea::-webkit-input-placeholder {
+  color: #fff;
+}
+textarea:-ms-input-placeholder {
+  color: #fff;
 }
 h2,
 h3,
