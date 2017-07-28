@@ -319,7 +319,7 @@
 
 
           </div>
-          <i class="dot dot-0"></i>
+          <i class="dot dot-3"></i>
          
   
     <h1 itemprop="name">
@@ -426,12 +426,17 @@
             <div class="footer-left">
                 <i class="fa fa-copyright"></i> 
                 2016-2017 ldq's Blog
-                <div class="fa-license">
+                <p class="fa-hexo">
+                    基于 <a href="http://hexo.io" target = "_blank">Hexo</a> 搭建，感谢 <a href="https://pages.github.com/" target = "_blank">GitHub Pages</a> 提供免费的托管服务
+                </p>
+                <p class="fa-license">
                     <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a>
-                </div>
+                </p>
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE 
+                <i class="fa fa-heart animated infinite pulse"></i>
+                <p class="fa-enhance">enhanced by <a href="https://ldq-first.github.io/" target="_blank" title="快速、简洁且高效的博客框架">ldq</a></p>
                 
                     <div class="visit">
                         
@@ -513,12 +518,12 @@
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#" title="返回顶部"><i class="fa fa-hand-o-up"></i></a>
     
         <a href="#gitments" title="查看评论"><i class="fa fa-comments-o"></i></a>
     
     <!-- <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a> -->
-    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-hand-o-down"></i></a>
 </div>
 <script>
     // Open in New Window
@@ -559,28 +564,12 @@
         })
     </script>
 
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="/js/readRate.js"></script>
   </div>
     
         <script type='text/javascript' src='/js/live2d.js'></script>
         <canvas id="live2dcanvas" width="120" height="240" class="live2d"></canvas>
-        <style>
-        #live2dcanvas {
-            position: fixed;
-            right: 0px;
-            z-index: 999;
-            bottom: -60px;
-            opacity: 0.4;   
-        }
-        #live2dcanvas:hover {
-            cursor: -moz-grab;
-            cursor: -webkit-grab;
-            cursor: grab;
-            opacity: 0.8;
-            animation: btnGroups 1s linear;
-        }
-        </style>
         <script>loadlive2d("live2dcanvas" ,"/js/koharu.model.json")</script>
     
 </body>
