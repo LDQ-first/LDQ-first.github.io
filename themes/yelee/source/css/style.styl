@@ -109,7 +109,6 @@ audio,canvas,img,video {
 @import "_partial/archive"
 @import "_partial/article"
 @import "_partial/reward"
-//@import "_partial/archive"
 @import "_partial/highlight"
 @import "_partial/footer"
 
@@ -132,4 +131,7 @@ if sidebar
 
 
 @import '_partial/comments/disqus.styl'
+@import '_partial/readRate.styl'
 
+if hexo-config("live2d.on") 
+  @import "_partial/live2dcanvas.styl"

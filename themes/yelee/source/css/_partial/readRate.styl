@@ -1,0 +1,38 @@
+#backtoTop {
+    background-color:#eee;
+    border-radius:100%;
+    bottom: 84px;
+    height:48px;
+    position:fixed;
+    right: -100px;width:48px;
+    transition:0.5s;
+    -webkit-transition:0.5s
+    box-shadow: 1px 2px 2px rgba(0,0,0,0.3), 1px 1px 3px rgba(0,0,0,0.5);
+    &:hover {
+        animation: btnGroups 1s linear;
+    }
+}
+#backtoTop.button-show {
+    right: 10px
+    @media screen and (min-width: 1200px) {
+        right: 40px;
+    }
+}
+.per {
+    font-size:16px;
+    height:48px;
+    line-height:48px;
+    position:absolute;
+    text-align:center;
+    top:0;
+    width:48px;
+    color:#555;
+    cursor:pointer
+}
+.per:before{
+    content: attr(data-percent)
+}
+.per:hover:before{
+    content: "↑";
+    font-size: 20px
+}

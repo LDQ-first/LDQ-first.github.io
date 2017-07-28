@@ -1,0 +1,17 @@
+#live2dcanvas {
+    position: fixed;
+    left: hexo-config("left_col_width")  - 16 px;
+    z-index: 999;
+    bottom: -60px;
+    opacity: 0.4;   
+    @media screen and (max-width: 800px) {
+        left: 0px;
+    }
+}
+#live2dcanvas:hover {
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+    cursor: grab;
+    opacity: 0.8;
+    animation: btnGroups 1s linear;
+}
