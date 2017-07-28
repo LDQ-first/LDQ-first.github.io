@@ -2068,6 +2068,7 @@ video {
   color: #fff;
 }
 #header .switch-area .switch-wrap {
+  height: 300px;
   -webkit-transition: -webkit-transform 0.3s ease-in;
   -moz-transition: -moz-transform 0.3s ease-in;
   -ms-transition: -ms-transform 0.3s ease-in;
@@ -2394,6 +2395,10 @@ video {
   top: 61.8%;
   text-align: center;
   line-height: 42px;
+  opacity: 0.6;
+}
+.scroll:hover {
+  opacity: 0.9;
 }
 .scroll a {
   display: block !important;
@@ -3207,7 +3212,7 @@ a.gitment-editor-footer-tip:hover {
 .body-wrap {
   max-width: 50em;
   margin: auto;
-  padding-bottom: 126px;
+  padding-bottom: 200px;
   overflow: hidden;
 }
 .article {
@@ -4368,7 +4373,7 @@ pre .javascript .function {
   color: #000;
   font-size: 0.8rem;
   position: absolute;
-  bottom: 20px;
+  bottom: 10px;
   width: 100%;
   max-width: 58em;
   left: 50%;
@@ -5157,7 +5162,7 @@ pre .javascript .function {
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 .search:focus {
-  background: rgba(64,148,199,0.4);
+  background: rgba(64,148,199,0.8);
 }
 @media screen and (min-width: 800px) {
   .search:focus {
@@ -5282,12 +5287,14 @@ p.no-result:hover {
   -webkit-transition: 0.5s;
   -webkit-box-shadow: 1px 2px 2px rgba(0,0,0,0.3), 1px 1px 3px rgba(0,0,0,0.5);
   box-shadow: 1px 2px 2px rgba(0,0,0,0.3), 1px 1px 3px rgba(0,0,0,0.5);
+  opacity: 0.6;
 }
 #backtoTop:hover {
   -webkit-animation: btnGroups 1s linear;
   -moz-animation: btnGroups 1s linear;
   -ms-animation: btnGroups 1s linear;
   animation: btnGroups 1s linear;
+  opacity: 0.9;
 }
 #backtoTop.button-show {
   right: 10px;

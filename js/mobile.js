@@ -156,6 +156,53 @@ define([], function(){
         }, false);
     };
 
+    if (yiliaConfig.search) {
+        var search = function(){
+            require([yiliaConfig.rootUrl + 'js/search.js'], function(){
+                var inputArea = document.querySelector("#local-search-inputs");
+                var $HideWhenSearch = $("#toc, #tocButton, .post-list, #post-nav-button a:nth-child(2)");
+                var $resetButton = $("#mobile-nav #search-form .fa-times");
+                var $resultArea = $("#local-search-results");
+
+                var getSearchFile = function(){
+                    var search_path = "search.xml";
+                    var path = yiliaConfig.rootUrl + search_path;
+                    searchFunc(path, 'local-search-inputs', 'local-search-results');
+                }
+
+                var getFileOnload = inputArea.getAttribute('searchonload');
+                if (yiliaConfig.search && getFileOnload === "true") {
+                    getSearchFile();
+                } else {
+                    inputArea.onfocus = function(){ getSearchFile() }
+                }
+
+                var HideTocArea = function(){
+                    $HideWhenSearch.css("visibility","hidden");
+                    $resetButton.show();
+                }
+                inputArea.oninput = function(){ HideTocArea() }
+                inputArea.onkeydown = function(){ if(event.keyCode==13) return false}
+
+                resetSearch = function(){
+                    $HideWhenSearch.css("visibility","initial");
+                    $resultArea.html("");
+                    document.querySelector("#mobile-nav #search-form").reset();
+                    $resetButton.hide();
+                    $("#mobile-nav .no-result").hide();
+                }
+
+                $resultArea.bind("DOMNodeRemoved DOMNodeInserted", function(e) {
+                    if (!$(e.target).text()) {
+                        $("#mobile-nav .no-result").show(200);
+                    } else {
+                      $("#mobile-nav .no-result").hide();
+                    }
+                })
+            })
+        }()
+    }
+
     return{
         init: function(){
             //构造函数需要的参数
