@@ -2870,7 +2870,9 @@ function renderHeader(_ref, instance) {
   var commentsCount = document.createElement('span');
   var countComment = document.querySelector('.count-comment');
   commentsCount.innerHTML = '\n    ' + (meta.comments ? ' \u2022 <strong>' + meta.comments + '</strong> Comments' : '') + '\n  ';
-  countComment.innerHTML = '\n    ' + (meta.comments ? ' <strong>' + meta.comments + '</strong> 条评论' : '') + '\n  ';
+  if(countComment) {
+      countComment.innerHTML = '\n    ' + (meta.comments ? ' <strong>' + meta.comments + '</strong> 条评论' : '') + '\n  ';
+  }
   container.appendChild(commentsCount);
 
   var issueLink = document.createElement('a');
