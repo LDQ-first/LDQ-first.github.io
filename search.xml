@@ -35,7 +35,7 @@
       <!-- <content type="html"><![CDATA[<ul>
 <li>测试图片功能</li>
 </ul>
-<p><img src="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg" alt="photos-0.jpg"><br><img src="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" alt="photos-1.jpg"></p>
+<p><img src="//images.pexels.com/photos/325185/pexels-photo-325185.jpeg?w=700&amp;h=482&amp;auto=compress&amp;cs=tinysrgb" alt="photos-0.jpg"><br><img src="//images.pexels.com/photos/21787/pexels-photo.jpg?w=700&amp;h=482&amp;auto=compress&amp;cs=tinysrgb" alt="photos-1.jpg"></p>
 ]]></content> -->
       <content type="html"><![CDATA[测试图片功能]]></content>
     </entry>
