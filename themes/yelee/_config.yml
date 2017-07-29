@@ -352,6 +352,8 @@ image_stream:
 live2d: 
   on: true
 
+# 是否开启球形标签云
+# tagcanvas: true
 
 
 

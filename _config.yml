@@ -74,12 +74,6 @@ deploy:
   type: git
   repo: 
     github: git@github.com:LDQ-first/LDQ-first.github.io.git 
-    #coding: git@git.coding.net:LDQ-first/LDQ-first.coding.me.git 
+    coding: git@git.coding.net:LDQ-first/LDQ-first.coding.me.git 
   branch: master
-  
 
-
-# comment
-## 如果报错 post is not defined，请将post改为 page。
-## hexo 版本 3.2.0.可能是作者修改了字段
-#duoshuo_shortname: ldq-first

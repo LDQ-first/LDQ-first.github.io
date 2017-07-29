@@ -2,9 +2,25 @@
 <br>
 <%- list_categories({depth: 1}) %>
 
-<p class="count"></p>
+<!-- Count tags and categories -->
+<p id="count">
+    <%= __('tag_cloud.already') %><span><script>document.write($(".category-list-item").length)</script></span><%= __('tag_cloud.categories') %>
+    <%= __('tag_cloud.total') %><span><script>document.write($(".tags > a").length)</script></span><%= __('tag_cloud.tags') %>
+</p>
+<script>
+    $('#count').appendTo('.count');
+</script> 
 
-<div class="tags">
+<% if(theme.tagcanvas) { %>
+    <div class="tags" id="myTags">
+    <canvas width="350" height="350" id="my3DTags">
+        <p>Anything in here will be replaced on browsers that support the canvas element</p>
+    </canvas>
+    </div>
+    <script src="/js/tagcanvas.min.js" type="text/javascript"></script>
+<% } %>
+
+<div class="tags" id="tags">
     <% var rdColor = ['#0475a1', '#9071C8', '#CE4DD3', '#F26E58', '#4DC1D3', '#F0575B', '#3dab34' ]; %>
     <%- tagcloud({
         min_font: 16, 
@@ -62,13 +78,35 @@
         margin: auto .2em;
         font-weight: bold;
     }
+    #myTags {
+        background: rgba(70, 151, 241, 0.3);
+    }
 </style>
 
-<!-- Count tags and categories -->
-<p id="count">
-        <%= __('tag_cloud.already') %><span><script>document.write($(".category-list-item").length)</script></span><%= __('tag_cloud.categories') %>
-        <%= __('tag_cloud.total') %><span><script>document.write($(".tags > a").length)</script></span><%= __('tag_cloud.tags') %>
-</p>
-<script>
-    $('#count').appendTo('.count');
-</script>
+
+
+
+<% if(theme.tagcanvas) { %>
+    <script type="text/javascript">
+        window.onload = function() {
+            try {
+                TagCanvas.Start('my3DTags','tags',{
+                textFont: 'Georgia,Optima',
+                textColour: null,
+                outlineColour: '#4697F1',
+                weight: true,
+                reverse: true,
+                depth: 0.8,
+                maxSpeed: 0.05,
+                bgRadius: 1,
+                freezeDecel: true
+                });
+            } catch(e) {
+                // something went wrong, hide the canvas container
+                document.getElementById('myTags').style.display = 'none';
+            }
+        };
+    </script>
+<% } %>
+
+
