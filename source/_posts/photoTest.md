@@ -5,11 +5,8 @@ tags: Test
 categories:
 - Test
 - 图片
-photos: 
-- http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg
-- http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg
 ---
 - 测试图片功能
 
-![photos-0.jpg](http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg)
-![photos-1.jpg](http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg)
+![photos-0.jpg](//images.pexels.com/photos/325185/pexels-photo-325185.jpeg?w=700&h=482&auto=compress&cs=tinysrgb)
+![photos-1.jpg](//images.pexels.com/photos/21787/pexels-photo.jpg?w=700&h=482&auto=compress&cs=tinysrgb)

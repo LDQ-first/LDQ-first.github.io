@@ -72,7 +72,9 @@ theme: yelee             #当前主题名称。值为false时禁用主题
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:LDQ-first/LDQ-first.github.io.git
+  repo: 
+    github: git@github.com:LDQ-first/LDQ-first.github.io.git 
+    #coding: git@git.coding.net:LDQ-first/LDQ-first.coding.me.git 
   branch: master
   
 
