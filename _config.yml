@@ -73,7 +73,7 @@ theme: yelee             #当前主题名称。值为false时禁用主题
 deploy:
   type: git
   repo: 
-    github: git@github.com:LDQ-first/LDQ-first.github.io.git 
-    coding: git@git.coding.net:LDQ-first/LDQ-first.coding.me.git 
-  branch: master
+    github: git@github.com:LDQ-first/LDQ-first.github.io.git,master 
+    coding: git@git.coding.net:LDQ-first/LDQ-first.coding.me.git,master  
+  #branch: master
 
