@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://ldqblog.me/sitemap.xml
+Sitemap: https://ldqblog.me/baidusitemap.xml
