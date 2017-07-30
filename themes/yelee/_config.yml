@@ -372,6 +372,15 @@ live2d:
 # tagcanvas: true
 
 
+# 外链
+nofollow: 
+  enable: true
+  exclude: 
+  - hexo.io
+  - pages.github.com
+  - moxfive.xyz
+
+
 
 CDN:
   jquery: //cdn.bootcss.com/jquery/2.2.4/jquery.min.js
