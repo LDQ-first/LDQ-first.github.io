@@ -64,6 +64,10 @@
     font-size: 1em;
 }
 
+.search {
+    width: 50%;
+}
+
 .article-info-index.article-info{
   padding-top: 10px;
   margin: 0;
@@ -312,7 +316,9 @@ if hexo-config("github_widget")
 .copyright
     font-size 16px
     .copy-path
-        display none
+        @media screen and (max-width: 600px) {
+                display none
+        }
 
 // Tags Cloud Page
 .tags a

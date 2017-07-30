@@ -40,14 +40,14 @@ require([], function (){
             return;
         }
         var w = $(window).width();
-        if (w >= 700) {
+        if (w >= 1050) {
             loadPC();
         } else {
             loadMobile();
         }
     });
 
-    if(!!browser.versions.mobile || $(window).width() < 800){
+    if(!!browser.versions.mobile || $(window).width() < 1150){
         loadMobile();
     } else {
         loadPC();
