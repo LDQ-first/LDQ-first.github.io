@@ -309,11 +309,11 @@ baidu_site: WACkilqsvK
 google_site: w9yTFxzwmAeHPQYf2KQrAIOTsA5xL1VpimlRhuBdHIc
 
 # Fill in Google Analytics tracking ID, #e.g. UA-XXXXX-X
-google_analytics: UA-103654144-1
+# google_analytics: UA-103654144-1
 
 # 百度统计 http://sitecenter.baidu.com/sc-web/
 # 查看代码，填入 //hm.baidu.com/hm.js? 之后的内容
-baidu_tongji: b43cc273b1e6a40c3f5e3bc77598f3ce
+# baidu_tongji: b43cc273b1e6a40c3f5e3bc77598f3ce
 
 # 不蒜子网站计数设置
 # http://ibruce.info/2015/04/04/busuanzi/
