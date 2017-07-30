@@ -3221,7 +3221,7 @@ a.gitment-editor-footer-tip:hover {
 .body-wrap {
   max-width: 50em;
   margin: auto;
-  padding-bottom: 200px;
+  padding-bottom: 300px;
   overflow: hidden;
 }
 .article {
@@ -4384,15 +4384,16 @@ pre .javascript .function {
   position: absolute;
   bottom: 10px;
   width: 100%;
-  max-width: 58em;
+  max-width: 60em;
   left: 50%;
-  -webkit-transform: translateX(-48%);
-  -moz-transform: translateX(-48%);
-  -ms-transform: translateX(-48%);
-  transform: translateX(-48%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
   margin-top: 1em;
 }
 #footer a {
+  font-weight: bold;
   color: #424bbe;
 }
 #footer .footer-left {
@@ -4401,7 +4402,7 @@ pre .javascript .function {
 #footer .footer-right {
   float: right;
 }
-#footer .fa-hexo,
+#footer .fa-hosted,
 #footer .fa-license,
 #footer .fa-enhance {
   margin: 6px 0;
