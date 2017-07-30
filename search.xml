@@ -8,8 +8,7 @@
       <url>https://ldqblog.me/2017/02/02/test-description/</url>
       <!-- <content type="html"><![CDATA[<ul>
 <li>在scaffolds/post.md文件中添加description</li>
-</ul>
-]]></content> -->
+</ul>]]></content> -->
       <content type="html"><![CDATA[在scaffolds/post.md文件中添加description]]></content>
     </entry>
     
@@ -24,8 +23,7 @@
 <h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content> -->
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>]]></content> -->
       <content type="html"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post More info: Writing Run server More info: Server Generate static files More info: Generating Deploy to remote sites More info: Deployment]]></content>
     </entry>
     
@@ -35,8 +33,7 @@
       <!-- <content type="html"><![CDATA[<ul>
 <li>测试图片功能</li>
 </ul>
-<p><img src="//images.pexels.com/photos/325185/pexels-photo-325185.jpeg?w=700&amp;h=482&amp;auto=compress&amp;cs=tinysrgb" alt="photos-0.jpg"><br><img src="//images.pexels.com/photos/21787/pexels-photo.jpg?w=700&amp;h=482&amp;auto=compress&amp;cs=tinysrgb" alt="photos-1.jpg"></p>
-]]></content> -->
+<p><img src="//images.pexels.com/photos/325185/pexels-photo-325185.jpeg?w=700&amp;h=482&amp;auto=compress&amp;cs=tinysrgb" alt="photos-0.jpg"><br><img src="//images.pexels.com/photos/21787/pexels-photo.jpg?w=700&amp;h=482&amp;auto=compress&amp;cs=tinysrgb" alt="photos-1.jpg"></p>]]></content> -->
       <content type="html"><![CDATA[测试图片功能]]></content>
     </entry>
     
@@ -45,8 +42,7 @@
       <url>https://ldqblog.me/2016/11/05/%E7%AC%AC%E4%B8%80%E7%AF%87Hexo%E6%96%87%E7%AB%A0/</url>
       <!-- <content type="html"><![CDATA[<ul>
 <li>第一次写Hexo博客</li>
-</ul>
-]]></content> -->
+</ul>]]></content> -->
       <content type="html"><![CDATA[第一次写Hexo博客]]></content>
     </entry>
     
