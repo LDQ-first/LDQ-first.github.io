@@ -4,8 +4,9 @@
             <div class="footer-left">
                 <i class="fa fa-copyright"></i> 
                 <% if (theme.since && !isNaN(theme.since) && theme.since < date(new Date(), 'YYYY')) { %><%- theme.since%>-<% } %><%= date(new Date(), 'YYYY') %> <%= config.author || config.title %>'s Blog
-                <p class="fa-hexo">
-                    基于 <a href="http://hexo.io" target = "_blank">Hexo</a> 搭建，感谢 <a href="https://pages.github.com/" target = "_blank">GitHub Pages</a> 提供免费的托管服务
+                <p class="fa-hosted">
+                    Hosted by <a href="https://pages.coding.me" style="font-weight: bold" target = "_blank" title="静态网站触及全球">Coding Pages</a>,
+                    <a href="https://pages.github.com/" target = "_blank" title="Websites for you and your projects">GitHub Pages</a>
                 </p>
                 <p class="fa-license">
                     <span><%= __('copyright_info.license') %>:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"<%= __('copyright_info.cc') %>"</a>
@@ -14,7 +15,7 @@
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank" title="<%= __('tooltip.Hexo') %>">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="<%= __('tooltip.Yelee') %>  v<%= theme.Yelee %>">Yelee</a> by MOxFIVE 
                 <i class="fa fa-heart animated infinite pulse"></i>
-                <p class="fa-enhance">enhanced by <a href="https://ldq-first.github.io/" target="_blank" title="<%= __('tooltip.Hexo') %>">ldq</a></p>
+                <p class="fa-enhance">enhanced by <a href="https://ldq-first.github.io/" target="_blank" title="ldq">ldq</a></p>
                 <% if (theme.visit_counter.on) { %>
                     <div class="visit">
                         <% if (theme.visit_counter.site_visit) { %>
