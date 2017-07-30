@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Allow: /archives/
+Allow: /about/
+Allow: /tags/ 
+Allow: /favorite/ 
 Sitemap: https://ldqblog.me/sitemap.xml
 Sitemap: https://ldqblog.me/baidusitemap.xml
