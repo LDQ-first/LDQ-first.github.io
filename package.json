@@ -8,7 +8,8 @@
   "scripts": {
     "finish": "git add . && git commit -m 'modify' && git push origin Hexo && hexo clean && hexo g && gulp && hexo d",
     "glups": "cnpm i -S gulp && cnpm i -S gulp-htmlclean && cnpm i -S  gulp-htmlmin && cnpm i -S gulp-imagemin && cnpm i -S gulp-minify-css && cnpm i -S gulp-uglify",
-    "sitemap": "cnpm i hexo-generator-sitemap -S  &&  cnpm i hexo-generator-baidu-sitemap -S"
+    "sitemap": "cnpm i hexo-generator-sitemap -S  &&  cnpm i hexo-generator-baidu-sitemap -S",
+    "bd": "npm i hexo-baidu-url-submit -S"
   },
   "dependencies": {
     "gulp": "^3.9.1",

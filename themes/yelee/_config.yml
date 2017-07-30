@@ -283,7 +283,7 @@ share:
   on: true
   baidu: true
   addthis: false
-  addthis_pubid: "ra-56ff76c972fc0cf9"
+  addthis_pubid: ""
   ## Go to www.addthis.com/dashboard to get your pubid (in src of Code)
   ## and customize AddThis share buttons
 
@@ -292,6 +292,16 @@ sitemap:
   path: sitemap.xml
 baidusitemap:
   path: baidusitemap.xml
+
+# 百度主动推送
+# baidu_url_submit:
+  count: 10 ## 比如3，代表提交最新的三个链接
+  host: ldqblog.me ## 在百度站长平台中注册的域名
+  token: your_token ## 请注意这是您的秘钥， 请不要发布在公众仓库里!
+  path: baidu_urls.txt ## 文本文档的地址， 新链接会保存在此文本文档里
+
+# 百度自动推送
+baidu_auto_push: true
 
 # 百度、谷歌站长验证。填写 HTML 标签 content
 # Site Verification for Google and Baidu. HTML label content.

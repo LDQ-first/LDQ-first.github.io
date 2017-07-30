@@ -14,7 +14,8 @@ timezone:                   #网站时区
 # URL         网址
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 ## 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，则请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/。
-url: https://LDQ-first.github.io            #网址
+# url: https://LDQ-first.github.io            #网址
+url: https://ldqblog.me            #网址
 root: /                                     #网站根目录
 permalink: :year/:month/:day/:title/        #文章的永久链接格式
 permalink_defaults:                         #永久链接中各部分的默认值
@@ -71,9 +72,9 @@ theme: yelee             #当前主题名称。值为false时禁用主题
 # Deployment    部署
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
+- type: git
   repo: 
     github: git@github.com:LDQ-first/LDQ-first.github.io.git,master 
     coding: git@git.coding.net:LDQ-first/LDQ-first.coding.me.git,master  
   #branch: master
-
+# - type: baidu_url_submitter
