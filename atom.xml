@@ -4,9 +4,9 @@
   <subtitle>前端</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://LDQ-first.github.io/"/>
+  <link href="https://ldqblog.me/"/>
   <updated>2017-02-02T13:09:18.447Z</updated>
-  <id>https://LDQ-first.github.io/</id>
+  <id>https://ldqblog.me/</id>
   
   <author>
     <name>ldq</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>test description</title>
-    <link href="https://LDQ-first.github.io/2017/02/02/test-description/"/>
-    <id>https://LDQ-first.github.io/2017/02/02/test-description/</id>
+    <link href="https://ldqblog.me/2017/02/02/test-description/"/>
+    <id>https://ldqblog.me/2017/02/02/test-description/</id>
     <published>2017-02-02T13:06:49.000Z</published>
     <updated>2017-02-02T13:09:18.447Z</updated>
     
@@ -38,8 +38,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://LDQ-first.github.io/2017/01/17/hello-world/"/>
-    <id>https://LDQ-first.github.io/2017/01/17/hello-world/</id>
+    <link href="https://ldqblog.me/2017/01/17/hello-world/"/>
+    <id>https://ldqblog.me/2017/01/17/hello-world/</id>
     <published>2017-01-17T09:48:44.039Z</published>
     <updated>2017-07-28T03:27:05.000Z</updated>
     
@@ -65,8 +65,8 @@
   
   <entry>
     <title>photoTest</title>
-    <link href="https://LDQ-first.github.io/2017/01/13/photoTest/"/>
-    <id>https://LDQ-first.github.io/2017/01/13/photoTest/</id>
+    <link href="https://ldqblog.me/2017/01/13/photoTest/"/>
+    <id>https://ldqblog.me/2017/01/13/photoTest/</id>
     <published>2017-01-13T08:30:23.000Z</published>
     <updated>2017-07-29T14:55:12.000Z</updated>
     
@@ -85,19 +85,19 @@
     
     </summary>
     
-      <category term="Test" scheme="https://LDQ-first.github.io/categories/Test/"/>
+      <category term="Test" scheme="https://ldqblog.me/categories/Test/"/>
     
-      <category term="图片" scheme="https://LDQ-first.github.io/categories/Test/%E5%9B%BE%E7%89%87/"/>
+      <category term="图片" scheme="https://ldqblog.me/categories/Test/%E5%9B%BE%E7%89%87/"/>
     
     
-      <category term="Test" scheme="https://LDQ-first.github.io/tags/Test/"/>
+      <category term="Test" scheme="https://ldqblog.me/tags/Test/"/>
     
   </entry>
   
   <entry>
     <title>第一篇Hexo文章</title>
-    <link href="https://LDQ-first.github.io/2016/11/05/%E7%AC%AC%E4%B8%80%E7%AF%87Hexo%E6%96%87%E7%AB%A0/"/>
-    <id>https://LDQ-first.github.io/2016/11/05/第一篇Hexo文章/</id>
+    <link href="https://ldqblog.me/2016/11/05/%E7%AC%AC%E4%B8%80%E7%AF%87Hexo%E6%96%87%E7%AB%A0/"/>
+    <id>https://ldqblog.me/2016/11/05/第一篇Hexo文章/</id>
     <published>2016-11-05T06:19:23.000Z</published>
     <updated>2017-07-28T03:26:29.000Z</updated>
     
@@ -115,14 +115,14 @@
     
     </summary>
     
-      <category term="技术" scheme="https://LDQ-first.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://ldqblog.me/categories/%E6%8A%80%E6%9C%AF/"/>
     
-      <category term="Hexo" scheme="https://LDQ-first.github.io/categories/%E6%8A%80%E6%9C%AF/Hexo/"/>
+      <category term="Hexo" scheme="https://ldqblog.me/categories/%E6%8A%80%E6%9C%AF/Hexo/"/>
     
     
-      <category term="Hexo" scheme="https://LDQ-first.github.io/tags/Hexo/"/>
+      <category term="Hexo" scheme="https://ldqblog.me/tags/Hexo/"/>
     
-      <category term="前端" scheme="https://LDQ-first.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://ldqblog.me/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
