@@ -1,22 +1,17 @@
-/*
-console.log('photoswipe.js');
-console.log(PhotoSwipe)
-console.log(PhotoSwipeUI_Default)*/
-
 function init() {
-	let pswpElement = document.querySelectorAll('.pswp')[0];
-	let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img):not(.hexo-image-steam-lazy)'))
+	var pswpElement = document.querySelectorAll('.pswp')[0];
+	var $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img):not(.hexo-image-steam-lazy)'))
 
 	$imgArr.forEach(($em, i) => {
 		$em.onclick = () => {
 			// slider展开状态
 			// todo: 这样不好，后面改成状态
 			if (document.querySelector('.left-col.show')) return
-			let items = []
+			var items = []
 			$imgArr.forEach(($em2, i2) => {
-				let img = $em2.getAttribute('data-idx', i2)
-				let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
-				let title = $em2.getAttribute('alt')
+				var img = $em2.getAttribute('data-idx', i2)
+				var src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+				var title = $em2.getAttribute('alt')
 				items.push({
 					src: src,
 					w: $em2.width,

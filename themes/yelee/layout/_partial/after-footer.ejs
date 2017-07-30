@@ -1,5 +1,5 @@
 <% if (theme.github_widget && is_post() || is_current('about') ){ %>
-    <%- js('js/GithubRepoWidget') %>
+    <%- js('js/GithubRepoWidget.min') %>
 <% } %>
 <script data-main="<%-config.root%>js/main.js" src="<%- theme.CDN.require %>"></script>
 <%- partial('_partial/background') %>
@@ -15,5 +15,5 @@
 <%- partial('tab-title-change') %>
 <script async src="<%- theme.CDN.busuanzi %>"></script>
 <% if (!is_archive()) { %>
-<script src="<%- config.root %>js/readRate.js"></script>
+<script src="<%- config.root %>js/readRate.min.js"></script>
 <% } %>
