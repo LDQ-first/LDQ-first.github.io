@@ -91,15 +91,22 @@
         window.onload = function() {
             try {
                 TagCanvas.Start('my3DTags','tags',{
-                textFont: 'Georgia,Optima',
+                maxSpeed: 0.05,
+                decel: 1,
+                minBrightness: 0.4,
+                depth: 0.5,
+                textFont: null,
                 textColour: null,
                 outlineColour: '#4697F1',
+                freezeActive: true,
+                frontSelect: true,
+                shadow: 'rgba(0, 0, 0, 0.2)',
+                shadowBlur: 1,
+                shadowOffset: [0, 1],
+                shuffleTags: true,
                 weight: true,
-                reverse: true,
-                depth: 0.8,
-                maxSpeed: 0.05,
-                bgRadius: 1,
-                freezeDecel: true
+                reverse: true, 
+                weight: true
                 });
             } catch(e) {
                 // something went wrong, hide the canvas container

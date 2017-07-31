@@ -3,7 +3,10 @@ title: music video test
 description: 测试音乐
 abbrlink: f7cc0d89
 date: 2017-07-31 21:00:43
-tags: music video test
+tags: 
+   - music 
+   - video 
+   - test
 categories:
 ---
 

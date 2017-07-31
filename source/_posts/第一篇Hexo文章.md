@@ -1,11 +1,11 @@
 ---
 title: 第一篇Hexo文章
 tags:
-  - Hexo
+  - hexo
   - 前端
 categories:
   - 技术
-  - Hexo
+  - hexo
 top: 1
 mathjax: true
 abbrlink: 37c28bfb

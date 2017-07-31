@@ -10,14 +10,14 @@
                 h = window.innerHeight;
             }   
           //  var imgSrc = 'https://unsplash.it/' + w + '/' + h + '/?random';
-          //  var imgSrc = 'http://lorempixel.com/' + w + '/' + h;
+          //  var imgSrc = 'https://lorempixel.com/' + w + '/' + h;
           // var imgSrc = 'https://source.unsplash.com/random/' + w + 'x' + h;
           var type = <%= theme.background.type %>;
           if(type === 1) {
               var imgSrc = 'https://unsplash.it/' + w + '/' + h + '/?random';
           }
           else if (type === 2) {
-              var imgSrc = 'http://lorempixel.com/' + w + '/' + h;
+              var imgSrc = 'https://lorempixel.com/' + w + '/' + h;
           }
           else if (type === 3) {
               var imgSrc = 'https://source.unsplash.com/random/' + w + 'x' + h;

@@ -1,8 +1,8 @@
 ---
 title: photoTest
-tags: Test
+tags: test
 categories:
-  - Test
+  - test
   - 图片
 abbrlink: ba82f11c
 date: 2017-01-13 16:30:23
