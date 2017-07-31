@@ -48,8 +48,10 @@
         <script src='<%- config.root %>js/particles/particles.oli.js'></script>
     <% } %>
     <% if(theme.photoswipe && is_post() || is_home() || is_current('about')) { %>
-        <script src="<%- config.root %>js/photoswipe.js"></script>
+        <script src="<%- config.root %>js/photoswipe.min.js"></script>
     <% } %>
-
+    <% if(theme.CDN.APlayer) { %>
+        <script src="<%- config.root %>js/player.min.js"></script>
+    <% } %>
     
 </footer>

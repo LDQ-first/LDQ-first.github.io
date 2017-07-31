@@ -29,7 +29,7 @@ gulp.task('minify-html', function() {
 // 压缩 public/js 目录 js文件
 // es6语法导致出错？
 gulp.task('minify-js', function() {
-    return gulp.src('./public/**/*.js')
+    return gulp.src('./public/js/*.js')
         .pipe(uglify())
         .pipe(gulp.dest('./public'));
 });

@@ -146,5 +146,9 @@ if ( is_archive() ) {
 </script>
 <% } %>
 
+<% if(theme.CDN.APlayer) { %>
+    <script src="<%- theme.CDN.APlayer %>"></script>
+<% } %>
+
 
 </head>

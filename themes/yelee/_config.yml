@@ -402,3 +402,4 @@ CDN:
   photoswipe_css: //cdn.bootcss.com/photoswipe/4.1.2/photoswipe.min.css
   photoswipe_js: //cdn.bootcss.com/photoswipe/4.1.2/photoswipe.min.js
   busuanzi: //dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js
+  APlayer: //cdn.bootcss.com/aplayer/1.6.0/APlayer.min.js
