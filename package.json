@@ -10,7 +10,8 @@
     "glups": "cnpm i -S gulp && cnpm i -S gulp-htmlclean && cnpm i -S  gulp-htmlmin && cnpm i -S gulp-imagemin && cnpm i -S gulp-minify-css && cnpm i -S gulp-uglify",
     "sitemap": "cnpm i hexo-generator-sitemap -S  &&  cnpm i hexo-generator-baidu-sitemap -S",
     "bd": "cnpm i hexo-baidu-url-submit -S",
-    "un": "cnpm uninstall hexo-html-minifier -S && cnpm uninstall hexo-clean-css -S "
+    "un": "cnpm uninstall hexo-html-minifier -S && cnpm uninstall hexo-clean-css -S ",
+    "uf": "npm uninstall hexo-all-minifier -S"
   },
   "dependencies": {
     "gulp": "^3.9.1",
@@ -21,7 +22,6 @@
     "gulp-uglify": "^3.0.0",
     "hexo": "^3.2.0",
     "hexo-abbrlink": "^2.0.4",
-    "hexo-all-minifier": "^0.2.2",
     "hexo-autonofollow": "^1.0.1",
     "hexo-deployer-git": "^0.2.0",
     "hexo-generator-archive": "^0.1.4",
