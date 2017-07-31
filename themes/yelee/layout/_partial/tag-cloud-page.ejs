@@ -5,7 +5,7 @@
 <!-- Count tags and categories -->
 <p id="count">
     <%= __('tag_cloud.already') %><span><script>document.write($(".category-list-item").length)</script></span><%= __('tag_cloud.categories') %>
-    <%= __('tag_cloud.total') %><span><script>document.write($(".tags > a").length)</script></span><%= __('tag_cloud.tags') %>
+    <%= __('tag_cloud.total') %><span><script>document.write($("#tags > a").length)</script></span><%= __('tag_cloud.tags') %>
 </p>
 <script>
     $('#count').appendTo('.count');
