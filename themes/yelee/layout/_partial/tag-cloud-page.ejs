@@ -2,14 +2,7 @@
 <br>
 <%- list_categories({depth: 1}) %>
 
-<!-- Count tags and categories -->
-<p id="count">
-    <%= __('tag_cloud.already') %><span><script>document.write($(".category-list-item").length)</script></span><%= __('tag_cloud.categories') %>
-    <%= __('tag_cloud.total') %><span><script>document.write($("#tags > a").length)</script></span><%= __('tag_cloud.tags') %>
-</p>
-<script>
-    $('#count').appendTo('.count');
-</script> 
+
 
 <% if(theme.tagcanvas) { %>
     <div class="tags" id="myTags">
@@ -31,6 +24,18 @@
         end_color: rdColor[Math.floor( Math.random() * (rdColor.length - 1) )],
     }) %>
 </div>
+
+<!-- Count tags and categories -->
+<p id="count">
+    <%= __('tag_cloud.already') %><span><script>document.write($(".category-list-item").length)</script></span><%= __('tag_cloud.categories') %>
+    <%= __('tag_cloud.total') %><span><script>document.write($("#tags > a").length)</script></span><%= __('tag_cloud.tags') %>
+</p>
+<script>
+    $('#count').appendTo('.count');
+</script> 
+
+
+
 <style>
     .category-list li{
         display: inline-block;
