@@ -50,12 +50,12 @@
     <link href="https://ldqblog.me/posts/6444e51d/"/>
     <id>https://ldqblog.me/posts/6444e51d/</id>
     <published>2017-02-02T13:06:49.000Z</published>
-    <updated>2017-07-31T15:42:45.088Z</updated>
+    <updated>2017-07-31T19:56:44.270Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li>在 scaffolds/post.md 文件中添加 description</li>
 </ul>
-]]></content>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">window</span>).load(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"> $(<span class="string">'pre'</span>).addClass(<span class="string">'prettyprint linenums'</span>).attr(<span class="string">'style'</span>, <span class="string">'overflow:auto;'</span>);</div><div class="line">   prettyPrint();</div><div class="line"> &#125;)</div></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
