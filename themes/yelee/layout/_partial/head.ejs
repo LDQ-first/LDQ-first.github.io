@@ -150,5 +150,17 @@ if ( is_archive() ) {
     <script src="<%- theme.CDN.APlayer %>"></script>
 <% } %>
 
+<script>
+    $(function(){
+        setVideoHeight()
+        $(window).on('resize', setVideoHeight);
+        function setVideoHeight() {
+            $('.bilibiliVideo').css({
+                height: parseInt($('.bilibiliVideo').parent().width() * 1 * 480 / 640)
+            })
+        }
+        
+    })
+</script>
 
 </head>

@@ -10,8 +10,7 @@
     "glups": "cnpm i -S gulp && cnpm i -S gulp-htmlclean && cnpm i -S  gulp-htmlmin && cnpm i -S gulp-imagemin && cnpm i -S gulp-minify-css && cnpm i -S gulp-uglify",
     "sitemap": "cnpm i hexo-generator-sitemap -S  &&  cnpm i hexo-generator-baidu-sitemap -S",
     "bd": "cnpm i hexo-baidu-url-submit -S",
-    "un": "cnpm uninstall hexo-html-minifier -S && cnpm uninstall hexo-clean-css -S ",
-    "uf": "npm uninstall hexo-all-minifier -S"
+    "un": "cnpm install pangu --save "
   },
   "dependencies": {
     "gulp": "^3.9.1",
@@ -36,6 +35,7 @@
     "hexo-renderer-marked": "^0.2.10",
     "hexo-renderer-stylus": "^0.3.1",
     "hexo-server": "^0.2.0",
+    "pangu": "^3.3.0",
     "qiniu": "^7.0.5"
   }
 }
