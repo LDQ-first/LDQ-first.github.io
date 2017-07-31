@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ldqblog.me/"/>
-  <updated>2017-02-02T13:09:18.447Z</updated>
+  <updated>2017-07-31T13:01:51.000Z</updated>
   <id>https://ldqblog.me/</id>
   
   <author>
@@ -14,6 +14,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>music test</title>
+    <link href="https://ldqblog.me/2017/07/31/music-test/"/>
+    <id>https://ldqblog.me/2017/07/31/music-test/</id>
+    <published>2017-07-31T13:00:43.000Z</published>
+    <updated>2017-07-31T13:01:51.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="歌曲"><a href="#歌曲" class="headerlink" title="歌曲"></a>歌曲</h3><div class="aplayer" data-id="31673404" data-server="netease" data-type="song"></div>
+
+<h3 id="歌单"><a href="#歌单" class="headerlink" title="歌单"></a>歌单</h3><div class="aplayer" data-id="11100236" data-server="netease" data-type="playlist" data-mode="random"></div>]]></content>
+    
+    <summary type="html">
+    
+      测试音乐
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>test description</title>

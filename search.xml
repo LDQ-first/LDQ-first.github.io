@@ -4,6 +4,15 @@
   
     
     <entry>
+      <title><![CDATA[music test]]></title>
+      <url>https://ldqblog.me/2017/07/31/music-test/</url>
+      <!-- <content type="html"><![CDATA[<h3 id="歌曲"><a href="#歌曲" class="headerlink" title="歌曲"></a>歌曲</h3><div class="aplayer" data-id="31673404" data-server="netease" data-type="song"></div>
+
+<h3 id="歌单"><a href="#歌单" class="headerlink" title="歌单"></a>歌单</h3><div class="aplayer" data-id="11100236" data-server="netease" data-type="playlist" data-mode="random"></div>]]></content> -->
+      <content type="html"><![CDATA[歌曲 歌单]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[test description]]></title>
       <url>https://ldqblog.me/2017/02/02/test-description/</url>
       <!-- <content type="html"><![CDATA[<ul>
