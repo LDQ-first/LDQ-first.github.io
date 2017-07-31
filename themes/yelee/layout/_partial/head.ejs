@@ -66,7 +66,7 @@ if ( is_archive() ) {
     } else if ( is_tag() ){
         title = 'Tag: ' + page.tag;
 } %>
-<title><% if ( title ){ %><%= title %> | <% } %><%= config.title %></title>
+<title><%= config.keyword%> - <% if ( title ){ %><%= title %> | <% } %><%= config.title %> - <%= config.description%></title>
 
 <script src="<%- theme.CDN.jquery %>"></script>
 <% if(is_post()) { %>

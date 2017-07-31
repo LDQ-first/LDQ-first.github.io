@@ -3,6 +3,9 @@ Allow: /
 Allow: /archives/
 Allow: /about/
 Allow: /tags/ 
+Allow: /music/
 Allow: /favorite/ 
+Disallow: /js/
+Disallow: /css/
 Sitemap: https://ldqblog.me/sitemap.xml
 Sitemap: https://ldqblog.me/baidusitemap.xml
