@@ -10,20 +10,20 @@
 
 <h3 id="歌单"><a href="#歌单" class="headerlink" title="歌单"></a>歌单</h3><div class="aplayer" data-id="11100236" data-server="netease" data-type="playlist" data-mode="random"></div>
 
-<h3 id="b站视频"><a href="#b站视频" class="headerlink" title="b站视频"></a>b站视频</h3><iframe class="bilibiliVideo" src="https://www.bilibili.com/html/html5player.html?cid=5090828&aid=3227348" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen></iframe>
+<h3 id="b-站视频"><a href="#b-站视频" class="headerlink" title="b 站视频"></a>b 站视频</h3><iframe class="bilibiliVideo" src="https://www.bilibili.com/html/html5player.html?cid=5090828&aid=3227348" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen></iframe>
 
 ]]></content> -->
-      <content type="html"><![CDATA[歌曲 歌单 b站视频]]></content>
+      <content type="html"><![CDATA[歌曲 歌单 b 站视频]]></content>
     </entry>
     
     <entry>
       <title><![CDATA[test description]]></title>
       <url>https://ldqblog.me/posts/6444e51d/</url>
       <!-- <content type="html"><![CDATA[<ul>
-<li>在scaffolds/post.md文件中添加description</li>
+<li>在 scaffolds/post.md 文件中添加 description</li>
 </ul>
 ]]></content> -->
-      <content type="html"><![CDATA[在scaffolds/post.md文件中添加description]]></content>
+      <content type="html"><![CDATA[在 scaffolds/post.md 文件中添加 description]]></content>
     </entry>
     
     <entry>
@@ -54,13 +54,13 @@
     </entry>
     
     <entry>
-      <title><![CDATA[第一篇Hexo文章]]></title>
+      <title><![CDATA[第一篇 Hexo 文章]]></title>
       <url>https://ldqblog.me/posts/37c28bfb/</url>
       <!-- <content type="html"><![CDATA[<ul>
-<li>第一次写Hexo博客</li>
+<li>第一次写 Hexo 博客</li>
 </ul>
 ]]></content> -->
-      <content type="html"><![CDATA[第一次写Hexo博客]]></content>
+      <content type="html"><![CDATA[第一次写 Hexo 博客]]></content>
     </entry>
     
   

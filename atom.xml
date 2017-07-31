@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ldqblog.me/"/>
-  <updated>2017-07-31T17:45:42.996Z</updated>
+  <updated>2017-07-31T18:02:09.000Z</updated>
   <id>https://ldqblog.me/</id>
   
   <author>
@@ -20,13 +20,13 @@
     <link href="https://ldqblog.me/posts/f7cc0d89/"/>
     <id>https://ldqblog.me/posts/f7cc0d89/</id>
     <published>2017-07-31T13:00:43.000Z</published>
-    <updated>2017-07-31T17:45:42.996Z</updated>
+    <updated>2017-07-31T18:02:09.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="歌曲"><a href="#歌曲" class="headerlink" title="歌曲"></a>歌曲</h3><div class="aplayer" data-id="31673404" data-server="netease" data-type="song"></div>
 
 <h3 id="歌单"><a href="#歌单" class="headerlink" title="歌单"></a>歌单</h3><div class="aplayer" data-id="11100236" data-server="netease" data-type="playlist" data-mode="random"></div>
 
-<h3 id="b站视频"><a href="#b站视频" class="headerlink" title="b站视频"></a>b站视频</h3><iframe class="bilibiliVideo" src="https://www.bilibili.com/html/html5player.html?cid=5090828&aid=3227348" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen></iframe>
+<h3 id="b-站视频"><a href="#b-站视频" class="headerlink" title="b 站视频"></a>b 站视频</h3><iframe class="bilibiliVideo" src="https://www.bilibili.com/html/html5player.html?cid=5090828&aid=3227348" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen></iframe>
 
 ]]></content>
     
@@ -37,7 +37,11 @@
     </summary>
     
     
-      <category term="music video test" scheme="https://ldqblog.me/tags/music-video-test/"/>
+      <category term="music" scheme="https://ldqblog.me/tags/music/"/>
+    
+      <category term="video" scheme="https://ldqblog.me/tags/video/"/>
+    
+      <category term="test" scheme="https://ldqblog.me/tags/test/"/>
     
   </entry>
   
@@ -49,7 +53,7 @@
     <updated>2017-07-31T15:42:45.088Z</updated>
     
     <content type="html"><![CDATA[<ul>
-<li>在scaffolds/post.md文件中添加description</li>
+<li>在 scaffolds/post.md 文件中添加 description</li>
 </ul>
 ]]></content>
     
@@ -94,7 +98,7 @@
     <link href="https://ldqblog.me/posts/ba82f11c/"/>
     <id>https://ldqblog.me/posts/ba82f11c/</id>
     <published>2017-01-13T08:30:23.000Z</published>
-    <updated>2017-07-31T15:42:45.086Z</updated>
+    <updated>2017-07-31T18:02:49.323Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li>测试图片功能</li>
@@ -111,31 +115,31 @@
     
     </summary>
     
-      <category term="Test" scheme="https://ldqblog.me/categories/Test/"/>
+      <category term="test" scheme="https://ldqblog.me/categories/test/"/>
     
-      <category term="图片" scheme="https://ldqblog.me/categories/Test/%E5%9B%BE%E7%89%87/"/>
+      <category term="图片" scheme="https://ldqblog.me/categories/test/%E5%9B%BE%E7%89%87/"/>
     
     
-      <category term="Test" scheme="https://ldqblog.me/tags/Test/"/>
+      <category term="test" scheme="https://ldqblog.me/tags/test/"/>
     
   </entry>
   
   <entry>
-    <title>第一篇Hexo文章</title>
+    <title>第一篇 Hexo 文章</title>
     <link href="https://ldqblog.me/posts/37c28bfb/"/>
     <id>https://ldqblog.me/posts/37c28bfb/</id>
     <published>2016-11-05T06:19:23.000Z</published>
-    <updated>2017-07-31T15:42:45.090Z</updated>
+    <updated>2017-07-31T18:03:00.747Z</updated>
     
     <content type="html"><![CDATA[<ul>
-<li>第一次写Hexo博客</li>
+<li>第一次写 Hexo 博客</li>
 </ul>
 ]]></content>
     
     <summary type="html">
     
       &lt;ul&gt;
-&lt;li&gt;第一次写Hexo博客&lt;/li&gt;
+&lt;li&gt;第一次写 Hexo 博客&lt;/li&gt;
 &lt;/ul&gt;
 
     
@@ -143,10 +147,10 @@
     
       <category term="技术" scheme="https://ldqblog.me/categories/%E6%8A%80%E6%9C%AF/"/>
     
-      <category term="Hexo" scheme="https://ldqblog.me/categories/%E6%8A%80%E6%9C%AF/Hexo/"/>
+      <category term="hexo" scheme="https://ldqblog.me/categories/%E6%8A%80%E6%9C%AF/hexo/"/>
     
     
-      <category term="Hexo" scheme="https://ldqblog.me/tags/Hexo/"/>
+      <category term="hexo" scheme="https://ldqblog.me/tags/hexo/"/>
     
       <category term="前端" scheme="https://ldqblog.me/tags/%E5%89%8D%E7%AB%AF/"/>
     
