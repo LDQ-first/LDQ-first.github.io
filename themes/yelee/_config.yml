@@ -13,6 +13,8 @@ menu:
   标签云: /tags/
   关于我: /about/
   照片流: /favorite/
+  听音乐: /music/
+  #作品: /work/
   #自定义: /myPage/
 
 # Link to your avatar | 填写头像地址
@@ -178,7 +180,7 @@ heading_style: 0 # Value: 0 - 2
 list_style: 0  # value: 0 - 12 可选
 
 # 左边栏宽度 px
-left_col_width: 240
+left_col_width: 300
 
 # Copyright info. of post | 文末版权信息
 copyright: true

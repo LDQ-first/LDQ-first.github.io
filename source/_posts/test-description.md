@@ -8,3 +8,10 @@ categories:
 ---
 
 - 在scaffolds/post.md文件中添加description
+
+```
+$(window).load(function(){
+ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   prettyPrint();
+ })
+```

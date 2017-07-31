@@ -49,7 +49,7 @@ future: true             # 显示未来的文章
 highlight:               # 代码块的设置,代码高亮
   enable: true           
   line_number: true
-  auto_detect: false
+  auto_detect: true
   tab_replace:
 
 # Category & Tag   分类 & 标签

@@ -50,6 +50,8 @@ permalink: /404
     <p class="center">                      
         可在搜索框中对本站进行检索，以获取相关信息。
     </p>
+    <h3>听听歌放松一下</h3>
+    <div class="aplayer" data-id="11100236" data-server="netease" data-type="playlist" data-mode="random"></div>
 </body>
 
 
