@@ -4,14 +4,16 @@
   
     
     <entry>
-      <title><![CDATA[music test]]></title>
+      <title><![CDATA[music video test]]></title>
       <url>https://ldqblog.me/posts/f7cc0d89/</url>
       <!-- <content type="html"><![CDATA[<h3 id="歌曲"><a href="#歌曲" class="headerlink" title="歌曲"></a>歌曲</h3><div class="aplayer" data-id="31673404" data-server="netease" data-type="song"></div>
 
 <h3 id="歌单"><a href="#歌单" class="headerlink" title="歌单"></a>歌单</h3><div class="aplayer" data-id="11100236" data-server="netease" data-type="playlist" data-mode="random"></div>
 
+<h3 id="b站视频"><a href="#b站视频" class="headerlink" title="b站视频"></a>b站视频</h3><iframe class="bilibiliVideo" src="https://www.bilibili.com/html/html5player.html?cid=5090828&aid=3227348" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen></iframe>
+
 ]]></content> -->
-      <content type="html"><![CDATA[歌曲 歌单]]></content>
+      <content type="html"><![CDATA[歌曲 歌单 b站视频]]></content>
     </entry>
     
     <entry>
