@@ -17,8 +17,14 @@ timezone:                   #网站时区
 # url: https://LDQ-first.github.io            #网址
 url: https://ldqblog.me            #网址
 root: /                                     #网站根目录
-permalink: :year/:month/:day/:title/        #文章的永久链接格式
+#permalink: :year/:month/:day/:title/       #文章的永久链接格式
+permalink: posts/:abbrlink/                 # “posts/” 可自行更换
 permalink_defaults:                         #永久链接中各部分的默认值
+
+# abbrlink config
+abbrlink:
+  alg: crc32  # 算法：crc16(default) and crc32
+  rep: hex    # 进制：dec(default) and hex
 
 # Directory   目录
 source_dir: source         #资源文件夹，这个文件夹用来存放内容。

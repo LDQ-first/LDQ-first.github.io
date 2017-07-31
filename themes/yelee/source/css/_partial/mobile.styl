@@ -54,7 +54,6 @@
 .article-header{
     border-left: none;
     padding: 0;
-    border-bottom: 1px dotted #ddd;
     h1{
         margin-bottom: 2px;
     }
@@ -116,9 +115,6 @@
 .archives {
     .archive-article {
     padding: 0;
-    }
-    .archive-article-date {
-        margin-right: 0;
     }
     .article-info {
     display: none;
@@ -209,16 +205,21 @@
     position: fixed;
     left: .5em;
     top: auto; /*In order to cover style in article.styl*/
-    bottom: 10px;
+    bottom: 20px;
+    left: 140px;
     border-radius: 6px;
-    border-style : outset;
     background: rgba(255, 255, 255, .8);
     font-size: 1em;
     font-weight: bold;
     color: gray;
+    opacity: 0.5;
     &:hover {
+        opacity: 0.9;
         color: #88acdb;
         font-size: 1em;
+    }
+    @media screen and (max-width: 700px) {
+        display: none;
     }
 }
 
@@ -229,8 +230,7 @@
     top: 38%;
     bottom: 2.5em;
     height: auto;
-    max-height: 58%;
-    width: auto;
+    max-height: 48%;
     min-width: 7em;
     max-width: 61.8%;
     overflow: auto;
@@ -242,6 +242,10 @@
     font-size: 1em;
     line-height: 1.25em;
     background: linear-gradient(200deg, #95C6D2, #DDBD73);
+    opacity: 0.4;
+    &:hover {
+        opacity: 0.9;
+    }
     .toc-title {
         display: none;
         padding: .3em;

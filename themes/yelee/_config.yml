@@ -111,7 +111,7 @@ gitment:
 # 打赏基础设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏
 reward_type: 2
 # 打赏wording
-reward_wording1: '如果对你有帮助，欢迎打赏'
+reward_wording1: '据说，扫了的人都变帅，变美了(づ●─●)づ'
 reward_wording2: '扫码打赏，你说多少就多少'
 # 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/img/alipay.png
 alipay: /img/alipay.png
@@ -230,7 +230,7 @@ open_in_new:
   tags: false # 标签
   categories: false # 分类
   article_nav: false # 导航
-  archives: true # 归档
+  archives: false # 归档
   mini_archives: true # 迷你归档
   menu: false # 边栏菜单
   friends: true  # 友情链接
@@ -379,6 +379,32 @@ nofollow:
   - hexo.io
   - pages.github.com
   - moxfive.xyz
+
+
+
+html_minifier:
+  enable: true
+  ignore_error: false
+  exclude:
+css_minifier:
+  enable: true
+  exclude:
+    - '*.min.css'
+js_minifier:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude:
+    - '*.min.js'
+image_minifier:
+  enable: true
+  interlaced: false
+  multipass: false
+  optimizationLevel: 2
+  pngquant: false
+  progressive: false
+
 
 
 

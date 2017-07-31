@@ -1,24 +1,25 @@
 <article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemscope itemprop="blogPost">
-  <%if(post.noDate != "true"){%>
-    <div class="article-meta">
-      <%- partial('post/date', {class_name: 'article-date', date_format: null}) %>
-    </div>
-  <%}%>
   <div class="article-inner">
     <% if (theme.fancybox){ %>
       <input type="hidden" class="isFancy" />
     <% } %>
     <% if (post.link || post.title){ %>
-      <header class="article-header">
-        <% if (theme.visit_counter.page_visit && !is_home() && !is_current('tags')) { %>
-            <span id="busuanzi_container_page_pv" style='display:none'>
-                <span id="page-visit"  title="<%= __('visit_counter.page') %>"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i>
-                  阅读次数
-                <span id="busuanzi_value_page_pv"></span>
-                </span>
-            </span>
-        <% } %>
+      <header class="article-header">   
         <%- partial('post/title', {class_name: 'article-title'}) %>
+        <div class="article-meta">
+          <%if(post.noDate != "true"){%> 
+              <%- partial('post/date', {class_name: 'article-date', date_format: null}) %>
+          <%}%>
+          <% if (theme.visit_counter.page_visit && !is_home() && !is_current('tags')) { %>
+              <span id="busuanzi_container_page_pv" style='display:none'>
+                  |
+                  <span id="page-visit"  title="<%= __('visit_counter.page') %>"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i>
+                    阅读次数
+                  <span id="busuanzi_value_page_pv"></span>
+                  </span>
+              </span>
+          <% } %>
+        </div>
       </header>
       <% if (!index){ %>
       <div class="article-info article-info-post">

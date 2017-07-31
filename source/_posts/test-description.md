@@ -1,6 +1,7 @@
 ---
 title: test description
-description: '测试decription'
+description: 测试decription
+abbrlink: 6444e51d
 date: 2017-02-02 21:06:49
 tags:
 categories:

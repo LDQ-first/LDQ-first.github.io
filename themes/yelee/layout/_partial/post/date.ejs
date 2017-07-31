@@ -1,15 +1,15 @@
 <a href="<%- url_for(post.path) %>" class="<%= class_name %>">
       <time datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><%= date(post.date, date_format) %></time>
 </a>
-
 <% if ((is_home() || (is_post() && !theme.preload_comment)) && theme.show_count && (theme.disqus.on || theme.duoshuo.on || config.disqus_shortname || theme.gitment.on)) { %> 
+    |
     <% if(theme.gitment.on) { %>
         <a href="<%- url_for(post.path) %>#gitments" title="<%= __('tooltip.jump2comments') %>">
     <% } else { %>
         <a href="<%- url_for(post.path) %>#comments" title="<%= __('tooltip.jump2comments') %>">
     <% } %>
-        <span class="count-comment"></span>
         <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
         <% if (theme.duoshuo.on) { %>
             <span class="ds-thread-count" <% if (index) { %> data-thread-key="<%=post.path%>" <% } %>></span>
         <% } %>

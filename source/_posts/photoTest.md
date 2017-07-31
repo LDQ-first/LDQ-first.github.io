@@ -1,10 +1,11 @@
 ---
 title: photoTest
-date: 2017-01-13 16:30:23
-tags: Test 
+tags: Test
 categories:
-- Test
-- 图片
+  - Test
+  - 图片
+abbrlink: ba82f11c
+date: 2017-01-13 16:30:23
 ---
 - 测试图片功能
 
