@@ -355,7 +355,7 @@ particles:
   ## "5": 显示`/yelee/source/background/`文件夹中 bg-1.jpg 到 bg-5.jpg 这5张图片
 background: 
   on: true
-  type: 2
+  type: 3
   background_image: 5
 
 
