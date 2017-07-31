@@ -391,8 +391,8 @@ css_minifier:
   exclude:
     - '*.min.css'
 js_minifier:
-  enable: true
-  mangle: true
+  enable: false
+  mangle: false
   output:
   compress:
   exclude:
