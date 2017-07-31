@@ -1,11 +1,11 @@
 const fs = require("fs");
-const path = "/photos";
+const path = "/img";
 const qiniu = require("qiniu");
 
 
 //需要填写你的 Access Key 和 Secret Key
-qiniu.conf.ACCESS_KEY = 'xxx';
-qiniu.conf.SECRET_KEY = 'xxx';
+qiniu.conf.ACCESS_KEY = 'ixwfvs7CA_4XKjvNiThZs5cpPbJ-ihtUEUfgsuh0';
+qiniu.conf.SECRET_KEY = 'SkTXI470ZfJx_pw6xmeRGyrT4Z262N6eoEvFfXr-';
 
 //要上传的空间
 bucket = 'hexo';
@@ -79,9 +79,8 @@ fs.readdir(path, function (err, files) {
                 uploadFile(token, key, filePath);
                 arr.push(files[index]);
             }
-
-                        }
-            iterator(index + 1);
+          }
+          iterator(index + 1);
         })
     }(0));
 });
