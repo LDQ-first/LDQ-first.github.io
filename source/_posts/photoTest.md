@@ -9,5 +9,5 @@ date: 2017-01-13 16:30:23
 ---
 - 测试图片功能
 
-![photos-0.jpg](//images.pexels.com/photos/325185/pexels-photo-325185.jpeg?w=700&h=482&auto=compress&cs=tinysrgb)
-![photos-1.jpg](//images.pexels.com/photos/21787/pexels-photo.jpg?w=700&h=482&auto=compress&cs=tinysrgb)
+![photos-0.jpg](http://otyr3ojiw.bkt.clouddn.com/blog/170801/GgD6FJfKF9.jpeg?imageslim)
+![photos-1.jpg](http://otyr3ojiw.bkt.clouddn.com/blog/170801/7L37AEEbdj.jpg?imageslim)

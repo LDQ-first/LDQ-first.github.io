@@ -18,7 +18,9 @@ menu:
   #自定义: /myPage/
 
 # Link to your avatar | 填写头像地址
-avatar: /img/avatar.png
+# avatar: /img/avatar.png
+avatar: http://otyr3ojiw.bkt.clouddn.com/blog/170801/Lld7lHLeG7.png?imageslim
+
 
 # Small icon of Your site | 站点小图标地址
 favicon: /favicon.png
@@ -116,9 +118,11 @@ reward_type: 2
 reward_wording1: '据说，扫了的人都变帅，变美了(づ●─●)づ'
 reward_wording2: '扫码打赏，你说多少就多少'
 # 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/img/alipay.png
-alipay: /img/alipay.png
+#alipay: /img/alipay.png
+alipay: http://otyr3ojiw.bkt.clouddn.com/blog/170801/m5ChfGl64d.png?imageslim
 # 微信二维码图片地址
-weixin: /img/weixin.png
+#weixin: /img/weixin.png
+weixin: http://otyr3ojiw.bkt.clouddn.com/blog/170801/9aJf9imdJm.png?imageslim
 
 
 
@@ -363,7 +367,7 @@ background:
 image_stream:
   jquery: false
   jquery_lazyload: //cdn.bootcss.com/jquery.lazyload/1.9.1/jquery.lazyload.min.js
-  img_placeholder: //i2.tiimg.com/1949/824a3063fe15d469.gif
+  img_placeholder: http://otyr3ojiw.bkt.clouddn.com/blog/170801/CJfGhKh56A.gif
 
 
 # 一个网页浮动动画小人

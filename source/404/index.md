@@ -39,7 +39,7 @@ permalink: /404
 
 <body>
     <div class="pic">
-        <img class="errorImg" src="/img/404.gif" alt="">
+        <img class="errorImg" src="http://otyr3ojiw.bkt.clouddn.com/blog/170801/Ial75aa8mj.gif" alt="">
     </div>
     <p class="center">很抱歉，您所访问的地址并不存在</p>
     <p class="center">
