@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://ldqblog.me/favorite/index.html</loc>
+    
+    <lastmod>2017-08-02T04:13:37.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ldqblog.me/posts/ba82f11c/</loc>
     
     <lastmod>2017-08-01T15:54:00.862Z</lastmod>
@@ -75,13 +82,6 @@
     <loc>https://ldqblog.me/myPage/index.html</loc>
     
     <lastmod>2017-07-28T08:24:42.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ldqblog.me/favorite/index.html</loc>
-    
-    <lastmod>2017-07-26T11:39:18.000Z</lastmod>
     
   </url>
   
