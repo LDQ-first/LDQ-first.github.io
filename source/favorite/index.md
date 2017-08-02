@@ -4,7 +4,7 @@ title: favorite
 > 我想看
 
 {% stream %}
-{% figure https://img3.doubanio.com/lpic/s27269296.jpg https://book.douban.com/subject/25768396/ 深入浅出Node.js %}
+{% figure https://img3.doubanio.com/lpic/s27269296.jpg https://book.douban.com/subject/25768396/  '深入浅出Node.js' %}
 
 
 {% endstream %}
