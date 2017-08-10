@@ -11,7 +11,11 @@
     <script src="/js/tagcanvas.min.js" type="text/javascript"></script>
 <% } %>
 
-<div class="tags" id="tags">
+<% if(theme.tagcanvas) { %>
+    <div class="tags" id="tags" style="display:none;">
+<% } else { %>
+    <div class="tags" id="tags" >
+<% } %>
     <% var rdColor = ['#0475a1', '#9071C8', '#CE4DD3', '#F26E58', '#4DC1D3', '#F0575B', '#3dab34' ]; %>
     <%- tagcloud({
         min_font: 16, 
@@ -88,7 +92,7 @@
 
 <% if(theme.tagcanvas) { %>
     <script type="text/javascript">
-        window.onload = function() {
+       { /*window.onload = function() {
             try {
                 TagCanvas.Start('my3DTags','tags',{
                 maxSpeed: 0.05,
@@ -112,7 +116,32 @@
                 // something went wrong, hide the canvas container
                 document.getElementById('myTags').style.display = 'none';
             }
-        };
+        }; */}
+         document.addEventListener( 'DOMContentLoaded', function() {
+            try {
+                TagCanvas.Start('my3DTags','tags',{
+                maxSpeed: 0.05,
+                decel: 1,
+                minBrightness: 0.4,
+                depth: 0.5,
+                textFont: null,
+                textColour: null,
+                outlineColour: '#4697F1',
+                freezeActive: true,
+                frontSelect: true,
+                shadow: 'rgba(0, 0, 0, 0.2)',
+                shadowBlur: 1,
+                shadowOffset: [0, 1],
+                shuffleTags: true,
+                weight: true,
+                reverse: true, 
+                weight: true
+                });
+            } catch(e) {
+                // something went wrong, hide the canvas container
+                document.getElementById('myTags').style.display = 'none';
+            }
+        }); 
     </script>
 <% } %>
 
