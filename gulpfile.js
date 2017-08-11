@@ -29,13 +29,13 @@ gulp.task('minify-html', function() {
 });
 
 
-gulp.task("main", function () {  
+/*gulp.task("main", function () {  
   return gulp.src("./public/js/*.js")   
     // Traces all modules and outputs them in the correct order.   
     .pipe(amdOptimize("main"))   //主入口文件    
     .pipe(uglify()) 
     .pipe(gulp.dest("./public/js"))  //输出目录  
-});  
+}); */ 
 
 gulp.task("pc", function () {  
   return gulp.src("./public/js/*.js")   
