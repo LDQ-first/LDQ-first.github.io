@@ -57,7 +57,7 @@ gulp.task("mobile", function () {
 // es6语法导致出错？
 gulp.task('minify-js', function() {
     return gulp.src('./public/js/*.js')
-        .pipe(gulpIgnore.include('main.js'))
+        .pipe(gulpIgnore.exclude('main.js'))
         .pipe(uglify())
         .pipe(gulp.dest('./public/js'));
 });
