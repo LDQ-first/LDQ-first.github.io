@@ -63,7 +63,7 @@ gulp.task('minify-js', function() {
 
 
 gulp.task('img', function(){
-    return gulp.src('./public/*.*')
+    return gulp.src('./public/**.*')
                .pipe(imagemin ({
                     optimizationLevel: 5, //类型：Number  默认：3  取值范围：0-7（优化等级）
                     progressive: true, //类型：Boolean 默认：false 无损压缩jpg图片
