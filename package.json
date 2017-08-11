@@ -10,9 +10,11 @@
     "glups": "cnpm i -S gulp && cnpm i -S gulp-htmlclean && cnpm i -S  gulp-htmlmin && cnpm i -S gulp-imagemin && cnpm i -S gulp-minify-css && cnpm i -S gulp-uglify",
     "sitemap": "cnpm i hexo-generator-sitemap -S  &&  cnpm i hexo-generator-baidu-sitemap -S",
     "bd": "cnpm i hexo-baidu-url-submit -S",
-    "un": "cnpm install hexo-pangu-spacing --save"
+    "un": "cnpm install hexo-pangu-spacing --save",
+    "amd": "cnpm install --save amd-optimize"
   },
   "dependencies": {
+    "amd-optimize": "^0.6.1",
     "gulp": "^3.9.1",
     "gulp-htmlclean": "^2.7.14",
     "gulp-htmlmin": "^3.0.0",
