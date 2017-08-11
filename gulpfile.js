@@ -37,7 +37,7 @@ gulp.task('minify-html', function() {
     .pipe(gulp.dest("./public/js"))  //输出目录  
 }); */ 
 
-gulp.task("pc", function () {  
+/*gulp.task("pc", function () {  
   return gulp.src("./public/js/*.js")   
     // Traces all modules and outputs them in the correct order.   
     .pipe(amdOptimize("pc"))   //主入口文件    
@@ -51,13 +51,13 @@ gulp.task("mobile", function () {
     .pipe(amdOptimize("mobile"))   //主入口文件    
     .pipe(uglify()) 
     .pipe(gulp.dest("./public/js"))  //输出目录  
-}); 
+}); */
 
 // 压缩 public/js 目录 js文件
 // es6语法导致出错？
 gulp.task('minify-js', function() {
     return gulp.src('./public/js/*.js')
-        .pipe(gulpIgnore.exclude('main.js'))
+        .pipe(gulpIgnore.exclude('main.js','pc.js','mobile.js'))
         .pipe(uglify())
         .pipe(gulp.dest('./public/js'));
 });
@@ -77,5 +77,5 @@ gulp.task('img', function(){
 
 // 执行 gulp 命令时执行的任务
 gulp.task('default', [
-    'minify-html','minify-css', 'pc', 'mobile','minify-js','img'
+    'minify-html','minify-css', 'minify-js','img'
 ]);
