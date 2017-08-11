@@ -11,7 +11,8 @@
     "sitemap": "cnpm i hexo-generator-sitemap -S  &&  cnpm i hexo-generator-baidu-sitemap -S",
     "bd": "cnpm i hexo-baidu-url-submit -S",
     "un": "cnpm install hexo-pangu-spacing --save",
-    "amd": "cnpm install --save amd-optimize"
+    "amd": "cnpm install --save amd-optimize",
+    "if": "cnpm install --save gulp-if"
   },
   "dependencies": {
     "amd-optimize": "^0.6.1",
