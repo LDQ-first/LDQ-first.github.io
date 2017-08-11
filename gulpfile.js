@@ -7,6 +7,7 @@ const htmlmin = require('gulp-htmlmin');
 const htmlclean = require('gulp-htmlclean');
 const amdOptimize = require("amd-optimize"); 
 const imagemin  = require('gulp-imagemin');
+const gulpIgnore = require('gulp-ignore');
 
 // 压缩 public 目录 css文件
 gulp.task('minify-css', function() {
@@ -57,6 +58,7 @@ gulp.task("mobile", function () {
 // es6语法导致出错？
 gulp.task('minify-js', function() {
     return gulp.src('./public/js/*.js')
+        .pipe(gulpIgnore.exclude('main.js'))
         .pipe(uglify())
         .pipe(gulp.dest('./public/js'));
 });
@@ -76,5 +78,5 @@ gulp.task('img', function(){
 
 // 执行 gulp 命令时执行的任务
 gulp.task('default', [
-    'minify-html','minify-css', 'pc', 'mobile','minify-js','main','img'
+    'minify-html','minify-css', 'main','pc', 'mobile','minify-js','img'
 ]);
