@@ -11,7 +11,7 @@ const amdOptimize = require("amd-optimize");
 gulp.task('minify-css', function() {
     return gulp.src('./public/**/*.css')
         .pipe(minifycss())
-        .pipe(gulp.dest('./public/css'));
+        .pipe(gulp.dest('./public'));
 });
 
 // 压缩 public 目录 html文件
