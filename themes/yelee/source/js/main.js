@@ -2,7 +2,7 @@ require([], function (){
 
     var isMobileInit = false;
     var loadMobile = function(){
-        require([yiliaConfig.rootUrl + 'js/mobile.js'], function(mobile){
+        require(['js/mobile.js'], function(mobile){
             mobile.init();
             isMobileInit = true;
         })
