@@ -76,5 +76,5 @@ gulp.task('img', function(){
 
 // 执行 gulp 命令时执行的任务
 gulp.task('default', [
-    'minify-html','minify-css', 'main', 'pc', 'mobile','minify-js','img'
+    'minify-html','minify-css', 'pc', 'mobile','minify-js','img'
 ]);
