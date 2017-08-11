@@ -1,1 +1,198 @@
-require([],function(){var i=!1,e=function(){require([yiliaConfig.rootUrl+"js/mobile.js"],function(e){e.init(),i=!0})},t=!1,n=function(){require([yiliaConfig.rootUrl+"js/pc.js"],function(i){i.init(),t=!0})},a={versions:function(){var i=window.navigator.userAgent;return{trident:i.indexOf("Trident")>-1,presto:i.indexOf("Presto")>-1,webKit:i.indexOf("AppleWebKit")>-1,gecko:i.indexOf("Gecko")>-1&&-1==i.indexOf("KHTML"),mobile:!!i.match(/AppleWebKit.*Mobile.*/),ios:!!i.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),android:i.indexOf("Android")>-1||i.indexOf("Linux")>-1,iPhone:i.indexOf("iPhone")>-1||i.indexOf("Mac")>-1,iPad:i.indexOf("iPad")>-1,webApp:-1==i.indexOf("Safari"),weixin:-1==i.indexOf("MicroMessenger")}}()};$(window).bind("resize",function(){i&&t?$(window).unbind("resize"):$(window).width()>=1050?n():e()}),a.versions.mobile||$(window).width()<1150?e():n(),resetTags=function(){for(var i=$(".tagcloud a"),e=0;e<i.length;e++){var t=Math.floor(7*Math.random());i.eq(e).addClass("color"+t)}$(".article-category a:nth-child(-n+2)").attr("class","color0")},yiliaConfig.fancybox&&require([yiliaConfig.fancybox_js],function(i){if(0!=$(".isFancy").length){for(var e=$(".article-inner img"),t=0,n=e.length;t<n;t++){var a=e.eq(t).attr("src");if(void 0===(o=e.eq(t).attr("alt")))var o=e.eq(t).attr("title");var r=e.eq(t).attr("width"),c=e.eq(t).attr("height");e.eq(t).replaceWith("<a href='"+a+"' title='"+o+"' rel='fancy-group' class='fancy-ctn fancybox'><img src='"+a+"' width="+r+" height="+c+" title='"+o+"' alt='"+o+"'></a>")}$(".article-inner .fancy-ctn").fancybox({type:"image"})}}),yiliaConfig.animate&&(yiliaConfig.isHome?require([yiliaConfig.scrollreveal],function(i){function e(){$(".article").each(function(){$(this).offset().top<=$(window).scrollTop()+$(window).height()&&!$(this).hasClass("show")?($(this).removeClass("hidden").addClass("show"),$(this).addClass("is-hiddened")):$(this).hasClass("is-hiddened")||$(this).addClass("hidden")})}var t=["pulse","fadeIn","fadeInRight","flipInX","lightSpeedIn","rotateInUpLeft","slideInUp","zoomIn"],n=t.length,a=t[Math.ceil(Math.random()*n)-1];if(!window.requestAnimationFrame)return $(".body-wrap > article").css({opacity:1}),void(navigator.userAgent.match(/Safari/i)&&($(window).on("scroll",function(){e()}),e()));var o=".body-wrap > article",r=$(".body-wrap > article:first-child");if(r.height()>$(window).height()){o=".body-wrap > article:not(:first-child)";r.css({opacity:1})}i({duration:0,afterReveal:function(i){$(i).addClass("animated "+a).css({opacity:1})}}).reveal(o)}):$(".body-wrap > article").css({opacity:1})),yiliaConfig.toc&&require(["toc"],function(){});var o=["#6da336","#ff945c","#66CC66","#99CC99","#CC6666","#76becc","#c99979","#918597","#4d4d4d"];Math.ceil(Math.random()*(o.length-1));$("table").wrap("<div class='table-area'></div>"),$(document).ready(function(){$("#comments").length<1&&$("#scroll > a:nth-child(2)").hide()}),(yiliaConfig.isArchive||yiliaConfig.isTag||yiliaConfig.isCategory)&&$(document).ready(function(){$("#footer").after("<button class='hide-labels'>TAGS</button>"),$(".hide-labels").click(function(){$(".article-info").toggle(200)})}),$("ul > li").each(function(){function i(i,e){var t=["disabled",""];o.html(o.html().replace(i,"<input type='checkbox' "+e+" "+t[1]+" >"))}var e={field:this.textContent.substring(0,2),check:function(i){var e=new RegExp(i);return this.field.match(e)}},t=["[ ]",["[x]","checked"]],n=e.check(t[1][0]),a=e.check(t[0]),o=$(this);(n||a)&&(this.classList.add("task-list"),n?(i(t[1][0],t[1][1]),this.classList.add("check")):i(t[0],""))})}),define("main",[],function(){});
+require([], function () {
+    var isMobileInit = false;
+    var loadMobile = function () {
+        require([yiliaConfig.rootUrl + 'js/mobile.js'], function (mobile) {
+            mobile.init();
+            isMobileInit = true;
+        });
+    };
+    var isPCInit = false;
+    var loadPC = function () {
+        require([yiliaConfig.rootUrl + 'js/pc.js'], function (pc) {
+            pc.init();
+            isPCInit = true;
+        });
+    };
+    var browser = {
+        versions: function () {
+            var u = window.navigator.userAgent;
+            return {
+                trident: u.indexOf('Trident') > -1,
+                presto: u.indexOf('Presto') > -1,
+                webKit: u.indexOf('AppleWebKit') > -1,
+                gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1,
+                mobile: !!u.match(/AppleWebKit.*Mobile.*/),
+                ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+                android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1,
+                iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1,
+                iPad: u.indexOf('iPad') > -1,
+                webApp: u.indexOf('Safari') == -1,
+                weixin: u.indexOf('MicroMessenger') == -1
+            };
+        }()
+    };
+    $(window).bind('resize', function () {
+        if (isMobileInit && isPCInit) {
+            $(window).unbind('resize');
+            return;
+        }
+        var w = $(window).width();
+        if (w >= 1050) {
+            loadPC();
+        } else {
+            loadMobile();
+        }
+    });
+    if (!!browser.versions.mobile || $(window).width() < 1150) {
+        loadMobile();
+    } else {
+        loadPC();
+    }
+    resetTags = function () {
+        var tags = $('.tagcloud a');
+        for (var i = 0; i < tags.length; i++) {
+            var num = Math.floor(Math.random() * 7);
+            tags.eq(i).addClass('color' + num);
+        }
+        $('.article-category a:nth-child(-n+2)').attr('class', 'color0');
+    };
+    if (!!yiliaConfig.fancybox) {
+        require([yiliaConfig.fancybox_js], function (pc) {
+            var isFancy = $('.isFancy');
+            if (isFancy.length != 0) {
+                var imgArr = $('.article-inner img');
+                for (var i = 0, len = imgArr.length; i < len; i++) {
+                    var src = imgArr.eq(i).attr('src');
+                    var title = imgArr.eq(i).attr('alt');
+                    if (typeof title == 'undefined') {
+                        var title = imgArr.eq(i).attr('title');
+                    }
+                    var width = imgArr.eq(i).attr('width');
+                    var height = imgArr.eq(i).attr('height');
+                    imgArr.eq(i).replaceWith('<a href=\'' + src + '\' title=\'' + title + '\' rel=\'fancy-group\' class=\'fancy-ctn fancybox\'><img src=\'' + src + '\' width=' + width + ' height=' + height + ' title=\'' + title + '\' alt=\'' + title + '\'></a>');
+                }
+                $('.article-inner .fancy-ctn').fancybox({ type: 'image' });
+            }
+        });
+    }
+    if (!!yiliaConfig.animate) {
+        if (!!yiliaConfig.isHome) {
+            require([yiliaConfig.scrollreveal], function (ScrollReveal) {
+                var animationNames = [
+                        'pulse',
+                        'fadeIn',
+                        'fadeInRight',
+                        'flipInX',
+                        'lightSpeedIn',
+                        'rotateInUpLeft',
+                        'slideInUp',
+                        'zoomIn'
+                    ], len = animationNames.length, randomAnimationName = animationNames[Math.ceil(Math.random() * len) - 1];
+                if (!window.requestAnimationFrame) {
+                    $('.body-wrap > article').css({ opacity: 1 });
+                    if (navigator.userAgent.match(/Safari/i)) {
+                        function showArticle() {
+                            $('.article').each(function () {
+                                if ($(this).offset().top <= $(window).scrollTop() + $(window).height() && !$(this).hasClass('show')) {
+                                    $(this).removeClass('hidden').addClass('show');
+                                    $(this).addClass('is-hiddened');
+                                } else {
+                                    if (!$(this).hasClass('is-hiddened')) {
+                                        $(this).addClass('hidden');
+                                    }
+                                }
+                            });
+                        }
+                        $(window).on('scroll', function () {
+                            showArticle();
+                        });
+                        showArticle();
+                    }
+                    return;
+                }
+                var animateScope = '.body-wrap > article';
+                var $firstArticle = $('.body-wrap > article:first-child');
+                if ($firstArticle.height() > $(window).height()) {
+                    var animateScope = '.body-wrap > article:not(:first-child)';
+                    $firstArticle.css({ opacity: 1 });
+                }
+                ScrollReveal({
+                    duration: 0,
+                    afterReveal: function (domEl) {
+                        $(domEl).addClass('animated ' + randomAnimationName).css({ opacity: 1 });
+                    }
+                }).reveal(animateScope);
+            });
+        } else {
+            $('.body-wrap > article').css({ opacity: 1 });
+        }
+    }
+    if (yiliaConfig.toc) {
+        require(['toc'], function () {
+        });
+    }
+    var colorList = [
+        '#6da336',
+        '#ff945c',
+        '#66CC66',
+        '#99CC99',
+        '#CC6666',
+        '#76becc',
+        '#c99979',
+        '#918597',
+        '#4d4d4d'
+    ];
+    var id = Math.ceil(Math.random() * (colorList.length - 1));
+    $('table').wrap('<div class=\'table-area\'></div>');
+    $(document).ready(function () {
+        if ($('#comments').length < 1) {
+            $('#scroll > a:nth-child(2)').hide();
+        }
+    });
+    if (yiliaConfig.isArchive || yiliaConfig.isTag || yiliaConfig.isCategory) {
+        $(document).ready(function () {
+            $('#footer').after('<button class=\'hide-labels\'>TAGS</button>');
+            $('.hide-labels').click(function () {
+                $('.article-info').toggle(200);
+            });
+        });
+    }
+    $('ul > li').each(function () {
+        var taskList = {
+            field: this.textContent.substring(0, 2),
+            check: function (str) {
+                var re = new RegExp(str);
+                return this.field.match(re);
+            }
+        };
+        var string = [
+            '[ ]',
+            [
+                '[x]',
+                'checked'
+            ]
+        ];
+        var checked = taskList.check(string[1][0]);
+        var unchecked = taskList.check(string[0]);
+        var $current = $(this);
+        function update(str, check) {
+            var click = [
+                'disabled',
+                ''
+            ];
+            $current.html($current.html().replace(str, '<input type=\'checkbox\' ' + check + ' ' + click[1] + ' >'));
+        }
+        if (checked || unchecked) {
+            this.classList.add('task-list');
+            if (checked) {
+                update(string[1][0], string[1][1]);
+                this.classList.add('check');
+            } else {
+                update(string[0], '');
+            }
+        }
+    });
+});
+define('main', [], function () {
+    return;
+});
