@@ -30,12 +30,12 @@ gulp.task('minify-html', function() {
 });
 
 
-gulp.task("main", function () {  
+/*gulp.task("main", function () {  
   return gulp.src("./public/js/*.js")   
     // Traces all modules and outputs them in the correct order.   
     .pipe(amdOptimize("main"))   //主入口文件     
     .pipe(gulp.dest("./public/js"))  //输出目录  
-});  
+}); */ 
 
 gulp.task("pc", function () {  
   return gulp.src("./public/js/*.js")   
@@ -76,5 +76,5 @@ gulp.task('img', function(){
 
 // 执行 gulp 命令时执行的任务
 gulp.task('default', [
-    'minify-html','minify-css', 'main','pc', 'mobile','minify-js','img'
+    'minify-html','minify-css', 'pc', 'mobile','minify-js','img'
 ]);
