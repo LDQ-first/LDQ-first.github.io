@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>https://ldqblog.me/posts/8eff68f4/</loc>
+    <lastmod>2017-08-12T07:53:04.000Z</lastmod>
+    <data>
+        <display>
+        <title>TypeScript 入门</title>
+        <pubTime>2017-08-12T07:13:38.000Z</pubTime>
+        
+        <tag>前端</tag>
+         
+        <tag>TypeScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://ldqblog.me/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://ldqblog.me/posts/d0f2c321/</loc>
     <lastmod>2017-08-10T06:04:10.000Z</lastmod>
     <data>
@@ -78,9 +100,9 @@
         <title>第一篇 Hexo 文章</title>
         <pubTime>2016-11-05T06:19:23.000Z</pubTime>
         
-        <tag>hexo</tag>
-         
         <tag>前端</tag>
+         
+        <tag>hexo</tag>
          
          
            
