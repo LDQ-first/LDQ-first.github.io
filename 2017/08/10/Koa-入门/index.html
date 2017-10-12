@@ -1,0 +1,444 @@
+<!DOCTYPE html><html style="display:none" lang="zh"><head><meta charset="utf-8"><script>window.materialVersion="1.5.0",window.oldVersion=["codestartv1","1.3.4","1.4.0","1.4.0b1"]</script><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://busuanzi.ibruce.info"><title> Koa 入门 | LDQ的博客</title><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="rgba(33,150,243 ,1)"><meta name="author" content="ldq"><meta name="description" itemprop="description" content="参考阮一峰老师的Koa入门教程"><meta name="keywords" content="LDQ-first 博客 前端,node,Koa,后端"><script>window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}},lsloader.removeLS=function(e){try{localStorage.removeItem(e)}catch(e){}},lsloader.setLS=function(e,t){try{localStorage.setItem(e,t)}catch(e){}},lsloader.getLS=function(e){var t="";try{t=localStorage.getItem(e)}catch(e){t=""}return t},versionString="/*"+(window.materialVersion||"unknownVersion")+"*/",lsloader.clean=function(){try{for(var e=[],t=0;t<localStorage.length;t++)e.push(localStorage.key(t));e.forEach(function(e){var t=lsloader.getLS(e);window.oldVersion&&window.oldVersion.reduce(function(e,n){return e||-1!==t.indexOf("/*"+n+"*/")},!1)&&lsloader.removeLS(e)})}catch(e){}},lsloader.clean(),lsloader.load=function(e,t,n,s){"boolean"==typeof n&&(s=n,n=void 0),s=s||!1,n=n||function(){};var a;if((a=this.getLS(e))&&-1===a.indexOf(versionString))return this.removeLS(e),void this.requestResource(e,t,n,s);if(a){if(a.split(versionString)[0]!=t)return console.log("reload:"+t),this.removeLS(e),void this.requestResource(e,t,n,s);a=a.split(versionString)[1],s?(this.jsRunSequence.push({name:e,code:a}),this.runjs(t,e,a)):(document.getElementById(e).appendChild(document.createTextNode(a)),n())}else this.requestResource(e,t,n,s)},lsloader.requestResource=function(e,t,n,s){var a=this;s?this.iojs(t,e,function(e,t,n){a.setLS(t,e+versionString+n),a.runjs(e,t,n)}):this.iocss(t,e,function(n){document.getElementById(e).appendChild(document.createTextNode(n)),a.setLS(e,t+versionString+n)},n)},lsloader.iojs=function(e,t,n){var s=this;s.jsRunSequence.push({name:t,code:""});try{var a=new XMLHttpRequest;a.open("get",e,!0),a.onreadystatechange=function(){if(4==a.readyState){if((a.status>=200&&a.status<300||304==a.status)&&""!=a.response)return void n(e,t,a.response);s.jsfallback(e,t)}},a.send(null)}catch(n){s.jsfallback(e,t)}},lsloader.iocss=function(e,t,n,s){var a=this;try{var o=new XMLHttpRequest;o.open("get",e,!0),o.onreadystatechange=function(){if(4==o.readyState){if((o.status>=200&&o.status<300||304==o.status)&&""!=o.response)return n(o.response),void s();a.cssfallback(e,t,s)}},o.send(null)}catch(n){a.cssfallback(e,t,s)}},lsloader.iofonts=function(e,t,n,s){var a=this;try{var o=new XMLHttpRequest;o.open("get",e,!0),o.onreadystatechange=function(){if(4==o.readyState){if((o.status>=200&&o.status<300||304==o.status)&&""!=o.response)return n(o.response),void s();a.cssfallback(e,t,s)}},o.send(null)}catch(n){a.cssfallback(e,t,s)}},lsloader.runjs=function(e,t,n){if(t&&n)for(var s in this.jsRunSequence)this.jsRunSequence[s].name==t&&(this.jsRunSequence[s].code=n);if(this.jsRunSequence[0]&&this.jsRunSequence[0].code&&"failed"!=this.jsRunSequence[0].status)(o=document.createElement("script")).appendChild(document.createTextNode(this.jsRunSequence[0].code)),o.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(o),this.jsRunSequence.shift(),this.jsRunSequence.length>0&&this.runjs();else if(this.jsRunSequence[0]&&"failed"==this.jsRunSequence[0].status){var a=this,o=document.createElement("script");o.src=this.jsRunSequence[0].path,o.type="text/javascript",this.jsRunSequence[0].status="loading",o.onload=function(){a.jsRunSequence.shift(),a.jsRunSequence.length>0&&a.runjs()},document.body.appendChild(o)}},lsloader.tagLoad=function(e,t){this.jsRunSequence.push({name:t,code:"",path:e,status:"failed"}),this.runjs()},lsloader.jsfallback=function(e,t){if(!this.jsnamemap[t]){this.jsnamemap[t]=t;for(var n in this.jsRunSequence)this.jsRunSequence[n].name==t&&(this.jsRunSequence[n].code="",this.jsRunSequence[n].status="failed",this.jsRunSequence[n].path=e);this.runjs()}},lsloader.cssfallback=function(e,t,n){if(!this.cssnamemap[t]){this.cssnamemap[t]=1;var s=document.createElement("link");s.type="text/css",s.href=e,s.rel="stylesheet",s.onload=s.onerror=n;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(s,a)}},lsloader.runInlineScript=function(e,t){var n=document.getElementById(t).innerText;this.jsRunSequence.push({name:e,code:n}),this.runjs()},lsloader.loadCombo=function(e){var t="",n={};for(var s in e){var a=this.getLS(e[s].name);if(a)var o=a.split(versionString)[0],i=a.split(versionString)[1];else o="";o==e[s].path?this.jsRunSequence.push({name:e[s].name,code:i,path:e[s].path}):(this.jsRunSequence.push({name:e[s].name,code:null,path:e[s].path,status:"comboloading"}),n[e[s].name]=!0,t+=(""==t?"":";")+e[s].path)}var u=this;if(t){var r=new XMLHttpRequest;r.open("get",combo+t,!0),r.onreadystatechange=function(){if(4==r.readyState)if(r.status>=200&&r.status<300||304==r.status){if(""!=r.response)return void u.runCombo(r.response,n)}else{for(var e in u.jsRunSequence)n[u.jsRunSequence[e].name]&&(u.jsRunSequence[e].status="failed");u.runjs()}},r.send(null)}this.runjs()},lsloader.runCombo=function(e,t){(e=e.split("/*combojs*/")).shift();for(var n in this.jsRunSequence)t[this.jsRunSequence[n].name]&&e[0]&&(this.jsRunSequence[n].status="comboJS",this.jsRunSequence[n].code=e[0],this.setLS(this.jsRunSequence[n].name,this.jsRunSequence[n].path+versionString+e[0]),e.shift());this.runjs()}</script><script>function Queue(){this.dataStore=[],this.offer=function(e){this.debug&&console.log("Offered a Queued Function."),"function"==typeof e?this.dataStore.push(e):console.log("You must offer a function.")},this.poll=function(){return this.debug&&console.log("Polled a Queued Function."),this.dataStore.shift()},this.execNext=function(){var e=this.poll();void 0!==e&&(this.debug&&console.log("Run a Queued Function."),e())},this.debug=!1,this.startDebug=function(){this.debug=!0}}var queue=new Queue</script><link rel="icon shortcut" type="image/ico" href="/img/favicon.png"><link rel="icon" sizes="192x192" href="/img/favicon.png"><link rel="apple-touch-icon" href="/img/favicon.png"><meta name="apple-mobile-web-app-title" content="Title"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="480"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="apple-mobile-web-app-title" content="LDQ的博客"> <!--[if lte IE 9]><link rel="stylesheet" href="/css/ie-blocker.css"><script src="/js/ie-blocker.zhCN.js"></script><![endif]--><style id="material_css"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style id="style_css"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style id="prettify_css"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style id="prettify_theme"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("prettify_theme","/css/prettify/tranquil-heart.min.css?ul3p9I9MsbOxK0L+BHzDDg==",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style>body,html{font-family:Roboto,"Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;overflow-x:hidden!important}code{font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace}a{color:#00838f}#scheme-Paradox .hot_tags-count,#scheme-Paradox .sidebar-colored .sidebar-badge,#scheme-Paradox .sidebar-colored .sidebar-header,#scheme-Paradox .sidebar_archives-count,#search-form-label:after,#search-label,.mdl-card__media{background-color:rgba(33,150,243 ,1)!important}#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus,#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover{color:rgba(33,150,243 ,1)!important}#ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a,#post_entry-right-info,.sidebar-colored .sidebar-nav li:hover>a,.sidebar-colored .sidebar-nav li:hover>a i,.sidebar-colored .sidebar-nav li>a:focus i,.sidebar-colored .sidebar-nav li>a:hover,.sidebar-colored .sidebar-nav li>a:hover i,.sidebar-colored .sidebar-nav>.open>a,.sidebar-colored .sidebar-nav>.open>a:focus,.sidebar-colored .sidebar-nav>.open>a:hover{color:rgba(33,150,243 ,1)!important}.toTop{background:rgba(239,83,80 ,1)!important}.material-layout .material-index>.material-nav,.material-layout .material-post>.material-nav,.material-nav a{color:rgba(239,83,80 ,1)}#scheme-Paradox .MD-burger-layer{background-color:rgba(239,83,80 ,1)}#scheme-Paradox #post-toc-trigger-btn{color:rgba(239,83,80 ,1)}.post-toc a:hover{color:#00838f;text-decoration:underline}</style><style>body{background-image:url(https://source.unsplash.com/random/)}</style><style>.fade{transition:all .8s linear;-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0);-o-transform:translate3d(0,0,0);transform:translate3d(0,0,0);opacity:1}.fade.out{opacity:0}</style><link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet"><link rel="stylesheet" href="https://cdn.bootcss.com/material-design-icons/3.0.1/iconfont/material-icons.min.css"><script>lsloader.load("jq_js","https://cdn.bootcss.com/jquery/2.2.1/jquery.min.js",!0)</script><meta property="og:url" content="https://ldqblog.me"><meta property="og:type" content="blog"><meta property="og:title" content="Koa 入门 | LDQ的博客"><meta property="og:image" content="https://ldqblog.me/img/favicon.png"><meta property="og:description" content="参考阮一峰老师的Koa入门教程"><meta property="og:article:tag" content="node"><meta property="og:article:tag" content="Koa"><meta property="og:article:tag" content="后端"><meta property="article:published_time" content="Thu Aug 10 2017 13:56:00 GMT+0800"><meta property="article:modified_time" content="Thu Aug 10 2017 14:04:10 GMT+0800"><meta name="twitter:title" content="Koa 入门 | LDQ的博客"><meta name="twitter:description" content="参考阮一峰老师的Koa入门教程"><meta name="twitter:image" content="https://ldqblog.me/img/favicon.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:url" content="https://ldqblog.me"><link rel="canonical" href="https://ldqblog.me/2017/08/10/Koa-入门/index.html"><script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://ldqblog.me/2017/08/10/Koa-入门/index.html",
+    "headline": "Koa 入门",
+    "datePublished": "Thu Aug 10 2017 13:56:00 GMT+0800",
+    "dateModified": "Thu Aug 10 2017 14:04:10 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "ldq",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/pikachu.svg"
+        },
+        "description": "欢迎来到我的博客（づ￣3￣）づ╭❤～,理想是人生的太阳ヽ(￣▽￣)ﾉ"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "LDQ的博客",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",node,Koa,后端LDQ-first 博客 前端",
+    "description": "参考阮一峰老师的Koa入门教程",
+}
+</script></head><body id="scheme-Paradox" class="lazy"><div class="material-layout mdl-js-layout has-drawer is-upgraded"><main class="material-layout__content" id="main"><div id="top"></div> <button class="MD-burger-icon sidebar-toggle"><span class="MD-burger-layer"></span></button> <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon"> <i class="material-icons">format_list_numbered</i></button><ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh;overflow-y:scroll"><ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Koa-入门"><span class="post-toc-number">1.</span> <span class="post-toc-text">Koa 入门</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#准备"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">准备</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一、基本用法"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">一、基本用法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-开启-HTTP-服务器"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">1 开启 HTTP 服务器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-Context-对象"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">2 Context 对象</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-response-类型"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">3 response 类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-读取模板文件"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">4 读取模板文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二、路由"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">二、路由</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-原生路由"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">1 原生路由</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-koa-router"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">2 koa-router</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-静态资源"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">3 静态资源</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-302-重定向"><span class="post-toc-number">1.3.4.</span> <span class="post-toc-text">4 302 重定向</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#三、-中间件"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">三、 中间件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-logger"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">1 logger</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-中间件的概念"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">2 中间件的概念</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-中间件栈"><span class="post-toc-number">1.4.3.</span> <span class="post-toc-text">3 中间件栈</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-异步中间件"><span class="post-toc-number">1.4.4.</span> <span class="post-toc-text">4 异步中间件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-中间件的合成"><span class="post-toc-number">1.4.5.</span> <span class="post-toc-text">5 中间件的合成</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#四、错误处理"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">四、错误处理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#500-错误"><span class="post-toc-number">1.5.1.</span> <span class="post-toc-text">500 错误</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-404-错误"><span class="post-toc-number">1.5.2.</span> <span class="post-toc-text">2 404 错误</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-处理错误的中间件"><span class="post-toc-number">1.5.3.</span> <span class="post-toc-text">3 处理错误的中间件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-error-事件的监听"><span class="post-toc-number">1.5.4.</span> <span class="post-toc-text">4 error 事件的监听</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-释放-error-事件"><span class="post-toc-number">1.5.5.</span> <span class="post-toc-text">5 释放 error 事件</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#五、Web-App-的功能"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">五、Web App 的功能</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-Cookies"><span class="post-toc-number">1.6.1.</span> <span class="post-toc-text">1 Cookies</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-表单"><span class="post-toc-number">1.6.2.</span> <span class="post-toc-text">2 表单</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-文件上传"><span class="post-toc-number">1.6.3.</span> <span class="post-toc-text">3 文件上传</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考资料"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">参考资料</span></a></li></ol></li></ol></ul><div class="material-post_container"><div class="material-post mdl-grid"><div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col"><div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50"><script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script><p class="article-headline-p"> Koa 入门</p></div><div class="mdl-color-text--grey-700 mdl-card__supporting-text meta"><div id="author-avatar"> <img src="/img/pikachu.svg" width="44px" height="44px" alt="Author Avatar"></div><div> <strong>ldq</strong> <span>8月 10, 2017</span></div><div class="section-spacer"></div> <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"> <i class="material-icons" role="presentation">devices other</i> <span class="visuallyhidden">devices other</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button"><li class="mdl-menu__item">在其它设备中阅读本文章</li> <img src="https://pan.baidu.com/share/qrcode?w=246&h=246&url=https://ldqblog.me/2017/08/10/Koa-入门/"></ul> <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"> <i class="material-icons" role="presentation">bookmark</i> <span class="visuallyhidden">bookmark</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button"><li class="mdl-menu__item"> <a class="post_tag-link" href="/tags/Koa/">Koa</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/node/">node</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/后端/">后端</a></li></ul> <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"> <i class="material-icons" role="presentation">share</i> <span class="visuallyhidden">share</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button"><a class="post_share-link" href="#"><li class="mdl-menu__item"><span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span> &nbsp;浏览量</span></li></a><a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Koa 入门&url=https://ldqblog.me/2017/08/10/Koa-入门/index.html&pic=https://ldqblog.me/img/favicon.png&searchPic=false&style=simple" target="_blank"><li class="mdl-menu__item"> 分享到微博</li></a><a class="post_share-link" href="https://twitter.com/intent/tweet?text=Koa 入门&url=https://ldqblog.me/2017/08/10/Koa-入门/index.html&via=ldq" target="_blank"><li class="mdl-menu__item"> 分享到 Twitter</li></a><a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://ldqblog.me/2017/08/10/Koa-入门/index.html" target="_blank"><li class="mdl-menu__item"> 分享到 Facebook</li></a><a class="post_share-link" href="https://plus.google.com/share?url=https://ldqblog.me/2017/08/10/Koa-入门/index.html" target="_blank"><li class="mdl-menu__item"> 分享到 Google+</li></a></ul></div><div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out"><h1 id="Koa-入门"><a href="#Koa-入门" class="headerlink" title="Koa 入门"></a>Koa 入门</h1><h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><blockquote><p>Node 版本必须 7.6 以上</p></blockquote><p>克隆代码库</p><blockquote><p>git clone <a href="https://github.com/ruanyf/koa-demos.git" target="_blank" rel="external">https://github.com/ruanyf/koa-demos.git</a></p></blockquote><h2 id="一、基本用法"><a href="#一、基本用法" class="headerlink" title="一、基本用法"></a>一、基本用法</h2><h3 id="1-开启-HTTP-服务器"><a href="#1-开启-HTTP-服务器" class="headerlink" title="1 开启 HTTP 服务器"></a>1 开启 HTTP 服务器</h3><pre><code>const Koa = require(&#39;koa&#39;);
+const app = new Koa();
+
+app.listen(3000);
+</code></pre><h3 id="2-Context-对象"><a href="#2-Context-对象" class="headerlink" title="2 Context 对象"></a>2 Context 对象</h3><p>Koa 提供一个 Context 对象，表示一次对话的上下文（包括 HTTP 请求和 HTTP 回复）。通过加工这个对象，就可以控制返回给用户的内容。</p><pre><code>const Koa = require(&#39;koa&#39;);
+const app = new Koa();
+
+const main = ctx =&gt; {
+    ctx.response.body = &#39;Hello World&#39;;
+};
+
+app.use(main);
+app.listen(3000);
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/3563580-32b69cd94b58aced.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><p>ctx.response 代表 HTTP Response<br>ctx.request 代表 HTTP Request</p><h3 id="3-response-类型"><a href="#3-response-类型" class="headerlink" title="3 response 类型"></a>3 response 类型</h3><p>Koa 默认的返回类型是 text/plain</p><p><img src="http://upload-images.jianshu.io/upload_images/3563580-cec6dc9a5a3d7674.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><p>ctx.request.accepts 用来判断客户端希望接受什么数据<br>ctx.response.type 指定返回类型</p><pre><code>const Koa = require(&#39;koa&#39;);
+const app = new Koa();
+
+const main = ctx =&gt; {
+
+if (ctx.request.accepts(&#39;xml&#39;)) {
+
+    ctx.response.type = &#39;xml&#39;;
+
+    ctx.response.body = &#39;&lt;data&gt;Hello World&lt;/data&gt;&#39;;
+
+} else if (ctx.request.accepts(&#39;json&#39;)) {
+
+    ctx.response.type = &#39;json&#39;;
+
+    ctx.response.body = { data: &#39;Hello World&#39; };
+
+} else if (ctx.request.accepts(&#39;html&#39;)) {
+
+    ctx.response.type = &#39;html&#39;;
+
+    ctx.response.body = &#39;&lt;p&gt;Hello World&lt;/p&gt;&#39;;
+
+} else {
+
+    ctx.response.type = &#39;text&#39;;
+
+    ctx.response.body = &#39;Hello World&#39;;
+
+}
+
+};
+
+app.use(main);
+app.listen(3000);
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/3563580-83caa8dd754ae06e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><p><img src="http://upload-images.jianshu.io/upload_images/3563580-df6ccc66b21c55da.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><p><img src="http://upload-images.jianshu.io/upload_images/3563580-0d84b50c0498d5dd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><h3 id="4-读取模板文件"><a href="#4-读取模板文件" class="headerlink" title="4 读取模板文件"></a>4 读取模板文件</h3><pre><code>const fs = require(&#39;fs&#39;);
+const Koa = require(&#39;koa&#39;);
+const app = new Koa();
+
+const main = ctx =&gt; {
+
+ctx.response.type = &#39;html&#39;;
+
+ctx.response.body = fs.createReadStream(&#39;./demos/template.html&#39;);
+
+};
+
+app.use(main);
+app.listen(3000);
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/3563580-6cfaa24a42e6277d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><h2 id="二、路由"><a href="#二、路由" class="headerlink" title="二、路由"></a>二、路由</h2><h3 id="1-原生路由"><a href="#1-原生路由" class="headerlink" title="1 原生路由"></a>1 原生路由</h3><p>ctx.request.path<br>可获取用户请求的路径</p><pre><code>const Koa = require(&#39;koa&#39;);
+const app = new Koa();
+
+const main = ctx =&gt; {
+
+if (ctx.request.path !== &#39;/&#39;) {
+
+ctx.response.type = &#39;html&#39;;
+
+ctx.response.body = &#39;&lt;a href=&quot;/&quot;&gt;Index Page&lt;/a&gt;&#39;;
+
+} else {
+
+        ctx.response.body = &#39;Hello World&#39;;
+
+}
+
+};
+
+app.use(main);
+app.listen(3000);
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/3563580-efda28165ef1c82e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><p><img src="http://upload-images.jianshu.io/upload_images/3563580-6e9b906b2762e116.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><h3 id="2-koa-router"><a href="#2-koa-router" class="headerlink" title="2 koa-router"></a>2 koa-router</h3><p>route.get(path, callback)<br>callback 指定 ctx.response.type 和 ctx,response.body</p><pre><code>const Koa = require(&#39;koa&#39;);
+const route = require(&#39;koa-route&#39;);
+const app = new Koa();
+
+const about = ctx =&gt; {
+
+ctx.response.type = &#39;html&#39;;
+
+ctx.response.body = &#39;&lt;a href=&quot;/&quot;&gt;Index Page&lt;/a&gt;&#39;;
+
+};
+
+const main = ctx =&gt; {
+        ctx.response.body = &#39;Hello World&#39;;
+};
+
+app.use(route.get(&#39;/&#39;, main));
+app.use(route.get(&#39;/about&#39;, about));
+
+app.use(main);
+app.listen(3000);
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/3563580-6ba08211d1b585a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><p><img src="http://upload-images.jianshu.io/upload_images/3563580-ae9d621c3e1b02a7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><p><img src="http://upload-images.jianshu.io/upload_images/3563580-6e274232aaba6562.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><p><img src="http://upload-images.jianshu.io/upload_images/3563580-52627f567dc12140.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><h3 id="3-静态资源"><a href="#3-静态资源" class="headerlink" title="3 静态资源"></a>3 静态资源</h3><p>koa-static 处理静态资源</p><pre><code>const Koa = require(&#39;koa&#39;);
+const app = new Koa();
+const path = require(&#39;path&#39;);
+const serve = require(&#39;koa-static&#39;);
+
+const main = serve(path.join(__dirname));
+
+app.use(main);
+app.listen(3000);
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/3563580-51fc1d1d22dd591b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><p><img src="http://upload-images.jianshu.io/upload_images/3563580-c10a8f130e9bef9e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><p><img src="http://upload-images.jianshu.io/upload_images/3563580-32fb0ac20d841137.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><h3 id="4-302-重定向"><a href="#4-302-重定向" class="headerlink" title="4 302 重定向"></a>4 302 重定向</h3><p>ctx.response.redirect()</p><pre><code>const Koa = require(&#39;koa&#39;);
+const route = require(&#39;koa-route&#39;);
+const app = new Koa();
+
+const redirect = ctx =&gt; {
+    ctx.response.redirect(&#39;/&#39;);
+};
+
+const main = ctx =&gt; {
+    ctx.response.body = &#39;Hello World&#39;;
+};
+
+app.use(route.get(&#39;/&#39;, main));
+app.use(route.get(&#39;/redirect&#39;, redirect));
+
+app.use(main);
+app.listen(3000);
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/3563580-d49041f899983618.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><h2 id="三、-中间件"><a href="#三、-中间件" class="headerlink" title="三、 中间件"></a>三、 中间件</h2><h3 id="1-logger"><a href="#1-logger" class="headerlink" title="1 logger"></a>1 logger</h3><p>打印日志</p><pre><code>const Koa = require(&#39;koa&#39;);
+const app = new Koa();
+
+const main = ctx =&gt; {
+
+console.log(`${Date.now()} ${ctx.request.method} ${ctx.request.url}`);
+
+ctx.response.body = &#39;Hello World&#39;;
+
+};
+
+app.use(main);
+app.listen(3000);
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/3563580-e3ba60c3e0d8d612.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><h3 id="2-中间件的概念"><a href="#2-中间件的概念" class="headerlink" title="2 中间件的概念"></a>2 中间件的概念</h3><p>logger 函数就叫做 “中间件”（middleware），因为它处在 HTTP Request 和 HTTP Response 中间，用来实现某种中间功能。app.use() 用来加载中间件。</p><p>基本上，Koa 所有的功能都是通过中间件实现的，前面例子里面的 main 也是中间件。<br>参数 context 对象， next 函数 （将执行权限交给下一个中间件）</p><pre><code>const Koa = require(&#39;koa&#39;);
+const app = new Koa();
+
+const logger = (ctx, next) =&gt; {
+
+console.log(`${Date.now()} ${ctx.request.method} ${ctx.request.url}`);
+
+next();
+
+}
+
+const main = ctx =&gt; {
+ctx.response.body = &#39;Hello World&#39;;
+};
+
+app.use(logger);
+app.use(main);
+app.listen(3000);
+</code></pre><h3 id="3-中间件栈"><a href="#3-中间件栈" class="headerlink" title="3 中间件栈"></a>3 中间件栈</h3><p>多个中间件会形成一个栈结构（middle stack），以 “先进后出”（first-in-last-out）的顺序执行。</p><blockquote><ol><li>最外层的中间件首先执行。</li><li>调用 next 函数，把执行权交给下一个中间件。</li><li>…</li><li>最内层的中间件最后执行。</li><li>执行结束后，把执行权交回上一层的中间件。</li><li>…</li><li>最外层的中间件收回执行权之后，执行 next 函数后面的代码。</li></ol></blockquote><pre><code>const Koa = require(&#39;koa&#39;);
+const app = new Koa();
+
+const one = (ctx, next) =&gt; {
+
+console.log(&#39;&gt;&gt; one&#39;);
+
+next();
+
+console.log(&#39;&lt;&lt; one&#39;);
+
+}
+
+const two = (ctx, next) =&gt; {
+
+console.log(&#39;&gt;&gt; two&#39;);
+
+next();
+
+console.log(&#39;&lt;&lt; two&#39;);
+
+}
+
+const three = (ctx, next) =&gt; {
+
+console.log(&#39;&gt;&gt; three&#39;);
+
+next();
+
+console.log(&#39;&lt;&lt; three&#39;);
+
+}
+
+app.use(one);
+app.use(two);
+app.use(three);
+
+app.listen(3000);
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/3563580-578836fa12375529.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><p>如果没有 next，中间件就不会往内层的中间件执行 而会返回外层中间件</p><p>把 two 的 next 注释掉</p><p><img src="http://upload-images.jianshu.io/upload_images/3563580-5f85230c6e1857aa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><h3 id="4-异步中间件"><a href="#4-异步中间件" class="headerlink" title="4 异步中间件"></a>4 异步中间件</h3><pre><code>const fs = require(&#39;fs.promised&#39;);
+const Koa = require(&#39;koa&#39;);
+const app = new Koa();
+
+const main = async function (ctx, next) {
+ctx.response.type = &#39;html&#39;;
+ctx.response.body = await fs.readFile(&#39;./demos/template.html&#39;, &#39;utf8&#39;);
+};
+
+app.use(main);
+app.listen(3000);
+</code></pre><p>async await 处理异步</p><h3 id="5-中间件的合成"><a href="#5-中间件的合成" class="headerlink" title="5 中间件的合成"></a>5 中间件的合成</h3><p>koa-compose 将多个中间件合并成一个</p><pre><code>const Koa = require(&#39;koa&#39;);
+const compose = require(&#39;koa-compose&#39;);
+const app = new Koa();
+
+const logger = (ctx, next) =&gt; {
+
+console.log(`${Date.now()} ${ctx.request.method} ${ctx.request.url}`);
+
+next();
+
+}
+
+const main = ctx =&gt; {
+    ctx.response.body = &#39;Hello World&#39;;
+};
+
+const middlewares = compose([logger, main]);
+
+app.use(middlewares);
+app.listen(3000);
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/3563580-022a1b9a9ed7ab00.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><p><img src="http://upload-images.jianshu.io/upload_images/3563580-a2cebd71f3c7e6ed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><h2 id="四、错误处理"><a href="#四、错误处理" class="headerlink" title="四、错误处理"></a>四、错误处理</h2><h3 id="500-错误"><a href="#500-错误" class="headerlink" title="500 错误"></a>500 错误</h3><p>500 状态码 —— 代码运行错误</p><p>ctx.throw 抛出错误</p><p>ctx.throw(500) 抛出 500 错误</p><pre><code>const Koa = require(&#39;koa&#39;);
+const app = new Koa();
+
+const main = ctx =&gt; {
+  ctx.throw(500);
+};
+
+app.use(main);
+app.listen(3000);
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/3563580-a8b4b900929fc3d0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><p><img src="http://upload-images.jianshu.io/upload_images/3563580-5735b99604f5fe9e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><p><img src="http://upload-images.jianshu.io/upload_images/3563580-759028ee17851586.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><p><img src="http://upload-images.jianshu.io/upload_images/3563580-20eff4f2acbc2499.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><h3 id="2-404-错误"><a href="#2-404-错误" class="headerlink" title="2 404 错误"></a>2 404 错误</h3><p>ctx.response.status = 404 相当于 ctx.throw(404) 返回 404 错误</p><pre><code>const Koa = require(&#39;koa&#39;);
+const app = new Koa();
+
+const main = ctx =&gt; {
+  ctx.response.status = 404;
+  ctx.response.body = &#39;Page Not Found&#39;;
+};
+
+app.use(main);
+app.listen(3000);
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/3563580-efbe181b5321d060.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><p><img src="http://upload-images.jianshu.io/upload_images/3563580-feb318b8207c51a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><h3 id="3-处理错误的中间件"><a href="#3-处理错误的中间件" class="headerlink" title="3 处理错误的中间件"></a>3 处理错误的中间件</h3><p>让最外层中间件负责处理所有中间件的错误</p><pre><code>const Koa = require(&#39;koa&#39;);
+const app = new Koa();
+
+const handler = async (ctx, next) =&gt; {
+  try {
+    await next();
+  } catch (err) {
+    ctx.response.status = err.statusCode || err.status || 500;
+    ctx.response.body = {
+      message: err.message
+    };
+  }
+};
+
+const main = ctx =&gt; {
+  ctx.throw(500);
+};
+
+app.use(handler);
+app.use(main);
+app.listen(3000);
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/3563580-b6a9a47929347e68.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><p><img src="http://upload-images.jianshu.io/upload_images/3563580-1e9ed4f3b201c457.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><h3 id="4-error-事件的监听"><a href="#4-error-事件的监听" class="headerlink" title="4 error 事件的监听"></a>4 error 事件的监听</h3><p>监听 error 事件也可以处理错误</p><pre><code>const Koa = require(&#39;koa&#39;);
+const app = new Koa();
+
+const main = ctx =&gt; {
+  ctx.throw(500);
+};
+
+app.on(&#39;error&#39;, (err, ctx) =&gt; {
+  console.error(&#39;server error&#39;, err);
+});
+
+app.use(main);
+app.listen(3000);
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/3563580-5a622ff8b674cb25.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><p><img src="http://upload-images.jianshu.io/upload_images/3563580-f0dd9f99ad67697b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><h3 id="5-释放-error-事件"><a href="#5-释放-error-事件" class="headerlink" title="5 释放 error 事件"></a>5 释放 error 事件</h3><p>被 try … catch 捕获的错误不会触发 error 事件</p><p>要调用 ctx.app.emit(), 手动释放 error 事件</p><pre><code>const Koa = require(&#39;koa&#39;);
+const app = new Koa();
+
+const handler = async (ctx, next) =&gt; {
+  try {
+    await next();
+  } catch (err) {
+    ctx.response.status = err.statusCode || err.status || 500;
+    ctx.response.type = &#39;html&#39;;
+    ctx.response.body = &#39;&lt;p&gt;Something wrong, please contact administrator.&lt;/p&gt;&#39;;
+    ctx.app.emit(&#39;error&#39;, err, ctx);
+  }
+};
+
+const main = ctx =&gt; {
+  ctx.throw(500);
+};
+
+app.on(&#39;error&#39;, function(err) {
+  console.log(&#39;logging error&#39;, err.message);
+  console.log(err);
+});
+
+app.use(handler);
+app.use(main);
+app.listen(3000);
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/3563580-7d43b2ac6e8bbf7e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><p><img src="http://upload-images.jianshu.io/upload_images/3563580-506388f40095a28d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><p><img src="http://upload-images.jianshu.io/upload_images/3563580-ace175d9f131f842.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><h2 id="五、Web-App-的功能"><a href="#五、Web-App-的功能" class="headerlink" title="五、Web App 的功能"></a>五、Web App 的功能</h2><h3 id="1-Cookies"><a href="#1-Cookies" class="headerlink" title="1 Cookies"></a>1 Cookies</h3><p>ctx.cookies 读写 Cookie<br>ctx.cookies.get() 获得 Cookie<br>ctx.cookies.set() 设置 Cookie</p><pre><code>const Koa = require(&#39;koa&#39;);
+const app = new Koa();
+
+const main = function(ctx) {
+  const n = Number(ctx.cookies.get(&#39;view&#39;) || 0) + 1;
+  ctx.cookies.set(&#39;view&#39;, n);
+  ctx.response.body = n + &#39;views&#39;;
+}
+
+app.use(main);
+app.listen(3000);
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/3563580-36da76974f1f7466.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><p><img src="http://upload-images.jianshu.io/upload_images/3563580-1dd21f5fa547ce7f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><p><img src="http://upload-images.jianshu.io/upload_images/3563580-6878538e8bc07385.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><blockquote><p>每刷新一次就会跟增加一次</p></blockquote><p><img src="http://upload-images.jianshu.io/upload_images/3563580-f291e8cb41e4a452.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><p><img src="http://upload-images.jianshu.io/upload_images/3563580-fbbf9a5527cfc00a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><p><img src="http://upload-images.jianshu.io/upload_images/3563580-1f41e0f27dbcf93f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><h3 id="2-表单"><a href="#2-表单" class="headerlink" title="2 表单"></a>2 表单</h3><p>Web 应用离不开处理表单。本质上，表单就是 POST 方法发送到服务器的键值对。</p><p>koa-body 用来从 POST 请求体中提取键值对</p><pre><code>const Koa = require(&#39;koa&#39;);
+const koaBody = require(&#39;koa-body&#39;);
+const app = new Koa();
+
+const main = async function(ctx) {
+  const body = ctx.request.body;
+  if (!body.name) ctx.throw(400, &#39;.name required&#39;);
+  ctx.body = { name: body.name };
+};
+
+app.use(koaBody());
+app.use(main);
+app.listen(3000);
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/3563580-b1b4ea7178e40045.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><p><img src="http://upload-images.jianshu.io/upload_images/3563580-5a56b2cd0f4e2c0b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><p>POST 方法向服务器发送一个键值对，会被正确解析。如果发送的数据不正确，就会收到错误提示。</p><p>打开新的命令行窗口</p><p>输入</p><p>curl -X POST –data “name=Jack” localhost:3000</p><p><img src="http://upload-images.jianshu.io/upload_images/3563580-1f6bd2a2ae6af739.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><p>curl -X POST –data “name” localhost:3000</p><p><img src="http://upload-images.jianshu.io/upload_images/3563580-bdee1f7139fdeb35.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><h3 id="3-文件上传"><a href="#3-文件上传" class="headerlink" title="3 文件上传"></a>3 文件上传</h3><p>koa-body 处理文件上传</p><pre><code>const os = require(&#39;os&#39;);
+const path = require(&#39;path&#39;);
+const Koa = require(&#39;koa&#39;);
+const fs = require(&#39;fs&#39;);
+const koaBody = require(&#39;koa-body&#39;);
+
+const app = new Koa();
+
+const main = async function(ctx) {
+  const tmpdir = os.tmpdir();
+  const filePaths = [];
+  const files = ctx.request.body.files || {};
+
+  for (let key in files) {
+    const file = files[key];
+    const filePath = path.join(tmpdir, file.name);
+    console.log(filePath)
+    const reader = fs.createReadStream(file.path);
+    const writer = fs.createWriteStream(filePath);
+    reader.pipe(writer);
+    filePaths.push(filePath);
+  }
+
+  ctx.body = filePaths;
+};
+
+app.use(koaBody({ multipart: true }));
+app.use(main);
+app.listen(3000);
+</code></pre><p>在新的命令行窗口输入</p><p>curl –form upload=@/path/to/file <a href="http://localhost:3000" target="_blank" rel="external">http://localhost:3000</a></p><p>/path/to/file 替换成真实路径</p><p>curl –form upload=@/D:/Nodejs/other/koa-demos/demos/21.js <a href="http://localhost:3000" target="_blank" rel="external">http://localhost:3000</a></p><p><img src="http://upload-images.jianshu.io/upload_images/3563580-7c57a9a9333dccf7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><strong>Koa 框架教程 by 阮一峰</strong> ：<a href="http://www.ruanyifeng.com/blog/2017/08/koa.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2017/08/koa.html</a></p><blockquote style="margin:2em 0 0;padding:.5em 1em;border-left:3px solid #f44336;background-color:#f5f5f5;list-style:none"><p><strong><div class="fa-license"> <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a></div></strong><br> <strong>本文链接：</strong><a href="https://ldqblog.me/2017/08/10/Koa-入门/">https://ldqblog.me/2017/08/10/Koa-入门/</a></p></blockquote></div><div id="gitment-comment"><div id="container"></div></div><style>#gitment-comment{background-color:#eee;padding:2pc}</style><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"><script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script><script>var gitment=new Gitment({owner:"LDQ-first",repo:"ldq-first.github.io",oauth:{client_id:"20b5b063fd83c9fee396",client_secret:"98c7739adae2875d0818a788a78a5df4fcaaa724"}});gitment.render("container")</script></div><nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col"> <a href="/2017/08/12/TypeScript-入门/" id="post_nav-newer" class="prev-content"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation"> <i class="material-icons">arrow_back</i></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 新篇</a><div class="section-spacer"></div> <a href="/2017/07/31/music-video-test/" id="post_nav-older" class="next-content">旧篇 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation"> <i class="material-icons">arrow_forward</i></button></a></nav></div></div><div class="sidebar-overlay"></div><aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation"><div id="sidebar-main"><div class="sidebar-header header-cover" style="background-image:url(/img/05.gif)"><div class="top-bar"></div> <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display:initial" data-upgraded=",MaterialButton,MaterialRipple"> <i class="material-icons">clear_all</i><span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button><div class="sidebar-image"> <img src="/img/pikachu.svg" alt="ldq's avatar"></div> <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">178848890@qq.com<b class="caret"></b></a></div><ul class="nav sidebar-nav"><li class="dropdown"><ul id="settings-dropdown" class="dropdown-menu"><li> <a href="#" target="_blank" title="Email Me"><i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i> Email Me</a></li></ul></li><li id="sidebar-first-li"> <a href="/"><i class="material-icons sidebar-material-icons">home</i> 主页</a></li><li class="dropdown"> <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown"><i class="material-icons sidebar-material-icons">inbox</i> 归档<b class="caret"></b></a><ul class="dropdown-menu"><li> <a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/11/">十一月 2016<span class="sidebar_archives-count">1</span></a></li></ul></li><li class="dropdown"> <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown"><i class="material-icons sidebar-material-icons">chrome_reader_mode</i> 分类<b class="caret"></b></a><ul class="dropdown-menu"><li> <a class="sidebar_archives-link" href="/categories/test/">test<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/test/图片/">图片<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/技术/">技术<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/技术/hexo/">hexo<span class="sidebar_archives-count">1</span></a></li></ul></li><li> <a href="/about" title="关于"><i class="material-icons sidebar-material-icons">person</i> 关于</a></li><li> <a href="/tags" title="标签">标签</a></li></ul><div class="sidebar-divider"></div><a href="https://github.com/viosey/hexo-theme-material" class="sidebar-footer-text-a" target="_blank"><div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple"> 主题 - Material <span class="sidebar-badge badge-circle">i</span></div></a></div> <span id="footer-image"><a href="#" target="_blank" title="upyun_logo"><img src="/img/08.gif" alt="upyun_logo"></a></span></aside><div id="back-to-top" class="toTop-wrap"> <a href="#top" class="toTop"><i class="material-icons footer_top-i">expand_less</i></a></div><footer class="mdl-mini-footer" id="bottom"><div class="mdl-mini-footer--left-section sns-list"> <a href="https://github.com/LDQ-first" target="_blank"><button class="mdl-mini-footer--social-btn social-btn footer-sns-github"> <span class="visuallyhidden">Github</span></button></a></div><div id="copyright"> Copyright&nbsp;©&nbsp;2016&nbsp;-<script type="text/javascript">var fd=new Date;document.write("&nbsp;"+fd.getFullYear()+"&nbsp;")</script>LDQ的博客<br><div class="fa-hosted"> Hosted by <a href="https://pages.coding.me" style="font-weight:700;text-decoration:none" target="_blank" title="静态网站触及全球">Coding Pages</a>, <a href="https://pages.github.com/" target="_blank" style="font-weight:700;text-decoration:none" title="Websites for you and your projects">GitHub Pages</a></div><div class="fa-license"> <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a></div></div><div class="mdl-mini-footer--right-section"><div><div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div><div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div></div></div></footer><script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==",!0)</script><script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==",!0)</script><script>lsloader.load("np_js","https://cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js",!0)</script><script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script><script>lsloader.load("sm_js","/js/smoothscroll.js?lOy/ACj5suSNi7ZVFVbpFQ==",!0)</script><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>var agent=navigator.userAgent.toLowerCase();agent.indexOf("ucbrowser")>0&&(document.write('<link rel="stylesheet" href="/css/uc.css">'),alert("由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。"))</script><script>lsloader.load("prettify_js","https://cdn.bootcss.com/prettify/r298/prettify.min.js",!0)</script><script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script><script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script><script>!function(){for(var e=document.querySelectorAll('script[type="text/ls-javascript"]'),r=0;r<e.length;++r){var o=e[r];lsloader.runInlineScript(o.id,o.id)}}(),console.log("\n %c © Material Theme | Version: 1.5.0 | https://github.com/viosey/hexo-theme-material %c \n","color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;","color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;")</script></main></div></body></html>

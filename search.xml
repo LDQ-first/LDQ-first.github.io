@@ -5,7 +5,7 @@
     
     <entry>
       <title><![CDATA[TypeScript 入门]]></title>
-      <url>https://ldqblog.me/posts/8eff68f4/</url>
+      <url>https://ldqblog.me/2017/08/12/TypeScript-%E5%85%A5%E9%97%A8/</url>
       <!-- <content type="html"><![CDATA[<h1 id="TypeScript-入门"><a href="#TypeScript-入门" class="headerlink" title="TypeScript 入门"></a>TypeScript 入门</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>JavaScript 是一门弱类型语言，没有类型检测，这让 JavaScript 很灵活，但也更容易出错</p>
 <blockquote>
 <p>TypeScript 是一种由微软开发的自由和开源的编程语言。它是 JavaScript 的一个超集，而且本质上向这个语言添加了可选的静态类型和基于类的面向对象编程。  </p>
@@ -24,13 +24,22 @@
 <div class="github-widget" data-repo="Reactive-Extensions/RxJS"></div>
 
 </blockquote>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight cmake"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">install</span> -g typescript</div></pre></td></tr></table></figure>
-<h3 id="安装完后运行-tsc-v-查看是否正确安装"><a href="#安装完后运行-tsc-v-查看是否正确安装" class="headerlink" title="安装完后运行 tsc -v 查看是否正确安装"></a>安装完后运行 tsc -v 查看是否正确安装</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">tsc</span> <span class="selector-tag">-v</span></div><div class="line"><span class="selector-tag">Version</span> 2<span class="selector-class">.4</span><span class="selector-class">.2</span></div></pre></td></tr></table></figure>
-<h3 id="查看帮助"><a href="#查看帮助" class="headerlink" title="查看帮助"></a>查看帮助</h3><p>tsc -h 或 tsc –help 查看帮助</p>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ tsc -<span class="built_in">h</span></div><div class="line"><span class="keyword">Version</span> 2.4.2</div><div class="line"><span class="keyword">Syntax</span>:  tsc [options] [<span class="keyword">file</span> ...]</div><div class="line"></div><div class="line">Examples: tsc hello.ts</div><div class="line">          tsc --<span class="keyword">outFile</span> <span class="keyword">file</span>.js <span class="keyword">file</span>.ts</div><div class="line">          tsc @<span class="keyword">args</span>.txt</div><div class="line">Options:</div><div class="line">...</div></pre></td></tr></table></figure>
-<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>生成默认的配置文件 tsconfig.json</p>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">tsc init</span></div></pre></td></tr></table></figure>
-<ul>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><pre><code>npm install -g typescript
+</code></pre><h3 id="安装完后运行-tsc-v-查看是否正确安装"><a href="#安装完后运行-tsc-v-查看是否正确安装" class="headerlink" title="安装完后运行 tsc -v 查看是否正确安装"></a>安装完后运行 tsc -v 查看是否正确安装</h3><pre><code>tsc -v
+Version 2.4.2
+</code></pre><h3 id="查看帮助"><a href="#查看帮助" class="headerlink" title="查看帮助"></a>查看帮助</h3><p>tsc -h 或 tsc –help 查看帮助</p>
+<pre><code>$ tsc -h
+Version 2.4.2
+Syntax:  tsc [options] [file ...]
+
+Examples: tsc hello.ts
+          tsc --outFile file.js file.ts
+          tsc @args.txt
+Options:
+...
+</code></pre><h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>生成默认的配置文件 tsconfig.json</p>
+<pre><code>tsc init
+</code></pre><ul>
 <li>配置 es6</li>
 </ul>
 <p><img src="http://upload-images.jianshu.io/upload_images/3563580-084ac9734f4aceab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
@@ -45,84 +54,154 @@
 <p>方法：</p>
 <ol>
 <li><p>用命令行工具进行编译</p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="attribute">Syntax</span>:  tsc [options] [file ...]</div><div class="line"></div><div class="line"><span class="attribute">Examples</span>: tsc hello.ts</div><div class="line"></div><div class="line">          tsc --outFile file.js file.ts</div><div class="line"></div><div class="line">          tsc <span class="variable">@args</span>.txt</div></pre></td></tr></table></figure>
-<p>最后一个的作用是从一个文件中插入命令行选项和文件</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">@<span class="symbol">&lt;file&gt;</span>    Insert <span class="keyword">command</span> <span class="built_in">line</span> <span class="keyword">options</span> <span class="built_in">and</span> <span class="keyword">files</span> from <span class="keyword">a</span> <span class="keyword">file</span>.</div></pre></td></tr></table></figure>
-</li>
+<pre><code>
+Syntax:  tsc [options] [file ...]
+
+Examples: tsc hello.ts
+
+        tsc --outFile file.js file.ts
+
+        tsc @args.txt
+</code></pre><p>最后一个的作用是从一个文件中插入命令行选项和文件</p>
+<pre><code>
+@&lt;file&gt;    Insert command line options and files from a file.
+</code></pre></li>
 <li><p>在 VSCode 或其他文本编辑器和 IDE 上操作</p>
 </li>
 <li><p>使用自动化构建工具，如 gulp， webpack 等</p>
 </li>
 </ol>
 <h3 id="介绍一下第一种方法"><a href="#介绍一下第一种方法" class="headerlink" title="介绍一下第一种方法"></a>介绍一下第一种方法</h3><p>下面的命令行把 TypeScript 文件 main.ts 编译为 JavaScript 版本的 main.js。如果 main.js 已经存在的话会被覆盖。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">tsc</span> <span class="selector-tag">main</span><span class="selector-class">.ts</span></div></pre></td></tr></table></figure>
-<p>可以同时编译多个文件</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">tsc main<span class="selector-class">.ts</span> other<span class="selector-class">.ts</span></div><div class="line"></div><div class="line">tsc *.ts</div></pre></td></tr></table></figure>
-<p>还可以通过 –watch 或 - w 来自动编译 (修改后能自动转成. js 文件)</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tsc main<span class="selector-class">.ts</span> --watch</div></pre></td></tr></table></figure>
-<h3 id="静态类型"><a href="#静态类型" class="headerlink" title="静态类型"></a>静态类型</h3><p>TypeScript 可以声明变量类型，这样编译器就可以确保赋值时不会产生类型错误<br>如果省略了类型声明，TypeScript 将会从代码中自动推测出正确的类型。</p>
+<pre><code>    tsc main.ts
+</code></pre><p>可以同时编译多个文件</p>
+<pre><code>tsc main.ts other.ts
+
+tsc *.ts
+</code></pre><p>还可以通过 –watch 或 - w 来自动编译 (修改后能自动转成. js 文件)</p>
+<pre><code>tsc main.ts --watch
+</code></pre><h3 id="静态类型"><a href="#静态类型" class="headerlink" title="静态类型"></a>静态类型</h3><p>TypeScript 可以声明变量类型，这样编译器就可以确保赋值时不会产生类型错误<br>如果省略了类型声明，TypeScript 将会从代码中自动推测出正确的类型。</p>
 <p>在变量，函数声明时可以定义自己的类型</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> burger: <span class="built_in">string</span> = <span class="string">'hamburger'</span>,    <span class="comment">// String </span></div><div class="line">    calories: <span class="built_in">number</span> = <span class="number">300</span>,          <span class="comment">// Numeric</span></div><div class="line">    tasty: <span class="built_in">boolean</span> = <span class="literal">true</span>;            <span class="comment">// Boolean</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">speak</span>(<span class="params">food: <span class="built_in">string</span>, energy: <span class="built_in">number</span></span>): <span class="title">void</span> </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"Our"</span> + food + <span class="string">"has"</span> + energy + <span class="string">"calories."</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">speak(burger, calories);</div></pre></td></tr></table></figure>
-<p>编译后变量声明都会被移除</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> burger = <span class="string">'hamburger'</span>,</div><div class="line">    calories = <span class="number">300</span>, </div><div class="line">    tasty = <span class="literal">true</span>; </div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">speak</span>(<span class="params">food, energy</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"Our"</span> + food + <span class="string">"has"</span> + energy + <span class="string">"calories."</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">speak(burger, calories);</div></pre></td></tr></table></figure>
-<p>如果输入的类型有错，TypeScript 会有代码警告<br>但还是会转成 js 文件</p>
+<pre><code>var burger: string = &#39;hamburger&#39;,    // String 
+    calories: number = 300,          // Numeric
+    tasty: boolean = true;            // Boolean
+
+function speak(food: string, energy: number): void {
+  console.log(&quot;Our&quot; + food + &quot;has&quot; + energy + &quot;calories.&quot;);
+}
+
+speak(burger, calories);
+</code></pre><p>编译后变量声明都会被移除</p>
+<pre><code>var burger = &#39;hamburger&#39;,
+    calories = 300, 
+    tasty = true; 
+
+function speak(food, energy) {
+    console.log(&quot;Our&quot; + food + &quot;has&quot; + energy + &quot;calories.&quot;);
+}
+
+speak(burger, calories);
+</code></pre><p>如果输入的类型有错，TypeScript 会有代码警告<br>但还是会转成 js 文件</p>
 <p>ts 文件</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> carNum: <span class="built_in">Number</span> = <span class="string">'10'</span></div></pre></td></tr></table></figure>
-<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ tsc err.ts <span class="comment">--watch</span></div><div class="line">err.ts(<span class="number">1</span>,<span class="number">5</span>): <span class="literal">error</span> TS2322: <span class="keyword">Type</span> '<span class="string">"10"</span>' <span class="keyword">is</span> <span class="keyword">not</span> assignable <span class="keyword">to</span> <span class="keyword">type</span> <span class="symbol">'Number</span>'.</div><div class="line"><span class="number">10</span>:<span class="number">36</span>:<span class="number">46</span> - Compilation complete. Watching <span class="keyword">for</span> <span class="keyword">file</span> changes.</div></pre></td></tr></table></figure>
-<p>js 文件</p>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">var carNum</span> = <span class="string">'10'</span>;</div></pre></td></tr></table></figure>
-<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><ul>
+<pre><code>var carNum: Number = &#39;10&#39;
+</code></pre><pre><code>$ tsc err.ts --watch
+err.ts(1,5): error TS2322: Type &#39;&quot;10&quot;&#39; is not assignable to type &#39;Number&#39;.
+10:36:46 - Compilation complete. Watching for file changes.
+</code></pre><p>js 文件</p>
+<pre><code>var carNum = &#39;10&#39;;
+</code></pre><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><ul>
 <li>Number ( 数值 ) - 包括整型，浮点型等</li>
 </ul>
-<figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">let</span> decimal: number = <span class="number">6</span>;</div><div class="line"><span class="built_in">let</span> hex: number = <span class="number">0xf00d</span>;</div><div class="line"><span class="built_in">let</span> binary: number = <span class="number">0b1010</span>;</div><div class="line"><span class="built_in">let</span> octal: number = <span class="number">0o744</span>;</div></pre></td></tr></table></figure>
-<ul>
+<pre><code>let decimal: number = 6;
+let hex: number = 0xf00d;
+let binary: number = 0b1010;
+let octal: number = 0o744;
+</code></pre><ul>
 <li>String （字符串）- 包括单双引号的字符串</li>
 </ul>
-<figure class="highlight qml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> <span class="attribute">color</span>: <span class="built_in">string</span> = <span class="string">"blue"</span>;</div><div class="line"><span class="built_in">color</span> = <span class="string">'red'</span>;</div><div class="line"><span class="keyword">let</span> <span class="attribute">sentence</span>: <span class="built_in">string</span> = <span class="string">`Hello, my name is <span class="subst">$&#123; fullName &#125;</span>.</span></div><div class="line">I'll be <span class="subst">$&#123; age + 1 &#125;</span> years old next month.`;</div></pre></td></tr></table></figure>
-<ul>
+<pre><code>let color: string = &quot;blue&quot;;
+color = &#39;red&#39;;
+let sentence: string = `Hello, my name is ${ fullName }.
+I&#39;ll be ${ age + 1 } years old next month.`;
+</code></pre><ul>
 <li>Boolean （布尔）- true ,false, 不可用其他类型如数字, 空字符串，否则会报错 </li>
 </ul>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">let <span class="string">isDone:</span> <span class="keyword">boolean</span> = <span class="literal">false</span></div></pre></td></tr></table></figure>
-<ul>
+<pre><code>let isDone: boolean = false
+</code></pre><ul>
 <li>Array （数组）- 有两种语法：my_arr: number[ ] 或者 my_arr: Array<number></number></li>
 </ul>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> lis<span class="variable">t:</span> <span class="keyword">number</span>[] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</div><div class="line"></div><div class="line"><span class="keyword">let</span> lis<span class="variable">t:</span> Array<span class="symbol">&lt;number&gt;</span> = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</div></pre></td></tr></table></figure>
-<ul>
+<pre><code>let list: number[] = [1, 2, 3]
+
+let list: Array&lt;number&gt; = [1, 2, 3]
+</code></pre><ul>
 <li>Tuple ( 元组 ) - 数组中包含不同的类型，有顺序</li>
 </ul>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> x: [<span class="built_in">string</span>, <span class="built_in">number</span>];</div><div class="line">x = [<span class="string">"hello"</span>, <span class="number">10</span>]; <span class="comment">// OK</span></div><div class="line">x = [<span class="number">10</span>, <span class="string">"hello"</span>]; <span class="comment">// Error</span></div></pre></td></tr></table></figure>
-<p>使用不是该数据类型的方法会报错</p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">console.log(x[<span class="number">0</span>].substr(<span class="number">1</span>)); <span class="comment">// OK</span></div><div class="line">console.log(x[<span class="number">1</span>].substr(<span class="number">1</span>)); <span class="comment">// Error, 'number' does not have 'substr'</span></div></pre></td></tr></table></figure>
-<p>新赋值的类型必须是定义时规定的类型</p>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">x[<span class="number">3</span>] = <span class="string">"world"</span>; <span class="regexp">//</span> OK, <span class="string">'string'</span> can be assigned to <span class="string">'string | number'</span></div><div class="line"></div><div class="line">console.log(x[<span class="number">5</span>].toString()); <span class="regexp">//</span> OK, <span class="string">'string'</span> <span class="keyword">and</span> <span class="string">'number'</span> both have <span class="string">'toString'</span></div><div class="line"></div><div class="line">x[<span class="number">6</span>] = <span class="keyword">true</span>; <span class="regexp">//</span> Error, <span class="string">'boolean'</span> isn<span class="string">'t'</span>string | number<span class="string">'</span></div></pre></td></tr></table></figure>
-<ul>
+<pre><code>let x: [string, number];
+x = [&quot;hello&quot;, 10]; // OK
+x = [10, &quot;hello&quot;]; // Error
+</code></pre><p>使用不是该数据类型的方法会报错</p>
+<pre><code>console.log(x[0].substr(1)); // OK
+console.log(x[1].substr(1)); // Error, &#39;number&#39; does not have &#39;substr&#39;
+</code></pre><p>新赋值的类型必须是定义时规定的类型</p>
+<pre><code>x[3] = &quot;world&quot;; // OK, &#39;string&#39; can be assigned to &#39;string | number&#39;
+
+console.log(x[5].toString()); // OK, &#39;string&#39; and &#39;number&#39; both have &#39;toString&#39;
+
+x[6] = true; // Error, &#39;boolean&#39; isn&#39;t&#39;string | number&#39;
+</code></pre><ul>
 <li>Enum （枚举类型）- 它用于声明一组命名的常数，当一个变量有几种可能的取值时，可以将它定义为枚举类型。</li>
 </ul>
 <p>让代码更有语义化, 可读性</p>
-<figure class="highlight crystal"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Color</span> &#123;<span class="title">Red</span>, <span class="title">Green</span>, <span class="title">Blue</span>&#125;</span></div><div class="line">let <span class="symbol">c:</span> Color = Color.Green;</div></pre></td></tr></table></figure>
-<p>枚举类型的数字默认从 0 开始，可以自己设置</p>
-<figure class="highlight nix"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">enum Color &#123;<span class="attr">Red</span> = <span class="number">1</span>, Green, Blue&#125;</div><div class="line"><span class="keyword">let</span> c: <span class="attr">Color</span> = Color.Green;</div><div class="line"></div><div class="line">enum Color &#123;<span class="attr">Red</span> = <span class="number">1</span>, <span class="attr">Green</span> = <span class="number">2</span>, <span class="attr">Blue</span> = <span class="number">4</span>&#125;</div><div class="line"><span class="keyword">let</span> c: <span class="attr">Color</span> = Color.Green;</div></pre></td></tr></table></figure>
-<p>当不知道 enum 类型的第 N 项是什么名称时，可以用 N 来代替</p>
-<figure class="highlight protobuf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Color</span> </span>&#123;Red = <span class="number">1</span>, Green, Blue&#125;</div><div class="line">let colorName: <span class="built_in">string</span> = Color[<span class="number">2</span>];</div><div class="line"></div><div class="line">alert(colorName);</div></pre></td></tr></table></figure>
-<figure class="highlight hsp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var <span class="keyword">Color</span><span class="comment">;</span></div><div class="line">(function (<span class="keyword">Color</span>) &#123;</div><div class="line">    <span class="keyword">Color</span>[<span class="keyword">Color</span>[<span class="string">"Red"</span>] = <span class="number">1</span>] = <span class="string">"Red"</span><span class="comment">;</span></div><div class="line">    <span class="keyword">Color</span>[<span class="keyword">Color</span>[<span class="string">"Green"</span>] = <span class="number">2</span>] = <span class="string">"Green"</span><span class="comment">;</span></div><div class="line">    <span class="keyword">Color</span>[<span class="keyword">Color</span>[<span class="string">"Blue"</span>] = <span class="number">3</span>] = <span class="string">"Blue"</span><span class="comment">;</span></div><div class="line">&#125;)(<span class="keyword">Color</span> || (<span class="keyword">Color</span> = &#123;&#125;))<span class="comment">;</span></div><div class="line">var colorName = <span class="keyword">Color</span>[<span class="number">2</span>]<span class="comment">;</span></div><div class="line">alert(colorName)<span class="comment">;</span></div></pre></td></tr></table></figure>
-<ul>
+<pre><code>enum Color {Red, Green, Blue}
+let c: Color = Color.Green;
+</code></pre><p>枚举类型的数字默认从 0 开始，可以自己设置</p>
+<pre><code>enum Color {Red = 1, Green, Blue}
+let c: Color = Color.Green;
+
+enum Color {Red = 1, Green = 2, Blue = 4}
+let c: Color = Color.Green;
+</code></pre><p>当不知道 enum 类型的第 N 项是什么名称时，可以用 N 来代替</p>
+<pre><code>enum Color {Red = 1, Green, Blue}
+let colorName: string = Color[2];
+
+alert(colorName);
+</code></pre><pre><code>var Color;
+(function (Color) {
+    Color[Color[&quot;Red&quot;] = 1] = &quot;Red&quot;;
+    Color[Color[&quot;Green&quot;] = 2] = &quot;Green&quot;;
+    Color[Color[&quot;Blue&quot;] = 3] = &quot;Blue&quot;;
+})(Color || (Color = {}));
+var colorName = Color[2];
+alert(colorName);
+</code></pre><ul>
 <li>Any （任意）- 任何类型都可以（Never 类型除外）</li>
 </ul>
 <p>关闭类型检查</p>
-<figure class="highlight erlang"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> <span class="keyword">not</span>Sure: any = <span class="number">4</span>;</div><div class="line"><span class="keyword">not</span>Sure = <span class="string">"maybe a string instead"</span>;</div><div class="line"><span class="keyword">not</span>Sure = <span class="literal">false</span>; // okay, definitely a boolean</div></pre></td></tr></table></figure>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> notSure: <span class="built_in">any</span> = <span class="number">4</span>;</div><div class="line">notSure.ifItExists(); <span class="comment">// okay, ifItExists might exist at runtime</span></div><div class="line">notSure.toFixed(); <span class="comment">// okay, toFixed exists (but the compiler doesn't check)</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> prettySure: <span class="built_in">Object</span> = <span class="number">4</span>;</div><div class="line">prettySure.toFixed(); <span class="comment">// Error: Property'toFixed'doesn't exist on type 'Object'.</span></div></pre></td></tr></table></figure>
-<figure class="highlight golo"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> <span class="keyword">list</span>: any[] = [<span class="number">1</span>, <span class="literal">true</span>, <span class="string">"free"</span>];</div><div class="line"></div><div class="line"><span class="keyword">list</span>[<span class="number">1</span>] = <span class="number">100</span>;</div></pre></td></tr></table></figure>
-<ul>
+<pre><code>let notSure: any = 4;
+notSure = &quot;maybe a string instead&quot;;
+notSure = false; // okay, definitely a boolean
+</code></pre><pre><code>let notSure: any = 4;
+notSure.ifItExists(); // okay, ifItExists might exist at runtime
+notSure.toFixed(); // okay, toFixed exists (but the compiler doesn&#39;t check)
+
+let prettySure: Object = 4;
+prettySure.toFixed(); // Error: Property &#39;toFixed&#39; doesn&#39;t exist on type&#39;Object&#39;.
+</code></pre><pre><code>let list: any[] = [1, true, &quot;free&quot;];
+
+list[1] = 100;
+</code></pre><ul>
 <li>Void （空）- 用在不返回任何值的函数中</li>
 </ul>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">warnUser</span><span class="params">()</span>: void </span>&#123;</div><div class="line">    alert(<span class="string">"This is my warning message"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>可以用来标识 undefined 和 null</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> unusable: <span class="keyword">void</span> = <span class="literal">undefined</span>;</div></pre></td></tr></table></figure>
-<ul>
+<pre><code>function warnUser(): void {
+    alert(&quot;This is my warning message&quot;);
+}
+</code></pre><p>可以用来标识 undefined 和 null</p>
+<pre><code>let unusable: void = undefined;
+</code></pre><ul>
 <li>Null and Undefined</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> u: <span class="literal">undefined</span> = <span class="literal">undefined</span>;</div><div class="line"><span class="keyword">let</span> n: <span class="literal">null</span> = <span class="literal">null</span>;</div></pre></td></tr></table></figure>
-<p>默认为其他类型的亚类型，就是可以匹配其他类型<br>使用 –strictNullChecks 标识，就只匹配 null 、undefined、void<br>可以使用 string | null | undefined 类型来只匹配 string 、 null 、 undefined 三种类型</p>
+<pre><code>let u: undefined = undefined;
+let n: null = null;
+</code></pre><p>默认为其他类型的亚类型，就是可以匹配其他类型<br>使用 –strictNullChecks 标识，就只匹配 null 、undefined、void<br>可以使用 string | null | undefined 类型来只匹配 string 、 null 、 undefined 三种类型</p>
 <blockquote>
 <p>官方鼓励使用 –strictNullChecks</p>
 </blockquote>
@@ -130,33 +209,106 @@
 <li>Never - 表示值从未发生</li>
 </ul>
 <p>Any 类型不能匹配 Never</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Function returning never must have unreachable end point</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">error</span><span class="params">(message: string)</span>: never </span>&#123;</div><div class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> Error(message);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// Inferred return type is never</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fail</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> error(<span class="string">"Something failed"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// Function returning never must have unreachable end point</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">infiniteLoop</span><span class="params">()</span>: never </span>&#123;</div><div class="line">    <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
+<pre><code>// Function returning never must have unreachable end point
+function error(message: string): never {
+    throw new Error(message);
+}
+
+// Inferred return type is never
+function fail() {
+    return error(&quot;Something failed&quot;);
+}
+
+// Function returning never must have unreachable end point
+function infiniteLoop(): never {
+    while (true) {
+    }
+}
+</code></pre><ul>
 <li>Type assertions</li>
 </ul>
 <p>“angle-bracket” syntax</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> someValue: <span class="built_in">any</span> = <span class="string">"this is a string"</span>;</div><div class="line"></div><div class="line"><span class="keyword">let</span> strLength: <span class="built_in">number</span> = (&lt;<span class="built_in">string</span>&gt;someValue).length;</div></pre></td></tr></table></figure>
-<p>as -syntax</p>
-<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> someValue: <span class="built_in">any</span> = <span class="string">"this is a string"</span>;</div><div class="line"></div><div class="line"><span class="keyword">let</span> strLength: number = (someValue <span class="keyword">as</span> <span class="built_in">string</span>).length;</div></pre></td></tr></table></figure>
-<p>一般情况下，两种写法等价，但在 JSX 中，只能用 as -style</p>
+<pre><code>let someValue: any = &quot;this is a string&quot;;
+
+let strLength: number = (&lt;string&gt;someValue).length;
+</code></pre><p>as -syntax</p>
+<pre><code>let someValue: any = &quot;this is a string&quot;;
+
+let strLength: number = (someValue as string).length;
+</code></pre><p>一般情况下，两种写法等价，但在 JSX 中，只能用 as -style</p>
 <blockquote>
 <p>官方文档中关于数据类型的介绍 <a href="http://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" rel="external">Basic Types</a></p>
 </blockquote>
 <h3 id="Interfaces-接口"><a href="#Interfaces-接口" class="headerlink" title="Interfaces 接口"></a>Interfaces 接口</h3><p>接口会根据一个对象是否符合某种特定的数据结构来进行类型检查</p>
 <p>只在开发是有效，编译后删除</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">interface</span> Food &#123;</div><div class="line">    name: <span class="built_in">string</span>;</div><div class="line">    calories: <span class="built_in">number</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">speak</span>(<span class="params">food: Food</span>): <span class="title">void</span></span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"Our"</span> + food.name + <span class="string">"has"</span> + food.calories + <span class="string">"calories."</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> ice_cream = &#123;</div><div class="line">  name: <span class="string">"ice cream"</span>, </div><div class="line">  calories: <span class="number">200</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">speak(ice_cream);</div></pre></td></tr></table></figure>
-<p>属性的顺序并不重要。我们只需必要的属性存在并且是正确的类型。如果哪里有遗漏，类型错误，或者命名不同的话，编译器都会报警告信息。</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">interface</span> Food &#123;</div><div class="line">    name: <span class="built_in">string</span>;</div><div class="line">    calories: <span class="built_in">number</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">speak</span>(<span class="params">food: Food</span>): <span class="title">void</span></span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"Our"</span> + food.name + <span class="string">"has"</span> + food.calories + <span class="string">"grams."</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 将 name 改为 nmae</span></div><div class="line"><span class="keyword">var</span> ice_cream = &#123;</div><div class="line">  nmae: <span class="string">"ice cream"</span>, </div><div class="line">  calories: <span class="number">200</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">speak(ice_cream);</div></pre></td></tr></table></figure>
-<figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">main.ts(<span class="number">16</span>,<span class="number">7</span>): error TS2345: Argument <span class="keyword">of</span> <span class="keyword">type</span> <span class="type">'&#123; </span>nmae: string; calories: number; &#125; </div><div class="line"><span class="keyword">is</span> <span class="keyword">not</span> assignable to parameter <span class="keyword">of</span> <span class="keyword">type</span> <span class="type">'Food'. </span></div><div class="line">Property <span class="symbol">'name</span>'<span class="keyword">is</span> missing <span class="keyword">in</span> <span class="keyword">type</span> <span class="type">'&#123; </span>nmae: string; calories: number; &#125;'.</div></pre></td></tr></table></figure>
-<p>接口可以在属性后面添加？表示可选<br>可以添加 [propName:  类型] : any 表示可以添加任何某种类型的属性</p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Person</span> &#123;</span>    <span class="string">name:</span> string;</div><div class="line">    age?: number;</div><div class="line">    [<span class="string">propName:</span> string]: any;</div><div class="line">&#125;</div><div class="line"></div><div class="line">const <span class="string">preson:</span> Person = &#123; <span class="string">name:</span> <span class="string">'Tom'</span>, <span class="string">age:</span> <span class="number">20</span>&#125;</div><div class="line">const <span class="string">student:</span> Person = &#123; <span class="string">name:</span> <span class="string">'Tom'</span>&#125;</div></pre></td></tr></table></figure>
-<ul>
+<pre><code>interface Food {
+    name: string;
+    calories: number;
+}
+
+function speak(food: Food): void{
+  console.log(&quot;Our&quot; + food.name + &quot;has&quot; + food.calories + &quot;calories.&quot;);
+}
+
+var ice_cream = {
+  name: &quot;ice cream&quot;, 
+  calories: 200
+}
+
+speak(ice_cream);
+</code></pre><p>属性的顺序并不重要。我们只需必要的属性存在并且是正确的类型。如果哪里有遗漏，类型错误，或者命名不同的话，编译器都会报警告信息。</p>
+<pre><code>interface Food {
+    name: string;
+    calories: number;
+}
+
+function speak(food: Food): void{
+  console.log(&quot;Our&quot; + food.name + &quot;has&quot; + food.calories + &quot;grams.&quot;);
+}
+
+// 将 name 改为 nmae
+var ice_cream = {
+  nmae: &quot;ice cream&quot;, 
+  calories: 200
+}
+
+speak(ice_cream);
+</code></pre><pre><code>main.ts(16,7): error TS2345: Argument of type &#39;{ nmae: string; calories: number; } 
+is not assignable to parameter of type &#39;Food&#39;. 
+Property &#39;name&#39; is missing in type &#39;{ nmae: string; calories: number; }&#39;.
+</code></pre><p>接口可以在属性后面添加？表示可选<br>可以添加 [propName:  类型] : any 表示可以添加任何某种类型的属性</p>
+<pre><code>interface Person {    name: string;
+    age?: number;
+    [propName: string]: any;
+}
+
+const preson: Person = { name: &#39;Tom&#39;, age: 20}
+const student: Person = { name: &#39;Tom&#39;}
+</code></pre><ul>
 <li>类实现接口</li>
 </ul>
 <p>关键字 implements</p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">ClockInterface</span> &#123;</span></div><div class="line"><span class="symbol">    currentTime:</span> Date;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Clock</span> <span class="keyword">implements</span> <span class="title">ClockInterface</span> &#123;</span></div><div class="line"><span class="symbol">    currentTime:</span> Date;</div><div class="line">    constructor(<span class="string">h:</span> number, <span class="string">m:</span> number) &#123; &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">interface</span> ClockInterface <span class="comment">&#123;</span></div><div class="line">    currentTime: Date;</div><div class="line">    setTime(d: Date);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">class</span> Clock <span class="keyword">implements</span> ClockInterface <span class="comment">&#123;</span></div><div class="line">    currentTime: Date;</div><div class="line">    setTime(d: Date) &#123;</div><div class="line">        this.currentTime = d;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">constructor</span><span class="params">(h: number, m: number)</span> <span class="comment">&#123; &#125;</span></span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
+<pre><code>interface ClockInterface {
+    currentTime: Date;
+}
+
+class Clock implements ClockInterface {
+    currentTime: Date;
+    constructor(h: number, m: number) { }
+}
+</code></pre><pre><code>interface ClockInterface {
+    currentTime: Date;
+    setTime(d: Date);
+}
+
+class Clock implements ClockInterface {
+    currentTime: Date;
+    setTime(d: Date) {
+        this.currentTime = d;
+    }
+    constructor(h: number, m: number) { }
+}
+</code></pre><blockquote>
 <p>官方文档有更详细的介绍 <a href="http://www.typescriptlang.org/docs/handbook/interfaces.html" target="_blank" rel="external">interfaces</a></p>
 </blockquote>
 <h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><p>包括了构造器、继承，抽象类，接口，构造函数、setters、getters、public、private、protected、readonly、static 等</p>
@@ -166,57 +318,175 @@
 <li>抽象类 不能实例化</li>
 </ul>
 <p>实现继承</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Menu &#123;</div><div class="line">  <span class="comment">// Our properties:</span></div><div class="line">  <span class="comment">// By default they are public, but can also be private or protected.</span></div><div class="line">  items: <span class="built_in">Array</span>&lt;<span class="built_in">string</span>&gt;;  <span class="comment">// The items in the menu, an array of strings.</span></div><div class="line">  pages: <span class="built_in">number</span>;        <span class="comment">// How many pages will the menu be, a number.</span></div><div class="line"></div><div class="line">  <span class="keyword">constructor</span>(item_list: Array&lt;string&gt;, total_pages: number) &#123;</div><div class="line">    <span class="comment">// The this keyword is mandatory.</span></div><div class="line">    <span class="keyword">this</span>.items = item_list;    </div><div class="line">    <span class="keyword">this</span>.pages = total_pages;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">// Methods</span></div><div class="line">  list(): <span class="built_in">void</span> &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"Our menu for today:"</span>);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="keyword">this</span>.items.length; i++) &#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="keyword">this</span>.items[i]);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125; </div><div class="line"></div><div class="line"><span class="comment">// Create a new instance of the Menu class.</span></div><div class="line"><span class="keyword">var</span> sundayMenu = <span class="keyword">new</span> Menu([<span class="string">"pancakes"</span>,<span class="string">"waffles"</span>,<span class="string">"orange juice"</span>], <span class="number">1</span>);</div><div class="line"></div><div class="line"><span class="comment">// Call the list method.</span></div><div class="line">sundayMenu.list();</div></pre></td></tr></table></figure>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">HappyMeal</span> <span class="keyword">extends</span> <span class="title">Menu</span> </span>&#123;</div><div class="line">  <span class="comment">// Properties are inherited</span></div><div class="line"></div><div class="line">  <span class="comment">// A new constructor has to be defined.</span></div><div class="line">  constructor(item_list: <span class="type">Array</span>&lt;string&gt;, total_pages: number) &#123;</div><div class="line">    <span class="comment">// In this case we want the exact same constructor as the parent class (Menu), </span></div><div class="line">    <span class="comment">// To automatically copy it we can call super() - a reference to the parent's constructor.</span></div><div class="line">    <span class="keyword">super</span>(item_list, total_pages);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">// Just like the properties, methods are inherited from the parent.</span></div><div class="line">  <span class="comment">// However, we want to override the list() function so we redefine it.</span></div><div class="line">  list(): void&#123;</div><div class="line">    console.log(<span class="string">"Our special menu for children:"</span>);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="keyword">this</span>.items.length; i++) &#123;</div><div class="line">      console.log(<span class="keyword">this</span>.items[i]);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// Create a new instance of the HappyMeal class.</span></div><div class="line"><span class="keyword">var</span> menu_for_children = <span class="keyword">new</span> <span class="type">HappyMeal</span>([<span class="string">"candy"</span>,<span class="string">"drink"</span>,<span class="string">"toy"</span>], <span class="number">1</span>);</div><div class="line"></div><div class="line"><span class="comment">// This time the log message will begin with the special introduction.</span></div><div class="line">menu_for_children.list();</div></pre></td></tr></table></figure>
-<blockquote>
+<pre><code>class Menu {
+  // Our properties:
+  // By default they are public, but can also be private or protected.
+  items: Array&lt;string&gt;;  // The items in the menu, an array of strings.
+  pages: number;        // How many pages will the menu be, a number.
+
+  constructor(item_list: Array&lt;string&gt;, total_pages: number) {
+    // The this keyword is mandatory.
+    this.items = item_list;    
+    this.pages = total_pages;
+  }
+
+  // Methods
+  list(): void {
+    console.log(&quot;Our menu for today:&quot;);
+    for(var i=0; i&lt;this.items.length; i++) {
+      console.log(this.items[i]);
+    }
+  }
+
+} 
+
+// Create a new instance of the Menu class.
+var sundayMenu = new Menu([&quot;pancakes&quot;,&quot;waffles&quot;,&quot;orange juice&quot;], 1);
+
+// Call the list method.
+sundayMenu.list();
+</code></pre><pre><code>class HappyMeal extends Menu {
+  // Properties are inherited
+
+  // A new constructor has to be defined.
+  constructor(item_list: Array&lt;string&gt;, total_pages: number) {
+    // In this case we want the exact same constructor as the parent class (Menu), 
+    // To automatically copy it we can call super() - a reference to the parent&#39;s constructor.
+    super(item_list, total_pages);
+  }
+
+  // Just like the properties, methods are inherited from the parent.
+  // However, we want to override the list() function so we redefine it.
+  list(): void{
+    console.log(&quot;Our special menu for children:&quot;);
+    for(var i=0; i&lt;this.items.length; i++) {
+      console.log(this.items[i]);
+    }
+
+  }
+}
+
+// Create a new instance of the HappyMeal class.
+var menu_for_children = new HappyMeal([&quot;candy&quot;,&quot;drink&quot;,&quot;toy&quot;], 1);
+
+// This time the log message will begin with the special introduction.
+menu_for_children.list();
+</code></pre><blockquote>
 <p>阅读官方文档，获得更多信息 <a href="http://www.typescriptlang.org/docs/handbook/classes.html" target="_blank" rel="external">classes</a></p>
 </blockquote>
 <h3 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h3><p>泛型是允许同一个函数接受不同类型参数的一种模板。相比于使用 any 类型，使用泛型来创建可复用的组件要更好，因为泛型会保留参数类型。</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">genericFunc</span>&lt;<span class="title">T</span>&gt;(<span class="params">argument: T</span>): <span class="title">T</span>[] </span>&#123;    </div><div class="line">  <span class="keyword">var</span> arrayOfT: T[] = [];    <span class="comment">// Create empty array of type T.</span></div><div class="line">  arrayOfT.push(argument);  <span class="comment">// Push, now arrayOfT = [argument].</span></div><div class="line">  <span class="keyword">return</span> arrayOfT;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> arrayFromString = genericFunc&lt;<span class="built_in">string</span>&gt;(<span class="string">"beep"</span>);</div><div class="line"><span class="built_in">console</span>.log(arrayFromString[<span class="number">0</span>]);        <span class="comment">// "beep"</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> arrayFromString[<span class="number">0</span>])  <span class="comment">// String</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> arrayFromNumber = genericFunc(<span class="number">42</span>);</div><div class="line"><span class="built_in">console</span>.log(arrayFromNumber[<span class="number">0</span>]);        <span class="comment">// 42</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> arrayFromNumber[<span class="number">0</span>])  <span class="comment">// number</span></div></pre></td></tr></table></figure>
-<ul>
+<pre><code>function genericFunc&lt;T&gt;(argument: T): T[] {    
+  var arrayOfT: T[] = [];    // Create empty array of type T.
+  arrayOfT.push(argument);  // Push, now arrayOfT = [argument].
+  return arrayOfT;
+}
+
+var arrayFromString = genericFunc&lt;string&gt;(&quot;beep&quot;);
+console.log(arrayFromString[0]);        // &quot;beep&quot;
+console.log(typeof arrayFromString[0])  // String
+
+var arrayFromNumber = genericFunc(42);
+console.log(arrayFromNumber[0]);        // 42
+console.log(typeof arrayFromNumber[0])  // number
+</code></pre><ul>
 <li>带泛型的函数类型</li>
 </ul>
-<figure class="highlight zephir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> f: () =&gt; any = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> f: &lt;T&gt;(arg: T) =&gt; T = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;&#125;</div></pre></td></tr></table></figure>
-<ul>
+<pre><code>let f: () =&gt; any = function() {}
+
+let f: &lt;T&gt;(arg: T) =&gt; T = function() {}
+</code></pre><ul>
 <li>带泛型的接口</li>
 </ul>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">interface Gen&lt;<span class="literal">T</span>&gt; &#123;    (arg: <span class="literal">T</span>) : <span class="literal">T</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">function</span> fn&lt;<span class="literal">T</span>&gt;(arg: <span class="literal">T</span>): <span class="literal">T</span> &#123;</div><div class="line">    <span class="keyword">return</span> arg;</div><div class="line">&#125;</div><div class="line"></div><div class="line">let id: Gen&lt;number&gt; = fn;</div><div class="line"></div><div class="line">Gen(<span class="number">2</span>)</div></pre></td></tr></table></figure>
-<ul>
+<pre><code>interface Gen&lt;T&gt; {    (arg: T) : T
+}
+
+function fn&lt;T&gt;(arg: T): T {
+    return arg;
+}
+
+let id: Gen&lt;number&gt; = fn;
+
+Gen(2)
+</code></pre><ul>
 <li>带泛型的类 </li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Gen</span>&lt;<span class="title">T</span>&gt; </span>&#123;    value: T</div><div class="line">    add: <span class="function">(<span class="params">x: T, y: T</span>) =&gt;</span> T</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> myGenNum = <span class="keyword">new</span> Gen&lt;number&gt;()</div><div class="line"></div><div class="line">myGenNum.value = <span class="number">0</span></div><div class="line">myGenNum.add = <span class="function">(<span class="params">x, y</span>) =&gt;</span> x + y</div><div class="line"></div><div class="line">myGenNum.add(<span class="number">2</span>,<span class="number">3</span>)</div></pre></td></tr></table></figure>
-<ul>
+<pre><code>class Gen&lt;T&gt; {    value: T
+    add: (x: T, y: T) =&gt; T
+}
+
+let myGenNum = new Gen&lt;number&gt;()
+
+myGenNum.value = 0
+myGenNum.add = (x, y) =&gt; x + y
+
+myGenNum.add(2,3)
+</code></pre><ul>
 <li>泛型约束</li>
 </ul>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">interface</span> Length &#123;    length: <span class="built_in">number</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>&lt;<span class="title">T</span> <span class="title">extends</span> <span class="title">Length</span>&gt;(<span class="params">arg: T</span>): <span class="title">T</span> </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(arg.length)</div><div class="line">    <span class="keyword">return</span> arg</div><div class="line">&#125;</div><div class="line"></div><div class="line">fn&lt;<span class="built_in">string</span>&gt;(<span class="string">"hello"</span>)</div></pre></td></tr></table></figure>
-<blockquote>
+<pre><code>interface Length {    
+    length: number
+}
+
+function fn&lt;T extends Length&gt;(arg: T): T {
+    console.log(arg.length)
+    return arg
+}
+
+fn&lt;string&gt;(&quot;hello&quot;)
+</code></pre><blockquote>
 <p>官方文档介绍了更多关于泛型类，泛型类与接口绑定等例子<br><a href="http://www.typescriptlang.org/docs/handbook/generics.html" target="_blank" rel="external">generics</a></p>
 </blockquote>
-<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><figure class="highlight fortran"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span></span> add(x: <span class="keyword">number</span>, y: <span class="keyword">number</span>): <span class="keyword">number</span> &#123;</div><div class="line">    <span class="keyword">return</span> x + y;</div><div class="line">&#125;</div><div class="line"></div><div class="line">let myAdd = <span class="function"><span class="keyword">function</span><span class="params">(x: number, y: number)</span></span>: <span class="keyword">number</span> &#123; <span class="keyword">return</span> x+y; &#125;;</div></pre></td></tr></table></figure>
-<ul>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><pre><code>function add(x: number, y: number): number {
+    return x + y;
+}
+
+let myAdd = function(x: number, y: number): number { return x+y; };
+</code></pre><ul>
 <li>箭头函数</li>
 </ul>
-<figure class="highlight fortran"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// myAdd has the full <span class="function"><span class="keyword">function</span></span> <span class="keyword">type</span></div><div class="line">let myAdd = <span class="function"><span class="keyword">function</span><span class="params">(x: number, y: number)</span></span>: <span class="keyword">number</span> &#123; <span class="keyword">return</span>  x + y; &#125;;</div><div class="line"></div><div class="line">// The parameters <span class="string">'x'</span> and <span class="string">'y'</span> have the <span class="keyword">type</span> <span class="keyword">number</span></div><div class="line">let myAdd: (baseValue:<span class="keyword">number</span>, increment:<span class="keyword">number</span>) =&gt; <span class="keyword">number</span> =</div><div class="line">    <span class="function"><span class="keyword">function</span><span class="params">(x, y)</span></span> &#123; <span class="keyword">return</span> x + y; &#125;;</div></pre></td></tr></table></figure>
-<p>参数可选</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">buildName</span>(<span class="params">firstName: <span class="built_in">string</span>, lastName?: <span class="built_in">string</span></span>) </span>&#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>剩余参数</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">buildName</span><span class="params">(firstName: string, <span class="rest_arg">...restOfName</span>: string[])</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> firstName + <span class="string">""</span> + restOfName.join(<span class="string">" "</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">let employeeName = buildName(<span class="string">"Joseph"</span>, <span class="string">"Samuel"</span>, <span class="string">"Lucas"</span>, <span class="string">"MacKinzie"</span>);</div></pre></td></tr></table></figure>
-<blockquote>
+<pre><code>// myAdd has the full function type
+let myAdd = function(x: number, y: number): number { return  x + y; };
+
+// The parameters &#39;x&#39; and &#39;y&#39; have the type number
+let myAdd: (baseValue:number, increment:number) =&gt; number =
+    function(x, y) { return x + y; };
+</code></pre><p>参数可选</p>
+<pre><code>function buildName(firstName: string, lastName?: string) {
+    // ...
+}
+</code></pre><p>剩余参数</p>
+<pre><code>function buildName(firstName: string, ...restOfName: string[]) {
+    return firstName + &quot;&quot; + restOfName.join(&quot; &quot;);
+}
+
+let employeeName = buildName(&quot;Joseph&quot;, &quot;Samuel&quot;, &quot;Lucas&quot;, &quot;MacKinzie&quot;);
+</code></pre><blockquote>
 <p>官方文档 <a href="http://www.typescriptlang.org/docs/handbook/functions.html" target="_blank" rel="external">functions</a></p>
 </blockquote>
 <h3 id="高级类型"><a href="#高级类型" class="headerlink" title="高级类型"></a>高级类型</h3><ul>
 <li>联合</li>
 </ul>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">padLeft</span>(<span class="params">value: <span class="built_in">string</span>, padding: <span class="built_in">string</span> | <span class="built_in">number</span></span>) </span>&#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> indentedString = padLeft(<span class="string">"Hello world"</span>, <span class="literal">true</span>); <span class="comment">// errors during compilation</span></div></pre></td></tr></table></figure>
-<blockquote>
+<pre><code>function padLeft(value: string, padding: string | number) {
+    // ...
+}
+
+let indentedString = padLeft(&quot;Hello world&quot;, true); // errors during compilation
+</code></pre><blockquote>
 <p>官方文档 <a href="http://www.typescriptlang.org/docs/handbook/advanced-types.html" target="_blank" rel="external">Advanced Types</a></p>
 </blockquote>
 <h3 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h3><p>如：require.js （AMD 规范）</p>
-<p>exporter.ts<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> sayHi = <span class="function"><span class="keyword">function</span>(<span class="params"></span>): <span class="title">void</span> </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"Hello!"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> = sayHi;</div></pre></td></tr></table></figure></p>
-<p>importer.ts<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sayHi = <span class="built_in">require</span>(<span class="string">'./exporter'</span>);</div><div class="line">sayHi();</div></pre></td></tr></table></figure></p>
-<p>引入 require.js，查看官方文档 <a href="http://requirejs.org/docs/start.html#add" target="_blank" rel="external">requirejs</a></p>
-<figure class="highlight crystal"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tsc --<span class="class"><span class="keyword">module</span> <span class="title">amd</span> *.<span class="title">ts</span></span></div></pre></td></tr></table></figure>
-<blockquote>
+<p>exporter.ts</p>
+<pre><code>var sayHi = function(): void {
+    console.log(&quot;Hello!&quot;);
+}
+
+export = sayHi;
+</code></pre><p>importer.ts</p>
+<pre><code>import sayHi = require(&#39;./exporter&#39;);
+sayHi();
+</code></pre><p>引入 require.js，查看官方文档 <a href="http://requirejs.org/docs/start.html#add" target="_blank" rel="external">requirejs</a></p>
+<pre><code>tsc --module amd *.ts
+</code></pre><blockquote>
 <p>更多模块化的内容，可查看官方文档 <a href="http://www.typescriptlang.org/docs/handbook/modules.html" target="_blank" rel="external">modules</a></p>
 </blockquote>
 <h3 id="第三方声明文件"><a href="#第三方声明文件" class="headerlink" title="第三方声明文件"></a>第三方声明文件</h3><p>声明文件用来是说明第三方 JavaScript 库是否和 TypeScript 兼容<br>一个声明文件包含. d.ts 扩展名和关于该库的多种信息，还有 API</p>
@@ -229,12 +499,12 @@
 </blockquote>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><strong> 三十分钟学会 TypeScript</strong>: <a href="http://web.jobbole.com/87535/" target="_blank" rel="external">http://web.jobbole.com/87535/</a><br><strong> 官方文档 </strong>: <a href="http://www.typescriptlang.org/docs/home.html" target="_blank" rel="external">http://www.typescriptlang.org/docs/home.html</a><br><strong> 中文文档 </strong>: <a href="https://www.tslang.cn/index.html" target="_blank" rel="external">https://www.tslang.cn/index.html</a></p>
 ]]></content> -->
-      <content type="html"><![CDATA[TypeScript 入门简介JavaScript 是一门弱类型语言，没有类型检测，这让 JavaScript 很灵活，但也更容易出错 TypeScript 是一种由微软开发的自由和开源的编程语言。它是 JavaScript 的一个超集，而且本质上向这个语言添加了可选的静态类型和基于类的面向对象编程。 网站 官网TypeScript中文文档tslang查看编译后的结果typescriptlang 很多项目开始使用 TypeScript Angular VSCode RxJS 安装 安装完后运行 tsc -v 查看是否正确安装 查看帮助tsc -h 或 tsc –help 查看帮助 配置文件生成默认的配置文件 tsconfig.json 配置 es6 支持 TypeScript 的文本编辑器和 IDE通过本身或插件支持 TypeScript 的语法、智能提示、纠错等 VSCode 微软开发的轻量级编辑器，内置支持 TypeScript Sublime Text 有相关插件 WebStorm 新版内置支持 TypeScript 其他包括 Vim，Atom，Emacs 等 将 TypeScrip 编译成 JavaScriptTypeScript 的文件类型是. ts 文件或 JSX 中的. tsx 文件，不能直接运行在浏览器中，需要编译成. js 文件 方法： 用命令行工具进行编译 最后一个的作用是从一个文件中插入命令行选项和文件 在 VSCode 或其他文本编辑器和 IDE 上操作 使用自动化构建工具，如 gulp， webpack 等 介绍一下第一种方法下面的命令行把 TypeScript 文件 main.ts 编译为 JavaScript 版本的 main.js。如果 main.js 已经存在的话会被覆盖。 可以同时编译多个文件 还可以通过 –watch 或 - w 来自动编译 (修改后能自动转成. js 文件) 静态类型TypeScript 可以声明变量类型，这样编译器就可以确保赋值时不会产生类型错误如果省略了类型声明，TypeScript 将会从代码中自动推测出正确的类型。 在变量，函数声明时可以定义自己的类型 编译后变量声明都会被移除 如果输入的类型有错，TypeScript 会有代码警告但还是会转成 js 文件 ts 文件 js 文件 数据类型 Number ( 数值 ) - 包括整型，浮点型等 String （字符串）- 包括单双引号的字符串 Boolean （布尔）- true ,false, 不可用其他类型如数字, 空字符串，否则会报错 Array （数组）- 有两种语法：my_arr: number[ ] 或者 my_arr: Array Tuple ( 元组 ) - 数组中包含不同的类型，有顺序 使用不是该数据类型的方法会报错 新赋值的类型必须是定义时规定的类型 Enum （枚举类型）- 它用于声明一组命名的常数，当一个变量有几种可能的取值时，可以将它定义为枚举类型。 让代码更有语义化, 可读性 枚举类型的数字默认从 0 开始，可以自己设置 当不知道 enum 类型的第 N 项是什么名称时，可以用 N 来代替 Any （任意）- 任何类型都可以（Never 类型除外） 关闭类型检查 Void （空）- 用在不返回任何值的函数中 可以用来标识 undefined 和 null Null and Undefined 默认为其他类型的亚类型，就是可以匹配其他类型使用 –strictNullChecks 标识，就只匹配 null 、undefined、void可以使用 string | null | undefined 类型来只匹配 string 、 null 、 undefined 三种类型 官方鼓励使用 –strictNullChecks Never - 表示值从未发生 Any 类型不能匹配 Never Type assertions “angle-bracket” syntax as -syntax 一般情况下，两种写法等价，但在 JSX 中，只能用 as -style 官方文档中关于数据类型的介绍 Basic Types Interfaces 接口接口会根据一个对象是否符合某种特定的数据结构来进行类型检查 只在开发是有效，编译后删除 属性的顺序并不重要。我们只需必要的属性存在并且是正确的类型。如果哪里有遗漏，类型错误，或者命名不同的话，编译器都会报警告信息。 接口可以在属性后面添加？表示可选可以添加 [propName: 类型] : any 表示可以添加任何某种类型的属性 类实现接口 关键字 implements 官方文档有更详细的介绍 interfaces 类包括了构造器、继承，抽象类，接口，构造函数、setters、getters、public、private、protected、readonly、static 等 ES6 中也有实现 属性默认为 publicprivate 只有自己可以用protected 自己和子类可用readonly 只读 (原理 object.freeze) 抽象类 不能实例化 实现继承 阅读官方文档，获得更多信息 classes 泛型泛型是允许同一个函数接受不同类型参数的一种模板。相比于使用 any 类型，使用泛型来创建可复用的组件要更好，因为泛型会保留参数类型。 带泛型的函数类型 带泛型的接口 带泛型的类 泛型约束 官方文档介绍了更多关于泛型类，泛型类与接口绑定等例子generics 函数 箭头函数 参数可选 剩余参数 官方文档 functions 高级类型 联合 官方文档 Advanced Types 模块化如：require.js （AMD 规范） exporter.ts importer.ts 引入 require.js，查看官方文档 requirejs 更多模块化的内容，可查看官方文档 modules 第三方声明文件声明文件用来是说明第三方 JavaScript 库是否和 TypeScript 兼容一个声明文件包含. d.ts 扩展名和关于该库的多种信息，还有 API 声明文件通常是手写的，但也可以用其他人写好的DefinitelyTyped The repository for high quality TypeScript type definitions也有一个用来管理 TypeScript 定义的 Node.js 流行模块，叫 Typings。 官方文档 introduction 参考资料 三十分钟学会 TypeScript: http://web.jobbole.com/87535/ 官方文档 : http://www.typescriptlang.org/docs/home.html 中文文档 : https://www.tslang.cn/index.html]]></content>
+      <content type="html"><![CDATA[TypeScript 入门简介JavaScript 是一门弱类型语言，没有类型检测，这让 JavaScript 很灵活，但也更容易出错 TypeScript 是一种由微软开发的自由和开源的编程语言。它是 JavaScript 的一个超集，而且本质上向这个语言添加了可选的静态类型和基于类的面向对象编程。 网站 官网TypeScript中文文档tslang查看编译后的结果typescriptlang 很多项目开始使用 TypeScript Angular VSCode RxJS 安装npm install -g typescript 安装完后运行 tsc -v 查看是否正确安装tsc -v Version 2.4.2 查看帮助tsc -h 或 tsc –help 查看帮助 $ tsc -h Version 2.4.2 Syntax: tsc [options] [file ...] Examples: tsc hello.ts tsc --outFile file.js file.ts tsc @args.txt Options: ... 配置文件生成默认的配置文件 tsconfig.json tsc init 配置 es6 支持 TypeScript 的文本编辑器和 IDE通过本身或插件支持 TypeScript 的语法、智能提示、纠错等 VSCode 微软开发的轻量级编辑器，内置支持 TypeScript Sublime Text 有相关插件 WebStorm 新版内置支持 TypeScript 其他包括 Vim，Atom，Emacs 等 将 TypeScrip 编译成 JavaScriptTypeScript 的文件类型是. ts 文件或 JSX 中的. tsx 文件，不能直接运行在浏览器中，需要编译成. js 文件 方法： 用命令行工具进行编译 Syntax: tsc [options] [file ...] Examples: tsc hello.ts tsc --outFile file.js file.ts tsc @args.txt 最后一个的作用是从一个文件中插入命令行选项和文件 @&lt;file&gt; Insert command line options and files from a file. 在 VSCode 或其他文本编辑器和 IDE 上操作 使用自动化构建工具，如 gulp， webpack 等 介绍一下第一种方法下面的命令行把 TypeScript 文件 main.ts 编译为 JavaScript 版本的 main.js。如果 main.js 已经存在的话会被覆盖。 tsc main.ts 可以同时编译多个文件 tsc main.ts other.ts tsc *.ts 还可以通过 –watch 或 - w 来自动编译 (修改后能自动转成. js 文件) tsc main.ts --watch 静态类型TypeScript 可以声明变量类型，这样编译器就可以确保赋值时不会产生类型错误如果省略了类型声明，TypeScript 将会从代码中自动推测出正确的类型。 在变量，函数声明时可以定义自己的类型 var burger: string = &#39;hamburger&#39;, // String calories: number = 300, // Numeric tasty: boolean = true; // Boolean function speak(food: string, energy: number): void { console.log(&quot;Our&quot; + food + &quot;has&quot; + energy + &quot;calories.&quot;); } speak(burger, calories); 编译后变量声明都会被移除 var burger = &#39;hamburger&#39;, calories = 300, tasty = true; function speak(food, energy) { console.log(&quot;Our&quot; + food + &quot;has&quot; + energy + &quot;calories.&quot;); } speak(burger, calories); 如果输入的类型有错，TypeScript 会有代码警告但还是会转成 js 文件 ts 文件 var carNum: Number = &#39;10&#39; $ tsc err.ts --watch err.ts(1,5): error TS2322: Type &#39;&quot;10&quot;&#39; is not assignable to type &#39;Number&#39;. 10:36:46 - Compilation complete. Watching for file changes. js 文件 var carNum = &#39;10&#39;; 数据类型 Number ( 数值 ) - 包括整型，浮点型等 let decimal: number = 6; let hex: number = 0xf00d; let binary: number = 0b1010; let octal: number = 0o744; String （字符串）- 包括单双引号的字符串 let color: string = &quot;blue&quot;; color = &#39;red&#39;; let sentence: string = `Hello, my name is ${ fullName }. I&#39;ll be ${ age + 1 } years old next month.`; Boolean （布尔）- true ,false, 不可用其他类型如数字, 空字符串，否则会报错 let isDone: boolean = false Array （数组）- 有两种语法：my_arr: number[ ] 或者 my_arr: Array let list: number[] = [1, 2, 3] let list: Array&lt;number&gt; = [1, 2, 3] Tuple ( 元组 ) - 数组中包含不同的类型，有顺序 let x: [string, number]; x = [&quot;hello&quot;, 10]; // OK x = [10, &quot;hello&quot;]; // Error 使用不是该数据类型的方法会报错 console.log(x[0].substr(1)); // OK console.log(x[1].substr(1)); // Error, &#39;number&#39; does not have &#39;substr&#39; 新赋值的类型必须是定义时规定的类型 x[3] = &quot;world&quot;; // OK, &#39;string&#39; can be assigned to &#39;string | number&#39; console.log(x[5].toString()); // OK, &#39;string&#39; and &#39;number&#39; both have &#39;toString&#39; x[6] = true; // Error, &#39;boolean&#39; isn&#39;t&#39;string | number&#39; Enum （枚举类型）- 它用于声明一组命名的常数，当一个变量有几种可能的取值时，可以将它定义为枚举类型。 让代码更有语义化, 可读性 enum Color {Red, Green, Blue} let c: Color = Color.Green; 枚举类型的数字默认从 0 开始，可以自己设置 enum Color {Red = 1, Green, Blue} let c: Color = Color.Green; enum Color {Red = 1, Green = 2, Blue = 4} let c: Color = Color.Green; 当不知道 enum 类型的第 N 项是什么名称时，可以用 N 来代替 enum Color {Red = 1, Green, Blue} let colorName: string = Color[2]; alert(colorName); var Color; (function (Color) { Color[Color[&quot;Red&quot;] = 1] = &quot;Red&quot;; Color[Color[&quot;Green&quot;] = 2] = &quot;Green&quot;; Color[Color[&quot;Blue&quot;] = 3] = &quot;Blue&quot;; })(Color || (Color = {})); var colorName = Color[2]; alert(colorName); Any （任意）- 任何类型都可以（Never 类型除外） 关闭类型检查 let notSure: any = 4; notSure = &quot;maybe a string instead&quot;; notSure = false; // okay, definitely a boolean let notSure: any = 4; notSure.ifItExists(); // okay, ifItExists might exist at runtime notSure.toFixed(); // okay, toFixed exists (but the compiler doesn&#39;t check) let prettySure: Object = 4; prettySure.toFixed(); // Error: Property &#39;toFixed&#39; doesn&#39;t exist on type&#39;Object&#39;. let list: any[] = [1, true, &quot;free&quot;]; list[1] = 100; Void （空）- 用在不返回任何值的函数中 function warnUser(): void { alert(&quot;This is my warning message&quot;); } 可以用来标识 undefined 和 null let unusable: void = undefined; Null and Undefined let u: undefined = undefined; let n: null = null; 默认为其他类型的亚类型，就是可以匹配其他类型使用 –strictNullChecks 标识，就只匹配 null 、undefined、void可以使用 string | null | undefined 类型来只匹配 string 、 null 、 undefined 三种类型 官方鼓励使用 –strictNullChecks Never - 表示值从未发生 Any 类型不能匹配 Never // Function returning never must have unreachable end point function error(message: string): never { throw new Error(message); } // Inferred return type is never function fail() { return error(&quot;Something failed&quot;); } // Function returning never must have unreachable end point function infiniteLoop(): never { while (true) { } } Type assertions “angle-bracket” syntax let someValue: any = &quot;this is a string&quot;; let strLength: number = (&lt;string&gt;someValue).length; as -syntax let someValue: any = &quot;this is a string&quot;; let strLength: number = (someValue as string).length; 一般情况下，两种写法等价，但在 JSX 中，只能用 as -style 官方文档中关于数据类型的介绍 Basic Types Interfaces 接口接口会根据一个对象是否符合某种特定的数据结构来进行类型检查 只在开发是有效，编译后删除 interface Food { name: string; calories: number; } function speak(food: Food): void{ console.log(&quot;Our&quot; + food.name + &quot;has&quot; + food.calories + &quot;calories.&quot;); } var ice_cream = { name: &quot;ice cream&quot;, calories: 200 } speak(ice_cream); 属性的顺序并不重要。我们只需必要的属性存在并且是正确的类型。如果哪里有遗漏，类型错误，或者命名不同的话，编译器都会报警告信息。 interface Food { name: string; calories: number; } function speak(food: Food): void{ console.log(&quot;Our&quot; + food.name + &quot;has&quot; + food.calories + &quot;grams.&quot;); } // 将 name 改为 nmae var ice_cream = { nmae: &quot;ice cream&quot;, calories: 200 } speak(ice_cream); main.ts(16,7): error TS2345: Argument of type &#39;{ nmae: string; calories: number; } is not assignable to parameter of type &#39;Food&#39;. Property &#39;name&#39; is missing in type &#39;{ nmae: string; calories: number; }&#39;. 接口可以在属性后面添加？表示可选可以添加 [propName: 类型] : any 表示可以添加任何某种类型的属性 interface Person { name: string; age?: number; [propName: string]: any; } const preson: Person = { name: &#39;Tom&#39;, age: 20} const student: Person = { name: &#39;Tom&#39;} 类实现接口 关键字 implements interface ClockInterface { currentTime: Date; } class Clock implements ClockInterface { currentTime: Date; constructor(h: number, m: number) { } } interface ClockInterface { currentTime: Date; setTime(d: Date); } class Clock implements ClockInterface { currentTime: Date; setTime(d: Date) { this.currentTime = d; } constructor(h: number, m: number) { } } 官方文档有更详细的介绍 interfaces 类包括了构造器、继承，抽象类，接口，构造函数、setters、getters、public、private、protected、readonly、static 等 ES6 中也有实现 属性默认为 publicprivate 只有自己可以用protected 自己和子类可用readonly 只读 (原理 object.freeze) 抽象类 不能实例化 实现继承 class Menu { // Our properties: // By default they are public, but can also be private or protected. items: Array&lt;string&gt;; // The items in the menu, an array of strings. pages: number; // How many pages will the menu be, a number. constructor(item_list: Array&lt;string&gt;, total_pages: number) { // The this keyword is mandatory. this.items = item_list; this.pages = total_pages; } // Methods list(): void { console.log(&quot;Our menu for today:&quot;); for(var i=0; i&lt;this.items.length; i++) { console.log(this.items[i]); } } } // Create a new instance of the Menu class. var sundayMenu = new Menu([&quot;pancakes&quot;,&quot;waffles&quot;,&quot;orange juice&quot;], 1); // Call the list method. sundayMenu.list(); class HappyMeal extends Menu { // Properties are inherited // A new constructor has to be defined. constructor(item_list: Array&lt;string&gt;, total_pages: number) { // In this case we want the exact same constructor as the parent class (Menu), // To automatically copy it we can call super() - a reference to the parent&#39;s constructor. super(item_list, total_pages); } // Just like the properties, methods are inherited from the parent. // However, we want to override the list() function so we redefine it. list(): void{ console.log(&quot;Our special menu for children:&quot;); for(var i=0; i&lt;this.items.length; i++) { console.log(this.items[i]); } } } // Create a new instance of the HappyMeal class. var menu_for_children = new HappyMeal([&quot;candy&quot;,&quot;drink&quot;,&quot;toy&quot;], 1); // This time the log message will begin with the special introduction. menu_for_children.list(); 阅读官方文档，获得更多信息 classes 泛型泛型是允许同一个函数接受不同类型参数的一种模板。相比于使用 any 类型，使用泛型来创建可复用的组件要更好，因为泛型会保留参数类型。 function genericFunc&lt;T&gt;(argument: T): T[] { var arrayOfT: T[] = []; // Create empty array of type T. arrayOfT.push(argument); // Push, now arrayOfT = [argument]. return arrayOfT; } var arrayFromString = genericFunc&lt;string&gt;(&quot;beep&quot;); console.log(arrayFromString[0]); // &quot;beep&quot; console.log(typeof arrayFromString[0]) // String var arrayFromNumber = genericFunc(42); console.log(arrayFromNumber[0]); // 42 console.log(typeof arrayFromNumber[0]) // number 带泛型的函数类型 let f: () =&gt; any = function() {} let f: &lt;T&gt;(arg: T) =&gt; T = function() {} 带泛型的接口 interface Gen&lt;T&gt; { (arg: T) : T } function fn&lt;T&gt;(arg: T): T { return arg; } let id: Gen&lt;number&gt; = fn; Gen(2) 带泛型的类 class Gen&lt;T&gt; { value: T add: (x: T, y: T) =&gt; T } let myGenNum = new Gen&lt;number&gt;() myGenNum.value = 0 myGenNum.add = (x, y) =&gt; x + y myGenNum.add(2,3) 泛型约束 interface Length { length: number } function fn&lt;T extends Length&gt;(arg: T): T { console.log(arg.length) return arg } fn&lt;string&gt;(&quot;hello&quot;) 官方文档介绍了更多关于泛型类，泛型类与接口绑定等例子generics 函数function add(x: number, y: number): number { return x + y; } let myAdd = function(x: number, y: number): number { return x+y; }; 箭头函数 // myAdd has the full function type let myAdd = function(x: number, y: number): number { return x + y; }; // The parameters &#39;x&#39; and &#39;y&#39; have the type number let myAdd: (baseValue:number, increment:number) =&gt; number = function(x, y) { return x + y; }; 参数可选 function buildName(firstName: string, lastName?: string) { // ... } 剩余参数 function buildName(firstName: string, ...restOfName: string[]) { return firstName + &quot;&quot; + restOfName.join(&quot; &quot;); } let employeeName = buildName(&quot;Joseph&quot;, &quot;Samuel&quot;, &quot;Lucas&quot;, &quot;MacKinzie&quot;); 官方文档 functions 高级类型 联合 function padLeft(value: string, padding: string | number) { // ... } let indentedString = padLeft(&quot;Hello world&quot;, true); // errors during compilation 官方文档 Advanced Types 模块化如：require.js （AMD 规范） exporter.ts var sayHi = function(): void { console.log(&quot;Hello!&quot;); } export = sayHi; importer.ts import sayHi = require(&#39;./exporter&#39;); sayHi(); 引入 require.js，查看官方文档 requirejs tsc --module amd *.ts 更多模块化的内容，可查看官方文档 modules 第三方声明文件声明文件用来是说明第三方 JavaScript 库是否和 TypeScript 兼容一个声明文件包含. d.ts 扩展名和关于该库的多种信息，还有 API 声明文件通常是手写的，但也可以用其他人写好的DefinitelyTyped The repository for high quality TypeScript type definitions也有一个用来管理 TypeScript 定义的 Node.js 流行模块，叫 Typings。 官方文档 introduction 参考资料 三十分钟学会 TypeScript: http://web.jobbole.com/87535/ 官方文档 : http://www.typescriptlang.org/docs/home.html 中文文档 : https://www.tslang.cn/index.html]]></content>
     </entry>
     
     <entry>
       <title><![CDATA[Koa 入门]]></title>
-      <url>https://ldqblog.me/posts/d0f2c321/</url>
+      <url>https://ldqblog.me/2017/08/10/Koa-%E5%85%A5%E9%97%A8/</url>
       <!-- <content type="html"><![CDATA[<h1 id="Koa-入门"><a href="#Koa-入门" class="headerlink" title="Koa 入门"></a>Koa 入门</h1><h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><blockquote>
 <p>Node 版本必须 7.6 以上</p>
 </blockquote>
@@ -242,45 +512,196 @@
 <blockquote>
 <p>git clone <a href="https://github.com/ruanyf/koa-demos.git" target="_blank" rel="external">https://github.com/ruanyf/koa-demos.git</a></p>
 </blockquote>
-<h2 id="一、基本用法"><a href="#一、基本用法" class="headerlink" title="一、基本用法"></a>一、基本用法</h2><h3 id="1-开启-HTTP-服务器"><a href="#1-开启-HTTP-服务器" class="headerlink" title="1 开启 HTTP 服务器"></a>1 开启 HTTP 服务器</h3><figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> Koa = require(<span class="string">'koa'</span>);</div><div class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa();</div><div class="line"></div><div class="line">app.<span class="built_in">listen</span>(<span class="number">3000</span>);</div></pre></td></tr></table></figure>
-<h3 id="2-Context-对象"><a href="#2-Context-对象" class="headerlink" title="2 Context 对象"></a>2 Context 对象</h3><p>Koa 提供一个 Context 对象，表示一次对话的上下文（包括 HTTP 请求和 HTTP 回复）。通过加工这个对象，就可以控制返回给用户的内容。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> Koa = <span class="built_in">require</span>(<span class="string">'koa'</span>);</div><div class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa();</div><div class="line"></div><div class="line"><span class="keyword">const</span> main = <span class="function"><span class="params">ctx</span> =&gt;</span> &#123;</div><div class="line">    ctx.response.body = <span class="string">'Hello World'</span>;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">app.use(main);</div><div class="line">app.listen(<span class="number">3000</span>);</div></pre></td></tr></table></figure>
-<p><img src="http://upload-images.jianshu.io/upload_images/3563580-32b69cd94b58aced.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h2 id="一、基本用法"><a href="#一、基本用法" class="headerlink" title="一、基本用法"></a>一、基本用法</h2><h3 id="1-开启-HTTP-服务器"><a href="#1-开启-HTTP-服务器" class="headerlink" title="1 开启 HTTP 服务器"></a>1 开启 HTTP 服务器</h3><pre><code>const Koa = require(&#39;koa&#39;);
+const app = new Koa();
+
+app.listen(3000);
+</code></pre><h3 id="2-Context-对象"><a href="#2-Context-对象" class="headerlink" title="2 Context 对象"></a>2 Context 对象</h3><p>Koa 提供一个 Context 对象，表示一次对话的上下文（包括 HTTP 请求和 HTTP 回复）。通过加工这个对象，就可以控制返回给用户的内容。</p>
+<pre><code>const Koa = require(&#39;koa&#39;);
+const app = new Koa();
+
+const main = ctx =&gt; {
+    ctx.response.body = &#39;Hello World&#39;;
+};
+
+app.use(main);
+app.listen(3000);
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/3563580-32b69cd94b58aced.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <p>ctx.response 代表 HTTP Response<br>ctx.request 代表 HTTP Request</p>
 <h3 id="3-response-类型"><a href="#3-response-类型" class="headerlink" title="3 response 类型"></a>3 response 类型</h3><p>Koa 默认的返回类型是 text/plain</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/3563580-cec6dc9a5a3d7674.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <p>ctx.request.accepts 用来判断客户端希望接受什么数据<br>ctx.response.type 指定返回类型</p>
-<figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">const Koa = require(<span class="symbol">'koa</span>');</div><div class="line">const app = <span class="keyword">new</span> Koa();</div><div class="line"></div><div class="line">const main = ctx =&gt; &#123;</div><div class="line"></div><div class="line"><span class="keyword">if</span> (ctx.request.accepts(<span class="symbol">'xml</span>')) &#123;</div><div class="line"></div><div class="line">    ctx.response.<span class="keyword">type</span> <span class="type">= </span><span class="symbol">'xml</span>';</div><div class="line"></div><div class="line">    ctx.response.<span class="keyword">body</span> = '&lt;data&gt;Hello World&lt;/data&gt;';</div><div class="line"></div><div class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (ctx.request.accepts(<span class="symbol">'json</span>')) &#123;</div><div class="line"></div><div class="line">    ctx.response.<span class="keyword">type</span> <span class="type">= </span><span class="symbol">'json</span>';</div><div class="line"></div><div class="line">    ctx.response.<span class="keyword">body</span> = &#123; data: <span class="symbol">'Hello</span> World' &#125;;</div><div class="line"></div><div class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (ctx.request.accepts(<span class="symbol">'html</span>')) &#123;</div><div class="line"></div><div class="line">    ctx.response.<span class="keyword">type</span> <span class="type">= </span><span class="symbol">'html</span>';</div><div class="line"></div><div class="line">    ctx.response.<span class="keyword">body</span> = '&lt;p&gt;Hello World&lt;/p&gt;';</div><div class="line"></div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line"></div><div class="line">    ctx.response.<span class="keyword">type</span> <span class="type">= </span><span class="symbol">'text</span>';</div><div class="line"></div><div class="line">    ctx.response.<span class="keyword">body</span> = <span class="symbol">'Hello</span> World';</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">&#125;;</div><div class="line"></div><div class="line">app.<span class="keyword">use</span>(main);</div><div class="line">app.listen(<span class="number">3000</span>);</div></pre></td></tr></table></figure>
-<p><img src="http://upload-images.jianshu.io/upload_images/3563580-83caa8dd754ae06e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<pre><code>const Koa = require(&#39;koa&#39;);
+const app = new Koa();
+
+const main = ctx =&gt; {
+
+if (ctx.request.accepts(&#39;xml&#39;)) {
+
+    ctx.response.type = &#39;xml&#39;;
+
+    ctx.response.body = &#39;&lt;data&gt;Hello World&lt;/data&gt;&#39;;
+
+} else if (ctx.request.accepts(&#39;json&#39;)) {
+
+    ctx.response.type = &#39;json&#39;;
+
+    ctx.response.body = { data: &#39;Hello World&#39; };
+
+} else if (ctx.request.accepts(&#39;html&#39;)) {
+
+    ctx.response.type = &#39;html&#39;;
+
+    ctx.response.body = &#39;&lt;p&gt;Hello World&lt;/p&gt;&#39;;
+
+} else {
+
+    ctx.response.type = &#39;text&#39;;
+
+    ctx.response.body = &#39;Hello World&#39;;
+
+}
+
+};
+
+app.use(main);
+app.listen(3000);
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/3563580-83caa8dd754ae06e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/3563580-df6ccc66b21c55da.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/3563580-0d84b50c0498d5dd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="4-读取模板文件"><a href="#4-读取模板文件" class="headerlink" title="4 读取模板文件"></a>4 读取模板文件</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</div><div class="line"><span class="keyword">const</span> Koa = <span class="built_in">require</span>(<span class="string">'koa'</span>);</div><div class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa();</div><div class="line"></div><div class="line"><span class="keyword">const</span> main = <span class="function"><span class="params">ctx</span> =&gt;</span> &#123;</div><div class="line"></div><div class="line">ctx.response.type = <span class="string">'html'</span>;</div><div class="line"></div><div class="line">ctx.response.body = fs.createReadStream(<span class="string">'./demos/template.html'</span>);</div><div class="line"></div><div class="line">&#125;;</div><div class="line"></div><div class="line">app.use(main);</div><div class="line">app.listen(<span class="number">3000</span>);</div></pre></td></tr></table></figure>
-<p><img src="http://upload-images.jianshu.io/upload_images/3563580-6cfaa24a42e6277d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="4-读取模板文件"><a href="#4-读取模板文件" class="headerlink" title="4 读取模板文件"></a>4 读取模板文件</h3><pre><code>const fs = require(&#39;fs&#39;);
+const Koa = require(&#39;koa&#39;);
+const app = new Koa();
+
+const main = ctx =&gt; {
+
+ctx.response.type = &#39;html&#39;;
+
+ctx.response.body = fs.createReadStream(&#39;./demos/template.html&#39;);
+
+};
+
+app.use(main);
+app.listen(3000);
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/3563580-6cfaa24a42e6277d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <h2 id="二、路由"><a href="#二、路由" class="headerlink" title="二、路由"></a>二、路由</h2><h3 id="1-原生路由"><a href="#1-原生路由" class="headerlink" title="1 原生路由"></a>1 原生路由</h3><p>ctx.request.path<br>可获取用户请求的路径</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> Koa = <span class="built_in">require</span>(<span class="string">'koa'</span>);</div><div class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa();</div><div class="line"></div><div class="line"><span class="keyword">const</span> main = <span class="function"><span class="params">ctx</span> =&gt;</span> &#123;</div><div class="line"></div><div class="line"><span class="keyword">if</span> (ctx.request.path !== <span class="string">'/'</span>) &#123;</div><div class="line"></div><div class="line">ctx.response.type = <span class="string">'html'</span>;</div><div class="line"></div><div class="line">ctx.response.body = <span class="string">'&lt;a href="/"&gt;Index Page&lt;/a&gt;'</span>;</div><div class="line"></div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line"></div><div class="line">        ctx.response.body = <span class="string">'Hello World'</span>;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">&#125;;</div><div class="line"></div><div class="line">app.use(main);</div><div class="line">app.listen(<span class="number">3000</span>);</div></pre></td></tr></table></figure>
-<p><img src="http://upload-images.jianshu.io/upload_images/3563580-efda28165ef1c82e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<pre><code>const Koa = require(&#39;koa&#39;);
+const app = new Koa();
+
+const main = ctx =&gt; {
+
+if (ctx.request.path !== &#39;/&#39;) {
+
+ctx.response.type = &#39;html&#39;;
+
+ctx.response.body = &#39;&lt;a href=&quot;/&quot;&gt;Index Page&lt;/a&gt;&#39;;
+
+} else {
+
+        ctx.response.body = &#39;Hello World&#39;;
+
+}
+
+};
+
+app.use(main);
+app.listen(3000);
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/3563580-efda28165ef1c82e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/3563580-6e9b906b2762e116.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <h3 id="2-koa-router"><a href="#2-koa-router" class="headerlink" title="2 koa-router"></a>2 koa-router</h3><p>route.get(path, callback)<br>callback 指定 ctx.response.type 和 ctx,response.body</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> Koa = <span class="keyword">require</span>(<span class="string">'koa'</span>);</div><div class="line"><span class="keyword">const</span> route = <span class="keyword">require</span>(<span class="string">'koa-route'</span>);</div><div class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa();</div><div class="line"></div><div class="line"><span class="keyword">const</span> about = ctx =&gt; &#123;</div><div class="line"></div><div class="line">ctx.response.type = <span class="string">'html'</span>;</div><div class="line"></div><div class="line">ctx.response.body = <span class="string">'&lt;a href="/"&gt;Index Page&lt;/a&gt;'</span>;</div><div class="line"></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">const</span> main = ctx =&gt; &#123;</div><div class="line">        ctx.response.body = <span class="string">'Hello World'</span>;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">app.<span class="keyword">use</span>(route.get(<span class="string">'/'</span>, main));</div><div class="line">app.<span class="keyword">use</span>(route.get(<span class="string">'/about'</span>, about));</div><div class="line"></div><div class="line">app.<span class="keyword">use</span>(main);</div><div class="line">app.listen(<span class="number">3000</span>);</div></pre></td></tr></table></figure>
-<p><img src="http://upload-images.jianshu.io/upload_images/3563580-6ba08211d1b585a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<pre><code>const Koa = require(&#39;koa&#39;);
+const route = require(&#39;koa-route&#39;);
+const app = new Koa();
+
+const about = ctx =&gt; {
+
+ctx.response.type = &#39;html&#39;;
+
+ctx.response.body = &#39;&lt;a href=&quot;/&quot;&gt;Index Page&lt;/a&gt;&#39;;
+
+};
+
+const main = ctx =&gt; {
+        ctx.response.body = &#39;Hello World&#39;;
+};
+
+app.use(route.get(&#39;/&#39;, main));
+app.use(route.get(&#39;/about&#39;, about));
+
+app.use(main);
+app.listen(3000);
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/3563580-6ba08211d1b585a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/3563580-ae9d621c3e1b02a7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/3563580-6e274232aaba6562.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/3563580-52627f567dc12140.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <h3 id="3-静态资源"><a href="#3-静态资源" class="headerlink" title="3 静态资源"></a>3 静态资源</h3><p>koa-static 处理静态资源</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> Koa = <span class="keyword">require</span>(<span class="string">'koa'</span>);</div><div class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa();</div><div class="line"><span class="keyword">const</span> path = <span class="keyword">require</span>(<span class="string">'path'</span>);</div><div class="line"><span class="keyword">const</span> serve = <span class="keyword">require</span>(<span class="string">'koa-static'</span>);</div><div class="line"></div><div class="line"><span class="keyword">const</span> main = serve(path.join(__dirname));</div><div class="line"></div><div class="line">app.<span class="keyword">use</span>(main);</div><div class="line">app.listen(<span class="number">3000</span>);</div></pre></td></tr></table></figure>
-<p><img src="http://upload-images.jianshu.io/upload_images/3563580-51fc1d1d22dd591b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<pre><code>const Koa = require(&#39;koa&#39;);
+const app = new Koa();
+const path = require(&#39;path&#39;);
+const serve = require(&#39;koa-static&#39;);
+
+const main = serve(path.join(__dirname));
+
+app.use(main);
+app.listen(3000);
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/3563580-51fc1d1d22dd591b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/3563580-c10a8f130e9bef9e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/3563580-32fb0ac20d841137.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <h3 id="4-302-重定向"><a href="#4-302-重定向" class="headerlink" title="4 302 重定向"></a>4 302 重定向</h3><p>ctx.response.redirect()</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> Koa = <span class="keyword">require</span>(<span class="string">'koa'</span>);</div><div class="line"><span class="keyword">const</span> route = <span class="keyword">require</span>(<span class="string">'koa-route'</span>);</div><div class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa();</div><div class="line"></div><div class="line"><span class="keyword">const</span> redirect = ctx =&gt; &#123;</div><div class="line">    ctx.response.redirect(<span class="string">'/'</span>);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">const</span> main = ctx =&gt; &#123;</div><div class="line">    ctx.response.body = <span class="string">'Hello World'</span>;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">app.<span class="keyword">use</span>(route.get(<span class="string">'/'</span>, main));</div><div class="line">app.<span class="keyword">use</span>(route.get(<span class="string">'/redirect'</span>, redirect));</div><div class="line"></div><div class="line">app.<span class="keyword">use</span>(main);</div><div class="line">app.listen(<span class="number">3000</span>);</div></pre></td></tr></table></figure>
-<p><img src="http://upload-images.jianshu.io/upload_images/3563580-d49041f899983618.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<pre><code>const Koa = require(&#39;koa&#39;);
+const route = require(&#39;koa-route&#39;);
+const app = new Koa();
+
+const redirect = ctx =&gt; {
+    ctx.response.redirect(&#39;/&#39;);
+};
+
+const main = ctx =&gt; {
+    ctx.response.body = &#39;Hello World&#39;;
+};
+
+app.use(route.get(&#39;/&#39;, main));
+app.use(route.get(&#39;/redirect&#39;, redirect));
+
+app.use(main);
+app.listen(3000);
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/3563580-d49041f899983618.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <h2 id="三、-中间件"><a href="#三、-中间件" class="headerlink" title="三、 中间件"></a>三、 中间件</h2><h3 id="1-logger"><a href="#1-logger" class="headerlink" title="1 logger"></a>1 logger</h3><p>打印日志</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> Koa = <span class="built_in">require</span>(<span class="string">'koa'</span>);</div><div class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa();</div><div class="line"></div><div class="line"><span class="keyword">const</span> main = <span class="function"><span class="params">ctx</span> =&gt;</span> &#123;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;<span class="built_in">Date</span>.now()&#125;</span> <span class="subst">$&#123;ctx.request.method&#125;</span> <span class="subst">$&#123;ctx.request.url&#125;</span>`</span>);</div><div class="line"></div><div class="line">ctx.response.body = <span class="string">'Hello World'</span>;</div><div class="line"></div><div class="line">&#125;;</div><div class="line"></div><div class="line">app.use(main);</div><div class="line">app.listen(<span class="number">3000</span>);</div></pre></td></tr></table></figure>
-<p><img src="http://upload-images.jianshu.io/upload_images/3563580-e3ba60c3e0d8d612.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<pre><code>const Koa = require(&#39;koa&#39;);
+const app = new Koa();
+
+const main = ctx =&gt; {
+
+console.log(`${Date.now()} ${ctx.request.method} ${ctx.request.url}`);
+
+ctx.response.body = &#39;Hello World&#39;;
+
+};
+
+app.use(main);
+app.listen(3000);
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/3563580-e3ba60c3e0d8d612.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <h3 id="2-中间件的概念"><a href="#2-中间件的概念" class="headerlink" title="2 中间件的概念"></a>2 中间件的概念</h3><p>logger 函数就叫做 “中间件”（middleware），因为它处在 HTTP Request 和 HTTP Response 中间，用来实现某种中间功能。app.use() 用来加载中间件。</p>
 <p>基本上，Koa 所有的功能都是通过中间件实现的，前面例子里面的 main 也是中间件。<br>参数 context 对象， next 函数 （将执行权限交给下一个中间件）</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> Koa = <span class="built_in">require</span>(<span class="string">'koa'</span>);</div><div class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa();</div><div class="line"></div><div class="line"><span class="keyword">const</span> logger = <span class="function">(<span class="params">ctx, next</span>) =&gt;</span> &#123;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;<span class="built_in">Date</span>.now()&#125;</span> <span class="subst">$&#123;ctx.request.method&#125;</span> <span class="subst">$&#123;ctx.request.url&#125;</span>`</span>);</div><div class="line"></div><div class="line">next();</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">const</span> main = <span class="function"><span class="params">ctx</span> =&gt;</span> &#123;</div><div class="line">ctx.response.body = <span class="string">'Hello World'</span>;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">app.use(logger);</div><div class="line">app.use(main);</div><div class="line">app.listen(<span class="number">3000</span>);</div></pre></td></tr></table></figure>
-<h3 id="3-中间件栈"><a href="#3-中间件栈" class="headerlink" title="3 中间件栈"></a>3 中间件栈</h3><p>多个中间件会形成一个栈结构（middle stack），以 “先进后出”（first-in-last-out）的顺序执行。</p>
+<pre><code>const Koa = require(&#39;koa&#39;);
+const app = new Koa();
+
+const logger = (ctx, next) =&gt; {
+
+console.log(`${Date.now()} ${ctx.request.method} ${ctx.request.url}`);
+
+next();
+
+}
+
+const main = ctx =&gt; {
+ctx.response.body = &#39;Hello World&#39;;
+};
+
+app.use(logger);
+app.use(main);
+app.listen(3000);
+</code></pre><h3 id="3-中间件栈"><a href="#3-中间件栈" class="headerlink" title="3 中间件栈"></a>3 中间件栈</h3><p>多个中间件会形成一个栈结构（middle stack），以 “先进后出”（first-in-last-out）的顺序执行。</p>
 <blockquote>
 <ol>
 <li>最外层的中间件首先执行。</li>
@@ -292,46 +713,196 @@
 <li>最外层的中间件收回执行权之后，执行 next 函数后面的代码。  </li>
 </ol>
 </blockquote>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> Koa = require('koa');</div><div class="line"><span class="keyword">const</span> <span class="keyword">app</span> = new Koa();</div><div class="line"></div><div class="line"><span class="keyword">const</span> <span class="keyword">one</span> = (ctx, next) =&gt; &#123;</div><div class="line"></div><div class="line">console.<span class="built_in">log</span>('&gt;&gt; <span class="keyword">one</span>');</div><div class="line"></div><div class="line">next();</div><div class="line"></div><div class="line">console.<span class="built_in">log</span>('&lt;&lt; <span class="keyword">one</span>');</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">const</span> <span class="keyword">two</span> = (ctx, next) =&gt; &#123;</div><div class="line"></div><div class="line">console.<span class="built_in">log</span>('&gt;&gt; <span class="keyword">two</span>');</div><div class="line"></div><div class="line">next();</div><div class="line"></div><div class="line">console.<span class="built_in">log</span>('&lt;&lt; <span class="keyword">two</span>');</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">const</span> three = (ctx, next) =&gt; &#123;</div><div class="line"></div><div class="line">console.<span class="built_in">log</span>('&gt;&gt; three');</div><div class="line"></div><div class="line">next();</div><div class="line"></div><div class="line">console.<span class="built_in">log</span>('&lt;&lt; three');</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">app</span>.<span class="keyword">use</span>(<span class="keyword">one</span>);</div><div class="line"><span class="keyword">app</span>.<span class="keyword">use</span>(<span class="keyword">two</span>);</div><div class="line"><span class="keyword">app</span>.<span class="keyword">use</span>(three);</div><div class="line"></div><div class="line"><span class="keyword">app</span>.listen(3000);</div></pre></td></tr></table></figure>
-<p><img src="http://upload-images.jianshu.io/upload_images/3563580-578836fa12375529.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<pre><code>const Koa = require(&#39;koa&#39;);
+const app = new Koa();
+
+const one = (ctx, next) =&gt; {
+
+console.log(&#39;&gt;&gt; one&#39;);
+
+next();
+
+console.log(&#39;&lt;&lt; one&#39;);
+
+}
+
+const two = (ctx, next) =&gt; {
+
+console.log(&#39;&gt;&gt; two&#39;);
+
+next();
+
+console.log(&#39;&lt;&lt; two&#39;);
+
+}
+
+const three = (ctx, next) =&gt; {
+
+console.log(&#39;&gt;&gt; three&#39;);
+
+next();
+
+console.log(&#39;&lt;&lt; three&#39;);
+
+}
+
+app.use(one);
+app.use(two);
+app.use(three);
+
+app.listen(3000);
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/3563580-578836fa12375529.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <p>如果没有 next，中间件就不会往内层的中间件执行 而会返回外层中间件</p>
 <p>把 two 的 next 注释掉</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/3563580-5f85230c6e1857aa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="4-异步中间件"><a href="#4-异步中间件" class="headerlink" title="4 异步中间件"></a>4 异步中间件</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs.promised'</span>);</div><div class="line"><span class="keyword">const</span> Koa = <span class="built_in">require</span>(<span class="string">'koa'</span>);</div><div class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa();</div><div class="line"></div><div class="line"><span class="keyword">const</span> main = <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params">ctx, next</span>) </span>&#123;</div><div class="line">ctx.response.type = <span class="string">'html'</span>;</div><div class="line">ctx.response.body = <span class="keyword">await</span> fs.readFile(<span class="string">'./demos/template.html'</span>, <span class="string">'utf8'</span>);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">app.use(main);</div><div class="line">app.listen(<span class="number">3000</span>);</div></pre></td></tr></table></figure>
-<p>async await 处理异步</p>
+<h3 id="4-异步中间件"><a href="#4-异步中间件" class="headerlink" title="4 异步中间件"></a>4 异步中间件</h3><pre><code>const fs = require(&#39;fs.promised&#39;);
+const Koa = require(&#39;koa&#39;);
+const app = new Koa();
+
+const main = async function (ctx, next) {
+ctx.response.type = &#39;html&#39;;
+ctx.response.body = await fs.readFile(&#39;./demos/template.html&#39;, &#39;utf8&#39;);
+};
+
+app.use(main);
+app.listen(3000);
+</code></pre><p>async await 处理异步</p>
 <h3 id="5-中间件的合成"><a href="#5-中间件的合成" class="headerlink" title="5 中间件的合成"></a>5 中间件的合成</h3><p>koa-compose 将多个中间件合并成一个</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> Koa = <span class="built_in">require</span>(<span class="string">'koa'</span>);</div><div class="line"><span class="keyword">const</span> compose = <span class="built_in">require</span>(<span class="string">'koa-compose'</span>);</div><div class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa();</div><div class="line"></div><div class="line"><span class="keyword">const</span> logger = <span class="function">(<span class="params">ctx, next</span>) =&gt;</span> &#123;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;<span class="built_in">Date</span>.now()&#125;</span> <span class="subst">$&#123;ctx.request.method&#125;</span> <span class="subst">$&#123;ctx.request.url&#125;</span>`</span>);</div><div class="line"></div><div class="line">next();</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">const</span> main = <span class="function"><span class="params">ctx</span> =&gt;</span> &#123;</div><div class="line">    ctx.response.body = <span class="string">'Hello World'</span>;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">const</span> middlewares = compose([logger, main]);</div><div class="line"></div><div class="line">app.use(middlewares);</div><div class="line">app.listen(<span class="number">3000</span>);</div></pre></td></tr></table></figure>
-<p><img src="http://upload-images.jianshu.io/upload_images/3563580-022a1b9a9ed7ab00.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<pre><code>const Koa = require(&#39;koa&#39;);
+const compose = require(&#39;koa-compose&#39;);
+const app = new Koa();
+
+const logger = (ctx, next) =&gt; {
+
+console.log(`${Date.now()} ${ctx.request.method} ${ctx.request.url}`);
+
+next();
+
+}
+
+const main = ctx =&gt; {
+    ctx.response.body = &#39;Hello World&#39;;
+};
+
+const middlewares = compose([logger, main]);
+
+app.use(middlewares);
+app.listen(3000);
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/3563580-022a1b9a9ed7ab00.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/3563580-a2cebd71f3c7e6ed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <h2 id="四、错误处理"><a href="#四、错误处理" class="headerlink" title="四、错误处理"></a>四、错误处理</h2><h3 id="500-错误"><a href="#500-错误" class="headerlink" title="500 错误"></a>500 错误</h3><p>500 状态码 —— 代码运行错误</p>
 <p>ctx.throw 抛出错误</p>
 <p>ctx.throw(500) 抛出 500 错误</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> Koa = <span class="keyword">require</span>(<span class="string">'koa'</span>);</div><div class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa();</div><div class="line"></div><div class="line"><span class="keyword">const</span> main = ctx =&gt; &#123;</div><div class="line">  ctx.<span class="keyword">throw</span>(<span class="number">500</span>);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">app.<span class="keyword">use</span>(main);</div><div class="line">app.listen(<span class="number">3000</span>);</div></pre></td></tr></table></figure>
-<p><img src="http://upload-images.jianshu.io/upload_images/3563580-a8b4b900929fc3d0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<pre><code>const Koa = require(&#39;koa&#39;);
+const app = new Koa();
+
+const main = ctx =&gt; {
+  ctx.throw(500);
+};
+
+app.use(main);
+app.listen(3000);
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/3563580-a8b4b900929fc3d0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/3563580-5735b99604f5fe9e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/3563580-759028ee17851586.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/3563580-20eff4f2acbc2499.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <h3 id="2-404-错误"><a href="#2-404-错误" class="headerlink" title="2 404 错误"></a>2 404 错误</h3><p>ctx.response.status = 404 相当于 ctx.throw(404) 返回 404 错误</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> Koa = <span class="built_in">require</span>(<span class="string">'koa'</span>);</div><div class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa();</div><div class="line"></div><div class="line"><span class="keyword">const</span> main = <span class="function"><span class="params">ctx</span> =&gt;</span> &#123;</div><div class="line">  ctx.response.status = <span class="number">404</span>;</div><div class="line">  ctx.response.body = <span class="string">'Page Not Found'</span>;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">app.use(main);</div><div class="line">app.listen(<span class="number">3000</span>);</div></pre></td></tr></table></figure>
-<p><img src="http://upload-images.jianshu.io/upload_images/3563580-efbe181b5321d060.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<pre><code>const Koa = require(&#39;koa&#39;);
+const app = new Koa();
+
+const main = ctx =&gt; {
+  ctx.response.status = 404;
+  ctx.response.body = &#39;Page Not Found&#39;;
+};
+
+app.use(main);
+app.listen(3000);
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/3563580-efbe181b5321d060.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/3563580-feb318b8207c51a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <h3 id="3-处理错误的中间件"><a href="#3-处理错误的中间件" class="headerlink" title="3 处理错误的中间件"></a>3 处理错误的中间件</h3><p>让最外层中间件负责处理所有中间件的错误</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> Koa = <span class="keyword">require</span>(<span class="string">'koa'</span>);</div><div class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa();</div><div class="line"></div><div class="line"><span class="keyword">const</span> handler = async (ctx, next) =&gt; &#123;</div><div class="line">  <span class="keyword">try</span> &#123;</div><div class="line">    await next();</div><div class="line">  &#125; <span class="keyword">catch</span> (err) &#123;</div><div class="line">    ctx.response.status = err.statusCode || err.status || <span class="number">500</span>;</div><div class="line">    ctx.response.body = &#123;</div><div class="line">      message: err.message</div><div class="line">    &#125;;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">const</span> main = ctx =&gt; &#123;</div><div class="line">  ctx.<span class="keyword">throw</span>(<span class="number">500</span>);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">app.<span class="keyword">use</span>(handler);</div><div class="line">app.<span class="keyword">use</span>(main);</div><div class="line">app.listen(<span class="number">3000</span>);</div></pre></td></tr></table></figure>
-<p><img src="http://upload-images.jianshu.io/upload_images/3563580-b6a9a47929347e68.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<pre><code>const Koa = require(&#39;koa&#39;);
+const app = new Koa();
+
+const handler = async (ctx, next) =&gt; {
+  try {
+    await next();
+  } catch (err) {
+    ctx.response.status = err.statusCode || err.status || 500;
+    ctx.response.body = {
+      message: err.message
+    };
+  }
+};
+
+const main = ctx =&gt; {
+  ctx.throw(500);
+};
+
+app.use(handler);
+app.use(main);
+app.listen(3000);
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/3563580-b6a9a47929347e68.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/3563580-1e9ed4f3b201c457.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <h3 id="4-error-事件的监听"><a href="#4-error-事件的监听" class="headerlink" title="4 error 事件的监听"></a>4 error 事件的监听</h3><p>监听 error 事件也可以处理错误</p>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> Koa = require('koa');</div><div class="line"><span class="keyword">const</span> <span class="keyword">app</span> = new Koa();</div><div class="line"></div><div class="line"><span class="keyword">const</span> main = ctx =&gt; &#123;</div><div class="line">  ctx.throw(500);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">app</span>.<span class="keyword">on</span>('<span class="keyword">error</span>', (<span class="keyword">err</span>, ctx) =&gt; &#123;</div><div class="line">  console.<span class="keyword">error</span>('server <span class="keyword">error</span>', <span class="keyword">err</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="keyword">app</span>.<span class="keyword">use</span>(main);</div><div class="line"><span class="keyword">app</span>.listen(3000);</div></pre></td></tr></table></figure>
-<p><img src="http://upload-images.jianshu.io/upload_images/3563580-5a622ff8b674cb25.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<pre><code>const Koa = require(&#39;koa&#39;);
+const app = new Koa();
+
+const main = ctx =&gt; {
+  ctx.throw(500);
+};
+
+app.on(&#39;error&#39;, (err, ctx) =&gt; {
+  console.error(&#39;server error&#39;, err);
+});
+
+app.use(main);
+app.listen(3000);
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/3563580-5a622ff8b674cb25.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/3563580-f0dd9f99ad67697b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <h3 id="5-释放-error-事件"><a href="#5-释放-error-事件" class="headerlink" title="5 释放 error 事件"></a>5 释放 error 事件</h3><p>被 try … catch 捕获的错误不会触发 error 事件</p>
 <p>要调用 ctx.app.emit(), 手动释放 error 事件</p>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> Koa = require('koa');</div><div class="line"><span class="keyword">const</span> <span class="keyword">app</span> = new Koa();</div><div class="line"></div><div class="line"><span class="keyword">const</span> handler = async (ctx, next) =&gt; &#123;</div><div class="line">  try &#123;</div><div class="line">    await next();</div><div class="line">  &#125; catch (<span class="keyword">err</span>) &#123;</div><div class="line">    ctx.response.status = <span class="keyword">err</span>.statusCode || <span class="keyword">err</span>.status || 500;</div><div class="line">    ctx.response.<span class="keyword">type</span> = 'html';</div><div class="line">    ctx.response.body = '&lt;p&gt;Something wrong, please contact administrator.&lt;/p&gt;';</div><div class="line">    ctx.<span class="keyword">app</span>.emit('<span class="keyword">error</span>', <span class="keyword">err</span>, ctx);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">const</span> main = ctx =&gt; &#123;</div><div class="line">  ctx.throw(500);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">app</span>.<span class="keyword">on</span>('<span class="keyword">error</span>', function(<span class="keyword">err</span>) &#123;</div><div class="line">  console.<span class="built_in">log</span>('logging <span class="keyword">error</span>', <span class="keyword">err</span>.message);</div><div class="line">  console.<span class="built_in">log</span>(<span class="keyword">err</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="keyword">app</span>.<span class="keyword">use</span>(handler);</div><div class="line"><span class="keyword">app</span>.<span class="keyword">use</span>(main);</div><div class="line"><span class="keyword">app</span>.listen(3000);</div></pre></td></tr></table></figure>
-<p><img src="http://upload-images.jianshu.io/upload_images/3563580-7d43b2ac6e8bbf7e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<pre><code>const Koa = require(&#39;koa&#39;);
+const app = new Koa();
+
+const handler = async (ctx, next) =&gt; {
+  try {
+    await next();
+  } catch (err) {
+    ctx.response.status = err.statusCode || err.status || 500;
+    ctx.response.type = &#39;html&#39;;
+    ctx.response.body = &#39;&lt;p&gt;Something wrong, please contact administrator.&lt;/p&gt;&#39;;
+    ctx.app.emit(&#39;error&#39;, err, ctx);
+  }
+};
+
+const main = ctx =&gt; {
+  ctx.throw(500);
+};
+
+app.on(&#39;error&#39;, function(err) {
+  console.log(&#39;logging error&#39;, err.message);
+  console.log(err);
+});
+
+app.use(handler);
+app.use(main);
+app.listen(3000);
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/3563580-7d43b2ac6e8bbf7e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/3563580-506388f40095a28d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/3563580-ace175d9f131f842.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <h2 id="五、Web-App-的功能"><a href="#五、Web-App-的功能" class="headerlink" title="五、Web App 的功能"></a>五、Web App 的功能</h2><h3 id="1-Cookies"><a href="#1-Cookies" class="headerlink" title="1 Cookies"></a>1 Cookies</h3><p>ctx.cookies 读写 Cookie<br>ctx.cookies.get() 获得 Cookie<br>ctx.cookies.set() 设置 Cookie</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> Koa = <span class="built_in">require</span>(<span class="string">'koa'</span>);</div><div class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa();</div><div class="line"></div><div class="line"><span class="keyword">const</span> main = <span class="function"><span class="keyword">function</span>(<span class="params">ctx</span>) </span>&#123;</div><div class="line">  <span class="keyword">const</span> n = <span class="built_in">Number</span>(ctx.cookies.get(<span class="string">'view'</span>) || <span class="number">0</span>) + <span class="number">1</span>;</div><div class="line">  ctx.cookies.set(<span class="string">'view'</span>, n);</div><div class="line">  ctx.response.body = n + <span class="string">'views'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">app.use(main);</div><div class="line">app.listen(<span class="number">3000</span>);</div></pre></td></tr></table></figure>
-<p><img src="http://upload-images.jianshu.io/upload_images/3563580-36da76974f1f7466.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<pre><code>const Koa = require(&#39;koa&#39;);
+const app = new Koa();
+
+const main = function(ctx) {
+  const n = Number(ctx.cookies.get(&#39;view&#39;) || 0) + 1;
+  ctx.cookies.set(&#39;view&#39;, n);
+  ctx.response.body = n + &#39;views&#39;;
+}
+
+app.use(main);
+app.listen(3000);
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/3563580-36da76974f1f7466.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/3563580-1dd21f5fa547ce7f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/3563580-6878538e8bc07385.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <blockquote>
@@ -342,8 +913,20 @@
 <p><img src="http://upload-images.jianshu.io/upload_images/3563580-1f41e0f27dbcf93f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <h3 id="2-表单"><a href="#2-表单" class="headerlink" title="2 表单"></a>2 表单</h3><p>Web 应用离不开处理表单。本质上，表单就是 POST 方法发送到服务器的键值对。</p>
 <p>koa-body 用来从 POST 请求体中提取键值对</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> Koa = <span class="keyword">require</span>(<span class="string">'koa'</span>);</div><div class="line"><span class="keyword">const</span> koaBody = <span class="keyword">require</span>(<span class="string">'koa-body'</span>);</div><div class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa();</div><div class="line"></div><div class="line"><span class="keyword">const</span> main = async <span class="function"><span class="keyword">function</span><span class="params">(ctx)</span> </span>&#123;</div><div class="line">  <span class="keyword">const</span> body = ctx.request.body;</div><div class="line">  <span class="keyword">if</span> (!body.name) ctx.<span class="keyword">throw</span>(<span class="number">400</span>, <span class="string">'.name required'</span>);</div><div class="line">  ctx.body = &#123; name: body.name &#125;;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">app.<span class="keyword">use</span>(koaBody());</div><div class="line">app.<span class="keyword">use</span>(main);</div><div class="line">app.listen(<span class="number">3000</span>);</div></pre></td></tr></table></figure>
-<p><img src="http://upload-images.jianshu.io/upload_images/3563580-b1b4ea7178e40045.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<pre><code>const Koa = require(&#39;koa&#39;);
+const koaBody = require(&#39;koa-body&#39;);
+const app = new Koa();
+
+const main = async function(ctx) {
+  const body = ctx.request.body;
+  if (!body.name) ctx.throw(400, &#39;.name required&#39;);
+  ctx.body = { name: body.name };
+};
+
+app.use(koaBody());
+app.use(main);
+app.listen(3000);
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/3563580-b1b4ea7178e40045.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/3563580-5a56b2cd0f4e2c0b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <p>POST 方法向服务器发送一个键值对，会被正确解析。如果发送的数据不正确，就会收到错误提示。</p>
 <p>打开新的命令行窗口</p>
@@ -353,20 +936,48 @@
 <p>curl -X POST –data “name” localhost:3000</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/3563580-bdee1f7139fdeb35.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <h3 id="3-文件上传"><a href="#3-文件上传" class="headerlink" title="3 文件上传"></a>3 文件上传</h3><p>koa-body 处理文件上传</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> os = <span class="built_in">require</span>(<span class="string">'os'</span>);</div><div class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</div><div class="line"><span class="keyword">const</span> Koa = <span class="built_in">require</span>(<span class="string">'koa'</span>);</div><div class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</div><div class="line"><span class="keyword">const</span> koaBody = <span class="built_in">require</span>(<span class="string">'koa-body'</span>);</div><div class="line"></div><div class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa();</div><div class="line"></div><div class="line"><span class="keyword">const</span> main = <span class="keyword">async</span> <span class="function"><span class="keyword">function</span>(<span class="params">ctx</span>) </span>&#123;</div><div class="line">  <span class="keyword">const</span> tmpdir = os.tmpdir();</div><div class="line">  <span class="keyword">const</span> filePaths = [];</div><div class="line">  <span class="keyword">const</span> files = ctx.request.body.files || &#123;&#125;;</div><div class="line"></div><div class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> files) &#123;</div><div class="line">    <span class="keyword">const</span> file = files[key];</div><div class="line">    <span class="keyword">const</span> filePath = path.join(tmpdir, file.name);</div><div class="line">    <span class="built_in">console</span>.log(filePath)</div><div class="line">    <span class="keyword">const</span> reader = fs.createReadStream(file.path);</div><div class="line">    <span class="keyword">const</span> writer = fs.createWriteStream(filePath);</div><div class="line">    reader.pipe(writer);</div><div class="line">    filePaths.push(filePath);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  ctx.body = filePaths;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">app.use(koaBody(&#123; <span class="attr">multipart</span>: <span class="literal">true</span> &#125;));</div><div class="line">app.use(main);</div><div class="line">app.listen(<span class="number">3000</span>);</div></pre></td></tr></table></figure>
-<p>在新的命令行窗口输入</p>
+<pre><code>const os = require(&#39;os&#39;);
+const path = require(&#39;path&#39;);
+const Koa = require(&#39;koa&#39;);
+const fs = require(&#39;fs&#39;);
+const koaBody = require(&#39;koa-body&#39;);
+
+const app = new Koa();
+
+const main = async function(ctx) {
+  const tmpdir = os.tmpdir();
+  const filePaths = [];
+  const files = ctx.request.body.files || {};
+
+  for (let key in files) {
+    const file = files[key];
+    const filePath = path.join(tmpdir, file.name);
+    console.log(filePath)
+    const reader = fs.createReadStream(file.path);
+    const writer = fs.createWriteStream(filePath);
+    reader.pipe(writer);
+    filePaths.push(filePath);
+  }
+
+  ctx.body = filePaths;
+};
+
+app.use(koaBody({ multipart: true }));
+app.use(main);
+app.listen(3000);
+</code></pre><p>在新的命令行窗口输入</p>
 <p>curl –form upload=@/path/to/file <a href="http://localhost:3000" target="_blank" rel="external">http://localhost:3000</a></p>
 <p>/path/to/file 替换成真实路径</p>
 <p>curl –form upload=@/D:/Nodejs/other/koa-demos/demos/21.js <a href="http://localhost:3000" target="_blank" rel="external">http://localhost:3000</a></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/3563580-7c57a9a9333dccf7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png">   </p>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><strong>Koa 框架教程 by 阮一峰 </strong>：<a href="http://www.ruanyifeng.com/blog/2017/08/koa.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2017/08/koa.html</a></p>
 ]]></content> -->
-      <content type="html"><![CDATA[Koa 入门准备 Node 版本必须 7.6 以上 克隆代码库 git clone https://github.com/ruanyf/koa-demos.git 一、基本用法1 开启 HTTP 服务器 2 Context 对象Koa 提供一个 Context 对象，表示一次对话的上下文（包括 HTTP 请求和 HTTP 回复）。通过加工这个对象，就可以控制返回给用户的内容。 ctx.response 代表 HTTP Responsectx.request 代表 HTTP Request 3 response 类型Koa 默认的返回类型是 text/plain ctx.request.accepts 用来判断客户端希望接受什么数据ctx.response.type 指定返回类型 4 读取模板文件 二、路由1 原生路由ctx.request.path可获取用户请求的路径 2 koa-routerroute.get(path, callback)callback 指定 ctx.response.type 和 ctx,response.body 3 静态资源koa-static 处理静态资源 4 302 重定向ctx.response.redirect() 三、 中间件1 logger打印日志 2 中间件的概念logger 函数就叫做 “中间件”（middleware），因为它处在 HTTP Request 和 HTTP Response 中间，用来实现某种中间功能。app.use() 用来加载中间件。 基本上，Koa 所有的功能都是通过中间件实现的，前面例子里面的 main 也是中间件。参数 context 对象， next 函数 （将执行权限交给下一个中间件） 3 中间件栈多个中间件会形成一个栈结构（middle stack），以 “先进后出”（first-in-last-out）的顺序执行。 最外层的中间件首先执行。 调用 next 函数，把执行权交给下一个中间件。 … 最内层的中间件最后执行。 执行结束后，把执行权交回上一层的中间件。 … 最外层的中间件收回执行权之后，执行 next 函数后面的代码。 如果没有 next，中间件就不会往内层的中间件执行 而会返回外层中间件 把 two 的 next 注释掉 4 异步中间件 async await 处理异步 5 中间件的合成koa-compose 将多个中间件合并成一个 四、错误处理500 错误500 状态码 —— 代码运行错误 ctx.throw 抛出错误 ctx.throw(500) 抛出 500 错误 2 404 错误ctx.response.status = 404 相当于 ctx.throw(404) 返回 404 错误 3 处理错误的中间件让最外层中间件负责处理所有中间件的错误 4 error 事件的监听监听 error 事件也可以处理错误 5 释放 error 事件被 try … catch 捕获的错误不会触发 error 事件 要调用 ctx.app.emit(), 手动释放 error 事件 五、Web App 的功能1 Cookiesctx.cookies 读写 Cookiectx.cookies.get() 获得 Cookiectx.cookies.set() 设置 Cookie 每刷新一次就会跟增加一次 2 表单Web 应用离不开处理表单。本质上，表单就是 POST 方法发送到服务器的键值对。 koa-body 用来从 POST 请求体中提取键值对 POST 方法向服务器发送一个键值对，会被正确解析。如果发送的数据不正确，就会收到错误提示。 打开新的命令行窗口 输入 curl -X POST –data “name=Jack” localhost:3000 curl -X POST –data “name” localhost:3000 3 文件上传koa-body 处理文件上传 在新的命令行窗口输入 curl –form upload=@/path/to/file http://localhost:3000 /path/to/file 替换成真实路径 curl –form upload=@/D:/Nodejs/other/koa-demos/demos/21.js http://localhost:3000 参考资料Koa 框架教程 by 阮一峰 ：http://www.ruanyifeng.com/blog/2017/08/koa.html]]></content>
+      <content type="html"><![CDATA[Koa 入门准备 Node 版本必须 7.6 以上 克隆代码库 git clone https://github.com/ruanyf/koa-demos.git 一、基本用法1 开启 HTTP 服务器const Koa = require(&#39;koa&#39;); const app = new Koa(); app.listen(3000); 2 Context 对象Koa 提供一个 Context 对象，表示一次对话的上下文（包括 HTTP 请求和 HTTP 回复）。通过加工这个对象，就可以控制返回给用户的内容。 const Koa = require(&#39;koa&#39;); const app = new Koa(); const main = ctx =&gt; { ctx.response.body = &#39;Hello World&#39;; }; app.use(main); app.listen(3000); ctx.response 代表 HTTP Responsectx.request 代表 HTTP Request 3 response 类型Koa 默认的返回类型是 text/plain ctx.request.accepts 用来判断客户端希望接受什么数据ctx.response.type 指定返回类型 const Koa = require(&#39;koa&#39;); const app = new Koa(); const main = ctx =&gt; { if (ctx.request.accepts(&#39;xml&#39;)) { ctx.response.type = &#39;xml&#39;; ctx.response.body = &#39;&lt;data&gt;Hello World&lt;/data&gt;&#39;; } else if (ctx.request.accepts(&#39;json&#39;)) { ctx.response.type = &#39;json&#39;; ctx.response.body = { data: &#39;Hello World&#39; }; } else if (ctx.request.accepts(&#39;html&#39;)) { ctx.response.type = &#39;html&#39;; ctx.response.body = &#39;&lt;p&gt;Hello World&lt;/p&gt;&#39;; } else { ctx.response.type = &#39;text&#39;; ctx.response.body = &#39;Hello World&#39;; } }; app.use(main); app.listen(3000); 4 读取模板文件const fs = require(&#39;fs&#39;); const Koa = require(&#39;koa&#39;); const app = new Koa(); const main = ctx =&gt; { ctx.response.type = &#39;html&#39;; ctx.response.body = fs.createReadStream(&#39;./demos/template.html&#39;); }; app.use(main); app.listen(3000); 二、路由1 原生路由ctx.request.path可获取用户请求的路径 const Koa = require(&#39;koa&#39;); const app = new Koa(); const main = ctx =&gt; { if (ctx.request.path !== &#39;/&#39;) { ctx.response.type = &#39;html&#39;; ctx.response.body = &#39;&lt;a href=&quot;/&quot;&gt;Index Page&lt;/a&gt;&#39;; } else { ctx.response.body = &#39;Hello World&#39;; } }; app.use(main); app.listen(3000); 2 koa-routerroute.get(path, callback)callback 指定 ctx.response.type 和 ctx,response.body const Koa = require(&#39;koa&#39;); const route = require(&#39;koa-route&#39;); const app = new Koa(); const about = ctx =&gt; { ctx.response.type = &#39;html&#39;; ctx.response.body = &#39;&lt;a href=&quot;/&quot;&gt;Index Page&lt;/a&gt;&#39;; }; const main = ctx =&gt; { ctx.response.body = &#39;Hello World&#39;; }; app.use(route.get(&#39;/&#39;, main)); app.use(route.get(&#39;/about&#39;, about)); app.use(main); app.listen(3000); 3 静态资源koa-static 处理静态资源 const Koa = require(&#39;koa&#39;); const app = new Koa(); const path = require(&#39;path&#39;); const serve = require(&#39;koa-static&#39;); const main = serve(path.join(__dirname)); app.use(main); app.listen(3000); 4 302 重定向ctx.response.redirect() const Koa = require(&#39;koa&#39;); const route = require(&#39;koa-route&#39;); const app = new Koa(); const redirect = ctx =&gt; { ctx.response.redirect(&#39;/&#39;); }; const main = ctx =&gt; { ctx.response.body = &#39;Hello World&#39;; }; app.use(route.get(&#39;/&#39;, main)); app.use(route.get(&#39;/redirect&#39;, redirect)); app.use(main); app.listen(3000); 三、 中间件1 logger打印日志 const Koa = require(&#39;koa&#39;); const app = new Koa(); const main = ctx =&gt; { console.log(`${Date.now()} ${ctx.request.method} ${ctx.request.url}`); ctx.response.body = &#39;Hello World&#39;; }; app.use(main); app.listen(3000); 2 中间件的概念logger 函数就叫做 “中间件”（middleware），因为它处在 HTTP Request 和 HTTP Response 中间，用来实现某种中间功能。app.use() 用来加载中间件。 基本上，Koa 所有的功能都是通过中间件实现的，前面例子里面的 main 也是中间件。参数 context 对象， next 函数 （将执行权限交给下一个中间件） const Koa = require(&#39;koa&#39;); const app = new Koa(); const logger = (ctx, next) =&gt; { console.log(`${Date.now()} ${ctx.request.method} ${ctx.request.url}`); next(); } const main = ctx =&gt; { ctx.response.body = &#39;Hello World&#39;; }; app.use(logger); app.use(main); app.listen(3000); 3 中间件栈多个中间件会形成一个栈结构（middle stack），以 “先进后出”（first-in-last-out）的顺序执行。 最外层的中间件首先执行。 调用 next 函数，把执行权交给下一个中间件。 … 最内层的中间件最后执行。 执行结束后，把执行权交回上一层的中间件。 … 最外层的中间件收回执行权之后，执行 next 函数后面的代码。 const Koa = require(&#39;koa&#39;); const app = new Koa(); const one = (ctx, next) =&gt; { console.log(&#39;&gt;&gt; one&#39;); next(); console.log(&#39;&lt;&lt; one&#39;); } const two = (ctx, next) =&gt; { console.log(&#39;&gt;&gt; two&#39;); next(); console.log(&#39;&lt;&lt; two&#39;); } const three = (ctx, next) =&gt; { console.log(&#39;&gt;&gt; three&#39;); next(); console.log(&#39;&lt;&lt; three&#39;); } app.use(one); app.use(two); app.use(three); app.listen(3000); 如果没有 next，中间件就不会往内层的中间件执行 而会返回外层中间件 把 two 的 next 注释掉 4 异步中间件const fs = require(&#39;fs.promised&#39;); const Koa = require(&#39;koa&#39;); const app = new Koa(); const main = async function (ctx, next) { ctx.response.type = &#39;html&#39;; ctx.response.body = await fs.readFile(&#39;./demos/template.html&#39;, &#39;utf8&#39;); }; app.use(main); app.listen(3000); async await 处理异步 5 中间件的合成koa-compose 将多个中间件合并成一个 const Koa = require(&#39;koa&#39;); const compose = require(&#39;koa-compose&#39;); const app = new Koa(); const logger = (ctx, next) =&gt; { console.log(`${Date.now()} ${ctx.request.method} ${ctx.request.url}`); next(); } const main = ctx =&gt; { ctx.response.body = &#39;Hello World&#39;; }; const middlewares = compose([logger, main]); app.use(middlewares); app.listen(3000); 四、错误处理500 错误500 状态码 —— 代码运行错误 ctx.throw 抛出错误 ctx.throw(500) 抛出 500 错误 const Koa = require(&#39;koa&#39;); const app = new Koa(); const main = ctx =&gt; { ctx.throw(500); }; app.use(main); app.listen(3000); 2 404 错误ctx.response.status = 404 相当于 ctx.throw(404) 返回 404 错误 const Koa = require(&#39;koa&#39;); const app = new Koa(); const main = ctx =&gt; { ctx.response.status = 404; ctx.response.body = &#39;Page Not Found&#39;; }; app.use(main); app.listen(3000); 3 处理错误的中间件让最外层中间件负责处理所有中间件的错误 const Koa = require(&#39;koa&#39;); const app = new Koa(); const handler = async (ctx, next) =&gt; { try { await next(); } catch (err) { ctx.response.status = err.statusCode || err.status || 500; ctx.response.body = { message: err.message }; } }; const main = ctx =&gt; { ctx.throw(500); }; app.use(handler); app.use(main); app.listen(3000); 4 error 事件的监听监听 error 事件也可以处理错误 const Koa = require(&#39;koa&#39;); const app = new Koa(); const main = ctx =&gt; { ctx.throw(500); }; app.on(&#39;error&#39;, (err, ctx) =&gt; { console.error(&#39;server error&#39;, err); }); app.use(main); app.listen(3000); 5 释放 error 事件被 try … catch 捕获的错误不会触发 error 事件 要调用 ctx.app.emit(), 手动释放 error 事件 const Koa = require(&#39;koa&#39;); const app = new Koa(); const handler = async (ctx, next) =&gt; { try { await next(); } catch (err) { ctx.response.status = err.statusCode || err.status || 500; ctx.response.type = &#39;html&#39;; ctx.response.body = &#39;&lt;p&gt;Something wrong, please contact administrator.&lt;/p&gt;&#39;; ctx.app.emit(&#39;error&#39;, err, ctx); } }; const main = ctx =&gt; { ctx.throw(500); }; app.on(&#39;error&#39;, function(err) { console.log(&#39;logging error&#39;, err.message); console.log(err); }); app.use(handler); app.use(main); app.listen(3000); 五、Web App 的功能1 Cookiesctx.cookies 读写 Cookiectx.cookies.get() 获得 Cookiectx.cookies.set() 设置 Cookie const Koa = require(&#39;koa&#39;); const app = new Koa(); const main = function(ctx) { const n = Number(ctx.cookies.get(&#39;view&#39;) || 0) + 1; ctx.cookies.set(&#39;view&#39;, n); ctx.response.body = n + &#39;views&#39;; } app.use(main); app.listen(3000); 每刷新一次就会跟增加一次 2 表单Web 应用离不开处理表单。本质上，表单就是 POST 方法发送到服务器的键值对。 koa-body 用来从 POST 请求体中提取键值对 const Koa = require(&#39;koa&#39;); const koaBody = require(&#39;koa-body&#39;); const app = new Koa(); const main = async function(ctx) { const body = ctx.request.body; if (!body.name) ctx.throw(400, &#39;.name required&#39;); ctx.body = { name: body.name }; }; app.use(koaBody()); app.use(main); app.listen(3000); POST 方法向服务器发送一个键值对，会被正确解析。如果发送的数据不正确，就会收到错误提示。 打开新的命令行窗口 输入 curl -X POST –data “name=Jack” localhost:3000 curl -X POST –data “name” localhost:3000 3 文件上传koa-body 处理文件上传 const os = require(&#39;os&#39;); const path = require(&#39;path&#39;); const Koa = require(&#39;koa&#39;); const fs = require(&#39;fs&#39;); const koaBody = require(&#39;koa-body&#39;); const app = new Koa(); const main = async function(ctx) { const tmpdir = os.tmpdir(); const filePaths = []; const files = ctx.request.body.files || {}; for (let key in files) { const file = files[key]; const filePath = path.join(tmpdir, file.name); console.log(filePath) const reader = fs.createReadStream(file.path); const writer = fs.createWriteStream(filePath); reader.pipe(writer); filePaths.push(filePath); } ctx.body = filePaths; }; app.use(koaBody({ multipart: true })); app.use(main); app.listen(3000); 在新的命令行窗口输入 curl –form upload=@/path/to/file http://localhost:3000 /path/to/file 替换成真实路径 curl –form upload=@/D:/Nodejs/other/koa-demos/demos/21.js http://localhost:3000 参考资料Koa 框架教程 by 阮一峰 ：http://www.ruanyifeng.com/blog/2017/08/koa.html]]></content>
     </entry>
     
     <entry>
       <title><![CDATA[music video test]]></title>
-      <url>https://ldqblog.me/posts/f7cc0d89/</url>
+      <url>https://ldqblog.me/2017/07/31/music-video-test/</url>
       <!-- <content type="html"><![CDATA[<h3 id="歌曲"><a href="#歌曲" class="headerlink" title="歌曲"></a>歌曲</h3><div class="aplayer" data-id="31673404" data-server="netease" data-type="song"></div>
 
 <h3 id="歌单"><a href="#歌单" class="headerlink" title="歌单"></a>歌单</h3><div class="aplayer" data-id="11100236" data-server="netease" data-type="playlist" data-mode="random"></div>
@@ -379,33 +990,41 @@
     
     <entry>
       <title><![CDATA[test description]]></title>
-      <url>https://ldqblog.me/posts/6444e51d/</url>
+      <url>https://ldqblog.me/2017/02/02/test-description/</url>
       <!-- <content type="html"><![CDATA[<ul>
 <li>在 scaffolds/post.md 文件中添加 description</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">window</span>).load(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"> $(<span class="string">'pre'</span>).addClass(<span class="string">'prettyprint linenums'</span>).attr(<span class="string">'style'</span>, <span class="string">'overflow:auto;'</span>);</div><div class="line">   prettyPrint();</div><div class="line"> &#125;)</div></pre></td></tr></table></figure>]]></content> -->
-      <content type="html"><![CDATA[在 scaffolds/post.md 文件中添加 description]]></content>
+<pre><code>$(window).load(function(){
+ $(&#39;pre&#39;).addClass(&#39;prettyprint linenums&#39;).attr(&#39;style&#39;, &#39;overflow:auto;&#39;);
+   prettyPrint();
+ })
+</code></pre>]]></content> -->
+      <content type="html"><![CDATA[在 scaffolds/post.md 文件中添加 description $(window).load(function(){ $(&#39;pre&#39;).addClass(&#39;prettyprint linenums&#39;).attr(&#39;style&#39;, &#39;overflow:auto;&#39;); prettyPrint(); })]]></content>
     </entry>
     
     <entry>
       <title><![CDATA[Hello World]]></title>
-      <url>https://ldqblog.me/posts/4a17b156/</url>
+      <url>https://ldqblog.me/2017/01/17/hello-world/</url>
       <!-- <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;
+</code></pre>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server
+</code></pre>
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate
+</code></pre>
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy
+</code></pre>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 ]]></content> -->
-      <content type="html"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post More info: Writing Run server More info: Server Generate static files More info: Generating Deploy to remote sites More info: Deployment]]></content>
+      <content type="html"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post$ hexo new &quot;My New Post&quot; More info: Writing Run server$ hexo server More info: Server Generate static files$ hexo generate More info: Generating Deploy to remote sites$ hexo deploy More info: Deployment]]></content>
     </entry>
     
     <entry>
       <title><![CDATA[photoTest]]></title>
-      <url>https://ldqblog.me/posts/ba82f11c/</url>
+      <url>https://ldqblog.me/2017/01/13/photoTest/</url>
       <!-- <content type="html"><![CDATA[<ul>
 <li>测试图片功能</li>
 </ul>
@@ -416,7 +1035,7 @@
     
     <entry>
       <title><![CDATA[第一篇 Hexo 文章]]></title>
-      <url>https://ldqblog.me/posts/37c28bfb/</url>
+      <url>https://ldqblog.me/2016/11/05/%E7%AC%AC%E4%B8%80%E7%AF%87Hexo%E6%96%87%E7%AB%A0/</url>
       <!-- <content type="html"><![CDATA[<ul>
 <li>第一次写 Hexo 博客</li>
 </ul>

@@ -1,1 +1,0 @@
-{"version":"Sample 1.0.0","model":"koharu.moc","textures":["img/texture_00.png"],"motions":{"idle":[{"file":"mtn/idle.mtn"}]},"physics":"koharu.physics.json","name":"koharu"}
