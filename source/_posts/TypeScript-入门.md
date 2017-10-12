@@ -125,7 +125,7 @@ TypeScript的文件类型是.ts文件或JSX中的.tsx文件，不能直接运行
 下面的命令行把 TypeScript 文件 main.ts编译为 JavaScript 版本的 main.js。如果 main.js 已经存在的话会被覆盖。
 
 ```
-tsc main.ts
+    tsc main.ts
 ```
 
 可以同时编译多个文件
@@ -620,7 +620,8 @@ myGenNum.add(2,3)
 - 泛型约束
 
 ```
-interface Length {    length: number
+interface Length {    
+    length: number
 }
 
 function fn<T extends Length>(arg: T): T {
