@@ -13,7 +13,7 @@
     "bd": "cnpm i hexo-baidu-url-submit -S",
     "un": "cnpm install hexo-pangu-spacing --save",
     "amd": "cnpm install --save amd-optimize",
-    "ig": "cnpm install --save gulp-ignore" 
+    "ig": "cnpm install --save gulp-ignore"   
   },
   "dependencies": {
     "amd-optimize": "^0.6.1",
