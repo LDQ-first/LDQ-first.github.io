@@ -32,11 +32,11 @@ gulp.task('minify-html', function() {
 
 // 压缩 public/js 目录 js文件
 // AMD语法导致出错？
-/*gulp.task('minify-js', function() {
+gulp.task('minify-js', function() {
     return gulp.src('./public/js/*.js')
         .pipe(uglify())
         .pipe(gulp.dest('./public/js'));
-});*/
+});
 
 
 gulp.task('img', function(){
@@ -53,5 +53,5 @@ gulp.task('img', function(){
 
 // 执行 gulp 命令时执行的任务
 gulp.task('default', [
-    'minify-html','minify-css','img'
+    'minify-html','minify-css','minify-js','img'
 ]);
