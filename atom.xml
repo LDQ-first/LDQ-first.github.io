@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ldqblog.me/"/>
-  <updated>2017-10-12T09:14:53.000Z</updated>
+  <updated>2017-10-12T16:28:54.000Z</updated>
   <id>https://ldqblog.me/</id>
   
   <author>
@@ -14,6 +14,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>React-Router 简介</title>
+    <link href="https://ldqblog.me/2017/10/13/React-Router-%E7%AE%80%E4%BB%8B/"/>
+    <id>https://ldqblog.me/2017/10/13/React-Router-简介/</id>
+    <published>2017-10-12T16:27:53.000Z</published>
+    <updated>2017-10-12T16:28:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="React-Router"><a href="#React-Router" class="headerlink" title="React-Router"></a>React-Router</h1><p><a href="http://ldqblog.me/learn-react-router/build/">学习 React-Router 的例子</a></p>
+<p><a href="https://github.com/LDQ-first/learn-react-router" target="_blank" rel="external">源码</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      React-Router 入门简单介绍
+    
+    </summary>
+    
+      <category term="技术" scheme="https://ldqblog.me/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="前端" scheme="https://ldqblog.me/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="React" scheme="https://ldqblog.me/tags/React/"/>
+    
+      <category term="React-Router" scheme="https://ldqblog.me/tags/React-Router/"/>
+    
+  </entry>
   
   <entry>
     <title>TypeScript 入门</title>
@@ -1045,11 +1073,962 @@ app.listen(3000);
     </summary>
     
     
+      <category term="test" scheme="https://ldqblog.me/tags/test/"/>
+    
       <category term="music" scheme="https://ldqblog.me/tags/music/"/>
     
       <category term="video" scheme="https://ldqblog.me/tags/video/"/>
     
-      <category term="test" scheme="https://ldqblog.me/tags/test/"/>
+  </entry>
+  
+  <entry>
+    <title>Redux 简介</title>
+    <link href="https://ldqblog.me/2017/07/23/Redux-%E7%AE%80%E4%BB%8B/"/>
+    <id>https://ldqblog.me/2017/07/23/Redux-简介/</id>
+    <published>2017-07-22T16:29:31.000Z</published>
+    <updated>2017-10-12T16:39:19.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Redux"><a href="#Redux" class="headerlink" title="Redux"></a>Redux</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><pre><code>
+redux react-redux
+
+const 文件
+action 
+aciton creator
+reducer
+store
+state
+dispatch
+combineReducers
+
+connect
+mapStateToProps
+mapDispatchToProps
+middleware
+</code></pre><h2 id="store"><a href="#store" class="headerlink" title="store"></a>store</h2><pre><code>保存数据的一个单一状态树
+</code></pre><p>要通过 createStore 方法生成    </p>
+<pre><code>import {createStore} from &#39;redux&#39;
+const store = createStore(fn)
+</code></pre><h2 id="action"><a href="#action" class="headerlink" title="action"></a>action</h2><p>  Action 是一个对象。其中的 type 属性是必须的，表示 Action 的名称。<br>  其他属性可以自由设置。</p>
+<pre><code>  const action = {
+    type: &#39;ADD_TODO&#39;,
+    payload: &#39;Learn Redux&#39;
+  }
+</code></pre><h2 id="action-creator"><a href="#action-creator" class="headerlink" title="action creator"></a>action creator</h2><pre><code>每次手写 action 很麻烦，于是要定义一个函数来生成 action，该函数就是
+action creator
+</code></pre><pre><code>const chooseNav = (index) =&gt; {
+    return {
+        type: CHOOSE_NAV,
+        index
+    }
+}
+
+const action = chooseNav(1)
+</code></pre><h2 id="store-dispatch"><a href="#store-dispatch" class="headerlink" title="store.dispatch"></a>store.dispatch</h2><p>  要触发 action，就要使用 store.dispatch</p>
+<pre><code>import { createStore } from &#39;redux&#39;;
+const store = createStore(fn)
+
+store.dispatch({
+  type: &#39;ADD_TODO&#39;,
+  payload: &#39;Learn Redux&#39;
+})
+</code></pre><h2 id="const-文件"><a href="#const-文件" class="headerlink" title="const 文件"></a>const 文件</h2><p>  将 action.type 定义为常量<br>  reducer 通过 action.type 判断是哪个 action</p>
+<h2 id="reducer"><a href="#reducer" class="headerlink" title="reducer"></a>reducer</h2><p>  更新数据， 返回新的 state</p>
+<pre><code>const initState = {
+
+}
+
+const reducer = (state = initState, action) =&gt; {
+    switch(action.type) {
+        case xxx:
+            xxx
+            break
+        case yyy:
+            yyy
+            break
+        default 
+           return state 
+
+    }
+}
+</code></pre><h2 id="combineReducers"><a href="#combineReducers" class="headerlink" title="combineReducers"></a>combineReducers</h2><pre><code>合并多个 reducer
+</code></pre><pre><code>import { combineReducers } from &#39;redux&#39;
+
+
+const chatReducer = combineReducers({
+  chatLog,
+  statusMessage,
+  userName
+})
+
+export default chatReducer
+</code></pre><h2 id="创建-stroe"><a href="#创建-stroe" class="headerlink" title="创建 stroe"></a>创建 stroe</h2><pre><code>import chatReducer from &#39;./xxx&#39;
+
+
+const store = createStore(
+    chatReducer
+)
+
+export default store
+</code></pre><h2 id="Provider"><a href="#Provider" class="headerlink" title="Provider"></a>Provider</h2><p>   store 添加在 Provider 组件</p>
+<pre><code>import store from &#39;./yyy&#39;
+import {Provider} from &#39;react-redux&#39;
+
+
+
+ReactDOM.render(
+    &lt; Provider store={store} &gt;
+       ...
+    &lt; /Provider &gt;, 
+document.getElementById(&#39;root&#39;))
+</code></pre><h2 id="在组件中使用"><a href="#在组件中使用" class="headerlink" title="在组件中使用"></a>在组件中使用</h2><pre><code> mapStateToProps 传 props 给组件
+ mapDispatchToProps 传 dispatch 方法 给组件
+ 通过 connect 传个组件 
+</code></pre><p>例子</p>
+<pre><code>import React, { Component } from &#39;react&#39;
+import PropTypes from &#39;prop-types&#39;
+import CommentList from &#39;../components/CommentList.js&#39;
+import { initComments, deleteComment} from &#39;../reducers/comments.js&#39;
+import {connect} from &#39;react-redux&#39;
+
+
+
+class CommentListContainer extends Component {
+    static propTypes = {
+        comments: PropTypes.array,
+        initComments: PropTypes.func,
+        deleteComment: PropTypes.func
+    }
+
+    componentWillMount() {
+        this._loadComments()
+    }
+
+    _loadComments() {
+        let comments = localStorage.getItem(&#39;comments&#39;)
+        comments = comments ? JSON.parse(comments) : []
+        this.props.initComments(comments)
+    }
+
+    handleDeleteComment(index) {
+        const {comments} = this.props
+        const newComments = [
+            ...comments.slice(0, index),
+            ...comments.slice(index + 1)
+        ]
+        localStorage.setItem(&#39;comments&#39;, JSON.stringify(newComments))
+        if(this.props.onDeleteComment) {
+            this.props.onDeleteComment(index)
+        }
+    }
+
+    render() {
+        return (
+            &lt; CommentList 
+                comments = {this.props.comments}
+                onDeleteComment={this.handleDeleteComment.bind(this)}
+            / &gt;
+        )
+    }
+}
+
+// 评论列表从 state.comments 中获取
+const mapStateToProps = state =&gt; {
+    return {
+        comments: state.comments
+    }
+}
+
+const mapDispatchToProps = dispatch =&gt; {
+    return {
+        // 提供给 CommentListContainer
+        // 当从 LocalStorage 加载评论列表以后就会通过这个方法
+        // 把评论列表初始化到 state 当中
+        initComments: (comments) =&gt; {
+            dispatch(initComments(comments))
+        } ,
+        // 删除评论
+        onDeleteComment: (commentIndex) =&gt; {
+            dispatch(deleteComment(commentIndex))
+        }
+    }
+}
+
+
+// 将 CommentListContainer connect 到 store
+// 会把 comments、initComments、onDeleteComment 传给 CommentListContainer
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(CommentListContainer)
+</code></pre><h2 id="middleware"><a href="#middleware" class="headerlink" title="middleware"></a>middleware</h2><p>   强化 redux 的功能</p>
+<p>原理<br>   改写 store.dispatch </p>
+<p>因为 reducer 是纯函数，只承担计算 State 的功能，不合适承担其他功能<br>View 与 State 一一对应，可以看作 State 的视觉层，也不合适承担其他功能。<br>Action：存放数据的对象，即消息的载体，只能被别人操作，自己不能进行任何操作。</p>
+<p>compose<br>  从右到左来组合多个函数。</p>
+<p>这是函数式编程中的方法，为了方便，被放到了 Redux 里。<br>当需要把多个 store 增强器 依次执行的时候，需要用到它。</p>
+<p>例子</p>
+<pre><code>import {createStore, applyMiddleware, compose} from &#39;redux&#39;
+import reducers from &#39;./reducers.js&#39;
+import thunkMiddleware  from &#39;redux-thunk&#39;
+import createLogger from &#39;redux-logger&#39;
+
+
+
+export default () =&gt; {
+    const middleware = [thunkMiddleware, createLogger]
+
+
+    const composeEnhancers = 
+        process.env.NODE_ENV !== &#39;production&#39; &amp;&amp;
+            typeof window === &#39;object&#39; &amp;&amp;
+            window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ 
+            ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+                // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
+                }) 
+            : compose
+
+    const enhancers =  composeEnhancers(
+        applyMiddleware(...middleware)
+    )
+
+    const store = createStore(
+        reducers,
+        enhancers
+    )
+
+    return store
+}
+</code></pre><h3 id="处理异步"><a href="#处理异步" class="headerlink" title="处理异步"></a>处理异步</h3><pre><code>
+
+redux-think + async/await
+    redux-think 让 dispatch 能接受 函数作为参数 （原来参数只能是对象）
+    利用 async/await 的调用方式处理异步
+
+redux-promise
+    利用 promise 的调用方式处理异步
+
+
+redux-promise-middleware
+    优化 redux-promise
+
+
+redux-saga (generator/yield)
+     利用 generator/yield 的调用方式处理异步
+     提供大量的 api
+
+
+redux-observable (RxJS)
+     利用 RxJS 的调用方式处理异步
+     提供大量的 api
+
+
+redux-loop
+</code></pre><h3 id="其他中间件"><a href="#其他中间件" class="headerlink" title="其他中间件"></a>其他中间件</h3><pre><code>
+redux-logger
+</code></pre><h3 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h3><p><a href="https://github.com/sorrycc/blog/issues/1" target="_blank" rel="external">看看 dva 的前身 React + Redux 最佳实践，知道 dva 是怎么来的</a></p>
+<h3 id="优秀的相关框架"><a href="#优秀的相关框架" class="headerlink" title="优秀的相关框架"></a>优秀的相关框架</h3><p><a href="https://github.com/dvajs/dva" target="_blank" rel="external">dva</a></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><strong> 理解 React</strong>: <a href="https://www.zhihu.com/question/41312576?sort=created" target="_blank" rel="external">https://www.zhihu.com/question/41312576?sort=created</a><br><strong>Redux 入门教程（一）—— 阮一峰 </strong>: <a href="http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      Redux 入门简单介绍
+    
+    </summary>
+    
+      <category term="技术" scheme="https://ldqblog.me/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="前端" scheme="https://ldqblog.me/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="React" scheme="https://ldqblog.me/tags/React/"/>
+    
+      <category term="Redux" scheme="https://ldqblog.me/tags/Redux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React 简介</title>
+    <link href="https://ldqblog.me/2017/07/13/React-%E7%AE%80%E4%BB%8B/"/>
+    <id>https://ldqblog.me/2017/07/13/React-简介/</id>
+    <published>2017-07-12T16:15:33.000Z</published>
+    <updated>2017-10-12T16:27:04.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="React-简介"><a href="#React-简介" class="headerlink" title="React 简介"></a>React 简介</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><h3 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h3><p>一般写在 render 生命周期函数里</p>
+<p>语法:</p>
+<pre><code>return (
+    写 HTML 
+
+    注意 有些 属性要改写 
+    如 ： class =》 className 
+
+    标签要闭合 &lt;img src=&quot;&quot;&gt; =》 &lt; img src=&quot;&quot; /&gt; 
+
+    可以添加 js
+    但要用 {} 括起来 
+
+
+)
+</code></pre><h3 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h3><pre><code>import React, { Component } from &#39;react&#39;
+
+class NotFound extends Component {
+
+    render () {
+
+        return (
+
+
+        )
+    }
+}
+</code></pre><p>例子</p>
+<pre><code>import React, { Component } from &#39;react&#39;
+
+
+export default class NotFound extends Component {
+
+    render() {
+
+        return (
+            &lt; Container className=&quot;noPadding&quot; &gt;
+               &lt; NotFoundDiv &gt;
+                   &lt; h1 className=&quot;title&quot; &gt;404&lt; /h1 &gt;
+               &lt; /NotFoundDiv &gt;
+            &lt; /Container &gt;
+        )
+    }
+}
+</code></pre><h3 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h3><p>获取 dom 元素</p>
+<pre><code>&lt; div className=&quot;contactContent&quot; 
+    ref={contact =&gt; this._contact = contact} &gt;       
+&lt; /div &gt;
+</code></pre><h3 id="state"><a href="#state" class="headerlink" title="state"></a>state</h3><p>数据</p>
+<pre><code>constructor(props) {
+    super(props) 
+    this.state = {
+
+    }
+}
+</code></pre><h3 id="setState"><a href="#setState" class="headerlink" title="setState"></a>setState</h3><p>   更新 state </p>
+<p>注意：</p>
+<ol>
+<li>setState 不会立刻改变 React 组件中 state 的值</li>
+<li>函数式的 setState 用法</li>
+</ol>
+<p>看这篇文章<br>   <a href="https://zhuanlan.zhihu.com/p/25954470" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/25954470</a></p>
+<h3 id="props"><a href="#props" class="headerlink" title="props"></a>props</h3><p>子组件接受父组件的数据</p>
+<pre><code>const { _this } = this.props
+</code></pre><h3 id="PropTypes"><a href="#PropTypes" class="headerlink" title="PropTypes"></a>PropTypes</h3><p>props 类型检查</p>
+<pre><code>import PropTypes from &#39;prop-types&#39;
+
+
+static get propTypes() {
+    return {
+        _this: PropTypes.object
+    }
+}
+</code></pre><h4 id="classNames-第三方库"><a href="#classNames-第三方库" class="headerlink" title="classNames(第三方库)"></a>classNames(第三方库)</h4><p> 处理各类名</p>
+<pre><code>import classNames from &#39;classnames&#39;
+
+const { isSpread } = this.state
+
+className={classNames(&#39;toggle&#39;, {active: isSpread})
+</code></pre><h3 id="event"><a href="#event" class="headerlink" title="event"></a>event</h3><p>事件<br>React 支持许多事件<br>官方文档有列出<br><a href="https://reactjs.org/docs/events.html#supported-events" target="_blank" rel="external">https://reactjs.org/docs/events.html#supported-events</a></p>
+<pre><code>
+&lt;a href=&quot;javascript:;&quot; className=&#39;toggle&#39;} 
+onClick={() =&gt; { this._toggle() }}&gt;
+    &lt;i className=&quot;bar&quot;&gt;&lt;/i&gt;
+&lt;/a&gt;
+</code></pre><h3 id="lists-key-map"><a href="#lists-key-map" class="headerlink" title="lists key map"></a>lists key map</h3><p>循环</p>
+<pre><code>
+const { navArr} = this.state
+
+const navs = navArr.map((item, index) =&gt; {
+    return (
+        &lt;li key={index} className=&#39;nav&#39;} &gt;
+            {item.name}
+        &lt;/li&gt;
+    )
+})
+
+&lt;ul className=&#39;navs&#39;&gt;
+    {navs ? navs : null}
+&lt;/ul&gt;
+</code></pre><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><pre><code>npm install -g create-react-app
+
+create-react-app my-app
+cd my-app/
+npm start
+</code></pre><p>浏览器自动打开 <a href="http://localhost:3000/" target="_blank" rel="external">http://localhost:3000/</a></p>
+<p>写完</p>
+<p>npm run build 构建打包</p>
+<p>生成的 build 文件夹就是要发布的文件</p>
+<h4 id="文件夹结构"><a href="#文件夹结构" class="headerlink" title="文件夹结构"></a>文件夹结构</h4><pre><code>
+my-app
+├── README.md
+├── node_modules
+├── package.json
+├── .gitignore
+├── public
+│   └── favicon.ico
+│   └── index.html
+│   └── manifest.json
+└── src
+    └── App.css
+    └── App.js
+    └── App.test.js
+    └── index.css
+    └── index.js
+    └── logo.svg
+    └── registerServiceWorker.js
+</code></pre><p>在 src 中编写代码</p>
+<p>也可以自己搭建一个脚手架</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><strong>React 文档 </strong>: <a href="https://reactjs.org/" target="_blank" rel="external">https://reactjs.org/</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      React 入门简单介绍
+    
+    </summary>
+    
+      <category term="技术" scheme="https://ldqblog.me/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="前端" scheme="https://ldqblog.me/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="React" scheme="https://ldqblog.me/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vuex 简介</title>
+    <link href="https://ldqblog.me/2017/06/24/Vuex-%E7%AE%80%E4%BB%8B/"/>
+    <id>https://ldqblog.me/2017/06/24/Vuex-简介/</id>
+    <published>2017-06-24T15:57:24.000Z</published>
+    <updated>2017-10-12T16:16:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Vuex"><a href="#Vuex" class="headerlink" title="Vuex"></a>Vuex</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>vue 组件通过 dispatch 来触发 actions [这步可省略， 一般用于处理异步]<br>actions 再通过 commit 触发 mutations , 改变 store 上的 state<br>最终改变 vue 组件 的 view </p>
+<p>常与 computed 结合 </p>
+<p>state 是唯一数据来源</p>
+<p>vuex 是单一状态树</p>
+<h3 id="getters"><a href="#getters" class="headerlink" title="getters"></a>getters</h3><p>getters 派生出一些新的状态</p>
+<p>Vuex 允许我们在 store 中定义 “getter”（可以认为是 store 的计算属性）。<br>就像计算属性一样，getter 的返回值会根据它的依赖被缓存起来，<br>且只有当它的依赖值发生了改变才会被重新计算。</p>
+<pre><code>const store = new Vuex.Store({
+  state: {
+    todos: [
+      { id: 1, text: &#39;...&#39;, done: true },
+      { id: 2, text: &#39;...&#39;, done: false }
+    ]
+  },
+  getters: {
+    doneTodos: state =&gt; {
+      return state.todos.filter(todo =&gt; todo.done)
+    }
+  }
+})
+</code></pre><p>Getter 会暴露为 store.getters 对象：</p>
+<p>store.getters.doneTodos // -&gt; [{ id: 1, text: ‘…’, done: true }]<br>Getter 也可以接受其他 getter 作为第二个参数：</p>
+<pre><code>getters: {
+  // ...
+  doneTodosCount: (state, getters) =&gt; {
+    return getters.doneTodos.length
+  }
+}
+store.getters.doneTodosCount // -&gt; 1
+</code></pre><p>我们可以很容易地在任何组件中使用它：</p>
+<pre><code>computed: {
+  doneTodosCount () {
+    return this.$store.getters.doneTodosCount
+  }
+}
+</code></pre><p>你也可以通过让 getter 返回一个函数，来实现给 getter 传参。在你对 store 里的数组进行查询时非常有用。</p>
+<pre><code>getters: {
+  // ...
+  getTodoById: (state, getters) =&gt; (id) =&gt; {
+    return state.todos.find(todo =&gt; todo.id === id)
+  }
+}
+store.getters.getTodoById(2) // -&gt; { id: 2, text: &#39;...&#39;, done: false }
+</code></pre><p>mapGetters 辅助函数 类似 mapState</p>
+<p>在 computed 中使用… 运算符获取 getters</p>
+<h3 id="mutations"><a href="#mutations" class="headerlink" title="mutations"></a>mutations</h3><p>更改 vuex 的 store 中的状态的唯一方法是提交 mutations</p>
+<p>action 通过 mutations 间接改变 store 的状态</p>
+<p>acion 处理异步操作</p>
+<h3 id="modules"><a href="#modules" class="headerlink" title="modules"></a>modules</h3><p>将 store 状态分割成模块（modules）<br>便于管理</p>
+<h3 id="一个简单的例子"><a href="#一个简单的例子" class="headerlink" title="一个简单的例子"></a>一个简单的例子</h3><pre><code>store
+  module 
+    moduleHome.js
+  mutations
+    mutationsHome.js
+  index.js
+
+
+
+
+moduleHome.js
+
+import mutations from &#39;../mutations/mutationsHome.js&#39;
+
+export default {
+    state: {
+        isFullScreen: false
+    },
+    mutations: mutations()
+}
+
+
+
+
+mutationsHome.js
+
+export default () =&gt; {
+    return {
+        FullScreen (state, isFullScreen) {
+            state.isFullScreen = isFullScreen
+        }
+    }
+}
+
+
+
+index.js
+
+import Vuex from &#39;vuex&#39;
+import Vue from &#39;vue&#39;
+Vue.use(Vuex)
+
+import moduleHome from &#39;./module/moduleHome.js&#39;
+
+
+export default new Vuex.Store({
+    modules: {
+        home: moduleHome
+    }
+})   
+
+
+
+
+
+main.js
+
+import Vue from &#39;vue&#39;
+import App from &#39;./App&#39;
+import store from &#39;./store/index.js&#39;
+
+Vue.config.productionTip = false
+
+
+
+new Vue({
+  el: &#39;#app&#39;,
+  store,
+  render: h =&gt; h(App)
+})
+</code></pre><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><pre><code>const Sidebar = resolve =&gt; require([&#39;../../components/Sidebar.vue&#39;], resolve)
+const MainContent = resolve =&gt; require([&#39;../../components/MainContent.vue&#39;], resolve)
+const Buttons = resolve =&gt; require([&#39;../../components/Button.vue&#39;], resolve)
+
+import { mapState } from &#39;vuex&#39;
+
+export default {
+    name: &#39;Home&#39;,
+    data () {
+        return {
+
+        } 
+    },
+    computed: {
+        ...mapState({
+            isFullScreen: state =&gt; state.home.isFullScreen
+        })
+        /*
+            isFullScreen() {
+                return this.$store.state.home.isFullScreen
+            }
+        */
+    },
+    components: {
+        Buttons,
+        Sidebar,
+        MainContent
+    },
+    methods: {
+        cancelFullScreen () {
+            this.$store.commit(&#39;FullScreen&#39;, false)
+        }
+    }
+}
+</code></pre><h3 id="对比-redux"><a href="#对比-redux" class="headerlink" title="对比 redux"></a>对比 redux</h3><pre><code>
+都是基于 Flux
+吸取 redux 的优点
+放弃强制的 immutability
+api 更简洁
+性能较好
+与 vue 契合度更高
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/3563580-c893179ac3e708f2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="vuex.png"></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><strong>Vuex 文档 </strong>: <a href="https://vuex.vuejs.org/zh-cn/" target="_blank" rel="external">https://vuex.vuejs.org/zh-cn/</a><br><strong> 尤大的答案 </strong>: <a href="https://www.zhihu.com/question/38546875/answer/76970954" target="_blank" rel="external">https://www.zhihu.com/question/38546875/answer/76970954</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      Vuex 入门简单介绍
+    
+    </summary>
+    
+      <category term="技术" scheme="https://ldqblog.me/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="前端" scheme="https://ldqblog.me/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="Vue" scheme="https://ldqblog.me/tags/Vue/"/>
+    
+      <category term="Vuex" scheme="https://ldqblog.me/tags/Vuex/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue-Router 简介</title>
+    <link href="https://ldqblog.me/2017/06/18/Vue-Router-%E7%AE%80%E4%BB%8B/"/>
+    <id>https://ldqblog.me/2017/06/18/Vue-Router-简介/</id>
+    <published>2017-06-18T15:29:31.000Z</published>
+    <updated>2017-10-12T16:04:46.479Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Vue-Router-简介"><a href="#Vue-Router-简介" class="headerlink" title="Vue-Router 简介"></a>Vue-Router 简介</h1><h2 id="前端路由"><a href="#前端路由" class="headerlink" title="前端路由"></a>前端路由</h2><blockquote>
+<p>指根据不同的 url 展示不同的内容或页面</p>
+</blockquote>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><pre><code>用户体验好，
+不需要每次从服务器全部获取
+展示更加快速
+</code></pre><h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><pre><code>不利于 SEO
+使用浏览器的前进后退功能时，会重新发请求，
+不能有效利用缓存
+
+单页面无法记住之前滚动的位置，
+无法在前进后退的时候记住之前的位置
+</code></pre><h2 id="Vue-路由-——-Vue-Router"><a href="#Vue-路由-——-Vue-Router" class="headerlink" title="Vue 路由 —— Vue-Router"></a>Vue 路由 —— Vue-Router</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><h4 id="动态路由"><a href="#动态路由" class="headerlink" title="动态路由"></a>动态路由</h4><pre><code>
+/user/:username
+/user/:username/goodlist/:goodlist_id
+
+
+username，goodlist_id 是变化的
+
+$router.params
+</code></pre><h4 id="嵌套路由"><a href="#嵌套路由" class="headerlink" title="嵌套路由"></a>嵌套路由</h4><p>路由有子路由</p>
+<pre><code>export default new Router({
+  routes: [
+    {
+      path: &#39;/goods&#39;,
+      name: &#39;GoodList&#39;,
+      component: GoodList,
+      children:[
+        {
+          path: &#39;title&#39;,
+          name: &#39;title&#39;,
+          component: Title
+        },
+        {
+          path: &#39;img&#39;,
+          name: &#39;img&#39;,
+          component: Image
+        }
+      ]
+    }
+  ]
+})
+</code></pre><h4 id="编程式路由"><a href="#编程式路由" class="headerlink" title="编程式路由"></a>编程式路由</h4><p>不通过 <router-link>&lt; /router-link &gt; 来跳转，而通过<br>事件触发，调用 $router.push() API 来跳转</router-link></p>
+<pre><code>$router.push(&quot;name&quot;)
+$router.push({path:&quot;name&quot;})
+$router.push({path:&quot;name?a=123&quot;})
+$router.push({path:&quot;name&quot;, query: {a:&quot;123&quot;}})
+$router.go(1)  // 前进 1 页  相当于 history.go(1)
+
+
+&lt; button @click=&quot;jump&quot; &gt;跳转到购物车页面&lt; /button &gt;
+
+ methods:{
+    jump() {
+        //this.$router.push(&quot;cart&quot;)
+        this.$router.push({path:&#39;cart?goodsId=123&#39;})
+    }
+}
+</code></pre><h4 id="命名路由"><a href="#命名路由" class="headerlink" title="命名路由"></a>命名路由</h4><p>给路由不同的名字，根据名字来进行匹配</p>
+<pre><code>import Vue from &#39;vue&#39;
+import Router from &#39;vue-router&#39;
+import GoodList from &#39;../views/GoodList&#39;
+import Title from &#39;@/views/Title&#39;
+import Image from &#39;@/views/Image&#39;
+import Cart from &#39;@/views/Cart&#39;
+
+Vue.use(Router)
+
+export default new Router({
+  routes: [
+    {
+      path: &#39;/goods&#39;,
+      name: &#39;GoodList&#39;,
+      component: GoodList,
+      children:[
+        {
+          path: &#39;title&#39;,
+          name: &#39;title&#39;,
+          component: Title
+        },
+        {
+          path: &#39;img&#39;,
+          name: &#39;img&#39;,
+          component: Image
+        }
+      ]
+    },
+    {
+        path: &#39;/cart/:cartId&#39;,
+        name: &#39;cart&#39;,
+        component: Cart
+    }
+  ]
+})
+
+
+&lt; router-link :to=&quot;{name:&#39;cart&#39;,params:{cartId: 123}}&quot; &gt;跳转到购物车页面&lt; /router-link &gt;
+</code></pre><h4 id="命名视图"><a href="#命名视图" class="headerlink" title="命名视图"></a>命名视图</h4><p>给不同的 router-view 定义名字，通过名字进行对应组件的渲染</p>
+<pre><code>import Vue from &#39;vue&#39;
+import Router from &#39;vue-router&#39;
+import GoodList from &#39;../views/GoodList&#39;
+import Title from &#39;@/views/Title&#39;
+import Image from &#39;@/views/Image&#39;
+import Cart from &#39;@/views/Cart&#39;
+
+Vue.use(Router)
+
+export default new Router({
+  routes: [
+    {
+      path: &#39;/&#39;,
+      name: &#39;GoodList&#39;,
+      components: {
+        default: GoodList,
+        title: Title,
+        img: Image 
+      },
+      children:[
+        {
+          path: &#39;title&#39;,
+          name: &#39;title&#39;,
+          component: Title
+        },
+        {
+          path: &#39;img&#39;,
+          name: &#39;img&#39;,
+          component: Image
+        }
+      ]
+    },
+    {
+        path: &#39;/cart/:cartId&#39;,
+        name: &#39;cart&#39;,
+        component: Cart
+    }
+  ]
+})
+
+
+
+
+&lt; router-view class=&quot;main&quot; &gt;&lt; /router-view&gt;
+&lt; router-view name=&quot;title&quot; class=&quot;left&quot; &gt;&lt; /router-view&gt;
+&lt; router-view name=&quot;img&quot; class=&quot;right&quot; &gt;&lt; /router-view&gt;
+</code></pre><h4 id="路由过渡"><a href="#路由过渡" class="headerlink" title="路由过渡"></a>路由过渡</h4><p>切换路由时有动画效果</p>
+<pre><code>&lt; transition name=&quot;show&quot; &gt;
+    &lt; router-view name=&quot;login&quot; &gt;&lt; /router-view &gt;
+&lt; /transition&gt;
+
+
+.show-enter-active {
+  transition: all .3s ease;
+}
+
+.show-leave-active {
+  transition: all .2s ease-in;
+}
+
+
+.show-enter, .show-leave-active {
+  transform: translateX(200px);
+  opacity: 0;
+}
+
+
+
+
+
+api，组件
+
+&lt; router-link &gt;&lt; /router-link &gt;
+this.$router.push({path: &#39;&#39;})
+&lt; router-view &gt;&lt; /router-view &gt;
+</code></pre><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><pre><code>
+router 
+    index.js
+
+import Vue from &#39;vue&#39;
+import Router from &#39;vue-router&#39;
+const GoodList = resolve =&gt; require([&#39;../views/GoodList.vue&#39;], resolve)
+
+Vue.use(Router)
+
+
+Vue.use(Router)
+
+const routes = [
+    {
+      path: &#39;/goods/:goodsId/user/:name&#39;,
+      name: &#39;GoodList&#39;,
+      component: GoodList
+    }
+]
+
+
+const router =  new Router({
+  routes
+})
+
+export default router
+
+export {
+    router,
+    routes
+}
+
+
+
+main.js
+
+    import Vue from &#39;vue&#39;
+    import App from &#39;./App&#39;
+    import router from &#39;./router&#39;
+
+new Vue({
+    el: &#39;#app&#39;,
+    router,
+    render: h =&gt; h(App)
+})
+</code></pre><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><strong>Vue-Router 文档 </strong>: <a href="https://router.vuejs.org/zh-cn/index.html" target="_blank" rel="external">https://router.vuejs.org/zh-cn/index.html</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      vue-router 入门简单介绍
+    
+    </summary>
+    
+      <category term="技术" scheme="https://ldqblog.me/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="前端" scheme="https://ldqblog.me/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="Vue" scheme="https://ldqblog.me/tags/Vue/"/>
+    
+      <category term="Vue-Router" scheme="https://ldqblog.me/tags/Vue-Router/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue 简介</title>
+    <link href="https://ldqblog.me/2017/06/06/Vue-%E7%AE%80%E4%BB%8B/"/>
+    <id>https://ldqblog.me/2017/06/06/Vue-简介/</id>
+    <published>2017-06-06T14:46:11.000Z</published>
+    <updated>2017-10-12T15:57:46.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Vue-简介"><a href="#Vue-简介" class="headerlink" title="Vue 简介"></a>Vue 简介</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote>
+<p>Vue 是一套构建用户界面的渐进式 MVVM 框架<br>Vue 的核心库只关注视图层，将路由交给 Vue-Router ，状态管理交给 Vuex </p>
+</blockquote>
+<h3 id="核心概念和关键词"><a href="#核心概念和关键词" class="headerlink" title="核心概念和关键词"></a>核心概念和关键词</h3><p>template<br>data<br>methods<br>components </p>
+<p>计算属性<br>watch</p>
+<h4 id="计算属性-vs-watch"><a href="#计算属性-vs-watch" class="headerlink" title="计算属性 vs watch"></a>计算属性 vs watch</h4><blockquote>
+<p>虽然计算属性在大多数情况下更合适，但有时也需要一个自定义的 watcher。<br>这是为什么 Vue 通过 watch 选项提供一个更通用的方法，来响应数据的变化。<br>当你想要在数据变化响应时，执行异步操作或开销较大的操作，这是很有用的。  </p>
+</blockquote>
+<p>指令<br>插件<br>生命周期<br>响应式<br>过渡<br>混合<br>过滤器</p>
+<p>路由<br>状态管理<br>服务端渲染<br>单元测试</p>
+<p>api<br>风格指南</p>
+<p>生态</p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>安装好 nodejs, 有命令行工具</p>
+<p>在命令行工具中</p>
+<pre><code>npm install -g vue-cli
+vue init webpack myProject
+cd myProject
+npm install
+npm run dev
+</code></pre><p>浏览器会自动打开 <a href="http://localhost:8080/#/" target="_blank" rel="external">http://localhost:8080/#/</a>  (opn 模块)</p>
+<p>写完代码</p>
+<p>npm run build 构建打包</p>
+<p>生成的 dist 文件夹就是要发布的文件</p>
+<h4 id="用到的文件"><a href="#用到的文件" class="headerlink" title="用到的文件"></a>用到的文件</h4><p>build 和 config 文件夹</p>
+<p>webpack 配置，可以自己修改</p>
+<p>一般改 config/index.js 的 build assetsPublicPath，这是打包后的静态文件的路径前添加的路径<br>因为线上路径和开发路径很多时候有所不同</p>
+<p>如: assetsPublicPath: ‘/vue-CNode/dist/‘</p>
+<p>dev proxyTable</p>
+<p>配置代理<br>用于解决开发时的跨域问题</p>
+<pre><code>
+proxyTable: {
+      &#39;/goods&#39;: {
+          target: &#39;http://localhost:3000&#39;
+      },
+      &#39;/goods/*&#39;: {
+          target: &#39;http://localhost:3000&#39;
+      },
+      &#39;/users/**&#39;: {
+          target: &#39;http://localhost:3000&#39;
+      }
+    },
+</code></pre><p>src  编写代码</p>
+<p>一种项目的录结构</p>
+<p>   assets 静态资源<br>   Components 组件<br>   router 路由<br>   store vuex<br>   util 工具脚本<br>   views 路由组件<br>   App.vue 根组件<br>   main.js 入口文件</p>
+<p>static<br>  静态资源</p>
+<h4 id="assets-和-static-的区别"><a href="#assets-和-static-的区别" class="headerlink" title="assets 和 static 的区别"></a>assets 和 static 的区别</h4><p>assets：<br>一般存放开发过程中自己写的静态资源<br>（image, css, js 等，如：shop.css, car.png, roomListUtil.js）</p>
+<p>static：<br>存放第三方静态资源（jquery.js, bootstrap.css 等），<br>这里的资源一般是直接引用，当打包编译后 assets 中的静态资源也会编译到 static 目录下，<br>这样原来引用 static 资源的地址也不用改变。<br>最后编译发布的时候会将所有的静态资源整合到 /dist/static/ 目录下，当然也可以自定义其他路径。</p>
+<p>index.html<br>    模板 HTML 文件 </p>
+<h4 id="Vue-的页面架构流程"><a href="#Vue-的页面架构流程" class="headerlink" title="Vue 的页面架构流程"></a>Vue 的页面架构流程</h4><p><img src="http://upload-images.jianshu.io/upload_images/3563580-ddbf4fee1d6de4c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="vue.png"></p>
+<h3 id="独立构建-运行时构建"><a href="#独立构建-运行时构建" class="headerlink" title="独立构建 运行时构建"></a>独立构建 运行时构建</h3><p>一、独立构建包含模板编译器，运行时构建不包含模板编译器。<br>二、模板编译器的作用就是将 template 选项编译成 render 函数，render 函数是渲染的关键。<br>三、鉴于以上两点，使用运行时构建时，不能出现 template 选项，因为此时没有模板编译器。<br>但是有一种情况除外：即 webpack+vue-loader 情况下单文件组件中出现 template 是可以的。<br>四、使用 vue-cli 生成项目时，会提醒使用哪种构建方式，npm 包默认导出的是运行时构建，<br>如果需要使用独立构建，需要在 webpack 中配置 alias(设置 alias 为 vue.common.js)<br>五、目前暂时发现的两者的应用场景上的区别有：</p>
+<p>需要注意 Vue 实例化时的方式，运行时构建方式下实例化 Vue 时，不要出现 template 属性<br>index.html 中不要出现 template 或者是通过 vue-router 渲染的 route-view</p>
+<p>运行时构建一定要 render 函数</p>
+<pre><code>new Vue({
+    el: &#39;#app&#39;,
+    render: h =&gt; h(App)
+})
+
+
+独立构建，是指可以在 html 里放置模板，并在 Vue 实例选项中通过 el 指定模板元素（同时也是挂载元素）
+</code></pre><h2 id="框架对比"><a href="#框架对比" class="headerlink" title="框架对比"></a>框架对比</h2><h4 id="Vue-和-React-的共同点"><a href="#Vue-和-React-的共同点" class="headerlink" title="Vue 和 React 的共同点"></a>Vue 和 React 的共同点</h4><p>使用 Virtual DOM<br>提供了响应式 (Reactive) 和组件化 (Composable) 的视图组件<br>将注意力集中保持在核心库，而将其他功能如路由和全局状态管理交给相关的库</p>
+<h4 id="Vue-的优势"><a href="#Vue-的优势" class="headerlink" title="Vue 的优势"></a>Vue 的优势</h4><p>在 Vue 应用中，组件的依赖是在渲染过程中自动追踪的，<br>所以系统能精确知晓哪个组件确实需要被重渲染。<br>React 由于 发生变化时会重新渲染整个组件树，所以需要做一些额外的优化工作<br>(PureComponent shouldComponentUpdate Immutable Reselect)</p>
+<p>vue 的 template 模板就是 HTML 写法，比起 jsx 更容易编写和理解</p>
+<p>vue 在每个单文件组件中可以访问自己独立的 css module，<br>在 style 标签里添加一个属性 scoped，不会污染全局</p>
+<p>vue 提供大量的指令来简化开发中的重复劳动<br>如：v-for 可以构建循环，在 React 中要自己写（使用 map 构建）</p>
+<p>Vue 设置样式的默认方法是单文件组件里类似 style 的标签</p>
+<h4 id="Vue-的劣势"><a href="#Vue-的劣势" class="headerlink" title="Vue 的劣势"></a>Vue 的劣势</h4><p>生态比不上 React</p>
+<p>在原生开发中，Weex 还没有 React Native 成熟</p>
+<h4 id="Vue-与-Angular1"><a href="#Vue-与-Angular1" class="headerlink" title="Vue 与 Angular1"></a>Vue 与 Angular1</h4><p>在 API 与设计两方面上 Vue.js 都比 AngularJS 简单得多</p>
+<p>Vue.js 是一个更加灵活开放的解决方案。它允许你以希望的方式组织应用程序，<br>而不是在任何时候都必须遵循 AngularJS 制定的规则，这让 Vue 能适用于各种项目。</p>
+<p>AngularJS 使用双向绑定，Vue 在不同组件间强制使用单向数据流。<br>这使应用中的数据流更加清晰易懂。</p>
+<p>在 Vue 中指令和组件分得更清晰。指令只封装 DOM 操作，<br>而组件代表一个自给自足的独立单元——有自己的视图和数据逻辑。<br>在 AngularJS 中两者有不少相混的地方。</p>
+<p>Vue 有更好的性能，并且非常非常容易优化，因为它不使用脏检查。</p>
+<h4 id="Vue-与-Angular2"><a href="#Vue-与-Angular2" class="headerlink" title="Vue 与 Angular2"></a>Vue 与 Angular2</h4><p>Vue 和 TS 的整合可能不如 Angular 那么深入<br>在中小型规模的项目中，引入 TS 可能并不会带来太多明显的优势。<br>在这些情况下，用 Vue 会是更好的选择，<br>因为在不用 TS 的情况下使用 Angular 会很有挑战性。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><strong>Vue 文档 </strong>: <a href="https://cn.vuejs.org/v2/guide/" target="_blank" rel="external">https://cn.vuejs.org/v2/guide/</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      Vue 入门简单介绍
+    
+    </summary>
+    
+      <category term="技术" scheme="https://ldqblog.me/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="前端" scheme="https://ldqblog.me/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="Vue" scheme="https://ldqblog.me/tags/Vue/"/>
     
   </entry>
   
