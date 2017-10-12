@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ldqblog.me/"/>
-  <updated>2017-10-12T16:28:54.000Z</updated>
+  <updated>2017-10-12T09:14:53.000Z</updated>
   <id>https://ldqblog.me/</id>
   
   <author>
@@ -14,34 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>React-Router 简介</title>
-    <link href="https://ldqblog.me/2017/10/13/React-Router-%E7%AE%80%E4%BB%8B/"/>
-    <id>https://ldqblog.me/2017/10/13/React-Router-简介/</id>
-    <published>2017-10-12T16:27:53.000Z</published>
-    <updated>2017-10-12T16:28:54.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="React-Router"><a href="#React-Router" class="headerlink" title="React-Router"></a>React-Router</h1><p><a href="http://ldqblog.me/learn-react-router/build/">学习 React-Router 的例子</a></p>
-<p><a href="https://github.com/LDQ-first/learn-react-router" target="_blank" rel="external">源码</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      React-Router 入门简单介绍
-    
-    </summary>
-    
-      <category term="技术" scheme="https://ldqblog.me/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="前端" scheme="https://ldqblog.me/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="React" scheme="https://ldqblog.me/tags/React/"/>
-    
-      <category term="React-Router" scheme="https://ldqblog.me/tags/React-Router/"/>
-    
-  </entry>
   
   <entry>
     <title>TypeScript 入门</title>
@@ -1073,11 +1045,11 @@ app.listen(3000);
     </summary>
     
     
-      <category term="test" scheme="https://ldqblog.me/tags/test/"/>
-    
       <category term="music" scheme="https://ldqblog.me/tags/music/"/>
     
       <category term="video" scheme="https://ldqblog.me/tags/video/"/>
+    
+      <category term="test" scheme="https://ldqblog.me/tags/test/"/>
     
   </entry>
   
@@ -1344,6 +1316,34 @@ redux-logger
       <category term="React" scheme="https://ldqblog.me/tags/React/"/>
     
       <category term="Redux" scheme="https://ldqblog.me/tags/Redux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React-Router 简介</title>
+    <link href="https://ldqblog.me/2017/07/15/React-Router-%E7%AE%80%E4%BB%8B/"/>
+    <id>https://ldqblog.me/2017/07/15/React-Router-简介/</id>
+    <published>2017-07-14T16:27:53.000Z</published>
+    <updated>2017-10-12T16:45:10.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="React-Router"><a href="#React-Router" class="headerlink" title="React-Router"></a>React-Router</h1><p><a href="http://ldqblog.me/learn-react-router/build/">学习 React-Router 的例子</a></p>
+<p><a href="https://github.com/LDQ-first/learn-react-router" target="_blank" rel="external">源码</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      React-Router 入门简单介绍
+    
+    </summary>
+    
+      <category term="技术" scheme="https://ldqblog.me/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="前端" scheme="https://ldqblog.me/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="React" scheme="https://ldqblog.me/tags/React/"/>
+    
+      <category term="React-Router" scheme="https://ldqblog.me/tags/React-Router/"/>
     
   </entry>
   
