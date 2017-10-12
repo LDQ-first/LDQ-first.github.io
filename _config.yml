@@ -50,7 +50,7 @@ highlight:               # 代码块的设置,代码高亮
   enable: false           
   line_number: false
   auto_detect: false
-  tab_replace:
+  tab_replace: 
 
 # Category & Tag   分类 & 标签
 default_category: uncategorized    # 默认分类
