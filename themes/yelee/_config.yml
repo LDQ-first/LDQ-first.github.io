@@ -252,7 +252,7 @@ ie_updater:
   link: //outdatedbrowser.com/
   ## http://browsehappy.com/
   ## http://outdatedbrowser.com/
-
+ 
 # Tab Title Change | 标签页标题切换
 tab_title_change: 
   on: true
