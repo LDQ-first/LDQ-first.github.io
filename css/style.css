@@ -48,8 +48,9 @@ a {
     font-weight: 300;
 }
 
-#editing-view-port #inner-editor{
+.search-input {
     color: #FFF;
+    text-shadow: 0 0 4px rgba(63, 151, 219, 1);
 }
 
 
