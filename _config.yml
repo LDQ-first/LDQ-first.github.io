@@ -15,7 +15,7 @@ timezone:                   #网站时区
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 ## 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，则请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/。
 # url: https://LDQ-first.github.io            #网址
-url: https://ldqblog.me            #网址
+url: http://ldqblog.me            #网址
 root: /                                     #网站根目录
 permalink: :year/:month/:day/:title/       #文章的永久链接格式
 #permalink: posts/:abbrlink/                 # “posts/” 可自行更换
