@@ -47,6 +47,12 @@ a {
 .mdl-menu__item {
     font-weight: 300;
 }
+
+#editing-view-port #inner-editor{
+    color: #FFF;
+}
+
+
 /****************/
 /* Local_Search */
 /****************/
