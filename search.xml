@@ -5,7 +5,7 @@
     
     <entry>
       <title><![CDATA[TypeScript 入门]]></title>
-      <url>https://ldqblog.me/2017/08/12/TypeScript-%E5%85%A5%E9%97%A8/</url>
+      <url>http://ldqblog.me/2017/08/12/TypeScript-%E5%85%A5%E9%97%A8/</url>
       <!-- <content type="html"><![CDATA[<h1 id="TypeScript-入门"><a href="#TypeScript-入门" class="headerlink" title="TypeScript 入门"></a>TypeScript 入门</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>JavaScript 是一门弱类型语言，没有类型检测，这让 JavaScript 很灵活，但也更容易出错</p>
 <blockquote>
 <p>TypeScript 是一种由微软开发的自由和开源的编程语言。它是 JavaScript 的一个超集，而且本质上向这个语言添加了可选的静态类型和基于类的面向对象编程。  </p>
@@ -504,7 +504,7 @@ sayHi();
     
     <entry>
       <title><![CDATA[Koa 入门]]></title>
-      <url>https://ldqblog.me/2017/08/10/Koa-%E5%85%A5%E9%97%A8/</url>
+      <url>http://ldqblog.me/2017/08/10/Koa-%E5%85%A5%E9%97%A8/</url>
       <!-- <content type="html"><![CDATA[<h1 id="Koa-入门"><a href="#Koa-入门" class="headerlink" title="Koa 入门"></a>Koa 入门</h1><h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><blockquote>
 <p>Node 版本必须 7.6 以上</p>
 </blockquote>
@@ -977,7 +977,7 @@ app.listen(3000);
     
     <entry>
       <title><![CDATA[music video test]]></title>
-      <url>https://ldqblog.me/2017/07/31/music-video-test/</url>
+      <url>http://ldqblog.me/2017/07/31/music-video-test/</url>
       <!-- <content type="html"><![CDATA[<h3 id="歌曲"><a href="#歌曲" class="headerlink" title="歌曲"></a>歌曲</h3><div class="aplayer" data-id="31673404" data-server="netease" data-type="song"></div>
 
 <h3 id="歌单"><a href="#歌单" class="headerlink" title="歌单"></a>歌单</h3><div class="aplayer" data-id="11100236" data-server="netease" data-type="playlist" data-mode="random"></div>
@@ -990,7 +990,7 @@ app.listen(3000);
     
     <entry>
       <title><![CDATA[Redux 简介]]></title>
-      <url>https://ldqblog.me/2017/07/23/Redux-%E7%AE%80%E4%BB%8B/</url>
+      <url>http://ldqblog.me/2017/07/23/Redux-%E7%AE%80%E4%BB%8B/</url>
       <!-- <content type="html"><![CDATA[<h1 id="Redux"><a href="#Redux" class="headerlink" title="Redux"></a>Redux</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><pre><code>
 redux react-redux
 
@@ -1237,7 +1237,7 @@ redux-logger
     
     <entry>
       <title><![CDATA[React-Router 简介]]></title>
-      <url>https://ldqblog.me/2017/07/15/React-Router-%E7%AE%80%E4%BB%8B/</url>
+      <url>http://ldqblog.me/2017/07/15/React-Router-%E7%AE%80%E4%BB%8B/</url>
       <!-- <content type="html"><![CDATA[<h1 id="React-Router"><a href="#React-Router" class="headerlink" title="React-Router"></a>React-Router</h1><p><a href="http://ldqblog.me/learn-react-router/build/">学习 React-Router 的例子</a></p>
 <p><a href="https://github.com/LDQ-first/learn-react-router" target="_blank" rel="external">源码</a></p>
 ]]></content> -->
@@ -1246,7 +1246,7 @@ redux-logger
     
     <entry>
       <title><![CDATA[React 简介]]></title>
-      <url>https://ldqblog.me/2017/07/13/React-%E7%AE%80%E4%BB%8B/</url>
+      <url>http://ldqblog.me/2017/07/13/React-%E7%AE%80%E4%BB%8B/</url>
       <!-- <content type="html"><![CDATA[<h1 id="React-简介"><a href="#React-简介" class="headerlink" title="React 简介"></a>React 简介</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><h3 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h3><p>一般写在 render 生命周期函数里</p>
 <p>语法:</p>
 <pre><code>return (
@@ -1383,7 +1383,7 @@ my-app
     
     <entry>
       <title><![CDATA[Vuex 简介]]></title>
-      <url>https://ldqblog.me/2017/06/24/Vuex-%E7%AE%80%E4%BB%8B/</url>
+      <url>http://ldqblog.me/2017/06/24/Vuex-%E7%AE%80%E4%BB%8B/</url>
       <!-- <content type="html"><![CDATA[<h2 id="Vuex"><a href="#Vuex" class="headerlink" title="Vuex"></a>Vuex</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>vue 组件通过 dispatch 来触发 actions [这步可省略， 一般用于处理异步]<br>actions 再通过 commit 触发 mutations , 改变 store 上的 state<br>最终改变 vue 组件 的 view </p>
 <p>常与 computed 结合 </p>
 <p>state 是唯一数据来源</p>
@@ -1551,7 +1551,7 @@ api 更简洁
     
     <entry>
       <title><![CDATA[Vue-Router 简介]]></title>
-      <url>https://ldqblog.me/2017/06/18/Vue-Router-%E7%AE%80%E4%BB%8B/</url>
+      <url>http://ldqblog.me/2017/06/18/Vue-Router-%E7%AE%80%E4%BB%8B/</url>
       <!-- <content type="html"><![CDATA[<h1 id="Vue-Router-简介"><a href="#Vue-Router-简介" class="headerlink" title="Vue-Router 简介"></a>Vue-Router 简介</h1><h2 id="前端路由"><a href="#前端路由" class="headerlink" title="前端路由"></a>前端路由</h2><blockquote>
 <p>指根据不同的 url 展示不同的内容或页面</p>
 </blockquote>
@@ -1778,7 +1778,7 @@ new Vue({
     
     <entry>
       <title><![CDATA[Vue 简介]]></title>
-      <url>https://ldqblog.me/2017/06/06/Vue-%E7%AE%80%E4%BB%8B/</url>
+      <url>http://ldqblog.me/2017/06/06/Vue-%E7%AE%80%E4%BB%8B/</url>
       <!-- <content type="html"><![CDATA[<h1 id="Vue-简介"><a href="#Vue-简介" class="headerlink" title="Vue 简介"></a>Vue 简介</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote>
 <p>Vue 是一套构建用户界面的渐进式 MVVM 框架<br>Vue 的核心库只关注视图层，将路由交给 Vue-Router ，状态管理交给 Vuex </p>
 </blockquote>
@@ -1859,7 +1859,7 @@ proxyTable: {
     
     <entry>
       <title><![CDATA[test description]]></title>
-      <url>https://ldqblog.me/2017/02/02/test-description/</url>
+      <url>http://ldqblog.me/2017/02/02/test-description/</url>
       <!-- <content type="html"><![CDATA[<ul>
 <li>在 scaffolds/post.md 文件中添加 description</li>
 </ul>
@@ -1873,7 +1873,7 @@ proxyTable: {
     
     <entry>
       <title><![CDATA[Hello World]]></title>
-      <url>https://ldqblog.me/2017/01/17/hello-world/</url>
+      <url>http://ldqblog.me/2017/01/17/hello-world/</url>
       <!-- <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;
 </code></pre>
@@ -1893,7 +1893,7 @@ proxyTable: {
     
     <entry>
       <title><![CDATA[photoTest]]></title>
-      <url>https://ldqblog.me/2017/01/13/photoTest/</url>
+      <url>http://ldqblog.me/2017/01/13/photoTest/</url>
       <!-- <content type="html"><![CDATA[<ul>
 <li>测试图片功能</li>
 </ul>
@@ -1904,7 +1904,7 @@ proxyTable: {
     
     <entry>
       <title><![CDATA[第一篇 Hexo 文章]]></title>
-      <url>https://ldqblog.me/2016/11/05/%E7%AC%AC%E4%B8%80%E7%AF%87Hexo%E6%96%87%E7%AB%A0/</url>
+      <url>http://ldqblog.me/2016/11/05/%E7%AC%AC%E4%B8%80%E7%AF%87Hexo%E6%96%87%E7%AB%A0/</url>
       <!-- <content type="html"><![CDATA[<ul>
 <li>第一次写 Hexo 博客</li>
 </ul>
