@@ -17,7 +17,7 @@ categories:
 
 ## React 
 
-UI框架
+
 配合React-Router 4 , Redux, Immutable, Reselect 使用
 
 React 层面分为路由组件（views文件夹中）
@@ -53,7 +53,7 @@ propTypes作为Prop的类型检查
 
 
 
-## UI组件
+## 第三方UI框架
 
 使用Material-UI框架中的组件
 配合Styled-components使用
@@ -168,12 +168,31 @@ export const eyeSelector = createSelector(
     appState => appState.get('eye')
 )
 
+export const IndexDataSelector = createSelector(
+    eyeSelector,
+    eyeState => {
+        if(!eyeState) return
+        return eyeState.get('IndexData')
+    }
+)
+
 
 const mapStateToProps = (state) => ({
     IndexData: IndexDataSelector(state)
 })
+
+
+static get propTypes() { 
+    return { 
+        IndexData: PropTypes.object
+    }
+}
 ```
 
+
+## Webpack
+
+用于搭建React脚手架
 
 
 
