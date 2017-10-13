@@ -379,7 +379,7 @@ static get propTypes() {
     <link href="http://ldqblog.me/2017/08/18/Vue%E7%89%88%E5%95%86%E5%9F%8E-%E4%BA%8C/"/>
     <id>http://ldqblog.me/2017/08/18/Vue版商城-二/</id>
     <published>2017-08-18T02:17:45.000Z</published>
-    <updated>2017-10-13T07:01:37.000Z</updated>
+    <updated>2017-10-13T07:23:48.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Vue-版商城技术详情"><a href="#Vue-版商城技术详情" class="headerlink" title="Vue 版商城技术详情"></a>Vue 版商城技术详情</h1><h2 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h2><p>Vue 配合 Vue-Router，Vuex</p>
 <p>实现路由跳转，路由过渡，状态管理</p>
@@ -473,8 +473,16 @@ router.get(&#39;/list&#39;, (req, res, next) =&gt; {
        }
    })
 })
-</code></pre><h3 id="根据环境连接数据库"><a href="#根据环境连接数据库" class="headerlink" title="根据环境连接数据库"></a>根据环境连接数据库</h3><p>var env = process.env.NODE_ENV || ‘development’<br>var sessionUrl = ‘’if(env ===’development’) {<br>    console.log(‘app.NODE_ENV:’, env)<br>    sessionUrl = ‘mongodb://IP:port/shopdb’<br>}<br>else {<br>  console.log(‘app.NODE_ENV:’, env)<br>  sessionUrl = ‘mongodb:// 用户. 数据库: password@IP:port/shopdb’<br>}</p>
-<h2 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h2><h3 id="代理转发"><a href="#代理转发" class="headerlink" title="代理转发"></a>代理转发</h3><pre><code>upstream vue {
+</code></pre><h3 id="根据环境连接数据库"><a href="#根据环境连接数据库" class="headerlink" title="根据环境连接数据库"></a>根据环境连接数据库</h3><pre><code>var env = process.env.NODE_ENV || &#39;development&#39;
+var sessionUrl = &#39;&#39;if(env ===&#39;development&#39;) {
+    console.log(&#39;app.NODE_ENV:&#39;, env)
+    sessionUrl = &#39;mongodb://IP:port/shopdb&#39;
+}
+else {
+  console.log(&#39;app.NODE_ENV:&#39;, env)
+  sessionUrl = &#39;mongodb:// 用户. 数据库: password@IP:port/shopdb&#39;
+}
+</code></pre><h2 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h2><h3 id="代理转发"><a href="#代理转发" class="headerlink" title="代理转发"></a>代理转发</h3><pre><code>upstream vue {
     server 本地 IP:port;
 }
 
@@ -529,7 +537,12 @@ gzip_min_length 1k;
     &quot;apps&quot;:[
         {
             &quot;name&quot;:&quot;vueshop&quot;,
-            &quot;script&quot;:&quot;&quot;, // 入口脚本&quot;env&quot;: { // 传进去的变量&quot;COMMON_VARIABLE&quot;:&quot;true&quot;},&quot;env_production&quot;: {&quot;NODE_ENV&quot;:&quot;production&quot;
+            &quot;script&quot;:&quot;入口脚本&quot;,           
+            &quot;env&quot;: {              // 传进去的变量
+                &quot;COMMON_VARIABLE&quot;: &quot;true&quot;
+            },
+            &quot;env_production&quot;: {
+                &quot;NODE_ENV&quot;: &quot;production&quot;
             }
         }
     ],
@@ -546,6 +559,7 @@ gzip_min_length 1k;
 }
 </code></pre><h2 id="Echarts"><a href="#Echarts" class="headerlink" title="Echarts"></a>Echarts</h2><p>数据可视化显示</p>
 <p>显示价格趋势，数据来自数据库（自己编的）</p>
+<p>显示订单详情</p>
 <h2 id="Svg-captcha"><a href="#Svg-captcha" class="headerlink" title="Svg-captcha"></a>Svg-captcha</h2><p>验证码</p>
 <p>在考虑要使用验证码时, 发现许多相关的 npm 模块都要<br>安装其它支持库（C 或 C++ 编写，而且平台兼容性极差）</p>
 <p>最终在 CNode 社区发现了以 svg 为基础的 Svg-captcha</p>
@@ -1836,11 +1850,11 @@ app.listen(3000);
     </summary>
     
     
-      <category term="test" scheme="http://ldqblog.me/tags/test/"/>
-    
       <category term="music" scheme="http://ldqblog.me/tags/music/"/>
     
       <category term="video" scheme="http://ldqblog.me/tags/video/"/>
+    
+      <category term="test" scheme="http://ldqblog.me/tags/test/"/>
     
   </entry>
   
