@@ -117,7 +117,7 @@ sass文件单独出来，没有利用到scoped
 ---
 
 ## 下一篇
-[Vue版CNode社区(二)](http://ldqblog.me/2017/06/22/Vue版CNode社区-二/)
+[Vue版CNode社区(二)](http://ldqblog.me/2017/06/22/Vue%E7%89%88CNode%E7%A4%BE%E5%8C%BA-%E4%BA%8C/)
 
 
 
