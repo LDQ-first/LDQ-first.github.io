@@ -226,7 +226,7 @@
 <li><strong>Echarts</strong>: [ 数据可视化显示 ]</li>
 <li><strong>Svg-captcha</strong>: [ 验证码 ]</li>
 </ul>
-<h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><p><img src="http://ldqblog.me/Vue-shop/img/VShop/01.jpg" alt="01"> </p>
+<h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><p><img src="http://ldqblog.me/img/VShop/01.jpg" alt="01"> </p>
 <h2 id="成果"><a href="#成果" class="headerlink" title="成果"></a>成果</h2><p>实现登录，注册，<br>添加删除购物车，添加删除地址，<br>完成订单，查看订单详情，<br>下拉刷新</p>
 <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>没有备案, 没有使用 HTTPS，导致 chrome 提示不安全</p>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><strong>Vue 文档 </strong>: <a href="https://cn.vuejs.org/v2/guide/" target="_blank" rel="external">https://cn.vuejs.org/v2/guide/</a><br><strong>Mongoose 文档 </strong>: <a href="http://mongoosejs.com/" target="_blank" rel="external">http://mongoosejs.com/</a><br><strong>Mongodb 文档 </strong>: <a href="https://docs.mongodb.com/" target="_blank" rel="external">https://docs.mongodb.com/</a></p>
