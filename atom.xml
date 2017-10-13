@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ldqblog.me/"/>
-  <updated>2017-10-13T05:08:30.000Z</updated>
+  <updated>2017-10-13T05:20:29.000Z</updated>
   <id>http://ldqblog.me/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http://ldqblog.me/2017/09/25/React%E7%89%88%E5%BC%80%E7%9C%BC-%E4%BA%8C/"/>
     <id>http://ldqblog.me/2017/09/25/React版开眼-二/</id>
     <published>2017-09-25T02:18:44.000Z</published>
-    <updated>2017-10-13T05:08:30.000Z</updated>
+    <updated>2017-10-13T05:20:29.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="React-版开眼技术详情"><a href="#React-版开眼技术详情" class="headerlink" title="React 版开眼技术详情"></a>React 版开眼技术详情</h1><h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><p>UI 框架<br>配合 React-Router 4 , Redux, Immutable, Reselect 使用</p>
+    <content type="html"><![CDATA[<h1 id="React-版开眼技术详情"><a href="#React-版开眼技术详情" class="headerlink" title="React 版开眼技术详情"></a>React 版开眼技术详情</h1><h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><p>配合 React-Router 4 , Redux, Immutable, Reselect 使用</p>
 <p>React 层面分为路由组件（views 文件夹中）<br>和非路由组件（components 文件夹中）</p>
 <p>利用 Redux 进行路由组件的状态管理，<br>利用 Redux-think（让 dispatch 接受函数做参数），<br> async/await（处理异步）<br>与 componentWillMount 等生命周期实现 api 请求</p>
 <p>利用 Prop 进行路由组件和非路由组件的通信,<br>propTypes 作为 Prop 的类型检查</p>
@@ -38,7 +38,7 @@
     }
 </code></pre><p>利用 Bundle 组件实现路由异步加载（官网有示例）</p>
 <p>利用 Immutable(不可变的数据结构), Reselect(避免不必要的 stroe 更新) 优化 Redux</p>
-<h2 id="UI-组件"><a href="#UI-组件" class="headerlink" title="UI 组件"></a>UI 组件</h2><p>使用 Material-UI 框架中的组件<br>配合 Styled-components 使用<br>提高开发效率</p>
+<h2 id="第三方-UI-框架"><a href="#第三方-UI-框架" class="headerlink" title="第三方 UI 框架"></a>第三方 UI 框架</h2><p>使用 Material-UI 框架中的组件<br>配合 Styled-components 使用<br>提高开发效率</p>
 <h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><p>利用 <a href="https://bird.ioliu.cn" target="_blank" rel="external">https://bird.ioliu.cn</a> 跨域</p>
 <p>理由<br>    开眼 api 不支持 jsonp 跨域，<br>    第三方 API 实现 CORS 跨域，需要使用服务端<br>     <a href="https://bird.ioliu.cn" target="_blank" rel="external">https://bird.ioliu.cn</a> 简单易用</p>
 <h2 id="Immutable-不可变的数据结构"><a href="#Immutable-不可变的数据结构" class="headerlink" title="Immutable(不可变的数据结构)"></a>Immutable(不可变的数据结构)</h2><p><a href="http://facebook.github.io/immutable-js/docs/#/" target="_blank" rel="external">文档</a></p>
@@ -73,7 +73,28 @@ var Obj = defaultObj.mergeDeep(initObj) // 深 merge
     selectGolbal,
     appState =&gt; appState.get(&#39;eye&#39;)
 )
-</code></pre><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><strong>immutable.js 文档 </strong>: <a href="http://facebook.github.io/immutable-js/docs/#/" target="_blank" rel="external">http://facebook.github.io/immutable-js/docs/#/</a><br><strong>immutable.js 在 React、Redux 中的实践以及常用 API 简介 </strong>: <a href="https://yq.aliyun.com/articles/69516" target="_blank" rel="external">https://yq.aliyun.com/articles/69516</a></p>
+
+export const IndexDataSelector = createSelector(
+    eyeSelector,
+    eyeState =&gt; {
+        if(!eyeState) return
+        return eyeState.get(&#39;IndexData&#39;)
+    }
+)
+
+
+const mapStateToProps = (state) =&gt; ({
+    IndexData: IndexDataSelector(state)
+})
+
+
+static get propTypes() { 
+    return { 
+        IndexData: PropTypes.object
+    }
+}
+</code></pre><h2 id="Webpack"><a href="#Webpack" class="headerlink" title="Webpack"></a>Webpack</h2><p>用于搭建 React 脚手架</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><strong>immutable.js 文档 </strong>: <a href="http://facebook.github.io/immutable-js/docs/#/" target="_blank" rel="external">http://facebook.github.io/immutable-js/docs/#/</a><br><strong>immutable.js 在 React、Redux 中的实践以及常用 API 简介 </strong>: <a href="https://yq.aliyun.com/articles/69516" target="_blank" rel="external">https://yq.aliyun.com/articles/69516</a></p>
 ]]></content>
     
     <summary type="html">
@@ -312,9 +333,26 @@ var Obj = defaultObj.mergeDeep(initObj) // 深 merge
     <link href="http://ldqblog.me/2017/08/18/Vue%E7%89%88%E5%95%86%E5%9F%8E-%E4%BA%8C/"/>
     <id>http://ldqblog.me/2017/08/18/Vue版商城-二/</id>
     <published>2017-08-18T02:17:45.000Z</published>
-    <updated>2017-10-13T02:46:35.090Z</updated>
+    <updated>2017-10-13T05:42:26.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Vue-版商城技术详情"><a href="#Vue-版商城技术详情" class="headerlink" title="Vue 版商城技术详情"></a>Vue 版商城技术详情</h1><h2 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h2><p>Vue 配合 Vue-Router，Vuex</p>
+<p>实现路由跳转，路由过渡，状态管理</p>
+<p>Vue-lazyload<br>头像图片懒加载</p>
+<p>Vue-infinite-scroll<br>滚动加载</p>
+<p>Vue-pull-to-refresh<br>自己开发的下拉刷新（实现插件）</p>
+<h2 id="Axios"><a href="#Axios" class="headerlink" title="Axios"></a>Axios</h2><p>实现 api 请求等的异步处理</p>
+<h2 id="Express"><a href="#Express" class="headerlink" title="Express"></a>Express</h2><p>后端服务器</p>
+<h2 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h2><p>数据库</p>
+<h2 id="Mongoose"><a href="#Mongoose" class="headerlink" title="Mongoose"></a>Mongoose</h2><p>连接数据库和 Express</p>
+<h2 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h2><p>代理转发</p>
+<h2 id="PM2"><a href="#PM2" class="headerlink" title="PM2"></a>PM2</h2><p>做守护进程, 发布更新项目</p>
+<h2 id="Echarts"><a href="#Echarts" class="headerlink" title="Echarts"></a>Echarts</h2><p>数据可视化显示</p>
+<h2 id="Svg-captcha"><a href="#Svg-captcha" class="headerlink" title="Svg-captcha"></a>Svg-captcha</h2><p>验证码</p>
+]]></content>
     
     <summary type="html">
+    
+      &lt;h1 id=&quot;Vue-版商城技术详情&quot;&gt;&lt;a href=&quot;#Vue-版商城技术详情&quot; class=&quot;headerlink&quot; title=&quot;Vue 版商城技术详情&quot;&gt;&lt;/a&gt;Vue 版商城技术详情&lt;/h1&gt;&lt;h2 id=&quot;Vue&quot;&gt;&lt;a href=&quot;#Vue&quot; class=&quot;he
     
     </summary>
     
@@ -2089,13 +2127,162 @@ api 更简洁
     <link href="http://ldqblog.me/2017/06/22/Vue%E7%89%88CNode%E7%A4%BE%E5%8C%BA-%E4%BA%8C/"/>
     <id>http://ldqblog.me/2017/06/22/Vue版CNode社区-二/</id>
     <published>2017-06-22T02:10:32.000Z</published>
-    <updated>2017-10-13T02:17:26.101Z</updated>
+    <updated>2017-10-13T05:35:17.171Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Vue-版-CNode-社区技术详情"><a href="#Vue-版-CNode-社区技术详情" class="headerlink" title="Vue 版 CNode 社区技术详情"></a>Vue 版 CNode 社区技术详情</h1>]]></content>
+    <content type="html"><![CDATA[<h1 id="Vue-版-CNode-社区技术详情"><a href="#Vue-版-CNode-社区技术详情" class="headerlink" title="Vue 版 CNode 社区技术详情"></a>Vue 版 CNode 社区技术详情</h1><h2 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h2><p>Vue 配合 Vue-Router，Vuex</p>
+<p>实现路由跳转，路由过渡，状态管理</p>
+<p>Vue-lazyload<br>头像图片懒加载</p>
+<h2 id="Axios"><a href="#Axios" class="headerlink" title="Axios"></a>Axios</h2><p>实现 api 请求等的异步处理</p>
+<h2 id="Moment-js"><a href="#Moment-js" class="headerlink" title="Moment.js"></a>Moment.js</h2><p>处理时间的显示</p>
+<h2 id="Simplemde"><a href="#Simplemde" class="headerlink" title="Simplemde"></a>Simplemde</h2><p>用于实现 markdown 方式回复，发帖</p>
+<h2 id="loaclStorge"><a href="#loaclStorge" class="headerlink" title="loaclStorge"></a>loaclStorge</h2><p>用于存储用户的登录信息<br>防止刷新或重开网页后登录失效</p>
+<h2 id="滚动加载"><a href="#滚动加载" class="headerlink" title="滚动加载"></a>滚动加载</h2><p>通过监听 scroll 事件来实现</p>
+<pre><code>
+ scroll(e) {
+            if(e.target.clientHeight  &gt; e.target.scrollTop) {
+                const e = this.$refs.articles;
+                bus.$emit(&#39;isShowTop&#39;, {isShow: false, e});
+            }
+            else {
+                  const e = this.$refs.articles;
+                bus.$emit(&#39;isShowTop&#39;, {isShow: true, e});
+            }
+            const pathArr = [&#39;/&#39;, &#39;/articleList/all&#39;, &#39;/articleList/good&#39;, &#39;/articleList/share&#39;, &#39;/articleList/ask&#39;, &#39;/articleList/job&#39;, &#39;/articleList/dev&#39;];
+            if(pathArr.indexOf(this.$route.path) === -1) {
+                return;
+            }
+            if(!this.over &amp;&amp; !this.isLoading) {
+                let isOver = e.target.clientHeight + Math.ceil(e.target.scrollTop) &gt;= e.target.scrollHeight - 100;
+                if(isOver) {
+                    console.log(this.page)
+                    this.page ++;
+                    this.$store.commit(&#39;changeMore&#39;, true);
+                    this.$store.commit(&#39;changeTab&#39;,{isLoading: true});
+                    axios.get(`https://cnodejs.org/api/v1/topics?page=${this.page}&amp;tab=${this.tab}`)
+                          .then(result =&gt;result.data.data)
+                          .then(articleList =&gt; {
+                              if(!articleList.length) {
+                                  this.$store.commit(&#39;Over&#39;, true);
+                                  this.$store.commit(&#39;changeMore&#39;, false);
+                                  return ;
+                              }
+                              this.$store.commit(&#39;changeTab&#39;,
+                               {articleList: this.articleList.concat(articleList), isLoading: false});
+                          })
+                          .then(() =&gt; this.$store.commit(&#39;changeMore&#39;, false));
+                }
+            }
+        },
+</code></pre><h2 id="Canvas-loading"><a href="#Canvas-loading" class="headerlink" title="Canvas loading"></a>Canvas loading</h2><p>利用  window.requestAnimationFrame  做动画</p>
+<p>画个白色的圆  whiteCircle() </p>
+<p>画文字 text()</p>
+<p>画蓝色的圆形进度条 blueCircle()</p>
+<pre><code>
+    data() {
+        return {
+            canvas: {},
+            context: {},
+            centerX: 0,
+            centerY: 0,
+            radius: 80,
+            rad: 0,
+            speed: 0.1,
+            timer: &#39;&#39;,
+        }
+    },
+    mounted() {
+        this.init();
+    },
+    methods: {
+        init() {
+            const canvas = this.$refs.canvasLoading;
+            const context = canvas.getContext(&#39;2d&#39;);
+
+            this.canvas = canvas;
+            this.context = context;
+            this.centerX = canvas.width/2;
+            this.centerY = canvas.height/2;
+            this.rad = 2*Math.PI/100;
+            this.speed = 0.2;
+
+             window.requestAnimFrame = (function(){
+            return  window.requestAnimationFrame       ||
+                    window.webkitRequestAnimationFrame ||
+                    window.mozRequestAnimationFrame    ||
+                    window.oRequestAnimationFrame      || 
+                    window.msRequestAnimationFrame     || 
+                   function ( callback ){
+                        window.setTimeout(callback, 1000 / 60);
+                    };
+            })();
+
+             window.cancelAnimationFrame = (function(){
+            return  window.cancelAnimationFrame       ||
+                    window.webkitCancelAnimationFrame ||
+                    window.mozCancelAnimationFrame    ||
+                    window.oCancelAnimationFrame      || 
+                    window.msCancelAnimationFrame     || 
+                    function(){
+                        window.clearTimeout(this.timer);
+                    };
+            })();
+            this.loading();
+        },  
+        loading() {
+            this.timer = requestAnimationFrame(this.loading, this.canvas);
+            this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+            this.whiteCircle();
+            this.text();
+            this.blueCircle();
+            if(this.speed &gt; 100) {
+                this.speed = 0;
+                cancelAnimationFrame(this.timer);                
+            this.$emit(&#39;BeginLoading&#39;);
+            }
+            else {
+                this.speed += 0.4;
+            }
+        },
+        whiteCircle() {
+            this.context.save();
+            this.context.beginPath();
+            this.context.strokeStyle = &#39;#FFF&#39;;
+            this.context.arc(this.centerX, this.centerY, this.radius, 0, Math.PI * 2, false );
+            this.context.stroke();
+            this.context.closePath();
+            this.context.restore();
+        },
+        text() {
+            this.context.save();
+            this.context.strokeStyle = &#39;#FFF&#39;;
+            this.context.font = &#39;30px Arial&#39;;
+            const text = this.speed.toFixed(0) + &#39;%&#39;;
+            const textWidth = this.context.measureText(text).width;
+            const translateWidth = (textWidth/2).toFixed(0);
+             this.context.strokeText(text, 
+                this.centerX - translateWidth + 5, this.centerY + 10);
+
+            this.context.stroke();
+            this.context.restore();
+        },
+        blueCircle() {
+            this.context.save();
+            this.context.strokeStyle = &#39;rgba(3,169,244,1)&#39;;
+            this.context.lineWidth = 10;
+            this.context.beginPath();
+            this.context.arc(this.centerX, this.centerY, this.radius,
+             -Math.PI/2, -Math.PI/2 + this.speed * this.rad, false );
+            this.context.stroke();
+            this.context.closePath();
+            this.context.restore();
+        },
+
+    }
+</code></pre>]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Vue-版-CNode-社区技术详情&quot;&gt;&lt;a href=&quot;#Vue-版-CNode-社区技术详情&quot; class=&quot;headerlink&quot; title=&quot;Vue 版 CNode 社区技术详情&quot;&gt;&lt;/a&gt;Vue 版 CNode 社区技术详情&lt;/h1&gt;
+      &lt;h1 id=&quot;Vue-版-CNode-社区技术详情&quot;&gt;&lt;a href=&quot;#Vue-版-CNode-社区技术详情&quot; class=&quot;headerlink&quot; title=&quot;Vue 版 CNode 社区技术详情&quot;&gt;&lt;/a&gt;Vue 版 CNode 社区技术详情&lt;/h1&gt;&lt;h2 id=&quot;V
     
     </summary>
     
@@ -2115,7 +2302,7 @@ api 更简洁
     <link href="http://ldqblog.me/2017/06/20/Vue%E7%89%88CNode%E7%A4%BE%E5%8C%BA-%E4%B8%80/"/>
     <id>http://ldqblog.me/2017/06/20/Vue版CNode社区-一/</id>
     <published>2017-06-20T01:43:59.000Z</published>
-    <updated>2017-10-13T03:24:00.000Z</updated>
+    <updated>2017-10-13T05:36:30.152Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Vue-版-CNode-社区介绍"><a href="#Vue-版-CNode-社区介绍" class="headerlink" title="Vue 版 CNode 社区介绍"></a>Vue 版 CNode 社区介绍</h1><h2 id="预览地址"><a href="#预览地址" class="headerlink" title="预览地址"></a>预览地址</h2><p><a href="http://ldqblog.me/vue-CNode/dist/#/">预览地址</a></p>
 <h2 id="手机可访问二维码"><a href="#手机可访问二维码" class="headerlink" title="手机可访问二维码"></a>手机可访问二维码</h2><p><img src="http://ldqblog.me/vue-CNode/static/img/mobile.png" alt="Vue 版 CNode">  </p>
@@ -2154,7 +2341,7 @@ api 更简洁
 <li>没有下拉刷新</li>
 <li>图片点击查看大图不支持手指缩放，<br>导致移动端看大图体验差</li>
 <li>利用 Vuex 实现的更换主题色方法比较繁琐，<br>考虑是否有其他更优的方法</li>
-<li>项目结构有待改善，<br>纯组件和视图组件应分开，<br>sass 文件单独出来，没有利用到 scoped</li>
+<li>项目结构有待改善，<br>纯组件和视图组件应分开，<br>sass 文件单独出来，没有利用到 scoped<br>vuex 没有分模块</li>
 </ul>
 <h2 id="未来"><a href="#未来" class="headerlink" title="未来"></a>未来</h2><p>改善问题<br>优化代码</p>
 <hr>
