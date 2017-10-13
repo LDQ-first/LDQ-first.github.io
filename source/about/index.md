@@ -1,11 +1,9 @@
 ---
 title: about
 date: 2017-01-14 23:54:43
-
 ---
 
 # 我是谁
-
 
 ## 联系方式
 
@@ -14,7 +12,6 @@ date: 2017-01-14 23:54:43
 - 163邮箱：18826136763@163.com 
 - QQ邮箱：2320975287@qq.com
 
----
 
 ## 个人信息
 
@@ -32,4 +29,6 @@ date: 2017-01-14 23:54:43
 - 博客：[博客](http://ldqblog.me/)
 - vue版pdf简历：[vue版pdf简历](http://ldqblog.me/vue-pdf-resume/dist/#/)
 - react版简历：[react版简历](http://ldqblog.me/react-resume/dist/#/)
+
+
 
