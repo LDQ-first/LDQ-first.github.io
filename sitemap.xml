@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://ldqblog.me/2017/09/25/React%E7%89%88%E5%BC%80%E7%9C%BC-%E4%BA%8C/</loc>
+    
+    <lastmod>2017-10-13T05:05:57.583Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://ldqblog.me/2017/07/13/React-%E7%AE%80%E4%BB%8B/</loc>
+    
+    <lastmod>2017-10-13T04:47:31.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://ldqblog.me/2017/09/23/React%E7%89%88%E5%BC%80%E7%9C%BC-%E4%B8%80/</loc>
+    
+    <lastmod>2017-10-13T03:45:21.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://ldqblog.me/2017/08/15/Vue%E7%89%88%E5%95%86%E5%9F%8E-%E4%B8%80/</loc>
     
     <lastmod>2017-10-13T03:34:19.000Z</lastmod>
@@ -12,13 +33,6 @@
     <loc>http://ldqblog.me/2017/06/20/Vue%E7%89%88CNode%E7%A4%BE%E5%8C%BA-%E4%B8%80/</loc>
     
     <lastmod>2017-10-13T03:24:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://ldqblog.me/2017/09/23/React%E7%89%88%E5%BC%80%E7%9C%BC-%E4%B8%80/</loc>
-    
-    <lastmod>2017-10-13T03:02:38.000Z</lastmod>
     
   </url>
   
@@ -51,13 +65,6 @@
   </url>
   
   <url>
-    <loc>http://ldqblog.me/2017/09/25/React%E7%89%88%E5%BC%80%E7%9C%BC-%E4%BA%8C/</loc>
-    
-    <lastmod>2017-10-13T02:45:44.494Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://ldqblog.me/2017/06/22/Vue%E7%89%88CNode%E7%A4%BE%E5%8C%BA-%E4%BA%8C/</loc>
     
     <lastmod>2017-10-13T02:17:26.101Z</lastmod>
@@ -75,13 +82,6 @@
     <loc>http://ldqblog.me/2017/07/23/Redux-%E7%AE%80%E4%BB%8B/</loc>
     
     <lastmod>2017-10-12T16:39:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://ldqblog.me/2017/07/13/React-%E7%AE%80%E4%BB%8B/</loc>
-    
-    <lastmod>2017-10-12T16:27:04.000Z</lastmod>
     
   </url>
   

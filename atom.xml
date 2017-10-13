@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ldqblog.me/"/>
-  <updated>2017-10-13T02:45:44.494Z</updated>
+  <updated>2017-10-13T05:05:57.583Z</updated>
   <id>http://ldqblog.me/</id>
   
   <author>
@@ -20,9 +20,61 @@
     <link href="http://ldqblog.me/2017/09/25/React%E7%89%88%E5%BC%80%E7%9C%BC-%E4%BA%8C/"/>
     <id>http://ldqblog.me/2017/09/25/React版开眼-二/</id>
     <published>2017-09-25T02:18:44.000Z</published>
-    <updated>2017-10-13T02:45:44.494Z</updated>
+    <updated>2017-10-13T05:05:57.583Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="React-版开眼技术详情"><a href="#React-版开眼技术详情" class="headerlink" title="React 版开眼技术详情"></a>React 版开眼技术详情</h1><h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><p>UI 框架<br>配合 React-Router 4 , Redux, Immutable, Reselect 使用</p>
+<p>React 层面分为路由组件（views 文件夹中）<br>和非路由组件（components 文件夹中）</p>
+<p>利用 Redux 进行路由组件的状态管理，<br>利用 Redux-think（让 dispatch 接受函数做参数），<br> async/await（处理异步）<br>与 componentWillMount 等生命周期实现 api 请求</p>
+<p>利用 Prop 进行路由组件和非路由组件的通信,<br>propTypes 作为 Prop 的类型检查</p>
+<pre><code> static get propTypes() { 
+        return { 
+            location: PropTypes.obj.isRequired,
+            history: PropTypes.obj.isRequired,
+            match: PropTypes.obj.isRequired,
+            IndexData: PropTypes.object,
+            getIndexData: PropTypes.func,
+            getSearchData: PropTypes.func,
+        }
+    }
+</code></pre><p>利用 Bundle 组件实现路由异步加载（官网有示例）</p>
+<p>利用 Immutable(不可变的数据结构), Reselect(避免不必要的 stroe 更新) 优化 Redux</p>
+<h2 id="UI-组件"><a href="#UI-组件" class="headerlink" title="UI 组件"></a>UI 组件</h2><p>使用 Material-UI 框架中的组件<br>配合 Styled-components 使用<br>提高开发效率</p>
+<h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><p>利用 <a href="https://bird.ioliu.cn" target="_blank" rel="external">https://bird.ioliu.cn</a> 跨域</p>
+<p>理由<br>    开眼 api 不支持 jsonp 跨域，<br>    第三方 API 实现 CORS 跨域，需要使用服务端<br>     <a href="https://bird.ioliu.cn" target="_blank" rel="external">https://bird.ioliu.cn</a> 简单易用</p>
+<h2 id="Immutable-不可变的数据结构"><a href="#Immutable-不可变的数据结构" class="headerlink" title="Immutable(不可变的数据结构)"></a>Immutable(不可变的数据结构)</h2><p><a href="http://facebook.github.io/immutable-js/docs/#/" target="_blank" rel="external">文档</a></p>
+<blockquote>
+<p>Immutable.js 是一个完全独立的库，并非 React 一家独有，无论基于什么框架都可以用它。<br>弥补了 Javascript 没有不可变数据结构的问题<br>Immutable Data 是指一旦被创造后，就不可以被改变的数据<br>Immutable.js 提供了 7 种不可变的数据结构：List, Stack, Map, OrderedMap, Set, OrderedSet, Record </p>
+</blockquote>
+<p>在 JS 中，由于引用类型会指向同一个地址, 所以更新一个会影响其他的<br>在复杂开发中会影响性能</p>
+<pre><code>a = { a: 1 }
+b = a 
+b.a = 10
+a.a =&gt; 10
+</code></pre><p>解决方法有利用浅拷贝和深拷贝的</p>
+<pre><code>var  defaultObj = { /* 默认值 */}
+var Obj = $.extend({}, defaultObj, initObj) // jQuery 用法。initObj 是自定义值
+var Obj = $.extend(true, {}, defaultObj, initObj) // 如果对象是多层的，就用到深拷贝了
+</code></pre><p>Object.assign 和 Object.freeze 是浅拷贝</p>
+<p>利用 ImmutableJS</p>
+<pre><code>var defaultObj = Immutable.fromJS({/* 默认值 */})
+var Obj = defaultObj.merge(initObj) //defaultObj 不会改变，返回新值给 Obj
+var Obj = defaultObj.mergeDeep(initObj) // 深 merge
+</code></pre><p>ImmutableJS 的性能在于通过通过 structural sharing, 改变父子节点关系来更新数据<br>修改数据的时候就检查差异，不变返回原引用，有变化则直接返回一个新的引用<br>深拷贝需要递归遍历整个对象</p>
+<h3 id="为什么要在-React-js-中使用-Immutable-js"><a href="#为什么要在-React-js-中使用-Immutable-js" class="headerlink" title="为什么要在 React.js 中使用 Immutable.js"></a>为什么要在 React.js 中使用 Immutable.js</h3><p>React.js 是一个 UI = f(states) 的框架，为了解决更新的问题，<br>React.js 使用了 virtual dom，virtual dom 通过 diff 修改 dom，来实现高效的 dom 更新。<br>但是当 state 更新时，如果数据没变，也会去做 virtual dom 的 diff，这就产生了浪费。</p>
+<p>可以利用 PureRenderMixin，但 PureRenderMixin 只是简单的浅比较，不使用于多层比较</p>
+<p>所以使用 Immutable.js 实现 Immutable Data</p>
+<p><img src="" alt="000"></p>
+<h2 id="Reselect-避免不必要的-stroe-更新"><a href="#Reselect-避免不必要的-stroe-更新" class="headerlink" title="Reselect(避免不必要的 stroe 更新)"></a>Reselect(避免不必要的 stroe 更新)</h2><p>mapStateToProps 也被叫做 selector，在 store 发生变化的时候就会被调用，<br>而不管是不是 selector 关心的数据发生改变它都会被调用，<br>所以如果 selector 计算量非常大，每次更新都重新计算可能会带来性能问题。</p>
+<p>Reselect 能帮你省去这些没必要的重新计算。<br>Reselect 提供 createSelector 函数来创建可记忆的 selector。</p>
+<p>createSelector 接收一个 input-selectors 数组和一个转换函数作为参数。</p>
+<p>如果 state tree 的改变会引起 input-selector 值变化，那么 selector 会调用转换函数，<br>传入 input-selectors 作为参数，并返回结果。</p>
+<p>如果 input-selectors 的值和前一次的一样，<br>它将会直接返回前一次计算的数据，而不会再调用一次转换函数。<br>这样就可以避免不必要的计算，为性能带来提升。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><strong>immutable.js 文档 </strong>: <a href="http://facebook.github.io/immutable-js/docs/#/" target="_blank" rel="external">http://facebook.github.io/immutable-js/docs/#/</a><br><strong>immutable.js 在 React、Redux 中的实践以及常用 API 简介 </strong>: <a href="https://yq.aliyun.com/articles/69516" target="_blank" rel="external">https://yq.aliyun.com/articles/69516</a></p>
+]]></content>
     
     <summary type="html">
+    
+      &lt;h1 id=&quot;React-版开眼技术详情&quot;&gt;&lt;a href=&quot;#React-版开眼技术详情&quot; class=&quot;headerlink&quot; title=&quot;React 版开眼技术详情&quot;&gt;&lt;/a&gt;React 版开眼技术详情&lt;/h1&gt;&lt;h2 id=&quot;React&quot;&gt;&lt;a href=&quot;#Reac
     
     </summary>
     
@@ -42,7 +94,7 @@
     <link href="http://ldqblog.me/2017/09/23/React%E7%89%88%E5%BC%80%E7%9C%BC-%E4%B8%80/"/>
     <id>http://ldqblog.me/2017/09/23/React版开眼-一/</id>
     <published>2017-09-23T02:18:35.000Z</published>
-    <updated>2017-10-13T03:02:38.000Z</updated>
+    <updated>2017-10-13T03:45:21.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="React-版开眼介绍"><a href="#React-版开眼介绍" class="headerlink" title="React 版开眼介绍"></a>React 版开眼介绍</h1><h2 id="预览地址"><a href="#预览地址" class="headerlink" title="预览地址"></a>预览地址</h2><p><a href="http://ldqblog.me/react-eyepetizer/dist/#/">预览地址</a></p>
 <h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><p><a href="https://github.com/LDQ-first/react-eyepetizer" target="_blank" rel="external">GitHub</a></p>
@@ -1689,9 +1741,12 @@ redux-logger
     <link href="http://ldqblog.me/2017/07/13/React-%E7%AE%80%E4%BB%8B/"/>
     <id>http://ldqblog.me/2017/07/13/React-简介/</id>
     <published>2017-07-12T16:15:33.000Z</published>
-    <updated>2017-10-12T16:27:04.000Z</updated>
+    <updated>2017-10-13T04:47:31.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="React-简介"><a href="#React-简介" class="headerlink" title="React 简介"></a>React 简介</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><h3 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h3><p>一般写在 render 生命周期函数里</p>
+    <content type="html"><![CDATA[<h1 id="React-简介"><a href="#React-简介" class="headerlink" title="React 简介"></a>React 简介</h1><blockquote>
+<p>React.js 是一个 UI = f(states) 的框架，为了解决更新的问题，<br>React.js 使用了 virtual dom，virtual dom 通过 diff 修改 dom，来实现高效的 dom 更新。</p>
+</blockquote>
+<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><h3 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h3><p>一般写在 render 生命周期函数里</p>
 <p>语法:</p>
 <pre><code>return (
     写 HTML 
@@ -1699,7 +1754,7 @@ redux-logger
     注意 有些 属性要改写 
     如 ： class =》 className 
 
-    标签要闭合 &lt;img src=&quot;&quot;&gt; =》 &lt; img src=&quot;&quot; /&gt; 
+    标签要闭合 &lt; img src=&quot;&quot;&gt; =》 &lt; img src=&quot;&quot; /&gt; 
 
     可以添加 js
     但要用 {} 括起来 
