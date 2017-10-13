@@ -241,15 +241,51 @@ static get propTypes() {
     <entry>
       <title><![CDATA[React 版动态简历]]></title>
       <url>http://ldqblog.me/2017/08/23/React%E7%89%88%E5%8A%A8%E6%80%81%E7%AE%80%E5%8E%86/</url>
-      <!-- <content type="html"><![CDATA[<h1 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h1>]]></content> -->
-      <content type="html"><![CDATA[技术]]></content>
+      <!-- <content type="html"><![CDATA[<p><strong><a href="http://ldqblog.me/react-animating-resume/build/">预览地址</a></strong></p>
+<h2 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h2><ul>
+<li>React  前端框架</li>
+<li>ES6/7 采用最新 JS 语法</li>
+<li>Async/Await Promise 用于处理异步事件流</li>
+<li>Marked 识别 markdown 语法</li>
+<li>Prismjs/react-prism 实现语法高亮</li>
+<li>styled-components 在 JS 中写 CSS</li>
+<li>classnames 处理 className</li>
+<li>Express create-react-app 自带服务器</li>
+<li>icomoom.css 字体图标</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><blockquote>
+<p>利用 Async/Await Promise 实现按步骤绘制动态简历<br>实现了加速、播放、暂停、跳过、重来、下载 PDF 等功能<br>用于 FireFox 显示 pdf 排版有错，所以遇到 Firefox 时，点击下载 PDF 后没有预览而采用直接下载</p>
+</blockquote>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>定时的在页面添加字符串</p>
+<p>用一定的方法解析字符串</p>
+<p>如字符串内容为 CSS 就添加到 style 标签中</p>
+<p>如字符串内容为 HTML 和 markdown 就用 marked 模块解析</p>
+]]></content> -->
+      <content type="html"><![CDATA[预览地址 技术 React 前端框架 ES6/7 采用最新 JS 语法 Async/Await Promise 用于处理异步事件流 Marked 识别 markdown 语法 Prismjs/react-prism 实现语法高亮 styled-components 在 JS 中写 CSS classnames 处理 className Express create-react-app 自带服务器 icomoom.css 字体图标 总结 利用 Async/Await Promise 实现按步骤绘制动态简历实现了加速、播放、暂停、跳过、重来、下载 PDF 等功能用于 FireFox 显示 pdf 排版有错，所以遇到 Firefox 时，点击下载 PDF 后没有预览而采用直接下载 原理定时的在页面添加字符串 用一定的方法解析字符串 如字符串内容为 CSS 就添加到 style 标签中 如字符串内容为 HTML 和 markdown 就用 marked 模块解析]]></content>
     </entry>
     
     <entry>
       <title><![CDATA[Vue 版动态简历]]></title>
       <url>http://ldqblog.me/2017/08/20/Vue%E7%89%88%E5%8A%A8%E6%80%81%E7%AE%80%E5%8E%86/</url>
-      <!-- <content type="html"><![CDATA[<h1 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h1>]]></content> -->
-      <content type="html"><![CDATA[技术]]></content>
+      <!-- <content type="html"><![CDATA[<p><strong><a href="http://ldqblog.me/vue-animating-resume/dist/">预览地址</a></strong></p>
+<h2 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h2><ul>
+<li>Vue  前端框架</li>
+<li>ES6/7 采用最新 JS 语法</li>
+<li>Async/Await Promise 用于处理异步事件流</li>
+<li>Marked 识别 markdown 语法</li>
+<li>Prismjs 实现语法高亮</li>
+<li>Express vue-cli 自带服务器</li>
+<li>svg 字体图标</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><blockquote>
+<p>利用 Async/Await Promise 实现按步骤绘制动态简历<br>实现了加速、播放、暂停、跳过、重来、下载 PDF 等功能<br>开启 webpack 和 babel-loader 缓存提高构建速度<br>用于 FireFox 显示 pdf 排版有错，所以遇到 Firefox 时，点击下载 PDF 后没有预览而采用直接下载</p>
+</blockquote>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>定时的在页面添加字符串</p>
+<p>用一定的方法解析字符串</p>
+<p>如字符串内容为 CSS 就添加到 style 标签中</p>
+<p>如字符串内容为 HTML 和 markdown 就用 marked 模块解析</p>
+]]></content> -->
+      <content type="html"><![CDATA[预览地址 技术栈 Vue 前端框架 ES6/7 采用最新 JS 语法 Async/Await Promise 用于处理异步事件流 Marked 识别 markdown 语法 Prismjs 实现语法高亮 Express vue-cli 自带服务器 svg 字体图标 总结 利用 Async/Await Promise 实现按步骤绘制动态简历实现了加速、播放、暂停、跳过、重来、下载 PDF 等功能开启 webpack 和 babel-loader 缓存提高构建速度用于 FireFox 显示 pdf 排版有错，所以遇到 Firefox 时，点击下载 PDF 后没有预览而采用直接下载 原理定时的在页面添加字符串 用一定的方法解析字符串 如字符串内容为 CSS 就添加到 style 标签中 如字符串内容为 HTML 和 markdown 就用 marked 模块解析]]></content>
     </entry>
     
     <entry>
