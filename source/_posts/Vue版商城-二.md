@@ -170,6 +170,7 @@ router.get('/list', (req, res, next) => {
 
 ### 根据环境连接数据库
 
+```
 var env = process.env.NODE_ENV || 'development'
 var sessionUrl = ''
 if(env === 'development') {
@@ -181,7 +182,7 @@ else {
   sessionUrl = 'mongodb://用户.数据库:password@IP:port/shopdb'
 }
 
-
+```
 
 
 
@@ -274,8 +275,8 @@ gzip_min_length 1k;
     "apps":[
         {
             "name":"vueshop",
-            "script":"", //入口脚本
-            "env": { //传进去的变量
+            "script":"入口脚本",           
+            "env": {              //传进去的变量
                 "COMMON_VARIABLE": "true"
             },
             "env_production": {
@@ -310,6 +311,7 @@ gzip_min_length 1k;
 
 显示价格趋势，数据来自数据库（自己编的）
 
+显示订单详情
 
 
 
