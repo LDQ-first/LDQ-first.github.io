@@ -102,12 +102,35 @@ categories:
 下拉刷新
 
 
+阿里云部署
+1. 创建新用户
+2. 更换端口，禁止root登录
+3. 安装配置iptables， fail2ban，nginx，mongodb，nodejs
+4. 利用公私钥实现ssh无密码登录
+5. 利用git，github，pm2 实现高效的部署代码
+6. 利用nginx开启gizp
+
+注意
+阿里云安全组本身就有做端口访问限制
+
+
 
 ## 问题
 
 
 
 没有备案, 没有使用HTTPS，导致chrome提示不安全
+没有实现RESTful API
+
+
+
+## 未来
+
+解决问题
+优化代码
+优化服务器配置
+
+
 
 
 
