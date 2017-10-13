@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ldqblog.me/"/>
-  <updated>2017-10-13T05:05:57.583Z</updated>
+  <updated>2017-10-13T05:08:30.000Z</updated>
   <id>http://ldqblog.me/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://ldqblog.me/2017/09/25/React%E7%89%88%E5%BC%80%E7%9C%BC-%E4%BA%8C/"/>
     <id>http://ldqblog.me/2017/09/25/React版开眼-二/</id>
     <published>2017-09-25T02:18:44.000Z</published>
-    <updated>2017-10-13T05:05:57.583Z</updated>
+    <updated>2017-10-13T05:08:30.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="React-版开眼技术详情"><a href="#React-版开眼技术详情" class="headerlink" title="React 版开眼技术详情"></a>React 版开眼技术详情</h1><h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><p>UI 框架<br>配合 React-Router 4 , Redux, Immutable, Reselect 使用</p>
 <p>React 层面分为路由组件（views 文件夹中）<br>和非路由组件（components 文件夹中）</p>
@@ -63,13 +63,17 @@ var Obj = defaultObj.mergeDeep(initObj) // 深 merge
 <h3 id="为什么要在-React-js-中使用-Immutable-js"><a href="#为什么要在-React-js-中使用-Immutable-js" class="headerlink" title="为什么要在 React.js 中使用 Immutable.js"></a>为什么要在 React.js 中使用 Immutable.js</h3><p>React.js 是一个 UI = f(states) 的框架，为了解决更新的问题，<br>React.js 使用了 virtual dom，virtual dom 通过 diff 修改 dom，来实现高效的 dom 更新。<br>但是当 state 更新时，如果数据没变，也会去做 virtual dom 的 diff，这就产生了浪费。</p>
 <p>可以利用 PureRenderMixin，但 PureRenderMixin 只是简单的浅比较，不使用于多层比较</p>
 <p>所以使用 Immutable.js 实现 Immutable Data</p>
-<p><img src="" alt="000"></p>
+<p><img src="http://ldqblog.me/img/Immutable/000.gif" alt="000"></p>
 <h2 id="Reselect-避免不必要的-stroe-更新"><a href="#Reselect-避免不必要的-stroe-更新" class="headerlink" title="Reselect(避免不必要的 stroe 更新)"></a>Reselect(避免不必要的 stroe 更新)</h2><p>mapStateToProps 也被叫做 selector，在 store 发生变化的时候就会被调用，<br>而不管是不是 selector 关心的数据发生改变它都会被调用，<br>所以如果 selector 计算量非常大，每次更新都重新计算可能会带来性能问题。</p>
 <p>Reselect 能帮你省去这些没必要的重新计算。<br>Reselect 提供 createSelector 函数来创建可记忆的 selector。</p>
 <p>createSelector 接收一个 input-selectors 数组和一个转换函数作为参数。</p>
 <p>如果 state tree 的改变会引起 input-selector 值变化，那么 selector 会调用转换函数，<br>传入 input-selectors 作为参数，并返回结果。</p>
 <p>如果 input-selectors 的值和前一次的一样，<br>它将会直接返回前一次计算的数据，而不会再调用一次转换函数。<br>这样就可以避免不必要的计算，为性能带来提升。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><strong>immutable.js 文档 </strong>: <a href="http://facebook.github.io/immutable-js/docs/#/" target="_blank" rel="external">http://facebook.github.io/immutable-js/docs/#/</a><br><strong>immutable.js 在 React、Redux 中的实践以及常用 API 简介 </strong>: <a href="https://yq.aliyun.com/articles/69516" target="_blank" rel="external">https://yq.aliyun.com/articles/69516</a></p>
+<pre><code>export const eyeSelector = createSelector(
+    selectGolbal,
+    appState =&gt; appState.get(&#39;eye&#39;)
+)
+</code></pre><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><strong>immutable.js 文档 </strong>: <a href="http://facebook.github.io/immutable-js/docs/#/" target="_blank" rel="external">http://facebook.github.io/immutable-js/docs/#/</a><br><strong>immutable.js 在 React、Redux 中的实践以及常用 API 简介 </strong>: <a href="https://yq.aliyun.com/articles/69516" target="_blank" rel="external">https://yq.aliyun.com/articles/69516</a></p>
 ]]></content>
     
     <summary type="html">
