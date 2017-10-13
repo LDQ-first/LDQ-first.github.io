@@ -90,7 +90,7 @@ categories:
 
 ### 效果图
 
-![01](http://ldqblog.me/Vue-shop/img/VShop/01.jpg) 
+![01](http://ldqblog.me/img/VShop/01.jpg) 
 
 
 
