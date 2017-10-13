@@ -241,15 +241,15 @@ static get propTypes() {
     <entry>
       <title><![CDATA[React 版动态简历]]></title>
       <url>http://ldqblog.me/2017/08/23/React%E7%89%88%E5%8A%A8%E6%80%81%E7%AE%80%E5%8E%86/</url>
-      <!-- <content type="html"></content> -->
-      <content type="html"></content>
+      <!-- <content type="html"><![CDATA[<h1 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h1>]]></content> -->
+      <content type="html"><![CDATA[技术]]></content>
     </entry>
     
     <entry>
       <title><![CDATA[Vue 版动态简历]]></title>
       <url>http://ldqblog.me/2017/08/20/Vue%E7%89%88%E5%8A%A8%E6%80%81%E7%AE%80%E5%8E%86/</url>
-      <!-- <content type="html"></content> -->
-      <content type="html"></content>
+      <!-- <content type="html"><![CDATA[<h1 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h1>]]></content> -->
+      <content type="html"><![CDATA[技术]]></content>
     </entry>
     
     <entry>
@@ -262,14 +262,317 @@ static get propTypes() {
 <p>Vue-pull-to-refresh<br>自己开发的下拉刷新（实现插件）</p>
 <h2 id="Axios"><a href="#Axios" class="headerlink" title="Axios"></a>Axios</h2><p>实现 api 请求等的异步处理</p>
 <h2 id="Express"><a href="#Express" class="headerlink" title="Express"></a>Express</h2><p>后端服务器</p>
+<p>获取数据 get 请求<br>操作数据 post 请求</p>
+<p>利用中间件，路由实现后端逻辑</p>
 <h2 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h2><p>数据库</p>
+<p>MongoDB 是一个基于文档的数据库，所有数据是从磁盘上进行读写的。<br>MongoDB 善长的是对无模式 JSON 数据的查询。</p>
+<h3 id="Robomongo"><a href="#Robomongo" class="headerlink" title="Robomongo"></a>Robomongo</h3><p>可视化 MongeDB 工具</p>
 <h2 id="Mongoose"><a href="#Mongoose" class="headerlink" title="Mongoose"></a>Mongoose</h2><p>连接数据库和 Express</p>
-<h2 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h2><p>代理转发</p>
-<h2 id="PM2"><a href="#PM2" class="headerlink" title="PM2"></a>PM2</h2><p>做守护进程, 发布更新项目</p>
-<h2 id="Echarts"><a href="#Echarts" class="headerlink" title="Echarts"></a>Echarts</h2><p>数据可视化显示</p>
+<p>使用 promise 的调用方式</p>
+<pre><code>
+const mongoose = require(&#39;mongoose&#39;)
+const Schema =  mongoose.Schema
+mongoose.Promise = global.Promise
+
+const productSchema = new Schema({
+    &quot;productId&quot;: String,
+    &quot;productName&quot;: String,
+    &quot;salePrice&quot;: Number,
+    &quot;productImage&quot;: String,
+    &quot;checked&quot;: Number,
+    &quot;productNum&quot;: Number
+})
+
+
+module.exports = mongoose.model(&#39;Good&#39;, productSchema)
+</code></pre><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><pre><code>const Goods = require(&#39;../models/goods.js&#39;)
+mongoose.Promise = global.Promise
+
+var env = process.env.NODE_ENV || &#39;development&#39;
+if(env === &#39;development&#39;) {
+    console.log(&#39;NODE_ENV:&#39;, env)
+    mongoose.connect(&#39;mongodb://IP:port/shopdb&#39;)
+}
+else {
+  console.log(&#39;NODE_ENV:&#39;, env)
+  mongoose.connect(&#39;mongodb:// 用户. 数据库: password@IP:port/shopdb&#39;)
+}
+
+
+
+router.get(&#39;/list&#39;, (req, res, next) =&gt; {
+   const sort = req.query.sort
+   const page = req.query.page
+   const pageSize = req.query.pageSize
+   const priceChecked = req.query.priceChecked
+   let params = {}
+   let priceGt = &#39;&#39;, priceLte =&#39;&#39;
+   if(priceChecked !== &#39;all&#39;) {
+       switch(priceChecked) {
+            case &#39;0&#39;: priceGt = 0; priceLte=500; break;
+            case &#39;1&#39;: priceGt = 500; priceLte=1000; break;
+            case &#39;2&#39;: priceGt = 1000; priceLte=2000; break;
+            case &#39;3&#39;: priceGt = 2000; priceLte=4000; break;
+        }
+        params = {
+            salePrice: {
+                $gt: priceGt,
+                $lte: priceLte
+            }
+        }
+        console.log(params)
+   }
+
+   const skip = (page - 1) * pageSize;
+   const goodsModel = Goods.find(params).skip(skip).limit(parseInt(pageSize))
+
+   goodsModel.sort({&#39;salePrice&#39;: sort})
+
+   goodsModel.exec((err, doc) =&gt; {
+       if(err) {
+           res.json({
+               status: &#39;404&#39;,
+               msg: err.message
+           })
+       }
+       else {
+           res.json({
+               status: &#39;200&#39;,
+               msg: &#39;OK&#39;,
+               result: {
+                   count: doc.length,
+                   list: doc
+               }
+           })
+       }
+   })
+})
+</code></pre><h3 id="根据环境连接数据库"><a href="#根据环境连接数据库" class="headerlink" title="根据环境连接数据库"></a>根据环境连接数据库</h3><p>var env = process.env.NODE_ENV || ‘development’<br>var sessionUrl = ‘’if(env ===’development’) {<br>    console.log(‘app.NODE_ENV:’, env)<br>    sessionUrl = ‘mongodb://IP:port/shopdb’<br>}<br>else {<br>  console.log(‘app.NODE_ENV:’, env)<br>  sessionUrl = ‘mongodb:// 用户. 数据库: password@IP:port/shopdb’<br>}</p>
+<h2 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h2><h3 id="代理转发"><a href="#代理转发" class="headerlink" title="代理转发"></a>代理转发</h3><pre><code>upstream vue {
+    server 本地 IP:port;
+}
+
+server {
+    listen port;
+    # server_name *. 主域名;
+    server_name  外部 IP;
+    location / {
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forward-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Nginx-Proxy true;
+        proxy_pass http://vue;
+        proxy_redirect off;
+    }
+    location /goods/ {
+        proxy_pass http:// 本地 IP:port/goods/;
+    }
+
+    location /users/ {
+        proxy_pass http:// 本地 IP:port/users/;
+    }
+    location /vueshop/ {
+        alias 路径;
+    }
+    location ~* ^.+\.(jpg|jpeg|gif|png|svg|ico|webp|css|js|map|pdf|txt)$ {
+        root 路径;
+    }
+}
+</code></pre><h3 id="开启-gzip-压缩"><a href="#开启-gzip-压缩" class="headerlink" title="开启 gzip 压缩"></a>开启 gzip 压缩</h3><p>sudo vi /etc/nginx/nginx.conf</p>
+<pre><code>##
+# Gzip Settings
+##
+
+gzip on;
+gzip_disable &quot;msie6&quot;;
+# 启用 gzip 压缩的最小文件，小于设置值的文件将不会压缩
+gzip_min_length 1k;
+# 是否在 http header 中添加 Vary: Accept-Encoding，建议开启
+    gzip_vary on;
+# gzip_proxied any;
+# gzip 压缩级别，1-10，数字越大压缩的越好，也越占用 CPU 时间
+    gzip_comp_level 4;
+    gzip_buffers 16 8k;
+# gzip_http_version 1.1;
+    gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
+</code></pre><h2 id="PM2"><a href="#PM2" class="headerlink" title="PM2"></a>PM2</h2><p>做守护进程, 发布更新项目</p>
+<p>使用 ecosystem.json </p>
+<p> pm2 deploy ecosystem.json start</p>
+<p> 可以配置服务器 ip，指定 github 仓库<br> 实现代码更新后快速部署到服务器中</p>
+<pre><code>{
+    &quot;apps&quot;:[
+        {
+            &quot;name&quot;:&quot;vueshop&quot;,
+            &quot;script&quot;:&quot;&quot;, // 入口脚本&quot;env&quot;: { // 传进去的变量&quot;COMMON_VARIABLE&quot;:&quot;true&quot;},&quot;env_production&quot;: {&quot;NODE_ENV&quot;:&quot;production&quot;
+            }
+        }
+    ],
+    &quot;deploy&quot;: { // 部署任务
+        &quot;start&quot;: { // 任务名
+            &quot;user&quot;: &quot;&quot;,// 服务器上用来发布应用的 user&quot;host&quot;: [&quot;IP&quot;],&quot;port&quot;:&quot;port&quot;,&quot;ref&quot;:&quot;origin/master&quot;,&quot;repo&quot;:&quot;git 仓库 &quot;,&quot;path&quot;:&quot;&quot;, // 服务器项目位置
+            &quot;ssh_options&quot;: &quot;StrictHostKeyChecking=no&quot;, // 取消 key 校验
+            &quot;post-deploy&quot;: &quot;执行的命令行 &amp;&amp; pm2 startOrRestart ../ecosystem.json --env production&quot;,
+            &quot;env&quot;: {
+                &quot;NODE_ENV&quot;: &quot;production&quot;
+            }
+        }
+    }
+}
+</code></pre><h2 id="Echarts"><a href="#Echarts" class="headerlink" title="Echarts"></a>Echarts</h2><p>数据可视化显示</p>
+<p>显示价格趋势，数据来自数据库（自己编的）</p>
 <h2 id="Svg-captcha"><a href="#Svg-captcha" class="headerlink" title="Svg-captcha"></a>Svg-captcha</h2><p>验证码</p>
-]]></content> -->
-      <content type="html"><![CDATA[Vue 版商城技术详情VueVue 配合 Vue-Router，Vuex 实现路由跳转，路由过渡，状态管理 Vue-lazyload头像图片懒加载 Vue-infinite-scroll滚动加载 Vue-pull-to-refresh自己开发的下拉刷新（实现插件） Axios实现 api 请求等的异步处理 Express后端服务器 MongoDB数据库 Mongoose连接数据库和 Express Nginx代理转发 PM2做守护进程, 发布更新项目 Echarts数据可视化显示 Svg-captcha验证码]]></content>
+<p>在考虑要使用验证码时, 发现许多相关的 npm 模块都要<br>安装其它支持库（C 或 C++ 编写，而且平台兼容性极差）</p>
+<p>最终在 CNode 社区发现了以 svg 为基础的 Svg-captcha</p>
+<blockquote>
+<p>内部使用 opentype.js ， 把字符转换为 svg 路径，然后生成验证码</p>
+</blockquote>
+<p>简单易用</p>
+<pre><code>
+const svgCaptcha = require(&#39;svg-captcha&#39;)
+
+router.get(&#39;/captcha&#39;, (req, res, next) =&gt; {
+  const captcha = svgCaptcha.create({
+    background: &quot;#3E96D6&quot;
+  })
+  req.session.captcha = captcha.text
+
+  res.set(&#39;Content-Type&#39;, &#39;image/svg+xml&#39;)
+  res.json({
+    status: &#39;200&#39;,
+    msg: &#39;OK&#39;,
+    result: captcha
+  })
+})
+
+
+router.get(&#39;/isCaptchaTrue&#39;, (req, res, next) =&gt; {
+  const captcha = req.query.captcha.toLowerCase()
+  if (req.session.captcha.toLowerCase() !== captcha) {
+    res.json({
+      status: &#39;500&#39;,
+      msg: &#39;验证码有错&#39;,
+      result: &#39;&#39;
+    })
+    return
+  } else {
+    res.json({
+      status: &#39;200&#39;,
+      msg: &#39;验证码正确&#39;,
+      result: &#39;&#39;
+    })
+  }
+})
+</code></pre><h2 id="session"><a href="#session" class="headerlink" title="session"></a>session</h2><p>express 在 4.x 版本之后，session 管理和 cookies 等许多模块都不再直接包含在 express 中，<br>而是需要单独添加相应模块。</p>
+<p>express4 中操作 cookie 使用 cookie-parser 模块<br>express4 中操作 session 使用 express-session 模块</p>
+<p>session 的运作通过一个 session_id 来进行。session_id 通常是存放在客户端的 cookie 中，<br>比如在 express 中，默认是 connect.sid 这个字段，当请求到来时，<br>服务端检查 cookie 中保存的 session_id 并通过这个 session_id 与服务器端的 session data 关联起来，<br>进行数据的保存和修改。</p>
+<p>这意思就是说，当你浏览一个网页时，服务端随机产生一个 1024 比特长的字符串，<br>然后存在你 cookie 中的 connect.sid 字段中。<br>当你下次访问时，cookie 会带有这个字符串，然后浏览器就知道你是上次访问过的某某某，然<br>后从服务器的存储中取出上次记录在你身上的数据。<br>由于字符串是随机产生的，而且位数足够多，所以也不担心有人能够伪造。<br>伪造成功的概率比坐在家里编程时被邻居家的狗突然闯入并咬死的几率还低。</p>
+<p>session 可以存放在 1）内存、2）cookie 本身、3）redis 或 memcached 等缓存中，或者 4）数据库中。</p>
+<p>使用 session 验证用户<br>session 存储在数据库中</p>
+<p>app.js</p>
+<pre><code>
+配置
+const session = require(&#39;express-session&#39;)
+const mongoStore = require(&#39;connect-mongo&#39;)(session)
+
+
+
+app.use(session({
+  secret: &#39;recommand 128 bytes random string&#39;, // 建议使用 128 个字符的随机字符串  
+ // 作为服务器端生成 session  cookie 的签名 ，防止篡改 ,
+  // 通过设置的 secret 字符串，来计算 hash 值并放在 cookie 中，使产生的 signedCookie 防篡改。
+ name: &#39;user&#39;,         
+ // cookie 的名字 保存 session 的字段名称, 返回客户端的 key 的名称，默认为 connect.sid, 也可以自己设置。
+ resave:  false,
+ // 强制保存 session 即使它并没有变化 （默认： true）
+ //saveUninitialized:
+ // 初始化 session 时是否保存到存储。默认为 true， 但是 (后续版本) 有可能默认失效，所以最好手动添加。
+cookie:  { maxAge: 60 * 1000 * 60 * 24 * 7 },
+//session cookie 设置 设置返回到前端 key 的属性，默认值为{ path: ‘/’, httpOnly: true, secure: false, maxAge: null }。
+//genid - 生成新 session ID 的函数 （默认使用 uid2 库）
+ //rolling: false,
+ // 在每次请求时强行设置 cookie，这将重置 cookie 过期时间（默认：false）
+//proxy: true,
+// 当设置了 secure cookies（通过”x-forwarded-proto” header ）时信任反向代理。当设定为 true 时，
+//”x-forwarded-proto” header 将被使用。
+// 当设定为 false 时，所有 headers 将被忽略。当该属性没有被设定时，将使用 Express 的 trust proxy。
+saveUninitialized: false,
+// 强制将未初始化的 session 存储。当新建了一个 session 且未设定属性或值时，它就处于
+// 未初始化状态。在设定一个 cookie 前，这对于登陆验证，减轻服务端存储压力，权限控制是有帮助的。（默认：true）
+// unset
+// 控制 req.session 是否取消（例如通过 delete，或者将它的值设置为 null）。这可以使 session 保持存储
+// 状态但忽略修改或删除的请求（默认：keep）
+//session 存储实例
+  store: new mongoStore({
+  //  db: &#39;VueShop&#39;,
+    url: sessionUrl,
+    collection: &#39;sessions&#39;
+  })
+}))
+</code></pre><p>使用</p>
+<p>routes<br>    user.js</p>
+<pre><code>
+
+// 登录
+router.post(&#39;/login&#39;, (req, res, next) =&gt; {
+  const captcha = req.body.captcha.toLowerCase()
+  console.log(captcha)
+  console.log(req.session.captcha.toLowerCase())
+  if (req.session.captcha.toLowerCase() !== captcha) {
+    res.json({
+      status: &#39;500&#39;,
+      msg: &#39;验证码有错&#39;,
+      result: &#39;&#39;
+    })
+    return
+  }
+  console.log(&#39;param&#39;)
+  const param = {
+    userName: req.body.userName,
+    userPwd: req.body.userPwd
+  }
+
+  User.findOne(param)
+    .then(doc =&gt; {
+      if (doc) {
+        res.cookie(&quot;userId&quot;, doc.userId, {
+          path: &#39;/&#39;,
+          maxAge: 1000 * 60 * 60 * 24 * 7
+        })
+        res.cookie(&quot;userName&quot;, doc.userName, {
+          path: &#39;/&#39;,
+          maxAge: 1000 * 60 * 60 * 24 * 7
+        })
+
+        req.session.user = {
+          userName: doc.userName,
+          userId: doc.userId
+        }
+        res.json({
+          status: &#39;200&#39;,
+          msg: &#39;OK&#39;,
+          result: {
+            userName: doc.userName
+          }
+        })
+      } else {
+        res.json({
+          status: &#39;400&#39;,
+          msg: &#39;用户名或者密码错误&#39;,
+          result: &#39;&#39;
+        })
+      }
+    })
+    .catch(err =&gt; {
+      res.json({
+        status: &#39;404&#39;,
+        msg: err.message,
+        result: &#39;&#39;
+      })
+    })
+
+})
+</code></pre>]]></content> -->
+      <content type="html"><![CDATA[Vue 版商城技术详情VueVue 配合 Vue-Router，Vuex 实现路由跳转，路由过渡，状态管理 Vue-lazyload头像图片懒加载 Vue-infinite-scroll滚动加载 Vue-pull-to-refresh自己开发的下拉刷新（实现插件） Axios实现 api 请求等的异步处理 Express后端服务器 获取数据 get 请求操作数据 post 请求 利用中间件，路由实现后端逻辑 MongoDB数据库 MongoDB 是一个基于文档的数据库，所有数据是从磁盘上进行读写的。MongoDB 善长的是对无模式 JSON 数据的查询。 Robomongo可视化 MongeDB 工具 Mongoose连接数据库和 Express 使用 promise 的调用方式 const mongoose = require(&#39;mongoose&#39;) const Schema = mongoose.Schema mongoose.Promise = global.Promise const productSchema = new Schema({ &quot;productId&quot;: String, &quot;productName&quot;: String, &quot;salePrice&quot;: Number, &quot;productImage&quot;: String, &quot;checked&quot;: Number, &quot;productNum&quot;: Number }) module.exports = mongoose.model(&#39;Good&#39;, productSchema) 使用const Goods = require(&#39;../models/goods.js&#39;) mongoose.Promise = global.Promise var env = process.env.NODE_ENV || &#39;development&#39; if(env === &#39;development&#39;) { console.log(&#39;NODE_ENV:&#39;, env) mongoose.connect(&#39;mongodb://IP:port/shopdb&#39;) } else { console.log(&#39;NODE_ENV:&#39;, env) mongoose.connect(&#39;mongodb:// 用户. 数据库: password@IP:port/shopdb&#39;) } router.get(&#39;/list&#39;, (req, res, next) =&gt; { const sort = req.query.sort const page = req.query.page const pageSize = req.query.pageSize const priceChecked = req.query.priceChecked let params = {} let priceGt = &#39;&#39;, priceLte =&#39;&#39; if(priceChecked !== &#39;all&#39;) { switch(priceChecked) { case &#39;0&#39;: priceGt = 0; priceLte=500; break; case &#39;1&#39;: priceGt = 500; priceLte=1000; break; case &#39;2&#39;: priceGt = 1000; priceLte=2000; break; case &#39;3&#39;: priceGt = 2000; priceLte=4000; break; } params = { salePrice: { $gt: priceGt, $lte: priceLte } } console.log(params) } const skip = (page - 1) * pageSize; const goodsModel = Goods.find(params).skip(skip).limit(parseInt(pageSize)) goodsModel.sort({&#39;salePrice&#39;: sort}) goodsModel.exec((err, doc) =&gt; { if(err) { res.json({ status: &#39;404&#39;, msg: err.message }) } else { res.json({ status: &#39;200&#39;, msg: &#39;OK&#39;, result: { count: doc.length, list: doc } }) } }) }) 根据环境连接数据库var env = process.env.NODE_ENV || ‘development’var sessionUrl = ‘’if(env ===’development’) { console.log(‘app.NODE_ENV:’, env) sessionUrl = ‘mongodb://IP:port/shopdb’}else { console.log(‘app.NODE_ENV:’, env) sessionUrl = ‘mongodb:// 用户. 数据库: password@IP:port/shopdb’} Nginx代理转发upstream vue { server 本地 IP:port; } server { listen port; # server_name *. 主域名; server_name 外部 IP; location / { proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forward-For $proxy_add_x_forwarded_for; proxy_set_header Host $http_host; proxy_set_header X-Nginx-Proxy true; proxy_pass http://vue; proxy_redirect off; } location /goods/ { proxy_pass http:// 本地 IP:port/goods/; } location /users/ { proxy_pass http:// 本地 IP:port/users/; } location /vueshop/ { alias 路径; } location ~* ^.+\.(jpg|jpeg|gif|png|svg|ico|webp|css|js|map|pdf|txt)$ { root 路径; } } 开启 gzip 压缩sudo vi /etc/nginx/nginx.conf ## # Gzip Settings ## gzip on; gzip_disable &quot;msie6&quot;; # 启用 gzip 压缩的最小文件，小于设置值的文件将不会压缩 gzip_min_length 1k; # 是否在 http header 中添加 Vary: Accept-Encoding，建议开启 gzip_vary on; # gzip_proxied any; # gzip 压缩级别，1-10，数字越大压缩的越好，也越占用 CPU 时间 gzip_comp_level 4; gzip_buffers 16 8k; # gzip_http_version 1.1; gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript; PM2做守护进程, 发布更新项目 使用 ecosystem.json pm2 deploy ecosystem.json start 可以配置服务器 ip，指定 github 仓库 实现代码更新后快速部署到服务器中 { &quot;apps&quot;:[ { &quot;name&quot;:&quot;vueshop&quot;, &quot;script&quot;:&quot;&quot;, // 入口脚本&quot;env&quot;: { // 传进去的变量&quot;COMMON_VARIABLE&quot;:&quot;true&quot;},&quot;env_production&quot;: {&quot;NODE_ENV&quot;:&quot;production&quot; } } ], &quot;deploy&quot;: { // 部署任务 &quot;start&quot;: { // 任务名 &quot;user&quot;: &quot;&quot;,// 服务器上用来发布应用的 user&quot;host&quot;: [&quot;IP&quot;],&quot;port&quot;:&quot;port&quot;,&quot;ref&quot;:&quot;origin/master&quot;,&quot;repo&quot;:&quot;git 仓库 &quot;,&quot;path&quot;:&quot;&quot;, // 服务器项目位置 &quot;ssh_options&quot;: &quot;StrictHostKeyChecking=no&quot;, // 取消 key 校验 &quot;post-deploy&quot;: &quot;执行的命令行 &amp;&amp; pm2 startOrRestart ../ecosystem.json --env production&quot;, &quot;env&quot;: { &quot;NODE_ENV&quot;: &quot;production&quot; } } } } Echarts数据可视化显示 显示价格趋势，数据来自数据库（自己编的） Svg-captcha验证码 在考虑要使用验证码时, 发现许多相关的 npm 模块都要安装其它支持库（C 或 C++ 编写，而且平台兼容性极差） 最终在 CNode 社区发现了以 svg 为基础的 Svg-captcha 内部使用 opentype.js ， 把字符转换为 svg 路径，然后生成验证码 简单易用 const svgCaptcha = require(&#39;svg-captcha&#39;) router.get(&#39;/captcha&#39;, (req, res, next) =&gt; { const captcha = svgCaptcha.create({ background: &quot;#3E96D6&quot; }) req.session.captcha = captcha.text res.set(&#39;Content-Type&#39;, &#39;image/svg+xml&#39;) res.json({ status: &#39;200&#39;, msg: &#39;OK&#39;, result: captcha }) }) router.get(&#39;/isCaptchaTrue&#39;, (req, res, next) =&gt; { const captcha = req.query.captcha.toLowerCase() if (req.session.captcha.toLowerCase() !== captcha) { res.json({ status: &#39;500&#39;, msg: &#39;验证码有错&#39;, result: &#39;&#39; }) return } else { res.json({ status: &#39;200&#39;, msg: &#39;验证码正确&#39;, result: &#39;&#39; }) } }) sessionexpress 在 4.x 版本之后，session 管理和 cookies 等许多模块都不再直接包含在 express 中，而是需要单独添加相应模块。 express4 中操作 cookie 使用 cookie-parser 模块express4 中操作 session 使用 express-session 模块 session 的运作通过一个 session_id 来进行。session_id 通常是存放在客户端的 cookie 中，比如在 express 中，默认是 connect.sid 这个字段，当请求到来时，服务端检查 cookie 中保存的 session_id 并通过这个 session_id 与服务器端的 session data 关联起来，进行数据的保存和修改。 这意思就是说，当你浏览一个网页时，服务端随机产生一个 1024 比特长的字符串，然后存在你 cookie 中的 connect.sid 字段中。当你下次访问时，cookie 会带有这个字符串，然后浏览器就知道你是上次访问过的某某某，然后从服务器的存储中取出上次记录在你身上的数据。由于字符串是随机产生的，而且位数足够多，所以也不担心有人能够伪造。伪造成功的概率比坐在家里编程时被邻居家的狗突然闯入并咬死的几率还低。 session 可以存放在 1）内存、2）cookie 本身、3）redis 或 memcached 等缓存中，或者 4）数据库中。 使用 session 验证用户session 存储在数据库中 app.js 配置 const session = require(&#39;express-session&#39;) const mongoStore = require(&#39;connect-mongo&#39;)(session) app.use(session({ secret: &#39;recommand 128 bytes random string&#39;, // 建议使用 128 个字符的随机字符串 // 作为服务器端生成 session cookie 的签名 ，防止篡改 , // 通过设置的 secret 字符串，来计算 hash 值并放在 cookie 中，使产生的 signedCookie 防篡改。 name: &#39;user&#39;, // cookie 的名字 保存 session 的字段名称, 返回客户端的 key 的名称，默认为 connect.sid, 也可以自己设置。 resave: false, // 强制保存 session 即使它并没有变化 （默认： true） //saveUninitialized: // 初始化 session 时是否保存到存储。默认为 true， 但是 (后续版本) 有可能默认失效，所以最好手动添加。 cookie: { maxAge: 60 * 1000 * 60 * 24 * 7 }, //session cookie 设置 设置返回到前端 key 的属性，默认值为{ path: ‘/’, httpOnly: true, secure: false, maxAge: null }。 //genid - 生成新 session ID 的函数 （默认使用 uid2 库） //rolling: false, // 在每次请求时强行设置 cookie，这将重置 cookie 过期时间（默认：false） //proxy: true, // 当设置了 secure cookies（通过”x-forwarded-proto” header ）时信任反向代理。当设定为 true 时， //”x-forwarded-proto” header 将被使用。 // 当设定为 false 时，所有 headers 将被忽略。当该属性没有被设定时，将使用 Express 的 trust proxy。 saveUninitialized: false, // 强制将未初始化的 session 存储。当新建了一个 session 且未设定属性或值时，它就处于 // 未初始化状态。在设定一个 cookie 前，这对于登陆验证，减轻服务端存储压力，权限控制是有帮助的。（默认：true） // unset // 控制 req.session 是否取消（例如通过 delete，或者将它的值设置为 null）。这可以使 session 保持存储 // 状态但忽略修改或删除的请求（默认：keep） //session 存储实例 store: new mongoStore({ // db: &#39;VueShop&#39;, url: sessionUrl, collection: &#39;sessions&#39; }) })) 使用 routes user.js // 登录 router.post(&#39;/login&#39;, (req, res, next) =&gt; { const captcha = req.body.captcha.toLowerCase() console.log(captcha) console.log(req.session.captcha.toLowerCase()) if (req.session.captcha.toLowerCase() !== captcha) { res.json({ status: &#39;500&#39;, msg: &#39;验证码有错&#39;, result: &#39;&#39; }) return } console.log(&#39;param&#39;) const param = { userName: req.body.userName, userPwd: req.body.userPwd } User.findOne(param) .then(doc =&gt; { if (doc) { res.cookie(&quot;userId&quot;, doc.userId, { path: &#39;/&#39;, maxAge: 1000 * 60 * 60 * 24 * 7 }) res.cookie(&quot;userName&quot;, doc.userName, { path: &#39;/&#39;, maxAge: 1000 * 60 * 60 * 24 * 7 }) req.session.user = { userName: doc.userName, userId: doc.userId } res.json({ status: &#39;200&#39;, msg: &#39;OK&#39;, result: { userName: doc.userName } }) } else { res.json({ status: &#39;400&#39;, msg: &#39;用户名或者密码错误&#39;, result: &#39;&#39; }) } }) .catch(err =&gt; { res.json({ status: &#39;404&#39;, msg: err.message, result: &#39;&#39; }) }) })]]></content>
     </entry>
     
     <entry>
@@ -314,10 +617,21 @@ static get propTypes() {
 </ul>
 <h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><p><img src="http://ldqblog.me/img/VShop/01.jpg" alt="01"> </p>
 <h2 id="成果"><a href="#成果" class="headerlink" title="成果"></a>成果</h2><p>实现登录，注册，<br>添加删除购物车，添加删除地址，<br>完成订单，查看订单详情，<br>下拉刷新</p>
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>没有备案, 没有使用 HTTPS，导致 chrome 提示不安全</p>
+<p>阿里云部署</p>
+<ol>
+<li>创建新用户</li>
+<li>更换端口，禁止 root 登录</li>
+<li>安装配置 iptables， fail2ban，nginx，mongodb，nodejs</li>
+<li>利用公私钥实现 ssh 无密码登录</li>
+<li>利用 git，github，pm2 实现高效的部署代码</li>
+<li>利用 nginx 开启 gizp</li>
+</ol>
+<p>注意<br>阿里云安全组本身就有做端口访问限制</p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>没有备案, 没有使用 HTTPS，导致 chrome 提示不安全<br>没有实现 RESTful API</p>
+<h2 id="未来"><a href="#未来" class="headerlink" title="未来"></a>未来</h2><p>解决问题<br>优化代码<br>优化服务器配置</p>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><strong>Vue 文档 </strong>: <a href="https://cn.vuejs.org/v2/guide/" target="_blank" rel="external">https://cn.vuejs.org/v2/guide/</a><br><strong>Mongoose 文档 </strong>: <a href="http://mongoosejs.com/" target="_blank" rel="external">http://mongoosejs.com/</a><br><strong>Mongodb 文档 </strong>: <a href="https://docs.mongodb.com/" target="_blank" rel="external">https://docs.mongodb.com/</a></p>
 ]]></content> -->
-      <content type="html"><![CDATA[Vue 版商城介绍预览地址预览地址 部署 部署在阿里云采用 Nginx 进行代理转发PM2 做守护进程 注意存在的问题 由于域名没有备案，所以用 ip 访问，防止被阿里云封 &lt; br&gt; 由于没有使用 Https[国内的免费证书都要备案域名] Chrome，Firefox 等遇到 &lt;input type=”password”&gt; 会报不安全 &lt; br&gt; 并非代码本身有问题 &lt; br&gt; 源码GitHub 起因做 Vue 版商城的原因： 1. 了解前后端通信 2. 了解服务器部署 3. 了解 MongoDB 4. 了解 Nginx 技术栈 Vue2.3: [ 前端框架 ] Vuex: [ 状态管理, 组件通信 ] Vue-router: [ 配置路由，组件切换 ] Vue-lazyload: [ 图片懒加载 ] Vue-infinite-scroll: [ 滚动加载 ] Vue-pull-to-refresh: [ 自己开发的下拉刷新 ] ES6/7: [ JS 版本 ] Webpack: [ 模块化处理，编译打包 ] Express: [ 服务器 ] Mongoose: [ 连接 MongoDB 数据库 ] Nginx: [ 代理转发，gzip 压缩等 ] PM2: [ 做守护进程, 发布更新项目 ] Axios: [ 基于 Promise 处理 HTTP 请求 ] SASS(SCSS): [ css 预处理器 ] Flex: [ 弹性布局 ] loaclStorge: [ 本地存储用户信息 ] Echarts: [ 数据可视化显示 ] Svg-captcha: [ 验证码 ] 效果图 成果实现登录，注册，添加删除购物车，添加删除地址，完成订单，查看订单详情，下拉刷新 问题没有备案, 没有使用 HTTPS，导致 chrome 提示不安全 参考资料Vue 文档 : https://cn.vuejs.org/v2/guide/Mongoose 文档 : http://mongoosejs.com/Mongodb 文档 : https://docs.mongodb.com/]]></content>
+      <content type="html"><![CDATA[Vue 版商城介绍预览地址预览地址 部署 部署在阿里云采用 Nginx 进行代理转发PM2 做守护进程 注意存在的问题 由于域名没有备案，所以用 ip 访问，防止被阿里云封 &lt; br&gt; 由于没有使用 Https[国内的免费证书都要备案域名] Chrome，Firefox 等遇到 &lt;input type=”password”&gt; 会报不安全 &lt; br&gt; 并非代码本身有问题 &lt; br&gt; 源码GitHub 起因做 Vue 版商城的原因： 1. 了解前后端通信 2. 了解服务器部署 3. 了解 MongoDB 4. 了解 Nginx 技术栈 Vue2.3: [ 前端框架 ] Vuex: [ 状态管理, 组件通信 ] Vue-router: [ 配置路由，组件切换 ] Vue-lazyload: [ 图片懒加载 ] Vue-infinite-scroll: [ 滚动加载 ] Vue-pull-to-refresh: [ 自己开发的下拉刷新 ] ES6/7: [ JS 版本 ] Webpack: [ 模块化处理，编译打包 ] Express: [ 服务器 ] Mongoose: [ 连接 MongoDB 数据库 ] Nginx: [ 代理转发，gzip 压缩等 ] PM2: [ 做守护进程, 发布更新项目 ] Axios: [ 基于 Promise 处理 HTTP 请求 ] SASS(SCSS): [ css 预处理器 ] Flex: [ 弹性布局 ] loaclStorge: [ 本地存储用户信息 ] Echarts: [ 数据可视化显示 ] Svg-captcha: [ 验证码 ] 效果图 成果实现登录，注册，添加删除购物车，添加删除地址，完成订单，查看订单详情，下拉刷新 阿里云部署 创建新用户 更换端口，禁止 root 登录 安装配置 iptables， fail2ban，nginx，mongodb，nodejs 利用公私钥实现 ssh 无密码登录 利用 git，github，pm2 实现高效的部署代码 利用 nginx 开启 gizp 注意阿里云安全组本身就有做端口访问限制 问题没有备案, 没有使用 HTTPS，导致 chrome 提示不安全没有实现 RESTful API 未来解决问题优化代码优化服务器配置 参考资料Vue 文档 : https://cn.vuejs.org/v2/guide/Mongoose 文档 : http://mongoosejs.com/Mongodb 文档 : https://docs.mongodb.com/]]></content>
     </entry>
     
     <entry>
