@@ -12,6 +12,11 @@ categories:
 
 # React 简介
 
+
+> React.js是一个UI = f(states)的框架，为了解决更新的问题，
+React.js使用了virtual dom，virtual dom通过diff修改dom，来实现高效的dom更新。
+
+
 ## 概念
 
 
