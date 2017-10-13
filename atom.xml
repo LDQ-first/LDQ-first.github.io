@@ -1850,11 +1850,11 @@ app.listen(3000);
     </summary>
     
     
+      <category term="test" scheme="http://ldqblog.me/tags/test/"/>
+    
       <category term="music" scheme="http://ldqblog.me/tags/music/"/>
     
       <category term="video" scheme="http://ldqblog.me/tags/video/"/>
-    
-      <category term="test" scheme="http://ldqblog.me/tags/test/"/>
     
   </entry>
   
