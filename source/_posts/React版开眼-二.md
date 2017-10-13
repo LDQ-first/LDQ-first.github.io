@@ -162,6 +162,22 @@ createSelector 接收一个 input-selectors 数组和一个转换函数作为参
 
 
 
+```
+export const eyeSelector = createSelector(
+    selectGolbal,
+    appState => appState.get('eye')
+)
+
+
+const mapStateToProps = (state) => ({
+    IndexData: IndexDataSelector(state)
+})
+```
+
+
+
+
+
 
 
 ## 参考
