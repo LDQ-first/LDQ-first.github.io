@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ldqblog.me/"/>
-  <updated>2017-10-13T05:20:29.000Z</updated>
+  <updated>2017-10-14T01:45:02.000Z</updated>
   <id>http://ldqblog.me/</id>
   
   <author>
@@ -14,6 +14,56 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>react 生命周期</title>
+    <link href="http://ldqblog.me/2017/09/26/React-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
+    <id>http://ldqblog.me/2017/09/26/React-生命周期/</id>
+    <published>2017-09-26T01:40:21.000Z</published>
+    <updated>2017-10-14T01:45:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><ul>
+<li>每个生命周期钩子的调用例子讲解的比较详细</li>
+</ul>
+<p><a href="https://github.com/LDQ-first/react-lifecycle" target="_blank" rel="external">一个 react 生命周期例子</a></p>
+<p><a href="https://github.com/LDQ-first/react-lifecycle" target="_blank" rel="external">源码</a></p>
+<p>生命周期钩子的函数</p>
+<p>React 的生命周期包括三个阶段：mount（挂载）、update（更新）和 unmount（移除）</p>
+<p>mount 阶段</p>
+<pre><code> constructor()   - 初始化 props 和 state
+ componentWillMount() - 将要挂载了!
+ render()             - 将 return 里的内容挂载到页面中
+ componentDidMount()  - 挂在完了要干点什么?
+</code></pre><p>update 阶段</p>
+<pre><code>componentWillReceiveProps(nextProps) - 我要读取 props 啦！
+shouldComponentUpdate(nextProps, nextState) - 请问要不要更新组件？true / false
+componentWillUpdate() - 我要更新组件啦！
+render() - 更新！
+componentDidUpdate() - 更新完毕啦！
+</code></pre><p>unmount 阶段</p>
+<pre><code>componentWillUnmount() - 我要死啦！
+</code></pre><p>setState 应该放在哪？</p>
+<p>一般，我们只在这几个钩子里 setState：</p>
+<pre><code>componentWillMount  -  一个组件只执行一次
+componentDidMount   -  一个组件只执行一次
+componentWillReceiveProps  - 每次数据更新时执行一次
+</code></pre><p>因为在 componentWillUpdate 和 componentDidUpdate 里 setState 后<br>又会触发这两个钩子，最终会导致 call stack 溢出</p>
+]]></content>
+    
+    <summary type="html">
+    
+      react 生命周期梳理
+    
+    </summary>
+    
+      <category term="技术" scheme="http://ldqblog.me/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="前端" scheme="http://ldqblog.me/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="React" scheme="http://ldqblog.me/tags/React/"/>
+    
+  </entry>
   
   <entry>
     <title>React 版开眼 (二)</title>
@@ -379,7 +429,7 @@ static get propTypes() {
     <link href="http://ldqblog.me/2017/08/18/Vue%E7%89%88%E5%95%86%E5%9F%8E-%E4%BA%8C/"/>
     <id>http://ldqblog.me/2017/08/18/Vue版商城-二/</id>
     <published>2017-08-18T02:17:45.000Z</published>
-    <updated>2017-10-13T07:23:48.000Z</updated>
+    <updated>2017-10-14T10:01:19.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Vue-版商城技术详情"><a href="#Vue-版商城技术详情" class="headerlink" title="Vue 版商城技术详情"></a>Vue 版商城技术详情</h1><h2 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h2><p>Vue 配合 Vue-Router，Vuex</p>
 <p>实现路由跳转，路由过渡，状态管理</p>
@@ -391,7 +441,7 @@ static get propTypes() {
 <p>获取数据 get 请求<br>操作数据 post 请求</p>
 <p>利用中间件，路由实现后端逻辑</p>
 <h2 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h2><p>数据库</p>
-<p>MongoDB 是一个基于文档的数据库，所有数据是从磁盘上进行读写的。<br>MongoDB 善长的是对无模式 JSON 数据的查询。</p>
+<p>MongoDB 是一个基于文档的数据库，所有数据是从磁盘上进行读写的。<br>MongoDB 善长的是对无模式 JSON 数据的查询。<br>MongoDB 旨在为 WEB 应用提供可扩展的高性能数据存储解决方案。<br>MongoDB 将数据存储为一个文档，数据结构由键值 (key=&gt;value) 对组成。<br>MongoDB 文档类似于 JSON 对象。字段值可以包含其他文档，数组及文档数组。</p>
 <h3 id="Robomongo"><a href="#Robomongo" class="headerlink" title="Robomongo"></a>Robomongo</h3><p>可视化 MongeDB 工具</p>
 <h2 id="Mongoose"><a href="#Mongoose" class="headerlink" title="Mongoose"></a>Mongoose</h2><p>连接数据库和 Express</p>
 <p>使用 promise 的调用方式</p>
@@ -411,6 +461,69 @@ const productSchema = new Schema({
 
 
 module.exports = mongoose.model(&#39;Good&#39;, productSchema)
+</code></pre><h3 id="Api"><a href="#Api" class="headerlink" title="Api"></a>Api</h3><pre><code>    插入数据
+    save
+
+    更新数据
+    update
+
+    查找
+    find
+
+    查找并更新
+    findByIdAndUpdate
+
+    移除
+    remove
+
+    数量查询
+    count
+
+    根据_id 查询
+    findById
+</code></pre><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><pre><code>　 $or　　　　或关系
+
+　　$nor　　　 或关系取反
+
+　　$gt　　　　大于
+
+　　$gte　　　 大于等于
+
+　　$lt　　　　 小于
+
+　　$lte　　　  小于等于
+
+　　$ne            不等于
+
+　　$in             在多个值范围内
+
+　　$nin           不在多个值范围内
+
+　　$all            匹配数组中多个值
+
+　　$regex　　正则，用于模糊查询
+
+　　$size　　　匹配数组大小
+
+　　$maxDistance　　范围查询，距离（基于 LBS）
+
+　　$mod　　   取模运算
+
+　　$near　　　邻域查询，查询附近的位置（基于 LBS）
+
+　　$exists　　  字段是否存在
+
+　　$elemMatch　　匹配内数组内的元素
+
+　　$within　　范围查询（基于 LBS）
+
+　　$box　　　 范围查询，矩形范围（基于 LBS）
+
+　　$center       范围醒询，圆形范围（基于 LBS）
+
+　　$centerSphere　　范围查询，球形范围（基于 LBS）
+
+　　$slice　　　　查询字段集合中的元素（比如从第几个之后，第 N 到第 M 个元素）
 </code></pre><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><pre><code>const Goods = require(&#39;../models/goods.js&#39;)
 mongoose.Promise = global.Promise
 
@@ -1850,11 +1963,11 @@ app.listen(3000);
     </summary>
     
     
-      <category term="test" scheme="http://ldqblog.me/tags/test/"/>
-    
       <category term="music" scheme="http://ldqblog.me/tags/music/"/>
     
       <category term="video" scheme="http://ldqblog.me/tags/video/"/>
+    
+      <category term="test" scheme="http://ldqblog.me/tags/test/"/>
     
   </entry>
   
@@ -2157,7 +2270,7 @@ redux-logger
     <link href="http://ldqblog.me/2017/07/13/React-%E7%AE%80%E4%BB%8B/"/>
     <id>http://ldqblog.me/2017/07/13/React-简介/</id>
     <published>2017-07-12T16:15:33.000Z</published>
-    <updated>2017-10-13T04:47:31.000Z</updated>
+    <updated>2017-10-14T01:41:32.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="React-简介"><a href="#React-简介" class="headerlink" title="React 简介"></a>React 简介</h1><blockquote>
 <p>React.js 是一个 UI = f(states) 的框架，为了解决更新的问题，<br>React.js 使用了 virtual dom，virtual dom 通过 diff 修改 dom，来实现高效的 dom 更新。</p>
@@ -2306,6 +2419,60 @@ my-app
       <category term="前端" scheme="http://ldqblog.me/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="React" scheme="http://ldqblog.me/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue 生命周期</title>
+    <link href="http://ldqblog.me/2017/06/25/Vue-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
+    <id>http://ldqblog.me/2017/06/25/Vue-生命周期/</id>
+    <published>2017-06-25T01:46:46.000Z</published>
+    <updated>2017-10-14T01:51:51.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><h3 id="生命周期钩子的函数"><a href="#生命周期钩子的函数" class="headerlink" title="生命周期钩子的函数"></a>生命周期钩子的函数</h3><p>实例化</p>
+<p>beforeCreate<br>实例初始化之后，数据观测 (data observer) 和 event/watcher 事件配置之前</p>
+<p>created<br>实例创建完成后</p>
+<p>beforeMount<br>挂载前</p>
+<p>mounted<br>挂载</p>
+<p>beforeUpdate<br>数据更新前，发生在虚拟 DOM 重新渲染和打补丁之前</p>
+<p>updated<br>数据更新，虚拟 DOM 重新渲染和打补丁后</p>
+<p>activated<br>keep-alive 组件激活时</p>
+<p>deactivated<br>keep-alive 组件停用时</p>
+<p>beforeDestroy<br>实例销毁前</p>
+<p>destroyed<br>实例销毁后</p>
+<h3 id="实际场景应用"><a href="#实际场景应用" class="headerlink" title="实际场景应用"></a>实际场景应用</h3><p>beforeCreate<br>实例初始化之后，数据观测 (data observer) 和 event/watcher 事件配置之前</p>
+<p>读取不到数据 (data) 和方法(methods)</p>
+<p>created<br>实例创建完成后</p>
+<p>在这一步，实例已完成以下的配置：数据观测 (data observer)，<br>属性和方法的运算，watch/event 事件回调。<br>然而，挂载阶段还没开始，$el 属性目前不可见。</p>
+<p>可以调用实例的数据 和 方法</p>
+<p>如：异步函数的调用, 初始化</p>
+<p>异步数据获取后的 dom 操作可以用<br>vue.$nextTick 方法操作<br>可以对不同的异步数据做不同的 dom 操作<br>某个数据的某一次变化</p>
+<p>对某个数据的变化做统一处理可以用 watch</p>
+<p>beforeMount<br>挂载前</p>
+<p>mounted<br>挂载</p>
+<p>有初始数据的 dom 渲染, 可以获取 dom</p>
+<p>beforeUpdate<br>数据更新前，发生在虚拟 DOM 重新渲染和打补丁之前</p>
+<p>updated<br>数据更新，虚拟 DOM 重新渲染和打补丁后<br>数据更新后的操作</p>
+<p>所有数据更新后做统一的操作</p>
+<p>activated<br>keep-alive 组件激活时</p>
+<p>deactivated<br>keep-alive 组件停用时</p>
+<p>beforeDestroy<br>实例销毁前</p>
+<p>destroyed<br>实例销毁后</p>
+<p>vue.$destroyed 主动触发</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;生命周期&quot;&gt;&lt;a href=&quot;#生命周期&quot; class=&quot;headerlink&quot; title=&quot;生命周期&quot;&gt;&lt;/a&gt;生命周期&lt;/h2&gt;&lt;h3 id=&quot;生命周期钩子的函数&quot;&gt;&lt;a href=&quot;#生命周期钩子的函数&quot; class=&quot;headerlink&quot; title=
+    
+    </summary>
+    
+      <category term="技术" scheme="http://ldqblog.me/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="前端" scheme="http://ldqblog.me/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="Vue" scheme="http://ldqblog.me/tags/Vue/"/>
     
   </entry>
   
@@ -3107,68 +3274,6 @@ proxyTable: {
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://ldqblog.me/2017/01/17/hello-world/"/>
-    <id>http://ldqblog.me/2017/01/17/hello-world/</id>
-    <published>2017-01-17T09:48:44.039Z</published>
-    <updated>2017-07-31T15:42:45.080Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      官方自带的Hello World
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>photoTest</title>
-    <link href="http://ldqblog.me/2017/01/13/photoTest/"/>
-    <id>http://ldqblog.me/2017/01/13/photoTest/</id>
-    <published>2017-01-13T08:30:23.000Z</published>
-    <updated>2017-08-01T15:54:00.862Z</updated>
-    
-    <content type="html"><![CDATA[<ul>
-<li>测试图片功能</li>
-</ul>
-<p><img src="http://otyr3ojiw.bkt.clouddn.com/blog/170801/GgD6FJfKF9.jpeg?imageslim" alt="photos-0.jpg"><br><img src="http://otyr3ojiw.bkt.clouddn.com/blog/170801/7L37AEEbdj.jpg?imageslim" alt="photos-1.jpg"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;测试图片功能&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;http://otyr3ojiw.bkt.clouddn.com/blog/170801/GgD6FJfKF9.jpeg?imageslim&quot; alt=&quot;photos-0.jpg&quot;&gt;&lt;br&gt;&lt;img 
-    
-    </summary>
-    
-      <category term="test" scheme="http://ldqblog.me/categories/test/"/>
-    
-      <category term="图片" scheme="http://ldqblog.me/categories/test/%E5%9B%BE%E7%89%87/"/>
-    
-    
-      <category term="test" scheme="http://ldqblog.me/tags/test/"/>
     
   </entry>
   

@@ -3,10 +3,9 @@
 
 
     
-    
   <url>
     <loc>http://ldqblog.me/2017/08/18/Vue%E7%89%88%E5%95%86%E5%9F%8E-%E4%BA%8C/</loc>
-    <lastmod>2017-10-13T07:23:48.000Z</lastmod>
+    <lastmod>2017-10-14T10:01:19.000Z</lastmod>
     <data>
         <display>
         <title>Vue 版商城 (二)</title>
@@ -27,6 +26,73 @@
     </data>
     </url>
 
+    
+  <url>
+    <loc>http://ldqblog.me/2017/06/25/Vue-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</loc>
+    <lastmod>2017-10-14T01:51:51.000Z</lastmod>
+    <data>
+        <display>
+        <title>vue 生命周期</title>
+        <pubTime>2017-06-25T01:46:46.000Z</pubTime>
+        
+        <tag>前端</tag>
+         
+        <tag>Vue</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://ldqblog.me/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ldqblog.me/2017/09/26/React-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</loc>
+    <lastmod>2017-10-14T01:45:02.000Z</lastmod>
+    <data>
+        <display>
+        <title>react 生命周期</title>
+        <pubTime>2017-09-26T01:40:21.000Z</pubTime>
+        
+        <tag>前端</tag>
+         
+        <tag>React</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://ldqblog.me/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ldqblog.me/2017/07/13/React-%E7%AE%80%E4%BB%8B/</loc>
+    <lastmod>2017-10-14T01:41:32.000Z</lastmod>
+    <data>
+        <display>
+        <title>React 简介</title>
+        <pubTime>2017-07-12T16:15:33.000Z</pubTime>
+        
+        <tag>前端</tag>
+         
+        <tag>React</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://ldqblog.me/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>http://ldqblog.me/2017/08/20/Vue%E7%89%88%E5%8A%A8%E6%80%81%E7%AE%80%E5%8E%86/</loc>
@@ -169,28 +235,6 @@
         <tag>React</tag>
          
         <tag>SPA</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术" url="http://ldqblog.me/categories/%E6%8A%80%E6%9C%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ldqblog.me/2017/07/13/React-%E7%AE%80%E4%BB%8B/</loc>
-    <lastmod>2017-10-13T04:47:31.000Z</lastmod>
-    <data>
-        <display>
-        <title>React 简介</title>
-        <pubTime>2017-07-12T16:15:33.000Z</pubTime>
-        
-        <tag>前端</tag>
-         
-        <tag>React</tag>
          
          
            
@@ -465,11 +509,11 @@
         <title>music video test</title>
         <pubTime>2017-07-31T13:00:43.000Z</pubTime>
         
-        <tag>test</tag>
-         
         <tag>music</tag>
          
         <tag>video</tag>
+         
+        <tag>test</tag>
          
          
            

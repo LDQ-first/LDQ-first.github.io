@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title><![CDATA[react 生命周期]]></title>
+      <url>http://ldqblog.me/2017/09/26/React-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</url>
+      <!-- <content type="html"><![CDATA[<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><ul>
+<li>每个生命周期钩子的调用例子讲解的比较详细</li>
+</ul>
+<p><a href="https://github.com/LDQ-first/react-lifecycle" target="_blank" rel="external">一个 react 生命周期例子</a></p>
+<p><a href="https://github.com/LDQ-first/react-lifecycle" target="_blank" rel="external">源码</a></p>
+<p>生命周期钩子的函数</p>
+<p>React 的生命周期包括三个阶段：mount（挂载）、update（更新）和 unmount（移除）</p>
+<p>mount 阶段</p>
+<pre><code> constructor()   - 初始化 props 和 state
+ componentWillMount() - 将要挂载了!
+ render()             - 将 return 里的内容挂载到页面中
+ componentDidMount()  - 挂在完了要干点什么?
+</code></pre><p>update 阶段</p>
+<pre><code>componentWillReceiveProps(nextProps) - 我要读取 props 啦！
+shouldComponentUpdate(nextProps, nextState) - 请问要不要更新组件？true / false
+componentWillUpdate() - 我要更新组件啦！
+render() - 更新！
+componentDidUpdate() - 更新完毕啦！
+</code></pre><p>unmount 阶段</p>
+<pre><code>componentWillUnmount() - 我要死啦！
+</code></pre><p>setState 应该放在哪？</p>
+<p>一般，我们只在这几个钩子里 setState：</p>
+<pre><code>componentWillMount  -  一个组件只执行一次
+componentDidMount   -  一个组件只执行一次
+componentWillReceiveProps  - 每次数据更新时执行一次
+</code></pre><p>因为在 componentWillUpdate 和 componentDidUpdate 里 setState 后<br>又会触发这两个钩子，最终会导致 call stack 溢出</p>
+]]></content> -->
+      <content type="html"><![CDATA[生命周期 每个生命周期钩子的调用例子讲解的比较详细 一个 react 生命周期例子 源码 生命周期钩子的函数 React 的生命周期包括三个阶段：mount（挂载）、update（更新）和 unmount（移除） mount 阶段 constructor() - 初始化 props 和 state componentWillMount() - 将要挂载了! render() - 将 return 里的内容挂载到页面中 componentDidMount() - 挂在完了要干点什么? update 阶段 componentWillReceiveProps(nextProps) - 我要读取 props 啦！ shouldComponentUpdate(nextProps, nextState) - 请问要不要更新组件？true / false componentWillUpdate() - 我要更新组件啦！ render() - 更新！ componentDidUpdate() - 更新完毕啦！ unmount 阶段 componentWillUnmount() - 我要死啦！ setState 应该放在哪？ 一般，我们只在这几个钩子里 setState： componentWillMount - 一个组件只执行一次 componentDidMount - 一个组件只执行一次 componentWillReceiveProps - 每次数据更新时执行一次 因为在 componentWillUpdate 和 componentDidUpdate 里 setState 后又会触发这两个钩子，最终会导致 call stack 溢出]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[React 版开眼 (二)]]></title>
       <url>http://ldqblog.me/2017/09/25/React%E7%89%88%E5%BC%80%E7%9C%BC-%E4%BA%8C/</url>
       <!-- <content type="html"><![CDATA[<h1 id="React-版开眼技术详情"><a href="#React-版开眼技术详情" class="headerlink" title="React 版开眼技术详情"></a>React 版开眼技术详情</h1><h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><p>配合 React-Router 4 , Redux, Immutable, Reselect 使用</p>
@@ -301,7 +334,7 @@ static get propTypes() {
 <p>获取数据 get 请求<br>操作数据 post 请求</p>
 <p>利用中间件，路由实现后端逻辑</p>
 <h2 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h2><p>数据库</p>
-<p>MongoDB 是一个基于文档的数据库，所有数据是从磁盘上进行读写的。<br>MongoDB 善长的是对无模式 JSON 数据的查询。</p>
+<p>MongoDB 是一个基于文档的数据库，所有数据是从磁盘上进行读写的。<br>MongoDB 善长的是对无模式 JSON 数据的查询。<br>MongoDB 旨在为 WEB 应用提供可扩展的高性能数据存储解决方案。<br>MongoDB 将数据存储为一个文档，数据结构由键值 (key=&gt;value) 对组成。<br>MongoDB 文档类似于 JSON 对象。字段值可以包含其他文档，数组及文档数组。</p>
 <h3 id="Robomongo"><a href="#Robomongo" class="headerlink" title="Robomongo"></a>Robomongo</h3><p>可视化 MongeDB 工具</p>
 <h2 id="Mongoose"><a href="#Mongoose" class="headerlink" title="Mongoose"></a>Mongoose</h2><p>连接数据库和 Express</p>
 <p>使用 promise 的调用方式</p>
@@ -321,6 +354,69 @@ const productSchema = new Schema({
 
 
 module.exports = mongoose.model(&#39;Good&#39;, productSchema)
+</code></pre><h3 id="Api"><a href="#Api" class="headerlink" title="Api"></a>Api</h3><pre><code>    插入数据
+    save
+
+    更新数据
+    update
+
+    查找
+    find
+
+    查找并更新
+    findByIdAndUpdate
+
+    移除
+    remove
+
+    数量查询
+    count
+
+    根据_id 查询
+    findById
+</code></pre><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><pre><code>　 $or　　　　或关系
+
+　　$nor　　　 或关系取反
+
+　　$gt　　　　大于
+
+　　$gte　　　 大于等于
+
+　　$lt　　　　 小于
+
+　　$lte　　　  小于等于
+
+　　$ne            不等于
+
+　　$in             在多个值范围内
+
+　　$nin           不在多个值范围内
+
+　　$all            匹配数组中多个值
+
+　　$regex　　正则，用于模糊查询
+
+　　$size　　　匹配数组大小
+
+　　$maxDistance　　范围查询，距离（基于 LBS）
+
+　　$mod　　   取模运算
+
+　　$near　　　邻域查询，查询附近的位置（基于 LBS）
+
+　　$exists　　  字段是否存在
+
+　　$elemMatch　　匹配内数组内的元素
+
+　　$within　　范围查询（基于 LBS）
+
+　　$box　　　 范围查询，矩形范围（基于 LBS）
+
+　　$center       范围醒询，圆形范围（基于 LBS）
+
+　　$centerSphere　　范围查询，球形范围（基于 LBS）
+
+　　$slice　　　　查询字段集合中的元素（比如从第几个之后，第 N 到第 M 个元素）
 </code></pre><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><pre><code>const Goods = require(&#39;../models/goods.js&#39;)
 mongoose.Promise = global.Promise
 
@@ -622,7 +718,7 @@ router.post(&#39;/login&#39;, (req, res, next) =&gt; {
 
 })
 </code></pre>]]></content> -->
-      <content type="html"><![CDATA[Vue 版商城技术详情VueVue 配合 Vue-Router，Vuex 实现路由跳转，路由过渡，状态管理 Vue-lazyload头像图片懒加载 Vue-infinite-scroll滚动加载 Vue-pull-to-refresh自己开发的下拉刷新（实现插件） Axios实现 api 请求等的异步处理 Express后端服务器 获取数据 get 请求操作数据 post 请求 利用中间件，路由实现后端逻辑 MongoDB数据库 MongoDB 是一个基于文档的数据库，所有数据是从磁盘上进行读写的。MongoDB 善长的是对无模式 JSON 数据的查询。 Robomongo可视化 MongeDB 工具 Mongoose连接数据库和 Express 使用 promise 的调用方式 const mongoose = require(&#39;mongoose&#39;) const Schema = mongoose.Schema mongoose.Promise = global.Promise const productSchema = new Schema({ &quot;productId&quot;: String, &quot;productName&quot;: String, &quot;salePrice&quot;: Number, &quot;productImage&quot;: String, &quot;checked&quot;: Number, &quot;productNum&quot;: Number }) module.exports = mongoose.model(&#39;Good&#39;, productSchema) 使用const Goods = require(&#39;../models/goods.js&#39;) mongoose.Promise = global.Promise var env = process.env.NODE_ENV || &#39;development&#39; if(env === &#39;development&#39;) { console.log(&#39;NODE_ENV:&#39;, env) mongoose.connect(&#39;mongodb://IP:port/shopdb&#39;) } else { console.log(&#39;NODE_ENV:&#39;, env) mongoose.connect(&#39;mongodb:// 用户. 数据库: password@IP:port/shopdb&#39;) } router.get(&#39;/list&#39;, (req, res, next) =&gt; { const sort = req.query.sort const page = req.query.page const pageSize = req.query.pageSize const priceChecked = req.query.priceChecked let params = {} let priceGt = &#39;&#39;, priceLte =&#39;&#39; if(priceChecked !== &#39;all&#39;) { switch(priceChecked) { case &#39;0&#39;: priceGt = 0; priceLte=500; break; case &#39;1&#39;: priceGt = 500; priceLte=1000; break; case &#39;2&#39;: priceGt = 1000; priceLte=2000; break; case &#39;3&#39;: priceGt = 2000; priceLte=4000; break; } params = { salePrice: { $gt: priceGt, $lte: priceLte } } console.log(params) } const skip = (page - 1) * pageSize; const goodsModel = Goods.find(params).skip(skip).limit(parseInt(pageSize)) goodsModel.sort({&#39;salePrice&#39;: sort}) goodsModel.exec((err, doc) =&gt; { if(err) { res.json({ status: &#39;404&#39;, msg: err.message }) } else { res.json({ status: &#39;200&#39;, msg: &#39;OK&#39;, result: { count: doc.length, list: doc } }) } }) }) 根据环境连接数据库var env = process.env.NODE_ENV || &#39;development&#39; var sessionUrl = &#39;&#39;if(env ===&#39;development&#39;) { console.log(&#39;app.NODE_ENV:&#39;, env) sessionUrl = &#39;mongodb://IP:port/shopdb&#39; } else { console.log(&#39;app.NODE_ENV:&#39;, env) sessionUrl = &#39;mongodb:// 用户. 数据库: password@IP:port/shopdb&#39; } Nginx代理转发upstream vue { server 本地 IP:port; } server { listen port; # server_name *. 主域名; server_name 外部 IP; location / { proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forward-For $proxy_add_x_forwarded_for; proxy_set_header Host $http_host; proxy_set_header X-Nginx-Proxy true; proxy_pass http://vue; proxy_redirect off; } location /goods/ { proxy_pass http:// 本地 IP:port/goods/; } location /users/ { proxy_pass http:// 本地 IP:port/users/; } location /vueshop/ { alias 路径; } location ~* ^.+\.(jpg|jpeg|gif|png|svg|ico|webp|css|js|map|pdf|txt)$ { root 路径; } } 开启 gzip 压缩sudo vi /etc/nginx/nginx.conf ## # Gzip Settings ## gzip on; gzip_disable &quot;msie6&quot;; # 启用 gzip 压缩的最小文件，小于设置值的文件将不会压缩 gzip_min_length 1k; # 是否在 http header 中添加 Vary: Accept-Encoding，建议开启 gzip_vary on; # gzip_proxied any; # gzip 压缩级别，1-10，数字越大压缩的越好，也越占用 CPU 时间 gzip_comp_level 4; gzip_buffers 16 8k; # gzip_http_version 1.1; gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript; PM2做守护进程, 发布更新项目 使用 ecosystem.json pm2 deploy ecosystem.json start 可以配置服务器 ip，指定 github 仓库 实现代码更新后快速部署到服务器中 { &quot;apps&quot;:[ { &quot;name&quot;:&quot;vueshop&quot;, &quot;script&quot;:&quot;入口脚本&quot;, &quot;env&quot;: { // 传进去的变量 &quot;COMMON_VARIABLE&quot;: &quot;true&quot; }, &quot;env_production&quot;: { &quot;NODE_ENV&quot;: &quot;production&quot; } } ], &quot;deploy&quot;: { // 部署任务 &quot;start&quot;: { // 任务名 &quot;user&quot;: &quot;&quot;,// 服务器上用来发布应用的 user&quot;host&quot;: [&quot;IP&quot;],&quot;port&quot;:&quot;port&quot;,&quot;ref&quot;:&quot;origin/master&quot;,&quot;repo&quot;:&quot;git 仓库 &quot;,&quot;path&quot;:&quot;&quot;, // 服务器项目位置 &quot;ssh_options&quot;: &quot;StrictHostKeyChecking=no&quot;, // 取消 key 校验 &quot;post-deploy&quot;: &quot;执行的命令行 &amp;&amp; pm2 startOrRestart ../ecosystem.json --env production&quot;, &quot;env&quot;: { &quot;NODE_ENV&quot;: &quot;production&quot; } } } } Echarts数据可视化显示 显示价格趋势，数据来自数据库（自己编的） 显示订单详情 Svg-captcha验证码 在考虑要使用验证码时, 发现许多相关的 npm 模块都要安装其它支持库（C 或 C++ 编写，而且平台兼容性极差） 最终在 CNode 社区发现了以 svg 为基础的 Svg-captcha 内部使用 opentype.js ， 把字符转换为 svg 路径，然后生成验证码 简单易用 const svgCaptcha = require(&#39;svg-captcha&#39;) router.get(&#39;/captcha&#39;, (req, res, next) =&gt; { const captcha = svgCaptcha.create({ background: &quot;#3E96D6&quot; }) req.session.captcha = captcha.text res.set(&#39;Content-Type&#39;, &#39;image/svg+xml&#39;) res.json({ status: &#39;200&#39;, msg: &#39;OK&#39;, result: captcha }) }) router.get(&#39;/isCaptchaTrue&#39;, (req, res, next) =&gt; { const captcha = req.query.captcha.toLowerCase() if (req.session.captcha.toLowerCase() !== captcha) { res.json({ status: &#39;500&#39;, msg: &#39;验证码有错&#39;, result: &#39;&#39; }) return } else { res.json({ status: &#39;200&#39;, msg: &#39;验证码正确&#39;, result: &#39;&#39; }) } }) sessionexpress 在 4.x 版本之后，session 管理和 cookies 等许多模块都不再直接包含在 express 中，而是需要单独添加相应模块。 express4 中操作 cookie 使用 cookie-parser 模块express4 中操作 session 使用 express-session 模块 session 的运作通过一个 session_id 来进行。session_id 通常是存放在客户端的 cookie 中，比如在 express 中，默认是 connect.sid 这个字段，当请求到来时，服务端检查 cookie 中保存的 session_id 并通过这个 session_id 与服务器端的 session data 关联起来，进行数据的保存和修改。 这意思就是说，当你浏览一个网页时，服务端随机产生一个 1024 比特长的字符串，然后存在你 cookie 中的 connect.sid 字段中。当你下次访问时，cookie 会带有这个字符串，然后浏览器就知道你是上次访问过的某某某，然后从服务器的存储中取出上次记录在你身上的数据。由于字符串是随机产生的，而且位数足够多，所以也不担心有人能够伪造。伪造成功的概率比坐在家里编程时被邻居家的狗突然闯入并咬死的几率还低。 session 可以存放在 1）内存、2）cookie 本身、3）redis 或 memcached 等缓存中，或者 4）数据库中。 使用 session 验证用户session 存储在数据库中 app.js 配置 const session = require(&#39;express-session&#39;) const mongoStore = require(&#39;connect-mongo&#39;)(session) app.use(session({ secret: &#39;recommand 128 bytes random string&#39;, // 建议使用 128 个字符的随机字符串 // 作为服务器端生成 session cookie 的签名 ，防止篡改 , // 通过设置的 secret 字符串，来计算 hash 值并放在 cookie 中，使产生的 signedCookie 防篡改。 name: &#39;user&#39;, // cookie 的名字 保存 session 的字段名称, 返回客户端的 key 的名称，默认为 connect.sid, 也可以自己设置。 resave: false, // 强制保存 session 即使它并没有变化 （默认： true） //saveUninitialized: // 初始化 session 时是否保存到存储。默认为 true， 但是 (后续版本) 有可能默认失效，所以最好手动添加。 cookie: { maxAge: 60 * 1000 * 60 * 24 * 7 }, //session cookie 设置 设置返回到前端 key 的属性，默认值为{ path: ‘/’, httpOnly: true, secure: false, maxAge: null }。 //genid - 生成新 session ID 的函数 （默认使用 uid2 库） //rolling: false, // 在每次请求时强行设置 cookie，这将重置 cookie 过期时间（默认：false） //proxy: true, // 当设置了 secure cookies（通过”x-forwarded-proto” header ）时信任反向代理。当设定为 true 时， //”x-forwarded-proto” header 将被使用。 // 当设定为 false 时，所有 headers 将被忽略。当该属性没有被设定时，将使用 Express 的 trust proxy。 saveUninitialized: false, // 强制将未初始化的 session 存储。当新建了一个 session 且未设定属性或值时，它就处于 // 未初始化状态。在设定一个 cookie 前，这对于登陆验证，减轻服务端存储压力，权限控制是有帮助的。（默认：true） // unset // 控制 req.session 是否取消（例如通过 delete，或者将它的值设置为 null）。这可以使 session 保持存储 // 状态但忽略修改或删除的请求（默认：keep） //session 存储实例 store: new mongoStore({ // db: &#39;VueShop&#39;, url: sessionUrl, collection: &#39;sessions&#39; }) })) 使用 routes user.js // 登录 router.post(&#39;/login&#39;, (req, res, next) =&gt; { const captcha = req.body.captcha.toLowerCase() console.log(captcha) console.log(req.session.captcha.toLowerCase()) if (req.session.captcha.toLowerCase() !== captcha) { res.json({ status: &#39;500&#39;, msg: &#39;验证码有错&#39;, result: &#39;&#39; }) return } console.log(&#39;param&#39;) const param = { userName: req.body.userName, userPwd: req.body.userPwd } User.findOne(param) .then(doc =&gt; { if (doc) { res.cookie(&quot;userId&quot;, doc.userId, { path: &#39;/&#39;, maxAge: 1000 * 60 * 60 * 24 * 7 }) res.cookie(&quot;userName&quot;, doc.userName, { path: &#39;/&#39;, maxAge: 1000 * 60 * 60 * 24 * 7 }) req.session.user = { userName: doc.userName, userId: doc.userId } res.json({ status: &#39;200&#39;, msg: &#39;OK&#39;, result: { userName: doc.userName } }) } else { res.json({ status: &#39;400&#39;, msg: &#39;用户名或者密码错误&#39;, result: &#39;&#39; }) } }) .catch(err =&gt; { res.json({ status: &#39;404&#39;, msg: err.message, result: &#39;&#39; }) }) })]]></content>
+      <content type="html"><![CDATA[Vue 版商城技术详情VueVue 配合 Vue-Router，Vuex 实现路由跳转，路由过渡，状态管理 Vue-lazyload头像图片懒加载 Vue-infinite-scroll滚动加载 Vue-pull-to-refresh自己开发的下拉刷新（实现插件） Axios实现 api 请求等的异步处理 Express后端服务器 获取数据 get 请求操作数据 post 请求 利用中间件，路由实现后端逻辑 MongoDB数据库 MongoDB 是一个基于文档的数据库，所有数据是从磁盘上进行读写的。MongoDB 善长的是对无模式 JSON 数据的查询。MongoDB 旨在为 WEB 应用提供可扩展的高性能数据存储解决方案。MongoDB 将数据存储为一个文档，数据结构由键值 (key=&gt;value) 对组成。MongoDB 文档类似于 JSON 对象。字段值可以包含其他文档，数组及文档数组。 Robomongo可视化 MongeDB 工具 Mongoose连接数据库和 Express 使用 promise 的调用方式 const mongoose = require(&#39;mongoose&#39;) const Schema = mongoose.Schema mongoose.Promise = global.Promise const productSchema = new Schema({ &quot;productId&quot;: String, &quot;productName&quot;: String, &quot;salePrice&quot;: Number, &quot;productImage&quot;: String, &quot;checked&quot;: Number, &quot;productNum&quot;: Number }) module.exports = mongoose.model(&#39;Good&#39;, productSchema) Api 插入数据 save 更新数据 update 查找 find 查找并更新 findByIdAndUpdate 移除 remove 数量查询 count 根据_id 查询 findById 变量 $or 或关系 $nor 或关系取反 $gt 大于 $gte 大于等于 $lt 小于 $lte 小于等于 $ne 不等于 $in 在多个值范围内 $nin 不在多个值范围内 $all 匹配数组中多个值 $regex 正则，用于模糊查询 $size 匹配数组大小 $maxDistance 范围查询，距离（基于 LBS） $mod 取模运算 $near 邻域查询，查询附近的位置（基于 LBS） $exists 字段是否存在 $elemMatch 匹配内数组内的元素 $within 范围查询（基于 LBS） $box 范围查询，矩形范围（基于 LBS） $center 范围醒询，圆形范围（基于 LBS） $centerSphere 范围查询，球形范围（基于 LBS） $slice 查询字段集合中的元素（比如从第几个之后，第 N 到第 M 个元素） 使用const Goods = require(&#39;../models/goods.js&#39;) mongoose.Promise = global.Promise var env = process.env.NODE_ENV || &#39;development&#39; if(env === &#39;development&#39;) { console.log(&#39;NODE_ENV:&#39;, env) mongoose.connect(&#39;mongodb://IP:port/shopdb&#39;) } else { console.log(&#39;NODE_ENV:&#39;, env) mongoose.connect(&#39;mongodb:// 用户. 数据库: password@IP:port/shopdb&#39;) } router.get(&#39;/list&#39;, (req, res, next) =&gt; { const sort = req.query.sort const page = req.query.page const pageSize = req.query.pageSize const priceChecked = req.query.priceChecked let params = {} let priceGt = &#39;&#39;, priceLte =&#39;&#39; if(priceChecked !== &#39;all&#39;) { switch(priceChecked) { case &#39;0&#39;: priceGt = 0; priceLte=500; break; case &#39;1&#39;: priceGt = 500; priceLte=1000; break; case &#39;2&#39;: priceGt = 1000; priceLte=2000; break; case &#39;3&#39;: priceGt = 2000; priceLte=4000; break; } params = { salePrice: { $gt: priceGt, $lte: priceLte } } console.log(params) } const skip = (page - 1) * pageSize; const goodsModel = Goods.find(params).skip(skip).limit(parseInt(pageSize)) goodsModel.sort({&#39;salePrice&#39;: sort}) goodsModel.exec((err, doc) =&gt; { if(err) { res.json({ status: &#39;404&#39;, msg: err.message }) } else { res.json({ status: &#39;200&#39;, msg: &#39;OK&#39;, result: { count: doc.length, list: doc } }) } }) }) 根据环境连接数据库var env = process.env.NODE_ENV || &#39;development&#39; var sessionUrl = &#39;&#39;if(env ===&#39;development&#39;) { console.log(&#39;app.NODE_ENV:&#39;, env) sessionUrl = &#39;mongodb://IP:port/shopdb&#39; } else { console.log(&#39;app.NODE_ENV:&#39;, env) sessionUrl = &#39;mongodb:// 用户. 数据库: password@IP:port/shopdb&#39; } Nginx代理转发upstream vue { server 本地 IP:port; } server { listen port; # server_name *. 主域名; server_name 外部 IP; location / { proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forward-For $proxy_add_x_forwarded_for; proxy_set_header Host $http_host; proxy_set_header X-Nginx-Proxy true; proxy_pass http://vue; proxy_redirect off; } location /goods/ { proxy_pass http:// 本地 IP:port/goods/; } location /users/ { proxy_pass http:// 本地 IP:port/users/; } location /vueshop/ { alias 路径; } location ~* ^.+\.(jpg|jpeg|gif|png|svg|ico|webp|css|js|map|pdf|txt)$ { root 路径; } } 开启 gzip 压缩sudo vi /etc/nginx/nginx.conf ## # Gzip Settings ## gzip on; gzip_disable &quot;msie6&quot;; # 启用 gzip 压缩的最小文件，小于设置值的文件将不会压缩 gzip_min_length 1k; # 是否在 http header 中添加 Vary: Accept-Encoding，建议开启 gzip_vary on; # gzip_proxied any; # gzip 压缩级别，1-10，数字越大压缩的越好，也越占用 CPU 时间 gzip_comp_level 4; gzip_buffers 16 8k; # gzip_http_version 1.1; gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript; PM2做守护进程, 发布更新项目 使用 ecosystem.json pm2 deploy ecosystem.json start 可以配置服务器 ip，指定 github 仓库 实现代码更新后快速部署到服务器中 { &quot;apps&quot;:[ { &quot;name&quot;:&quot;vueshop&quot;, &quot;script&quot;:&quot;入口脚本&quot;, &quot;env&quot;: { // 传进去的变量 &quot;COMMON_VARIABLE&quot;: &quot;true&quot; }, &quot;env_production&quot;: { &quot;NODE_ENV&quot;: &quot;production&quot; } } ], &quot;deploy&quot;: { // 部署任务 &quot;start&quot;: { // 任务名 &quot;user&quot;: &quot;&quot;,// 服务器上用来发布应用的 user&quot;host&quot;: [&quot;IP&quot;],&quot;port&quot;:&quot;port&quot;,&quot;ref&quot;:&quot;origin/master&quot;,&quot;repo&quot;:&quot;git 仓库 &quot;,&quot;path&quot;:&quot;&quot;, // 服务器项目位置 &quot;ssh_options&quot;: &quot;StrictHostKeyChecking=no&quot;, // 取消 key 校验 &quot;post-deploy&quot;: &quot;执行的命令行 &amp;&amp; pm2 startOrRestart ../ecosystem.json --env production&quot;, &quot;env&quot;: { &quot;NODE_ENV&quot;: &quot;production&quot; } } } } Echarts数据可视化显示 显示价格趋势，数据来自数据库（自己编的） 显示订单详情 Svg-captcha验证码 在考虑要使用验证码时, 发现许多相关的 npm 模块都要安装其它支持库（C 或 C++ 编写，而且平台兼容性极差） 最终在 CNode 社区发现了以 svg 为基础的 Svg-captcha 内部使用 opentype.js ， 把字符转换为 svg 路径，然后生成验证码 简单易用 const svgCaptcha = require(&#39;svg-captcha&#39;) router.get(&#39;/captcha&#39;, (req, res, next) =&gt; { const captcha = svgCaptcha.create({ background: &quot;#3E96D6&quot; }) req.session.captcha = captcha.text res.set(&#39;Content-Type&#39;, &#39;image/svg+xml&#39;) res.json({ status: &#39;200&#39;, msg: &#39;OK&#39;, result: captcha }) }) router.get(&#39;/isCaptchaTrue&#39;, (req, res, next) =&gt; { const captcha = req.query.captcha.toLowerCase() if (req.session.captcha.toLowerCase() !== captcha) { res.json({ status: &#39;500&#39;, msg: &#39;验证码有错&#39;, result: &#39;&#39; }) return } else { res.json({ status: &#39;200&#39;, msg: &#39;验证码正确&#39;, result: &#39;&#39; }) } }) sessionexpress 在 4.x 版本之后，session 管理和 cookies 等许多模块都不再直接包含在 express 中，而是需要单独添加相应模块。 express4 中操作 cookie 使用 cookie-parser 模块express4 中操作 session 使用 express-session 模块 session 的运作通过一个 session_id 来进行。session_id 通常是存放在客户端的 cookie 中，比如在 express 中，默认是 connect.sid 这个字段，当请求到来时，服务端检查 cookie 中保存的 session_id 并通过这个 session_id 与服务器端的 session data 关联起来，进行数据的保存和修改。 这意思就是说，当你浏览一个网页时，服务端随机产生一个 1024 比特长的字符串，然后存在你 cookie 中的 connect.sid 字段中。当你下次访问时，cookie 会带有这个字符串，然后浏览器就知道你是上次访问过的某某某，然后从服务器的存储中取出上次记录在你身上的数据。由于字符串是随机产生的，而且位数足够多，所以也不担心有人能够伪造。伪造成功的概率比坐在家里编程时被邻居家的狗突然闯入并咬死的几率还低。 session 可以存放在 1）内存、2）cookie 本身、3）redis 或 memcached 等缓存中，或者 4）数据库中。 使用 session 验证用户session 存储在数据库中 app.js 配置 const session = require(&#39;express-session&#39;) const mongoStore = require(&#39;connect-mongo&#39;)(session) app.use(session({ secret: &#39;recommand 128 bytes random string&#39;, // 建议使用 128 个字符的随机字符串 // 作为服务器端生成 session cookie 的签名 ，防止篡改 , // 通过设置的 secret 字符串，来计算 hash 值并放在 cookie 中，使产生的 signedCookie 防篡改。 name: &#39;user&#39;, // cookie 的名字 保存 session 的字段名称, 返回客户端的 key 的名称，默认为 connect.sid, 也可以自己设置。 resave: false, // 强制保存 session 即使它并没有变化 （默认： true） //saveUninitialized: // 初始化 session 时是否保存到存储。默认为 true， 但是 (后续版本) 有可能默认失效，所以最好手动添加。 cookie: { maxAge: 60 * 1000 * 60 * 24 * 7 }, //session cookie 设置 设置返回到前端 key 的属性，默认值为{ path: ‘/’, httpOnly: true, secure: false, maxAge: null }。 //genid - 生成新 session ID 的函数 （默认使用 uid2 库） //rolling: false, // 在每次请求时强行设置 cookie，这将重置 cookie 过期时间（默认：false） //proxy: true, // 当设置了 secure cookies（通过”x-forwarded-proto” header ）时信任反向代理。当设定为 true 时， //”x-forwarded-proto” header 将被使用。 // 当设定为 false 时，所有 headers 将被忽略。当该属性没有被设定时，将使用 Express 的 trust proxy。 saveUninitialized: false, // 强制将未初始化的 session 存储。当新建了一个 session 且未设定属性或值时，它就处于 // 未初始化状态。在设定一个 cookie 前，这对于登陆验证，减轻服务端存储压力，权限控制是有帮助的。（默认：true） // unset // 控制 req.session 是否取消（例如通过 delete，或者将它的值设置为 null）。这可以使 session 保持存储 // 状态但忽略修改或删除的请求（默认：keep） //session 存储实例 store: new mongoStore({ // db: &#39;VueShop&#39;, url: sessionUrl, collection: &#39;sessions&#39; }) })) 使用 routes user.js // 登录 router.post(&#39;/login&#39;, (req, res, next) =&gt; { const captcha = req.body.captcha.toLowerCase() console.log(captcha) console.log(req.session.captcha.toLowerCase()) if (req.session.captcha.toLowerCase() !== captcha) { res.json({ status: &#39;500&#39;, msg: &#39;验证码有错&#39;, result: &#39;&#39; }) return } console.log(&#39;param&#39;) const param = { userName: req.body.userName, userPwd: req.body.userPwd } User.findOne(param) .then(doc =&gt; { if (doc) { res.cookie(&quot;userId&quot;, doc.userId, { path: &#39;/&#39;, maxAge: 1000 * 60 * 60 * 24 * 7 }) res.cookie(&quot;userName&quot;, doc.userName, { path: &#39;/&#39;, maxAge: 1000 * 60 * 60 * 24 * 7 }) req.session.user = { userName: doc.userName, userId: doc.userId } res.json({ status: &#39;200&#39;, msg: &#39;OK&#39;, result: { userName: doc.userName } }) } else { res.json({ status: &#39;400&#39;, msg: &#39;用户名或者密码错误&#39;, result: &#39;&#39; }) } }) .catch(err =&gt; { res.json({ status: &#39;404&#39;, msg: err.message, result: &#39;&#39; }) }) })]]></content>
     </entry>
     
     <entry>
@@ -2063,6 +2159,43 @@ my-app
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><strong>React 文档 </strong>: <a href="https://reactjs.org/" target="_blank" rel="external">https://reactjs.org/</a></p>
 ]]></content> -->
       <content type="html"><![CDATA[React 简介 React.js 是一个 UI = f(states) 的框架，为了解决更新的问题，React.js 使用了 virtual dom，virtual dom 通过 diff 修改 dom，来实现高效的 dom 更新。 概念JSX一般写在 render 生命周期函数里 语法: return ( 写 HTML 注意 有些 属性要改写 如 ： class =》 className 标签要闭合 &lt; img src=&quot;&quot;&gt; =》 &lt; img src=&quot;&quot; /&gt; 可以添加 js 但要用 {} 括起来 ) 组件import React, { Component } from &#39;react&#39; class NotFound extends Component { render () { return ( ) } } 例子 import React, { Component } from &#39;react&#39; export default class NotFound extends Component { render() { return ( &lt; Container className=&quot;noPadding&quot; &gt; &lt; NotFoundDiv &gt; &lt; h1 className=&quot;title&quot; &gt;404&lt; /h1 &gt; &lt; /NotFoundDiv &gt; &lt; /Container &gt; ) } } ref获取 dom 元素 &lt; div className=&quot;contactContent&quot; ref={contact =&gt; this._contact = contact} &gt; &lt; /div &gt; state数据 constructor(props) { super(props) this.state = { } } setState 更新 state 注意： setState 不会立刻改变 React 组件中 state 的值 函数式的 setState 用法 看这篇文章 https://zhuanlan.zhihu.com/p/25954470 props子组件接受父组件的数据 const { _this } = this.props PropTypesprops 类型检查 import PropTypes from &#39;prop-types&#39; static get propTypes() { return { _this: PropTypes.object } } classNames(第三方库) 处理各类名 import classNames from &#39;classnames&#39; const { isSpread } = this.state className={classNames(&#39;toggle&#39;, {active: isSpread}) event事件React 支持许多事件官方文档有列出https://reactjs.org/docs/events.html#supported-events &lt;a href=&quot;javascript:;&quot; className=&#39;toggle&#39;} onClick={() =&gt; { this._toggle() }}&gt; &lt;i className=&quot;bar&quot;&gt;&lt;/i&gt; &lt;/a&gt; lists key map循环 const { navArr} = this.state const navs = navArr.map((item, index) =&gt; { return ( &lt;li key={index} className=&#39;nav&#39;} &gt; {item.name} &lt;/li&gt; ) }) &lt;ul className=&#39;navs&#39;&gt; {navs ? navs : null} &lt;/ul&gt; 使用npm install -g create-react-app create-react-app my-app cd my-app/ npm start 浏览器自动打开 http://localhost:3000/ 写完 npm run build 构建打包 生成的 build 文件夹就是要发布的文件 文件夹结构 my-app ├── README.md ├── node_modules ├── package.json ├── .gitignore ├── public │ └── favicon.ico │ └── index.html │ └── manifest.json └── src └── App.css └── App.js └── App.test.js └── index.css └── index.js └── logo.svg └── registerServiceWorker.js 在 src 中编写代码 也可以自己搭建一个脚手架 参考资料React 文档 : https://reactjs.org/]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[vue 生命周期]]></title>
+      <url>http://ldqblog.me/2017/06/25/Vue-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</url>
+      <!-- <content type="html"><![CDATA[<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><h3 id="生命周期钩子的函数"><a href="#生命周期钩子的函数" class="headerlink" title="生命周期钩子的函数"></a>生命周期钩子的函数</h3><p>实例化</p>
+<p>beforeCreate<br>实例初始化之后，数据观测 (data observer) 和 event/watcher 事件配置之前</p>
+<p>created<br>实例创建完成后</p>
+<p>beforeMount<br>挂载前</p>
+<p>mounted<br>挂载</p>
+<p>beforeUpdate<br>数据更新前，发生在虚拟 DOM 重新渲染和打补丁之前</p>
+<p>updated<br>数据更新，虚拟 DOM 重新渲染和打补丁后</p>
+<p>activated<br>keep-alive 组件激活时</p>
+<p>deactivated<br>keep-alive 组件停用时</p>
+<p>beforeDestroy<br>实例销毁前</p>
+<p>destroyed<br>实例销毁后</p>
+<h3 id="实际场景应用"><a href="#实际场景应用" class="headerlink" title="实际场景应用"></a>实际场景应用</h3><p>beforeCreate<br>实例初始化之后，数据观测 (data observer) 和 event/watcher 事件配置之前</p>
+<p>读取不到数据 (data) 和方法(methods)</p>
+<p>created<br>实例创建完成后</p>
+<p>在这一步，实例已完成以下的配置：数据观测 (data observer)，<br>属性和方法的运算，watch/event 事件回调。<br>然而，挂载阶段还没开始，$el 属性目前不可见。</p>
+<p>可以调用实例的数据 和 方法</p>
+<p>如：异步函数的调用, 初始化</p>
+<p>异步数据获取后的 dom 操作可以用<br>vue.$nextTick 方法操作<br>可以对不同的异步数据做不同的 dom 操作<br>某个数据的某一次变化</p>
+<p>对某个数据的变化做统一处理可以用 watch</p>
+<p>beforeMount<br>挂载前</p>
+<p>mounted<br>挂载</p>
+<p>有初始数据的 dom 渲染, 可以获取 dom</p>
+<p>beforeUpdate<br>数据更新前，发生在虚拟 DOM 重新渲染和打补丁之前</p>
+<p>updated<br>数据更新，虚拟 DOM 重新渲染和打补丁后<br>数据更新后的操作</p>
+<p>所有数据更新后做统一的操作</p>
+<p>activated<br>keep-alive 组件激活时</p>
+<p>deactivated<br>keep-alive 组件停用时</p>
+<p>beforeDestroy<br>实例销毁前</p>
+<p>destroyed<br>实例销毁后</p>
+<p>vue.$destroyed 主动触发</p>
+]]></content> -->
+      <content type="html"><![CDATA[生命周期生命周期钩子的函数实例化 beforeCreate实例初始化之后，数据观测 (data observer) 和 event/watcher 事件配置之前 created实例创建完成后 beforeMount挂载前 mounted挂载 beforeUpdate数据更新前，发生在虚拟 DOM 重新渲染和打补丁之前 updated数据更新，虚拟 DOM 重新渲染和打补丁后 activatedkeep-alive 组件激活时 deactivatedkeep-alive 组件停用时 beforeDestroy实例销毁前 destroyed实例销毁后 实际场景应用beforeCreate实例初始化之后，数据观测 (data observer) 和 event/watcher 事件配置之前 读取不到数据 (data) 和方法(methods) created实例创建完成后 在这一步，实例已完成以下的配置：数据观测 (data observer)，属性和方法的运算，watch/event 事件回调。然而，挂载阶段还没开始，$el 属性目前不可见。 可以调用实例的数据 和 方法 如：异步函数的调用, 初始化 异步数据获取后的 dom 操作可以用vue.$nextTick 方法操作可以对不同的异步数据做不同的 dom 操作某个数据的某一次变化 对某个数据的变化做统一处理可以用 watch beforeMount挂载前 mounted挂载 有初始数据的 dom 渲染, 可以获取 dom beforeUpdate数据更新前，发生在虚拟 DOM 重新渲染和打补丁之前 updated数据更新，虚拟 DOM 重新渲染和打补丁后数据更新后的操作 所有数据更新后做统一的操作 activatedkeep-alive 组件激活时 deactivatedkeep-alive 组件停用时 beforeDestroy实例销毁前 destroyed实例销毁后 vue.$destroyed 主动触发]]></content>
     </entry>
     
     <entry>
