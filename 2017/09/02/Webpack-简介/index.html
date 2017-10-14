@@ -1,0 +1,338 @@
+<!DOCTYPE html><html style="display:none" lang="zh"><head><meta charset="utf-8"><script>window.materialVersion="1.5.0",window.oldVersion=["codestartv1","1.3.4","1.4.0","1.4.0b1"]</script><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://busuanzi.ibruce.info"><title> Webpack 简介 | LDQ的博客</title><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta name="renderer" content="webkit"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="//upload-images.jianshu.io"><link rel="dns-prefetch" href="//source.unsplash.com"><link rel="dns-prefetch" href="//github.com"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="rgba(33,150,243 ,1)"><meta name="author" content="ldq"><meta name="description" itemprop="description" content="热爱前端"><meta name="keywords" content="LDQ-first 博客 前端,前端,Webpack"><script>window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}},lsloader.removeLS=function(e){try{localStorage.removeItem(e)}catch(e){}},lsloader.setLS=function(e,t){try{localStorage.setItem(e,t)}catch(e){}},lsloader.getLS=function(e){var t="";try{t=localStorage.getItem(e)}catch(e){t=""}return t},versionString="/*"+(window.materialVersion||"unknownVersion")+"*/",lsloader.clean=function(){try{for(var e=[],t=0;t<localStorage.length;t++)e.push(localStorage.key(t));e.forEach(function(e){var t=lsloader.getLS(e);window.oldVersion&&window.oldVersion.reduce(function(e,n){return e||-1!==t.indexOf("/*"+n+"*/")},!1)&&lsloader.removeLS(e)})}catch(e){}},lsloader.clean(),lsloader.load=function(e,t,n,s){"boolean"==typeof n&&(s=n,n=void 0),s=s||!1,n=n||function(){};var a;if((a=this.getLS(e))&&-1===a.indexOf(versionString))return this.removeLS(e),void this.requestResource(e,t,n,s);if(a){if(a.split(versionString)[0]!=t)return console.log("reload:"+t),this.removeLS(e),void this.requestResource(e,t,n,s);a=a.split(versionString)[1],s?(this.jsRunSequence.push({name:e,code:a}),this.runjs(t,e,a)):(document.getElementById(e).appendChild(document.createTextNode(a)),n())}else this.requestResource(e,t,n,s)},lsloader.requestResource=function(e,t,n,s){var a=this;s?this.iojs(t,e,function(e,t,n){a.setLS(t,e+versionString+n),a.runjs(e,t,n)}):this.iocss(t,e,function(n){document.getElementById(e).appendChild(document.createTextNode(n)),a.setLS(e,t+versionString+n)},n)},lsloader.iojs=function(e,t,n){var s=this;s.jsRunSequence.push({name:t,code:""});try{var a=new XMLHttpRequest;a.open("get",e,!0),a.onreadystatechange=function(){if(4==a.readyState){if((a.status>=200&&a.status<300||304==a.status)&&""!=a.response)return void n(e,t,a.response);s.jsfallback(e,t)}},a.send(null)}catch(n){s.jsfallback(e,t)}},lsloader.iocss=function(e,t,n,s){var a=this;try{var o=new XMLHttpRequest;o.open("get",e,!0),o.onreadystatechange=function(){if(4==o.readyState){if((o.status>=200&&o.status<300||304==o.status)&&""!=o.response)return n(o.response),void s();a.cssfallback(e,t,s)}},o.send(null)}catch(n){a.cssfallback(e,t,s)}},lsloader.iofonts=function(e,t,n,s){var a=this;try{var o=new XMLHttpRequest;o.open("get",e,!0),o.onreadystatechange=function(){if(4==o.readyState){if((o.status>=200&&o.status<300||304==o.status)&&""!=o.response)return n(o.response),void s();a.cssfallback(e,t,s)}},o.send(null)}catch(n){a.cssfallback(e,t,s)}},lsloader.runjs=function(e,t,n){if(t&&n)for(var s in this.jsRunSequence)this.jsRunSequence[s].name==t&&(this.jsRunSequence[s].code=n);if(this.jsRunSequence[0]&&this.jsRunSequence[0].code&&"failed"!=this.jsRunSequence[0].status)(o=document.createElement("script")).appendChild(document.createTextNode(this.jsRunSequence[0].code)),o.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(o),this.jsRunSequence.shift(),this.jsRunSequence.length>0&&this.runjs();else if(this.jsRunSequence[0]&&"failed"==this.jsRunSequence[0].status){var a=this,o=document.createElement("script");o.src=this.jsRunSequence[0].path,o.type="text/javascript",this.jsRunSequence[0].status="loading",o.onload=function(){a.jsRunSequence.shift(),a.jsRunSequence.length>0&&a.runjs()},document.body.appendChild(o)}},lsloader.tagLoad=function(e,t){this.jsRunSequence.push({name:t,code:"",path:e,status:"failed"}),this.runjs()},lsloader.jsfallback=function(e,t){if(!this.jsnamemap[t]){this.jsnamemap[t]=t;for(var n in this.jsRunSequence)this.jsRunSequence[n].name==t&&(this.jsRunSequence[n].code="",this.jsRunSequence[n].status="failed",this.jsRunSequence[n].path=e);this.runjs()}},lsloader.cssfallback=function(e,t,n){if(!this.cssnamemap[t]){this.cssnamemap[t]=1;var s=document.createElement("link");s.type="text/css",s.href=e,s.rel="stylesheet",s.onload=s.onerror=n;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(s,a)}},lsloader.runInlineScript=function(e,t){var n=document.getElementById(t).innerText;this.jsRunSequence.push({name:e,code:n}),this.runjs()},lsloader.loadCombo=function(e){var t="",n={};for(var s in e){var a=this.getLS(e[s].name);if(a)var o=a.split(versionString)[0],i=a.split(versionString)[1];else o="";o==e[s].path?this.jsRunSequence.push({name:e[s].name,code:i,path:e[s].path}):(this.jsRunSequence.push({name:e[s].name,code:null,path:e[s].path,status:"comboloading"}),n[e[s].name]=!0,t+=(""==t?"":";")+e[s].path)}var u=this;if(t){var r=new XMLHttpRequest;r.open("get",combo+t,!0),r.onreadystatechange=function(){if(4==r.readyState)if(r.status>=200&&r.status<300||304==r.status){if(""!=r.response)return void u.runCombo(r.response,n)}else{for(var e in u.jsRunSequence)n[u.jsRunSequence[e].name]&&(u.jsRunSequence[e].status="failed");u.runjs()}},r.send(null)}this.runjs()},lsloader.runCombo=function(e,t){(e=e.split("/*combojs*/")).shift();for(var n in this.jsRunSequence)t[this.jsRunSequence[n].name]&&e[0]&&(this.jsRunSequence[n].status="comboJS",this.jsRunSequence[n].code=e[0],this.setLS(this.jsRunSequence[n].name,this.jsRunSequence[n].path+versionString+e[0]),e.shift());this.runjs()}</script><script>function Queue(){this.dataStore=[],this.offer=function(e){this.debug&&console.log("Offered a Queued Function."),"function"==typeof e?this.dataStore.push(e):console.log("You must offer a function.")},this.poll=function(){return this.debug&&console.log("Polled a Queued Function."),this.dataStore.shift()},this.execNext=function(){var e=this.poll();void 0!==e&&(this.debug&&console.log("Run a Queued Function."),e())},this.debug=!1,this.startDebug=function(){this.debug=!0}}var queue=new Queue</script><link rel="icon shortcut" type="image/ico" href="/img/favicon.png"><link rel="icon" sizes="192x192" href="/img/favicon.png"><link rel="apple-touch-icon" href="/img/favicon.png"><meta name="apple-mobile-web-app-title" content="Title"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="480"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="apple-mobile-web-app-title" content="LDQ的博客"> <!--[if lte IE 9]><link rel="stylesheet" href="/css/ie-blocker.css"><script src="/js/ie-blocker.zhCN.js"></script><![endif]--><style id="material_css"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style id="style_css"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("style_css","/css/style.min.css?hPxZBPbdOqoIB0dVmdSVpw==",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style id="prettify_css"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style id="prettify_theme"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("prettify_theme","/css/prettify/tranquil-heart.min.css?ul3p9I9MsbOxK0L+BHzDDg==",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style>body,html{font-family:Roboto,"Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;overflow-x:hidden!important}code{font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace}a{color:#00838f}#scheme-Paradox .hot_tags-count,#scheme-Paradox .sidebar-colored .sidebar-badge,#scheme-Paradox .sidebar-colored .sidebar-header,#scheme-Paradox .sidebar_archives-count,#search-form-label:after,#search-label,.mdl-card__media{background-color:rgba(33,150,243 ,1)!important}#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus,#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover{color:rgba(33,150,243 ,1)!important}#ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a,#post_entry-right-info,.sidebar-colored .sidebar-nav li:hover>a,.sidebar-colored .sidebar-nav li:hover>a i,.sidebar-colored .sidebar-nav li>a:focus i,.sidebar-colored .sidebar-nav li>a:hover,.sidebar-colored .sidebar-nav li>a:hover i,.sidebar-colored .sidebar-nav>.open>a,.sidebar-colored .sidebar-nav>.open>a:focus,.sidebar-colored .sidebar-nav>.open>a:hover{color:rgba(33,150,243 ,1)!important}.toTop{background:rgba(239,83,80 ,1)!important}.material-layout .material-index>.material-nav,.material-layout .material-post>.material-nav,.material-nav a{color:rgba(239,83,80 ,1)}#scheme-Paradox .MD-burger-layer{background-color:rgba(239,83,80 ,1)}#scheme-Paradox #post-toc-trigger-btn{color:rgba(239,83,80 ,1)}.post-toc a:hover{color:#00838f;text-decoration:underline}</style><style>body{background-image:url(https://source.unsplash.com/random/)}</style><style>.fade{transition:all .8s linear;-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0);-o-transform:translate3d(0,0,0);transform:translate3d(0,0,0);opacity:1}.fade.out{opacity:0}</style><link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet"><link rel="stylesheet" href="https://cdn.bootcss.com/material-design-icons/3.0.1/iconfont/material-icons.min.css"><script>lsloader.load("jq_js","https://cdn.bootcss.com/jquery/2.2.1/jquery.min.js",!0)</script><meta property="og:url" content="http://ldqblog.me"><meta property="og:type" content="blog"><meta property="og:title" content="Webpack 简介 | LDQ的博客"><meta property="og:image" content="http://ldqblog.me/img/favicon.png"><meta property="og:description" content="热爱前端"><meta property="og:article:tag" content="前端"><meta property="og:article:tag" content="Webpack"><meta property="article:published_time" content="Sat Sep 02 2017 19:18:10 GMT+0800"><meta property="article:modified_time" content="Sat Oct 14 2017 19:31:11 GMT+0800"><meta name="twitter:title" content="Webpack 简介 | LDQ的博客"><meta name="twitter:description" content="热爱前端"><meta name="twitter:image" content="http://ldqblog.me/img/favicon.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:url" content="http://ldqblog.me"><link rel="canonical" href="http://ldqblog.me/2017/09/02/Webpack-简介/index.html"><script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://ldqblog.me/2017/09/02/Webpack-简介/index.html",
+    "headline": "Webpack 简介",
+    "datePublished": "Sat Sep 02 2017 19:18:10 GMT+0800",
+    "dateModified": "Sat Oct 14 2017 19:31:11 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "ldq",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/pikachu.svg"
+        },
+        "description": "欢迎来到我的博客<span>（づ￣3￣）づ╭❤～</span>,理想是人生的太阳<span>ヽ(￣▽￣)ﾉ</span>"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "LDQ的博客",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",前端,WebpackLDQ-first 博客 前端",
+    "description": "热爱前端",
+}
+</script><script src="//cdn.bootcss.com/aplayer/1.6.0/APlayer.min.js"></script></head><body id="scheme-Paradox" class="lazy"><div class="material-layout mdl-js-layout has-drawer is-upgraded"><main class="material-layout__content" id="main"><div id="top"></div> <button class="MD-burger-icon sidebar-toggle"><span class="MD-burger-layer"></span></button> <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon"> <i class="material-icons">format_list_numbered</i></button><ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh;overflow-y:scroll"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Webpack"><span class="post-toc-number">1.</span> <span class="post-toc-text">Webpack</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">使用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#例子"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">例子</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#常用-loader"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">常用 loader</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#常用-plugin"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">常用 plugin</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#webpack-DllReferencePlugin"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">webpack.DllReferencePlugin</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Happypack"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">Happypack</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#代码分割"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">代码分割</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">2.</span> <span class="post-toc-text">参考</span></a></li></ol></ul><div class="material-post_container"><div class="material-post mdl-grid"><div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col"><div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50"><script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script><p class="article-headline-p"> Webpack 简介</p></div><div class="mdl-color-text--grey-700 mdl-card__supporting-text meta"><div id="author-avatar"> <img src="/img/pikachu.svg" width="44px" height="44px" alt="Author Avatar"></div><div> <strong>ldq</strong> <span>9月 02, 2017</span></div><div class="section-spacer"></div> <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"> <i class="material-icons" role="presentation">devices other</i> <span class="visuallyhidden">devices other</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button"><li class="mdl-menu__item">在其它设备中阅读本文章</li> <img src="https://pan.baidu.com/share/qrcode?w=246&h=246&url=http://ldqblog.me/2017/09/02/Webpack-简介/"></ul> <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"> <i class="material-icons" role="presentation">bookmark</i> <span class="visuallyhidden">bookmark</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button"><li class="mdl-menu__item"> <a class="post_tag-link" href="/tags/Webpack/">Webpack</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/前端/">前端</a></li></ul> <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"> <i class="material-icons" role="presentation">share</i> <span class="visuallyhidden">share</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button"><a class="post_share-link" href="#"><li class="mdl-menu__item"><span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span> &nbsp;浏览量</span></li></a><a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Webpack 简介&url=http://ldqblog.me/2017/09/02/Webpack-简介/index.html&pic=http://ldqblog.me/img/favicon.png&searchPic=false&style=simple" target="_blank"><li class="mdl-menu__item"> 分享到微博</li></a><a class="post_share-link" href="https://twitter.com/intent/tweet?text=Webpack 简介&url=http://ldqblog.me/2017/09/02/Webpack-简介/index.html&via=ldq" target="_blank"><li class="mdl-menu__item"> 分享到 Twitter</li></a><a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://ldqblog.me/2017/09/02/Webpack-简介/index.html" target="_blank"><li class="mdl-menu__item"> 分享到 Facebook</li></a><a class="post_share-link" href="https://plus.google.com/share?url=http://ldqblog.me/2017/09/02/Webpack-简介/index.html" target="_blank"><li class="mdl-menu__item"> 分享到 Google+</li></a></ul></div><div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out"><h2 id="Webpack"><a href="#Webpack" class="headerlink" title="Webpack"></a>Webpack</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><blockquote><p>一切皆模块的思想<br>将前端的资源通过各种 loader 处理成浏览器可使用的资源</p></blockquote><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><pre><code>npm install --save-dev webpack
+npm install --save-dev webpack@&lt;version&gt;
+npm install --save-dev webpack-dev-server //webpack 基于 express 的服务器 可以不要
+
+&quot;scripts&quot;: {
+    &quot;start&quot;: &quot;webpack --config webpack.config.js&quot;
+}
+</code></pre><p>主要工作就是编写 webpack.config.js<br>和下载 loader，plugin</p><p>plugin 分 webpack 自带的和第三方的</p><h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><pre><code>
+const webpack = require(&#39;webpack&#39;)
+const path = require(&#39;path&#39;)
+const HtmlWebpackPlugin = require(&#39;html-webpack-plugin&#39;)
+const ExtractTextPlugin = require(&quot;extract-text-webpack-plugin&quot;)
+const CopyWebpackPlugin = require(&#39;copy-webpack-plugin&#39;)
+
+
+// 分离 css 文件
+const extractCSS = new ExtractTextPlugin({
+    filename: &#39;static/css/main.[name].[contenthash:8].css&#39;
+})
+const extractSASS = new ExtractTextPlugin({
+    filename: &#39;static/css/sass.[name].[contenthash:8].css&#39;
+})
+
+
+module.exports = {
+    devtool: &#39;cheap-module-eval-source-map&#39;, //source-map 用于 debugger 时能否看到源码
+    entry: {  // 入口文件
+        app: [
+            path.join(__dirname, &#39;../src/index.js&#39;) 
+        ],
+    }, 
+    output: {  // 出口文件
+        path: path.join(__dirname, &#39;../dist&#39;),
+        filename: &#39;static/js/[name].[chunkhash:8].js&#39;,
+        chunkFilename: &#39;static/js/[name].[chunkhash:8].js&#39;,
+        publicPath: &#39;/&#39;          // 静态资源路径前要添加的路径                 
+    },
+    resolve: { // 扩展名，别名
+        extensions: [&#39;.js&#39;, &#39;.jsx&#39;, &#39;.json&#39;],
+        alias: {
+        // ================================
+        // 自定义路径别名
+        // ================================
+        &#39;@&#39;: path.join(__dirname, &#39;../src&#39;)
+        }
+    },
+     module: {
+        rules: [{  //loader 配置
+            test: /\.(js|jsx)$/,
+            use: [{
+                loader: &#39;babel-loader?cacheDirectory=true&#39;,
+                options: {
+                    plugins: [&#39;syntax-dynamic-import&#39;]                         
+                }
+            }, &#39;eslint-loader&#39;],
+            include: path.join(__dirname, &#39;../src&#39;),
+            exclude: /node_modules/
+        }, {
+                test: /\.css$/,
+                exclude: &#39;/node_modules/&#39;,
+                use: extractCSS.extract({
+                    fallback: &#39;style-loader&#39;,
+                    use: [{
+                        loader: &#39;css-loader&#39;,
+                        options: {
+                            modules: false                         
+                        }
+                    }]
+                })
+            },
+            {
+                test: /\.scss$/,
+                exclude: /node_modules/,
+                use: extractSASS.extract({
+                    fallback: &#39;style-loader&#39;,
+                    use: [{
+                        loader: &#39;css-loader&#39;,
+                        options: {
+                            modules: false
+                        }
+                    },
+                    {
+                        loader: &#39;sass-loader&#39;
+                    }]
+                })
+            },
+            {
+                test: /\.(png|svg|jpe?g|gif|ico)$/,
+                use: [
+                    {
+                        loader: &#39;url-loader&#39;,
+                        options: {
+                            limit: 10240, // 10KB 以下使用 base64
+                            name: &#39;img/[name].[sha512:hash:base64:7].[ext]&#39;
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.(woff2?|eot|ttf|otf|svg)((-|\?)?.*)?$/,
+                exclude: /static\/img/,
+                loader: &#39;url-loader&#39;,
+                options: {
+                    name: &#39;css/fonts/[name].[hash:8].[ext]&#39;
+                }
+            },{
+                test: /\.json$/,
+                exclude: &#39;/node_modules/&#39;,
+                loader: &#39;json-loader&#39;
+            }]
+    },
+    plugins: [  // 插件
+        new webpack.BannerPlugin(&quot;author by ldq-first&quot;),
+        extractCSS,
+        extractSASS,
+        new webpack.LoaderOptionsPlugin({
+            options: {
+                postcss: require(&#39;autoprefixer&#39;)
+            }
+        }),
+        new HtmlWebpackPlugin({
+            template:  path.join(__dirname, &#39;../index.html&#39;)
+        }),
+        new CopyWebpackPlugin([
+            {
+                from: path.join(__dirname, &#39;../static&#39;),
+                to: path.join(__dirname, &#39;../dist/static/&#39;),
+              //  ignore: [&#39;.*&#39;]
+            }
+        ]),
+        new webpack.HashedModuleIdsPlugin(),
+        // 这个 plugin 是用于引入 dll 里生成的 json 的。
+        new webpack.DllReferencePlugin({  
+            context: __dirname,
+            manifest: require(&#39;../static/public/js/vendor-mainfest.json&#39;)  // 指向这个 json
+        })
+    ],
+    devServer: {  //webpack-dev-server
+        historyApiFallback: true,
+        host: &#39;0.0.0.0&#39;,  // 手机局域网访问 如：http://10.30.4.227:5050
+        hot: true,
+        port: 5050
+    }
+}
+</code></pre><h3 id="常用-loader"><a href="#常用-loader" class="headerlink" title="常用 loader"></a>常用 loader</h3><p><a href="https://webpack.js.org/loaders/" target="_blank" rel="external">loader</a></p><pre><code>
+babel-loader
+style-loader
+css-loader
+sass-loader
+url-loader
+json-loader
+less-loader
+html-loader
+postcss-loader
+eslint-loader
+</code></pre><h3 id="常用-plugin"><a href="#常用-plugin" class="headerlink" title="常用 plugin"></a>常用 plugin</h3><p><a href="https://webpack.js.org/plugins/" target="_blank" rel="external">插件列表</a></p><pre><code>
+html-webpack-plugin
+extract-text-webpack-plugin
+copy-webpack-plugin
+copy-webpack-plugin
+
+webpack.BannerPlugin
+webpack.LoaderOptionsPlugin
+webpack.HashedModuleIdsPlugin
+webpack.DllReferencePlugin
+webpack.DefinePlugin
+webpack.optimize.OccurrenceOrderPlugin
+webpack.optimize.UglifyJsPlugin
+</code></pre><h3 id="webpack-DllReferencePlugin"><a href="#webpack-DllReferencePlugin" class="headerlink" title="webpack.DllReferencePlugin"></a>webpack.DllReferencePlugin</h3><p>提取不变的第三方代码，提高打包速度，减少打包文件大小，<br>防止首屏加载的单个 js 文件太大，影响用户体验，还能利用缓存</p><p>编写配置文件<br>webpack.dll.config.js</p><pre><code>在 webpack.config.js 的 plugin 中添加
+
+// 这个 plugin 是用于引入 dll 里生成的 json 的。
+new webpack.DllReferencePlugin({  
+    context: __dirname,
+    manifest: require(&#39;../static/public/js/vendor-mainfest.json&#39;)  // 指向这个 json
+})
+</code></pre><p>运行命令</p><pre><code>webpack --config ./build/webpack.dll.config.js
+
+在 index.html 中引入最终的 js 文件
+&lt; script src=&quot;./static/public/js/vendor.dll.js&quot; &gt;&lt; /script &gt;
+</code></pre><p>例子</p><pre><code>const webpack = require(&#39;webpack&#39;)
+const path = require(&#39;path&#39;)
+
+
+module.exports = {
+    entry: {
+        vendor: [&#39;react&#39;, &#39;react-router-dom&#39;, &#39;redux&#39;, &#39;react-dom&#39;, &#39;react-redux&#39;,
+         &#39;react-router-redux&#39;, &#39;prop-types&#39;, &#39;history&#39;, &#39;styled-components&#39;, 
+         &#39;redux-thunk&#39;]
+    },
+    output: {
+        path: path.join(__dirname , &#39;../static/public/js&#39;),
+        filename: &#39;[name].dll.js&#39;, // 输出的文件，将会根据 entry 命名为 vendor.dll.js
+        library: &#39;[name]_library&#39; // 暴露出的全局变量名
+    },
+    plugins: [
+        new webpack.DllPlugin({
+             //path 是 manifest.json 文件的输出路径，这个文件会用于后续的业务代码打包
+            path: path.join(__dirname, &#39;../static/public/js/&#39;, &#39;[name]-mainfest.json&#39;),
+            // 是 dll 暴露的对象名，要跟 output.library 保持一致
+            name: &#39;[name]_library&#39;, 
+            //context 是解析包路径的上下文，这个要跟接下来配置的 webpack.config.js 一致
+            context: __dirname
+        }),
+        new webpack.DefinePlugin({
+            &#39;process.env&#39;:{
+                &#39;NODE_ENV&#39;: JSON.stringify(&#39;production&#39;)
+            }
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+             compress: {
+                warnings: false
+            }
+        })
+    ]
+}
+</code></pre><h3 id="Happypack"><a href="#Happypack" class="headerlink" title="Happypack"></a>Happypack</h3><p>它可以建立线程，加速我们的 rebuild，并很好的利用缓存。首次 build 时速度甚至会变慢，<br>这是由于 happypack 在进行分析和配置，当进入开发阶段，<br>改动代码后的 rebuild 会快到让你吓一跳。</p><p>未来可尝试一下</p><h3 id="代码分割"><a href="#代码分割" class="headerlink" title="代码分割"></a>代码分割</h3><p>Webpack 支持两种按需拆分，切入点分别是 import() 和 require.ensure()，<br>首选前者，它是 ECMAScript 的建议，import 也是 es6 的关键词；后者是 webpack 所特有的。</p><p>动态导入 import</p><p>Webpack 把 import() 作为拆分点，把导入的模块放在单独的 chunk 中。<br>import() 接收模块名作为参数并返回 Promise：import(name) -&gt; Promise。</p><p>用于演示的目录结构：</p><pre><code>demo
+├── index.html
+├── index.js
+└── webpack.config.js
+</code></pre><p>index.js</p><pre><code>function test(){
+  import(/* webpackChunkName: &quot;my-chunk-name&quot; */&#39;moment&#39;).then(function(moment){
+    console.log(moment().format(&#39;MMMM Do YYYY, h:mm:ss a&#39;));
+  }).catch(function(err){
+    console.log(err);
+  }); 
+}
+test();
+
+
+
+
+webpack.config.js
+
+module.exports = { 
+  entry: &#39;./index.js&#39;,
+  output: {
+      filename: &#39;dist.js&#39;,
+  },  
+  module: {
+    rules: [{
+      test: /\.js$/,
+      use: [{
+        loader: &#39;babel-loader&#39;,
+        options: {
+          presets: &#39;es2015&#39;,
+          plugins: [&#39;syntax-dynamic-import&#39;]
+        }
+      }]  
+    }]  
+  }
+}
+</code></pre><p>index.html</p><pre><code>&lt;!doctype html&gt;
+&lt; script src=&quot;0.dist.js&quot; &gt;&lt; /script &gt;
+&lt; script src=&quot;dist.js&quot; &gt;&lt; /script &gt;
+</code></pre><p>由于使用动态的导入，因此需要使用插件 syntax-dynamic-import</p><pre><code>npm install --save-dev babel-core babel-loader babel-plugin-syntax-dynamic-import babel-preset-es2015 webpack
+npm install --save moment
+</code></pre><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><strong>webpack 文档</strong> : <a href="https://webpack.js.org/guides/installation/" target="_blank" rel="external">https://webpack.js.org/guides/installation/</a></p><blockquote style="margin:2em 0 0;padding:.5em 1em;border-left:3px solid #f44336;background-color:#f5f5f5;list-style:none"><p><strong><div class="fa-license"> <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a></div></strong><br> <strong>本文链接：</strong><a href="http://ldqblog.me/2017/09/02/Webpack-简介/">http://ldqblog.me/2017/09/02/Webpack-简介/</a></p></blockquote></div><div id="gitment-comment"><div id="container"></div></div><style>#gitment-comment{background-color:#eee;padding:2pc}</style><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"><script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script><script>var gitment=new Gitment({owner:"LDQ-first",repo:"ldq-first.github.io",oauth:{client_id:"20b5b063fd83c9fee396",client_secret:"98c7739adae2875d0818a788a78a5df4fcaaa724"}});gitment.render("container")</script></div><nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col"> <a href="/2017/09/23/React版开眼-一/" id="post_nav-newer" class="prev-content"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation"> <i class="material-icons">arrow_back</i></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 新篇</a><div class="section-spacer"></div> <a href="/2017/09/01/glup-简介/" id="post_nav-older" class="next-content">旧篇 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation"> <i class="material-icons">arrow_forward</i></button></a></nav></div></div><div class="sidebar-overlay"></div><aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation"><div id="sidebar-main"><div class="sidebar-header header-cover" style="background-image:url(/img/05.gif)"><div class="top-bar"></div> <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display:initial" data-upgraded=",MaterialButton,MaterialRipple"> <i class="material-icons">clear_all</i><span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button><div class="sidebar-image"> <img src="/img/pikachu.svg" alt="ldq's avatar"></div> <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">178848890@qq.com<b class="caret"></b></a></div><ul class="nav sidebar-nav"><li class="dropdown"><ul id="settings-dropdown" class="dropdown-menu"><li> <a href="#" target="_blank" title="Email Me"><i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i> Email Me</a></li></ul></li><li id="sidebar-first-li"> <a href="/"><i class="material-icons sidebar-material-icons">home</i> 主页</a></li><li class="dropdown"> <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown"><i class="material-icons sidebar-material-icons">inbox</i> 归档<b class="caret"></b></a><ul class="dropdown-menu"><li> <a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/11/">十一月 2016<span class="sidebar_archives-count">1</span></a></li></ul></li><li class="dropdown"> <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown"><i class="material-icons sidebar-material-icons">chrome_reader_mode</i> 分类<b class="caret"></b></a><ul class="dropdown-menu"><li> <a class="sidebar_archives-link" href="/categories/test/">test<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/test/图片/">图片<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/技术/">技术<span class="sidebar_archives-count">21</span></a></li><li><a class="sidebar_archives-link" href="/categories/技术/hexo/">hexo<span class="sidebar_archives-count">1</span></a></li></ul></li><li> <a href="/about" title="关于"><i class="material-icons sidebar-material-icons">person</i> 关于</a></li><li> <a href="/tags" title="标签"><i class="material-icons sidebar-material-icons">bookmark</i> 标签</a></li><li class="divider"></li><li> <a href="/music" title="音乐盒"><i class="material-icons sidebar-material-icons">music_note</i> 音乐盒</a></li></ul><div class="sidebar-divider"></div><a href="https://github.com/viosey/hexo-theme-material" class="sidebar-footer-text-a" target="_blank"><div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple"> 主题 - Material <span class="sidebar-badge badge-circle">i</span></div></a></div> <span id="footer-image"><a href="#" target="_blank" title="upyun_logo"><img src="/img/08.gif" alt="upyun_logo"></a></span></aside><div id="back-to-top" class="toTop-wrap"> <a href="#top" class="toTop"><i class="material-icons footer_top-i">expand_less</i></a></div><footer class="mdl-mini-footer" id="bottom"><div class="mdl-mini-footer--left-section sns-list"> <a href="https://github.com/LDQ-first" target="_blank"><button class="mdl-mini-footer--social-btn social-btn footer-sns-github"> <span class="visuallyhidden">Github</span></button></a></div><div id="copyright"> Copyright&nbsp;©&nbsp;2016&nbsp;-<script type="text/javascript">var fd=new Date;document.write("&nbsp;"+fd.getFullYear()+"&nbsp;")</script>LDQ的博客<br><div class="fa-hosted"> Hosted by <a href="https://pages.coding.me" style="font-weight:700;text-decoration:none" target="_blank" title="静态网站触及全球">Coding Pages</a>, <a href="https://pages.github.com/" target="_blank" style="font-weight:700;text-decoration:none" title="Websites for you and your projects">GitHub Pages</a></div><div class="fa-license"> <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a></div></div><div class="mdl-mini-footer--right-section"><div><div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div><div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div></div></div><script src="/js/player.min.js"></script></footer><script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==",!0)</script><script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==",!0)</script><script>lsloader.load("np_js","https://cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js",!0)</script><script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script><script>lsloader.load("sm_js","/js/smoothscroll.js?lOy/ACj5suSNi7ZVFVbpFQ==",!0)</script><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>var agent=navigator.userAgent.toLowerCase();agent.indexOf("ucbrowser")>0&&(document.write('<link rel="stylesheet" href="/css/uc.css">'),alert("由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。"))</script><script>lsloader.load("prettify_js","https://cdn.bootcss.com/prettify/r298/prettify.min.js",!0)</script><script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script><script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script><script>!function(){for(var e=document.querySelectorAll('script[type="text/ls-javascript"]'),r=0;r<e.length;++r){var o=e[r];lsloader.runInlineScript(o.id,o.id)}}(),console.log("\n %c © Material Theme | Version: 1.5.0 | https://github.com/viosey/hexo-theme-material %c \n","color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;","color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;")</script></main></div></body></html>

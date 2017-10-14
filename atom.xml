@@ -339,6 +339,476 @@ static get propTypes() {
   </entry>
   
   <entry>
+    <title>Webpack 简介</title>
+    <link href="http://ldqblog.me/2017/09/02/Webpack-%E7%AE%80%E4%BB%8B/"/>
+    <id>http://ldqblog.me/2017/09/02/Webpack-简介/</id>
+    <published>2017-09-02T11:18:10.000Z</published>
+    <updated>2017-10-14T11:31:11.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Webpack"><a href="#Webpack" class="headerlink" title="Webpack"></a>Webpack</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><blockquote>
+<p>一切皆模块的思想<br>将前端的资源通过各种 loader 处理成浏览器可使用的资源</p>
+</blockquote>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><pre><code>npm install --save-dev webpack
+npm install --save-dev webpack@&lt;version&gt;
+npm install --save-dev webpack-dev-server //webpack 基于 express 的服务器 可以不要
+
+&quot;scripts&quot;: {
+    &quot;start&quot;: &quot;webpack --config webpack.config.js&quot;
+}
+</code></pre><p>主要工作就是编写 webpack.config.js<br>和下载 loader，plugin</p>
+<p>plugin 分 webpack 自带的和第三方的</p>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><pre><code>
+const webpack = require(&#39;webpack&#39;)
+const path = require(&#39;path&#39;)
+const HtmlWebpackPlugin = require(&#39;html-webpack-plugin&#39;)
+const ExtractTextPlugin = require(&quot;extract-text-webpack-plugin&quot;)
+const CopyWebpackPlugin = require(&#39;copy-webpack-plugin&#39;)
+
+
+// 分离 css 文件
+const extractCSS = new ExtractTextPlugin({
+    filename: &#39;static/css/main.[name].[contenthash:8].css&#39;
+})
+const extractSASS = new ExtractTextPlugin({
+    filename: &#39;static/css/sass.[name].[contenthash:8].css&#39;
+})
+
+
+module.exports = {
+    devtool: &#39;cheap-module-eval-source-map&#39;, //source-map 用于 debugger 时能否看到源码
+    entry: {  // 入口文件
+        app: [
+            path.join(__dirname, &#39;../src/index.js&#39;) 
+        ],
+    }, 
+    output: {  // 出口文件
+        path: path.join(__dirname, &#39;../dist&#39;),
+        filename: &#39;static/js/[name].[chunkhash:8].js&#39;,
+        chunkFilename: &#39;static/js/[name].[chunkhash:8].js&#39;,
+        publicPath: &#39;/&#39;          // 静态资源路径前要添加的路径                 
+    },
+    resolve: { // 扩展名，别名
+        extensions: [&#39;.js&#39;, &#39;.jsx&#39;, &#39;.json&#39;],
+        alias: {
+        // ================================
+        // 自定义路径别名
+        // ================================
+        &#39;@&#39;: path.join(__dirname, &#39;../src&#39;)
+        }
+    },
+     module: {
+        rules: [{  //loader 配置
+            test: /\.(js|jsx)$/,
+            use: [{
+                loader: &#39;babel-loader?cacheDirectory=true&#39;,
+                options: {
+                    plugins: [&#39;syntax-dynamic-import&#39;]                         
+                }
+            }, &#39;eslint-loader&#39;],
+            include: path.join(__dirname, &#39;../src&#39;),
+            exclude: /node_modules/
+        }, {
+                test: /\.css$/,
+                exclude: &#39;/node_modules/&#39;,
+                use: extractCSS.extract({
+                    fallback: &#39;style-loader&#39;,
+                    use: [{
+                        loader: &#39;css-loader&#39;,
+                        options: {
+                            modules: false                         
+                        }
+                    }]
+                })
+            },
+            {
+                test: /\.scss$/,
+                exclude: /node_modules/,
+                use: extractSASS.extract({
+                    fallback: &#39;style-loader&#39;,
+                    use: [{
+                        loader: &#39;css-loader&#39;,
+                        options: {
+                            modules: false
+                        }
+                    },
+                    {
+                        loader: &#39;sass-loader&#39;
+                    }]
+                })
+            },
+            {
+                test: /\.(png|svg|jpe?g|gif|ico)$/,
+                use: [
+                    {
+                        loader: &#39;url-loader&#39;,
+                        options: {
+                            limit: 10240, // 10KB 以下使用 base64
+                            name: &#39;img/[name].[sha512:hash:base64:7].[ext]&#39;
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.(woff2?|eot|ttf|otf|svg)((-|\?)?.*)?$/,
+                exclude: /static\/img/,
+                loader: &#39;url-loader&#39;,
+                options: {
+                    name: &#39;css/fonts/[name].[hash:8].[ext]&#39;
+                }
+            },{
+                test: /\.json$/,
+                exclude: &#39;/node_modules/&#39;,
+                loader: &#39;json-loader&#39;
+            }]
+    },
+    plugins: [  // 插件
+        new webpack.BannerPlugin(&quot;author by ldq-first&quot;),
+        extractCSS,
+        extractSASS,
+        new webpack.LoaderOptionsPlugin({
+            options: {
+                postcss: require(&#39;autoprefixer&#39;)
+            }
+        }),
+        new HtmlWebpackPlugin({
+            template:  path.join(__dirname, &#39;../index.html&#39;)
+        }),
+        new CopyWebpackPlugin([
+            {
+                from: path.join(__dirname, &#39;../static&#39;),
+                to: path.join(__dirname, &#39;../dist/static/&#39;),
+              //  ignore: [&#39;.*&#39;]
+            }
+        ]),
+        new webpack.HashedModuleIdsPlugin(),
+        // 这个 plugin 是用于引入 dll 里生成的 json 的。
+        new webpack.DllReferencePlugin({  
+            context: __dirname,
+            manifest: require(&#39;../static/public/js/vendor-mainfest.json&#39;)  // 指向这个 json
+        })
+    ],
+    devServer: {  //webpack-dev-server
+        historyApiFallback: true,
+        host: &#39;0.0.0.0&#39;,  // 手机局域网访问 如：http://10.30.4.227:5050
+        hot: true,
+        port: 5050
+    }
+}
+</code></pre><h3 id="常用-loader"><a href="#常用-loader" class="headerlink" title="常用 loader"></a>常用 loader</h3><p><a href="https://webpack.js.org/loaders/" target="_blank" rel="external">loader</a></p>
+<pre><code>
+babel-loader
+style-loader
+css-loader
+sass-loader
+url-loader
+json-loader
+less-loader
+html-loader
+postcss-loader
+eslint-loader
+</code></pre><h3 id="常用-plugin"><a href="#常用-plugin" class="headerlink" title="常用 plugin"></a>常用 plugin</h3><p><a href="https://webpack.js.org/plugins/" target="_blank" rel="external">插件列表</a></p>
+<pre><code>
+html-webpack-plugin
+extract-text-webpack-plugin
+copy-webpack-plugin
+copy-webpack-plugin
+
+webpack.BannerPlugin
+webpack.LoaderOptionsPlugin
+webpack.HashedModuleIdsPlugin
+webpack.DllReferencePlugin
+webpack.DefinePlugin
+webpack.optimize.OccurrenceOrderPlugin
+webpack.optimize.UglifyJsPlugin
+</code></pre><h3 id="webpack-DllReferencePlugin"><a href="#webpack-DllReferencePlugin" class="headerlink" title="webpack.DllReferencePlugin"></a>webpack.DllReferencePlugin</h3><p>提取不变的第三方代码，提高打包速度，减少打包文件大小，<br>防止首屏加载的单个 js 文件太大，影响用户体验，还能利用缓存</p>
+<p>编写配置文件<br>webpack.dll.config.js</p>
+<pre><code>在 webpack.config.js 的 plugin 中添加
+
+// 这个 plugin 是用于引入 dll 里生成的 json 的。
+new webpack.DllReferencePlugin({  
+    context: __dirname,
+    manifest: require(&#39;../static/public/js/vendor-mainfest.json&#39;)  // 指向这个 json
+})
+</code></pre><p>运行命令</p>
+<pre><code>webpack --config ./build/webpack.dll.config.js
+
+在 index.html 中引入最终的 js 文件
+&lt; script src=&quot;./static/public/js/vendor.dll.js&quot; &gt;&lt; /script &gt;
+</code></pre><p>例子</p>
+<pre><code>const webpack = require(&#39;webpack&#39;)
+const path = require(&#39;path&#39;)
+
+
+module.exports = {
+    entry: {
+        vendor: [&#39;react&#39;, &#39;react-router-dom&#39;, &#39;redux&#39;, &#39;react-dom&#39;, &#39;react-redux&#39;,
+         &#39;react-router-redux&#39;, &#39;prop-types&#39;, &#39;history&#39;, &#39;styled-components&#39;, 
+         &#39;redux-thunk&#39;]
+    },
+    output: {
+        path: path.join(__dirname , &#39;../static/public/js&#39;),
+        filename: &#39;[name].dll.js&#39;, // 输出的文件，将会根据 entry 命名为 vendor.dll.js
+        library: &#39;[name]_library&#39; // 暴露出的全局变量名
+    },
+    plugins: [
+        new webpack.DllPlugin({
+             //path 是 manifest.json 文件的输出路径，这个文件会用于后续的业务代码打包
+            path: path.join(__dirname, &#39;../static/public/js/&#39;, &#39;[name]-mainfest.json&#39;),
+            // 是 dll 暴露的对象名，要跟 output.library 保持一致
+            name: &#39;[name]_library&#39;, 
+            //context 是解析包路径的上下文，这个要跟接下来配置的 webpack.config.js 一致
+            context: __dirname
+        }),
+        new webpack.DefinePlugin({
+            &#39;process.env&#39;:{
+                &#39;NODE_ENV&#39;: JSON.stringify(&#39;production&#39;)
+            }
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+             compress: {
+                warnings: false
+            }
+        })
+    ]
+}
+</code></pre><h3 id="Happypack"><a href="#Happypack" class="headerlink" title="Happypack"></a>Happypack</h3><p>它可以建立线程，加速我们的 rebuild，并很好的利用缓存。首次 build 时速度甚至会变慢，<br>这是由于 happypack 在进行分析和配置，当进入开发阶段，<br>改动代码后的 rebuild 会快到让你吓一跳。</p>
+<p>未来可尝试一下</p>
+<h3 id="代码分割"><a href="#代码分割" class="headerlink" title="代码分割"></a>代码分割</h3><p>Webpack 支持两种按需拆分，切入点分别是 import() 和 require.ensure()，<br>首选前者，它是 ECMAScript 的建议，import 也是 es6 的关键词；后者是 webpack 所特有的。</p>
+<p>动态导入 import</p>
+<p>Webpack 把 import() 作为拆分点，把导入的模块放在单独的 chunk 中。<br>import() 接收模块名作为参数并返回 Promise：import(name) -&gt; Promise。</p>
+<p>用于演示的目录结构：</p>
+<pre><code>demo
+├── index.html
+├── index.js
+└── webpack.config.js
+</code></pre><p>index.js</p>
+<pre><code>function test(){
+  import(/* webpackChunkName: &quot;my-chunk-name&quot; */&#39;moment&#39;).then(function(moment){
+    console.log(moment().format(&#39;MMMM Do YYYY, h:mm:ss a&#39;));
+  }).catch(function(err){
+    console.log(err);
+  }); 
+}
+test();
+
+
+
+
+webpack.config.js
+
+module.exports = { 
+  entry: &#39;./index.js&#39;,
+  output: {
+      filename: &#39;dist.js&#39;,
+  },  
+  module: {
+    rules: [{
+      test: /\.js$/,
+      use: [{
+        loader: &#39;babel-loader&#39;,
+        options: {
+          presets: &#39;es2015&#39;,
+          plugins: [&#39;syntax-dynamic-import&#39;]
+        }
+      }]  
+    }]  
+  }
+}
+</code></pre><p>index.html</p>
+<pre><code>&lt;!doctype html&gt;
+&lt; script src=&quot;0.dist.js&quot; &gt;&lt; /script &gt;
+&lt; script src=&quot;dist.js&quot; &gt;&lt; /script &gt;
+</code></pre><p>由于使用动态的导入，因此需要使用插件 syntax-dynamic-import</p>
+<pre><code>npm install --save-dev babel-core babel-loader babel-plugin-syntax-dynamic-import babel-preset-es2015 webpack
+npm install --save moment
+</code></pre><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><strong>webpack 文档 </strong>: <a href="https://webpack.js.org/guides/installation/" target="_blank" rel="external">https://webpack.js.org/guides/installation/</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Webpack&quot;&gt;&lt;a href=&quot;#Webpack&quot; class=&quot;headerlink&quot; title=&quot;Webpack&quot;&gt;&lt;/a&gt;Webpack&lt;/h2&gt;&lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简
+    
+    </summary>
+    
+      <category term="技术" scheme="http://ldqblog.me/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="前端" scheme="http://ldqblog.me/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="Webpack" scheme="http://ldqblog.me/tags/Webpack/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>glup 简介</title>
+    <link href="http://ldqblog.me/2017/09/01/glup-%E7%AE%80%E4%BB%8B/"/>
+    <id>http://ldqblog.me/2017/09/01/glup-简介/</id>
+    <published>2017-09-01T11:28:20.000Z</published>
+    <updated>2017-10-14T11:31:56.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="glup"><a href="#glup" class="headerlink" title="glup"></a>glup</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><pre><code>
+打造前端工作流
+打包，压缩，合并，git，远程操作
+
+
+本质：将命令行转变成 js 代码来执行
+
+
+思想
+   数据流
+   流水线
+
+   操作过的文件，不输出
+   下次再操作时，操作流水线
+   最后才输出
+</code></pre><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><pre><code>    npm install gulp-cli -g
+
+    npm install gulp -D
+
+    touch gulpfile.js
+
+    gulp --help
+</code></pre><p>编写 glupfile.js 文件</p>
+<pre><code>var gulp = require(&#39;gulp&#39;);
+var pug = require(&#39;gulp-pug&#39;);
+var less = require(&#39;gulp-less&#39;);
+var minifyCSS = require(&#39;gulp-csso&#39;);
+
+
+
+gulp.task(&#39;html&#39;, function(){
+  return gulp.src(&#39;client/templates/*.pug&#39;)
+    .pipe(pug())
+    .pipe(gulp.dest(&#39;build/html&#39;))
+});
+
+gulp.task(&#39;css&#39;, function(){
+  return gulp.src(&#39;client/templates/*.less&#39;)
+    .pipe(less())
+    .pipe(minifyCSS())
+    .pipe(gulp.dest(&#39;build/css&#39;))
+});
+
+gulp.task(&#39;default&#39;, [ &#39;html&#39;, &#39;css&#39; ]);
+</code></pre><p>常用 API</p>
+<pre><code>task
+src
+pipe
+dest
+</code></pre><p>gulp.src(globs[, options])</p>
+<p>globs 字符串 / 数组<br>数据流</p>
+<p>pipe<br>传数据流</p>
+<p>task(name, deps, callback)<br>创建任务<br>deps 并行执行</p>
+<p>watch 监听文件改动</p>
+<p>常用插件</p>
+<pre><code>
+gulp-htmlmin
+gulp plugin to minify HTML.
+
+
+gulp-cssnano
+Minify CSS with cssnano.
+
+gulp-clean-css
+gulp plugin to minify CSS, using clean-css
+
+gulp-less
+gulp-sass
+gulp-requirejs-optimize
+
+
+gulp-concat
+合并数据流
+
+
+gulp-uglify
+Minify JavaScript with UglifyJS2.
+
+gulp-imagemin 
+Minify PNG, JPEG, GIF and SVG images with imagemin
+
+gulp-rename
+gulp-rename is a gulp plugin to rename files easily.
+
+gulp-clean
+Removes files and folders.
+
+
+gulp-eslint
+A gulp plugin for ESLint.
+
+
+gulp-jslint
+It&#39;s JSLint for Gulp.js.
+
+gulp-postcss
+PostCSS gulp plugin to pipe CSS through several plugins, but parse CSS only once.
+
+glob-stream 
+A Readable Stream interface over node-glob.
+
+gulp-typescript 
+A gulp plugin for handling TypeScript compilation workflow. 
+The plugin exposes TypeScript&#39;s compiler options to gulp using TypeScript API.
+
+
+gulp-filter 
+Filter files in a Vinyl stream
+
+Enables you to work on a subset of the original files
+ by filtering them using glob patterns. 
+ When you&#39;re done and want all the original files back 
+ you just use the restore stream.
+
+
+gulp-sourcemaps
+Write inline source maps
+Inline source maps are embedded in the source file.
+
+
+gulp-if
+A ternary gulp plugin: conditionally control the flow of vinyl objects.
+
+Note: Badly behaved plugins can often get worse when used with gulp-if.
+ Typically the fix is not in gulp-if.
+
+Note: Works great with lazypipe, see below
+
+
+gulp-autoprefixer
+Prefix CSS with Autoprefixer
+
+
+gulp-babel
+Use next generation JavaScript, today, with Babel
+
+gulp-rev
+添加版本号
+
+gulp-rev-replace
+版本号替换
+
+gulp-useref
+解析 html 资源定位
+</code></pre><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><strong>glup 文档 </strong>: <a href="https://gulpjs.com/" target="_blank" rel="external">https://gulpjs.com/</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;glup&quot;&gt;&lt;a href=&quot;#glup&quot; class=&quot;headerlink&quot; title=&quot;glup&quot;&gt;&lt;/a&gt;glup&lt;/h2&gt;&lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h
+    
+    </summary>
+    
+      <category term="技术" scheme="http://ldqblog.me/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="前端" scheme="http://ldqblog.me/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="Glup" scheme="http://ldqblog.me/tags/Glup/"/>
+    
+  </entry>
+  
+  <entry>
     <title>React 版动态简历</title>
     <link href="http://ldqblog.me/2017/08/23/React%E7%89%88%E5%8A%A8%E6%80%81%E7%AE%80%E5%8E%86/"/>
     <id>http://ldqblog.me/2017/08/23/React版动态简历/</id>
@@ -3151,129 +3621,6 @@ new Vue({
       <category term="Vue" scheme="http://ldqblog.me/tags/Vue/"/>
     
       <category term="Vue-Router" scheme="http://ldqblog.me/tags/Vue-Router/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue 简介</title>
-    <link href="http://ldqblog.me/2017/06/06/Vue-%E7%AE%80%E4%BB%8B/"/>
-    <id>http://ldqblog.me/2017/06/06/Vue-简介/</id>
-    <published>2017-06-06T14:46:11.000Z</published>
-    <updated>2017-10-12T15:57:46.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Vue-简介"><a href="#Vue-简介" class="headerlink" title="Vue 简介"></a>Vue 简介</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote>
-<p>Vue 是一套构建用户界面的渐进式 MVVM 框架<br>Vue 的核心库只关注视图层，将路由交给 Vue-Router ，状态管理交给 Vuex </p>
-</blockquote>
-<h3 id="核心概念和关键词"><a href="#核心概念和关键词" class="headerlink" title="核心概念和关键词"></a>核心概念和关键词</h3><p>template<br>data<br>methods<br>components </p>
-<p>计算属性<br>watch</p>
-<h4 id="计算属性-vs-watch"><a href="#计算属性-vs-watch" class="headerlink" title="计算属性 vs watch"></a>计算属性 vs watch</h4><blockquote>
-<p>虽然计算属性在大多数情况下更合适，但有时也需要一个自定义的 watcher。<br>这是为什么 Vue 通过 watch 选项提供一个更通用的方法，来响应数据的变化。<br>当你想要在数据变化响应时，执行异步操作或开销较大的操作，这是很有用的。  </p>
-</blockquote>
-<p>指令<br>插件<br>生命周期<br>响应式<br>过渡<br>混合<br>过滤器</p>
-<p>路由<br>状态管理<br>服务端渲染<br>单元测试</p>
-<p>api<br>风格指南</p>
-<p>生态</p>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>安装好 nodejs, 有命令行工具</p>
-<p>在命令行工具中</p>
-<pre><code>npm install -g vue-cli
-vue init webpack myProject
-cd myProject
-npm install
-npm run dev
-</code></pre><p>浏览器会自动打开 <a href="http://localhost:8080/#/" target="_blank" rel="external">http://localhost:8080/#/</a>  (opn 模块)</p>
-<p>写完代码</p>
-<p>npm run build 构建打包</p>
-<p>生成的 dist 文件夹就是要发布的文件</p>
-<h4 id="用到的文件"><a href="#用到的文件" class="headerlink" title="用到的文件"></a>用到的文件</h4><p>build 和 config 文件夹</p>
-<p>webpack 配置，可以自己修改</p>
-<p>一般改 config/index.js 的 build assetsPublicPath，这是打包后的静态文件的路径前添加的路径<br>因为线上路径和开发路径很多时候有所不同</p>
-<p>如: assetsPublicPath: ‘/vue-CNode/dist/‘</p>
-<p>dev proxyTable</p>
-<p>配置代理<br>用于解决开发时的跨域问题</p>
-<pre><code>
-proxyTable: {
-      &#39;/goods&#39;: {
-          target: &#39;http://localhost:3000&#39;
-      },
-      &#39;/goods/*&#39;: {
-          target: &#39;http://localhost:3000&#39;
-      },
-      &#39;/users/**&#39;: {
-          target: &#39;http://localhost:3000&#39;
-      }
-    },
-</code></pre><p>src  编写代码</p>
-<p>一种项目的录结构</p>
-<p>   assets 静态资源<br>   Components 组件<br>   router 路由<br>   store vuex<br>   util 工具脚本<br>   views 路由组件<br>   App.vue 根组件<br>   main.js 入口文件</p>
-<p>static<br>  静态资源</p>
-<h4 id="assets-和-static-的区别"><a href="#assets-和-static-的区别" class="headerlink" title="assets 和 static 的区别"></a>assets 和 static 的区别</h4><p>assets：<br>一般存放开发过程中自己写的静态资源<br>（image, css, js 等，如：shop.css, car.png, roomListUtil.js）</p>
-<p>static：<br>存放第三方静态资源（jquery.js, bootstrap.css 等），<br>这里的资源一般是直接引用，当打包编译后 assets 中的静态资源也会编译到 static 目录下，<br>这样原来引用 static 资源的地址也不用改变。<br>最后编译发布的时候会将所有的静态资源整合到 /dist/static/ 目录下，当然也可以自定义其他路径。</p>
-<p>index.html<br>    模板 HTML 文件 </p>
-<h4 id="Vue-的页面架构流程"><a href="#Vue-的页面架构流程" class="headerlink" title="Vue 的页面架构流程"></a>Vue 的页面架构流程</h4><p><img src="http://upload-images.jianshu.io/upload_images/3563580-ddbf4fee1d6de4c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="vue.png"></p>
-<h3 id="独立构建-运行时构建"><a href="#独立构建-运行时构建" class="headerlink" title="独立构建 运行时构建"></a>独立构建 运行时构建</h3><p>一、独立构建包含模板编译器，运行时构建不包含模板编译器。<br>二、模板编译器的作用就是将 template 选项编译成 render 函数，render 函数是渲染的关键。<br>三、鉴于以上两点，使用运行时构建时，不能出现 template 选项，因为此时没有模板编译器。<br>但是有一种情况除外：即 webpack+vue-loader 情况下单文件组件中出现 template 是可以的。<br>四、使用 vue-cli 生成项目时，会提醒使用哪种构建方式，npm 包默认导出的是运行时构建，<br>如果需要使用独立构建，需要在 webpack 中配置 alias(设置 alias 为 vue.common.js)<br>五、目前暂时发现的两者的应用场景上的区别有：</p>
-<p>需要注意 Vue 实例化时的方式，运行时构建方式下实例化 Vue 时，不要出现 template 属性<br>index.html 中不要出现 template 或者是通过 vue-router 渲染的 route-view</p>
-<p>运行时构建一定要 render 函数</p>
-<pre><code>new Vue({
-    el: &#39;#app&#39;,
-    render: h =&gt; h(App)
-})
-
-
-独立构建，是指可以在 html 里放置模板，并在 Vue 实例选项中通过 el 指定模板元素（同时也是挂载元素）
-</code></pre><h2 id="框架对比"><a href="#框架对比" class="headerlink" title="框架对比"></a>框架对比</h2><h4 id="Vue-和-React-的共同点"><a href="#Vue-和-React-的共同点" class="headerlink" title="Vue 和 React 的共同点"></a>Vue 和 React 的共同点</h4><p>使用 Virtual DOM<br>提供了响应式 (Reactive) 和组件化 (Composable) 的视图组件<br>将注意力集中保持在核心库，而将其他功能如路由和全局状态管理交给相关的库</p>
-<h4 id="Vue-的优势"><a href="#Vue-的优势" class="headerlink" title="Vue 的优势"></a>Vue 的优势</h4><p>在 Vue 应用中，组件的依赖是在渲染过程中自动追踪的，<br>所以系统能精确知晓哪个组件确实需要被重渲染。<br>React 由于 发生变化时会重新渲染整个组件树，所以需要做一些额外的优化工作<br>(PureComponent shouldComponentUpdate Immutable Reselect)</p>
-<p>vue 的 template 模板就是 HTML 写法，比起 jsx 更容易编写和理解</p>
-<p>vue 在每个单文件组件中可以访问自己独立的 css module，<br>在 style 标签里添加一个属性 scoped，不会污染全局</p>
-<p>vue 提供大量的指令来简化开发中的重复劳动<br>如：v-for 可以构建循环，在 React 中要自己写（使用 map 构建）</p>
-<p>Vue 设置样式的默认方法是单文件组件里类似 style 的标签</p>
-<h4 id="Vue-的劣势"><a href="#Vue-的劣势" class="headerlink" title="Vue 的劣势"></a>Vue 的劣势</h4><p>生态比不上 React</p>
-<p>在原生开发中，Weex 还没有 React Native 成熟</p>
-<h4 id="Vue-与-Angular1"><a href="#Vue-与-Angular1" class="headerlink" title="Vue 与 Angular1"></a>Vue 与 Angular1</h4><p>在 API 与设计两方面上 Vue.js 都比 AngularJS 简单得多</p>
-<p>Vue.js 是一个更加灵活开放的解决方案。它允许你以希望的方式组织应用程序，<br>而不是在任何时候都必须遵循 AngularJS 制定的规则，这让 Vue 能适用于各种项目。</p>
-<p>AngularJS 使用双向绑定，Vue 在不同组件间强制使用单向数据流。<br>这使应用中的数据流更加清晰易懂。</p>
-<p>在 Vue 中指令和组件分得更清晰。指令只封装 DOM 操作，<br>而组件代表一个自给自足的独立单元——有自己的视图和数据逻辑。<br>在 AngularJS 中两者有不少相混的地方。</p>
-<p>Vue 有更好的性能，并且非常非常容易优化，因为它不使用脏检查。</p>
-<h4 id="Vue-与-Angular2"><a href="#Vue-与-Angular2" class="headerlink" title="Vue 与 Angular2"></a>Vue 与 Angular2</h4><p>Vue 和 TS 的整合可能不如 Angular 那么深入<br>在中小型规模的项目中，引入 TS 可能并不会带来太多明显的优势。<br>在这些情况下，用 Vue 会是更好的选择，<br>因为在不用 TS 的情况下使用 Angular 会很有挑战性。</p>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><strong>Vue 文档 </strong>: <a href="https://cn.vuejs.org/v2/guide/" target="_blank" rel="external">https://cn.vuejs.org/v2/guide/</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      Vue 入门简单介绍
-    
-    </summary>
-    
-      <category term="技术" scheme="http://ldqblog.me/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="前端" scheme="http://ldqblog.me/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="Vue" scheme="http://ldqblog.me/tags/Vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>test description</title>
-    <link href="http://ldqblog.me/2017/02/02/test-description/"/>
-    <id>http://ldqblog.me/2017/02/02/test-description/</id>
-    <published>2017-02-02T13:06:49.000Z</published>
-    <updated>2017-07-31T19:56:44.270Z</updated>
-    
-    <content type="html"><![CDATA[<ul>
-<li>在 scaffolds/post.md 文件中添加 description</li>
-</ul>
-<pre><code>$(window).load(function(){
- $(&#39;pre&#39;).addClass(&#39;prettyprint linenums&#39;).attr(&#39;style&#39;, &#39;overflow:auto;&#39;);
-   prettyPrint();
- })
-</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      测试decription
-    
-    </summary>
-    
     
   </entry>
   
