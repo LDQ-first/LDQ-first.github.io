@@ -5,14 +5,23 @@
     
   <url>
     <loc>http://ldqblog.me/2017/05/28/Promise-%E7%AE%80%E4%BB%8B/</loc>
-    <lastmod>2017-10-14T11:37:42.000Z</lastmod>
+    <lastmod>2017-10-14T11:39:02.000Z</lastmod>
     <data>
         <display>
         <title>Promise 简介</title>
         <pubTime>2017-05-28T11:34:22.000Z</pubTime>
         
+        <tag>前端</tag>
+         
+        <tag>JavaScript</tag>
+         
+        <tag>Promise</tag>
+         
          
            
+             
+              <breadCrumb title="技术" url="http://ldqblog.me/categories/%E6%8A%80%E6%9C%AF/"/>
+          
         </display>
     </data>
     </url>
