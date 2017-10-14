@@ -62,6 +62,11 @@ Vue-pull-to-refresh
 
 MongoDB 是一个基于文档的数据库，所有数据是从磁盘上进行读写的。
 MongoDB善长的是对无模式JSON数据的查询。
+MongoDB 旨在为WEB应用提供可扩展的高性能数据存储解决方案。
+MongoDB 将数据存储为一个文档，数据结构由键值(key=>value)对组成。
+MongoDB 文档类似于 JSON 对象。字段值可以包含其他文档，数组及文档数组。
+
+
 
 
 ### Robomongo
@@ -97,6 +102,84 @@ module.exports = mongoose.model('Good', productSchema)
 
 
 ```
+
+
+### Api
+
+```
+    插入数据
+    save
+
+    更新数据
+    update
+
+    查找
+    find
+
+    查找并更新
+    findByIdAndUpdate
+
+    移除
+    remove
+
+    数量查询
+    count
+
+    根据_id查询
+    findById
+
+
+```
+
+### 变量 
+
+```
+　 $or　　　　或关系
+
+　　$nor　　　 或关系取反
+
+　　$gt　　　　大于
+
+　　$gte　　　 大于等于
+
+　　$lt　　　　 小于
+
+　　$lte　　　  小于等于
+
+　　$ne            不等于
+
+　　$in             在多个值范围内
+
+　　$nin           不在多个值范围内
+
+　　$all            匹配数组中多个值
+
+　　$regex　　正则，用于模糊查询
+
+　　$size　　　匹配数组大小
+
+　　$maxDistance　　范围查询，距离（基于LBS）
+
+　　$mod　　   取模运算
+
+　　$near　　　邻域查询，查询附近的位置（基于LBS）
+
+　　$exists　　  字段是否存在
+
+　　$elemMatch　　匹配内数组内的元素
+
+　　$within　　范围查询（基于LBS）
+
+　　$box　　　 范围查询，矩形范围（基于LBS）
+
+　　$center       范围醒询，圆形范围（基于LBS）
+
+　　$centerSphere　　范围查询，球形范围（基于LBS）
+
+　　$slice　　　　查询字段集合中的元素（比如从第几个之后，第N到第M个元素）
+```
+
+
 
 ### 使用
 
