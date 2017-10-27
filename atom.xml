@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ldqblog.me/"/>
-  <updated>2017-10-14T01:45:02.000Z</updated>
+  <updated>2017-10-27T12:48:34.000Z</updated>
   <id>http://ldqblog.me/</id>
   
   <author>
@@ -14,6 +14,77 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HTTP 缓存</title>
+    <link href="http://ldqblog.me/2017/10/27/HTTP%E7%BC%93%E5%AD%98/"/>
+    <id>http://ldqblog.me/2017/10/27/HTTP缓存/</id>
+    <published>2017-10-27T11:49:31.000Z</published>
+    <updated>2017-10-27T12:48:34.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>HTTP 通过一些请求和响应头来设置缓存</p>
+<p>常见的有 Expires / Cache-Control / Last-Modified / Etag</p>
+<h2 id="强缓存"><a href="#强缓存" class="headerlink" title="强缓存"></a>强缓存</h2><p>不会向服务器发起请求</p>
+<blockquote>
+<p>Expires / Cache-Control </p>
+</blockquote>
+<p>Expires HTTP/1.0 版本的标准<br>值为过期时间</p>
+<p>Cache-Control HTTP/1.1 版本的标准</p>
+<p>max-age: 相对时间的秒数<br>smax-age: 相对时间的秒数, 但仅适用于共享缓存，在私有缓存中被忽略<br>public: 响应可以被任何对象 (客户端，代理服务器) 缓存<br>private: 响应只能被单个用户缓存, 是非共享的，不能被代理服务器缓存<br>no-cache: 强制所有用户在请求时，向服务器发起请求<br>no-store: 禁止缓存，每次请求都要向服务器重新获取数据</p>
+<p>Cache-Control 优先级高于 Expires</p>
+<p>相对时间比绝对时间准</p>
+<p>不经常改变的文件:</p>
+<p>给 max-age 设置一个较大的值，一般设置 max-age=31536000</p>
+<p>标准中规定 max-age 的值最大不超过一年，所以设成 max-age=31536000。<br>至于过期内容，缓存区会将一段时间没有使用的文件删除掉。</p>
+<p>可能经常需要变动的文件:</p>
+<p>Cache-Control: no-cache / max-age=0</p>
+<h2 id="协商缓存"><a href="#协商缓存" class="headerlink" title="协商缓存"></a>协商缓存</h2><p>会向服务器发起请求</p>
+<blockquote>
+<p>Last-Modified / if-Modified-Since</p>
+</blockquote>
+<p>响应头：Last-Modified GMT 时间</p>
+<p>请求头：if-Modified-Since GMT 时间</p>
+<p>两个的值相同</p>
+<p>请求时服务端会将 if-Modified-Since 的时间和资源最后修改时间做比较</p>
+<p>如果响应头中有 Last-Modified , 没有 Expires 或 Cache-Control 时，<br>浏览器会有自己的算法来推算出缓存时间，不同浏览器不同，所以 Last-Modified 要配合<br>Expires / Cache-Control 使用</p>
+<blockquote>
+<p>ETag / if-None-Match</p>
+</blockquote>
+<p>响应头：ETag MD5</p>
+<p>请求头：if-None-Match MD5</p>
+<p>两个的值相同</p>
+<p>Last-Modified 只能精准到秒<br>ETag 通过 MD5 来验证，能精准到字节级别，优先级高</p>
+<h2 id="设置某个日期过期"><a href="#设置某个日期过期" class="headerlink" title="设置某个日期过期"></a>设置某个日期过期</h2><p>响应头</p>
+<p>Expires 过期时间的 GMT 时间</p>
+<p>Cache-Control  max-age = 从现在起距离过期时间的秒数</p>
+<p>Last-Modified 服务器资源最后修改的 GMT 时间</p>
+<p>ETag  文件 MD5</p>
+<p>请求头</p>
+<p>if-Modified-Since 服务器资源最后修改的 GMT 时间</p>
+<p>if-None-Match 文件 MD5</p>
+<p>GMT 时间</p>
+<pre><code>new Date(&#39;2017-10-27 20:46:02&#39;)
+Fri Oct 27 2017 20:46:02 GMT+0800 (中国标准时间)
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;HTTP 通过一些请求和响应头来设置缓存&lt;/p&gt;
+&lt;p&gt;常见的有 Expires / Cache-Control / Last-Modified / Etag&lt;/p&gt;
+&lt;h2 id=&quot;强缓存&quot;&gt;&lt;a href=&quot;#强缓存&quot; class=&quot;headerlink&quot; title=
+    
+    </summary>
+    
+      <category term="技术" scheme="http://ldqblog.me/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="前端" scheme="http://ldqblog.me/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="HTTP" scheme="http://ldqblog.me/tags/HTTP/"/>
+    
+      <category term="缓存" scheme="http://ldqblog.me/tags/%E7%BC%93%E5%AD%98/"/>
+    
+  </entry>
   
   <entry>
     <title>react 生命周期</title>
@@ -2433,11 +2504,11 @@ app.listen(3000);
     </summary>
     
     
+      <category term="test" scheme="http://ldqblog.me/tags/test/"/>
+    
       <category term="music" scheme="http://ldqblog.me/tags/music/"/>
     
       <category term="video" scheme="http://ldqblog.me/tags/video/"/>
-    
-      <category term="test" scheme="http://ldqblog.me/tags/test/"/>
     
   </entry>
   
@@ -3375,252 +3446,6 @@ api 更简洁
       <category term="SPA" scheme="http://ldqblog.me/tags/SPA/"/>
     
       <category term="Vue" scheme="http://ldqblog.me/tags/Vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue-Router 简介</title>
-    <link href="http://ldqblog.me/2017/06/18/Vue-Router-%E7%AE%80%E4%BB%8B/"/>
-    <id>http://ldqblog.me/2017/06/18/Vue-Router-简介/</id>
-    <published>2017-06-18T15:29:31.000Z</published>
-    <updated>2017-10-12T16:04:46.479Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Vue-Router-简介"><a href="#Vue-Router-简介" class="headerlink" title="Vue-Router 简介"></a>Vue-Router 简介</h1><h2 id="前端路由"><a href="#前端路由" class="headerlink" title="前端路由"></a>前端路由</h2><blockquote>
-<p>指根据不同的 url 展示不同的内容或页面</p>
-</blockquote>
-<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><pre><code>用户体验好，
-不需要每次从服务器全部获取
-展示更加快速
-</code></pre><h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><pre><code>不利于 SEO
-使用浏览器的前进后退功能时，会重新发请求，
-不能有效利用缓存
-
-单页面无法记住之前滚动的位置，
-无法在前进后退的时候记住之前的位置
-</code></pre><h2 id="Vue-路由-——-Vue-Router"><a href="#Vue-路由-——-Vue-Router" class="headerlink" title="Vue 路由 —— Vue-Router"></a>Vue 路由 —— Vue-Router</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><h4 id="动态路由"><a href="#动态路由" class="headerlink" title="动态路由"></a>动态路由</h4><pre><code>
-/user/:username
-/user/:username/goodlist/:goodlist_id
-
-
-username，goodlist_id 是变化的
-
-$router.params
-</code></pre><h4 id="嵌套路由"><a href="#嵌套路由" class="headerlink" title="嵌套路由"></a>嵌套路由</h4><p>路由有子路由</p>
-<pre><code>export default new Router({
-  routes: [
-    {
-      path: &#39;/goods&#39;,
-      name: &#39;GoodList&#39;,
-      component: GoodList,
-      children:[
-        {
-          path: &#39;title&#39;,
-          name: &#39;title&#39;,
-          component: Title
-        },
-        {
-          path: &#39;img&#39;,
-          name: &#39;img&#39;,
-          component: Image
-        }
-      ]
-    }
-  ]
-})
-</code></pre><h4 id="编程式路由"><a href="#编程式路由" class="headerlink" title="编程式路由"></a>编程式路由</h4><p>不通过 <router-link>&lt; /router-link &gt; 来跳转，而通过<br>事件触发，调用 $router.push() API 来跳转</router-link></p>
-<pre><code>$router.push(&quot;name&quot;)
-$router.push({path:&quot;name&quot;})
-$router.push({path:&quot;name?a=123&quot;})
-$router.push({path:&quot;name&quot;, query: {a:&quot;123&quot;}})
-$router.go(1)  // 前进 1 页  相当于 history.go(1)
-
-
-&lt; button @click=&quot;jump&quot; &gt;跳转到购物车页面&lt; /button &gt;
-
- methods:{
-    jump() {
-        //this.$router.push(&quot;cart&quot;)
-        this.$router.push({path:&#39;cart?goodsId=123&#39;})
-    }
-}
-</code></pre><h4 id="命名路由"><a href="#命名路由" class="headerlink" title="命名路由"></a>命名路由</h4><p>给路由不同的名字，根据名字来进行匹配</p>
-<pre><code>import Vue from &#39;vue&#39;
-import Router from &#39;vue-router&#39;
-import GoodList from &#39;../views/GoodList&#39;
-import Title from &#39;@/views/Title&#39;
-import Image from &#39;@/views/Image&#39;
-import Cart from &#39;@/views/Cart&#39;
-
-Vue.use(Router)
-
-export default new Router({
-  routes: [
-    {
-      path: &#39;/goods&#39;,
-      name: &#39;GoodList&#39;,
-      component: GoodList,
-      children:[
-        {
-          path: &#39;title&#39;,
-          name: &#39;title&#39;,
-          component: Title
-        },
-        {
-          path: &#39;img&#39;,
-          name: &#39;img&#39;,
-          component: Image
-        }
-      ]
-    },
-    {
-        path: &#39;/cart/:cartId&#39;,
-        name: &#39;cart&#39;,
-        component: Cart
-    }
-  ]
-})
-
-
-&lt; router-link :to=&quot;{name:&#39;cart&#39;,params:{cartId: 123}}&quot; &gt;跳转到购物车页面&lt; /router-link &gt;
-</code></pre><h4 id="命名视图"><a href="#命名视图" class="headerlink" title="命名视图"></a>命名视图</h4><p>给不同的 router-view 定义名字，通过名字进行对应组件的渲染</p>
-<pre><code>import Vue from &#39;vue&#39;
-import Router from &#39;vue-router&#39;
-import GoodList from &#39;../views/GoodList&#39;
-import Title from &#39;@/views/Title&#39;
-import Image from &#39;@/views/Image&#39;
-import Cart from &#39;@/views/Cart&#39;
-
-Vue.use(Router)
-
-export default new Router({
-  routes: [
-    {
-      path: &#39;/&#39;,
-      name: &#39;GoodList&#39;,
-      components: {
-        default: GoodList,
-        title: Title,
-        img: Image 
-      },
-      children:[
-        {
-          path: &#39;title&#39;,
-          name: &#39;title&#39;,
-          component: Title
-        },
-        {
-          path: &#39;img&#39;,
-          name: &#39;img&#39;,
-          component: Image
-        }
-      ]
-    },
-    {
-        path: &#39;/cart/:cartId&#39;,
-        name: &#39;cart&#39;,
-        component: Cart
-    }
-  ]
-})
-
-
-
-
-&lt; router-view class=&quot;main&quot; &gt;&lt; /router-view&gt;
-&lt; router-view name=&quot;title&quot; class=&quot;left&quot; &gt;&lt; /router-view&gt;
-&lt; router-view name=&quot;img&quot; class=&quot;right&quot; &gt;&lt; /router-view&gt;
-</code></pre><h4 id="路由过渡"><a href="#路由过渡" class="headerlink" title="路由过渡"></a>路由过渡</h4><p>切换路由时有动画效果</p>
-<pre><code>&lt; transition name=&quot;show&quot; &gt;
-    &lt; router-view name=&quot;login&quot; &gt;&lt; /router-view &gt;
-&lt; /transition&gt;
-
-
-.show-enter-active {
-  transition: all .3s ease;
-}
-
-.show-leave-active {
-  transition: all .2s ease-in;
-}
-
-
-.show-enter, .show-leave-active {
-  transform: translateX(200px);
-  opacity: 0;
-}
-
-
-
-
-
-api，组件
-
-&lt; router-link &gt;&lt; /router-link &gt;
-this.$router.push({path: &#39;&#39;})
-&lt; router-view &gt;&lt; /router-view &gt;
-</code></pre><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><pre><code>
-router 
-    index.js
-
-import Vue from &#39;vue&#39;
-import Router from &#39;vue-router&#39;
-const GoodList = resolve =&gt; require([&#39;../views/GoodList.vue&#39;], resolve)
-
-Vue.use(Router)
-
-
-Vue.use(Router)
-
-const routes = [
-    {
-      path: &#39;/goods/:goodsId/user/:name&#39;,
-      name: &#39;GoodList&#39;,
-      component: GoodList
-    }
-]
-
-
-const router =  new Router({
-  routes
-})
-
-export default router
-
-export {
-    router,
-    routes
-}
-
-
-
-main.js
-
-    import Vue from &#39;vue&#39;
-    import App from &#39;./App&#39;
-    import router from &#39;./router&#39;
-
-new Vue({
-    el: &#39;#app&#39;,
-    router,
-    render: h =&gt; h(App)
-})
-</code></pre><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><strong>Vue-Router 文档 </strong>: <a href="https://router.vuejs.org/zh-cn/index.html" target="_blank" rel="external">https://router.vuejs.org/zh-cn/index.html</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      vue-router 入门简单介绍
-    
-    </summary>
-    
-      <category term="技术" scheme="http://ldqblog.me/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="前端" scheme="http://ldqblog.me/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="Vue" scheme="http://ldqblog.me/tags/Vue/"/>
-    
-      <category term="Vue-Router" scheme="http://ldqblog.me/tags/Vue-Router/"/>
     
   </entry>
   

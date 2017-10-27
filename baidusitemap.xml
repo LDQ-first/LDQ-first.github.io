@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>http://ldqblog.me/2017/10/27/HTTP%E7%BC%93%E5%AD%98/</loc>
+    <lastmod>2017-10-27T12:48:34.000Z</lastmod>
+    <data>
+        <display>
+        <title>HTTP 缓存</title>
+        <pubTime>2017-10-27T11:49:31.000Z</pubTime>
+        
+        <tag>前端</tag>
+         
+        <tag>HTTP</tag>
+         
+        <tag>缓存</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://ldqblog.me/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://ldqblog.me/2017/05/28/Promise-%E7%AE%80%E4%BB%8B/</loc>
     <lastmod>2017-10-14T11:39:02.000Z</lastmod>
     <data>
@@ -577,11 +601,11 @@
         <title>music video test</title>
         <pubTime>2017-07-31T13:00:43.000Z</pubTime>
         
+        <tag>test</tag>
+         
         <tag>music</tag>
          
         <tag>video</tag>
-         
-        <tag>test</tag>
          
          
            
