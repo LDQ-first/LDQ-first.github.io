@@ -4,6 +4,72 @@
 
     
   <url>
+    <loc>http://ldqblog.me/2017/10/27/GitHub-Flow/</loc>
+    <lastmod>2017-10-27T13:45:47.980Z</lastmod>
+    <data>
+        <display>
+        <title>GitHub Flow</title>
+        <pubTime>2017-10-27T13:29:26.000Z</pubTime>
+        
+        <tag>Git</tag>
+         
+        <tag>GitHub</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://ldqblog.me/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ldqblog.me/2017/10/27/HTTP-%E8%AF%B7%E6%B1%82%E6%8A%A5%E6%96%87%E5%92%8C%E5%93%8D%E5%BA%94%E6%8A%A5%E6%96%87/</loc>
+    <lastmod>2017-10-27T13:28:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>HTTP 请求报文和响应报文</title>
+        <pubTime>2017-10-27T13:20:52.000Z</pubTime>
+        
+        <tag>HTTP</tag>
+         
+        <tag>前端</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://ldqblog.me/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ldqblog.me/2017/10/27/HTTP-%E7%8A%B6%E6%80%81%E7%A0%81/</loc>
+    <lastmod>2017-10-27T13:19:09.000Z</lastmod>
+    <data>
+        <display>
+        <title>HTTP 状态码</title>
+        <pubTime>2017-10-27T12:56:03.000Z</pubTime>
+        
+        <tag>HTTP</tag>
+         
+        <tag>前端</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://ldqblog.me/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://ldqblog.me/2017/10/27/HTTP%E7%BC%93%E5%AD%98/</loc>
     <lastmod>2017-10-27T12:48:34.000Z</lastmod>
     <data>
@@ -11,9 +77,9 @@
         <title>HTTP 缓存</title>
         <pubTime>2017-10-27T11:49:31.000Z</pubTime>
         
-        <tag>前端</tag>
-         
         <tag>HTTP</tag>
+         
+        <tag>前端</tag>
          
         <tag>缓存</tag>
          

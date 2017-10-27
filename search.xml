@@ -4,6 +4,67 @@
   
     
     <entry>
+      <title><![CDATA[GitHub Flow]]></title>
+      <url>http://ldqblog.me/2017/10/27/GitHub-Flow/</url>
+      <!-- <content type="html"><![CDATA[<h2 id="Git-FLow"><a href="#Git-FLow" class="headerlink" title="Git FLow"></a>Git FLow</h2><p>五条分支</p>
+<p>两条长期分支</p>
+<ul>
+<li>主分支 master</li>
+<li>开发分支 develop</li>
+</ul>
+<p>三条短期分支</p>
+<ul>
+<li>功能分支 feature </li>
+<li>补丁分支 hotfix</li>
+<li>预发分支 release</li>
+</ul>
+<blockquote>
+<p>一旦完成开发，它们就会被合并进 develop 或 master，然后被删除</p>
+</blockquote>
+<p>相对复杂，需要经常切换分支<br>不便于持续发布</p>
+<h2 id="Github-Flow"><a href="#Github-Flow" class="headerlink" title="Github Flow"></a>Github Flow</h2><p>Git Flow 简化版</p>
+<p>一条长期分支</p>
+<ul>
+<li>master</li>
+</ul>
+<ol>
+<li>开发时，从项目中 Fork 出一条新分支</li>
+<li>修改后向 master 分支提交一个 pull request（PR）</li>
+<li>经过审查后决定是否合并提交的 pull request</li>
+<li>合并 master 后重新部署，删除分支</li>
+</ol>
+<p>合并 master 分支后不代表可以立刻发布，需要审核<br>于是线上版本和 master 分支版本会有不一致<br>所以又需要一个 production 分支</p>
+]]></content> -->
+      <content type="html"><![CDATA[Git FLow五条分支 两条长期分支 主分支 master 开发分支 develop 三条短期分支 功能分支 feature 补丁分支 hotfix 预发分支 release 一旦完成开发，它们就会被合并进 develop 或 master，然后被删除 相对复杂，需要经常切换分支不便于持续发布 Github FlowGit Flow 简化版 一条长期分支 master 开发时，从项目中 Fork 出一条新分支 修改后向 master 分支提交一个 pull request（PR） 经过审查后决定是否合并提交的 pull request 合并 master 后重新部署，删除分支 合并 master 分支后不代表可以立刻发布，需要审核于是线上版本和 master 分支版本会有不一致所以又需要一个 production 分支]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[HTTP 请求报文和响应报文]]></title>
+      <url>http://ldqblog.me/2017/10/27/HTTP-%E8%AF%B7%E6%B1%82%E6%8A%A5%E6%96%87%E5%92%8C%E5%93%8D%E5%BA%94%E6%8A%A5%E6%96%87/</url>
+      <!-- <content type="html"><![CDATA[<p>HTTP 请求报文 </p>
+<p>请求方法 路径 协议 / 版本<br>请求头</p>
+<p>请求体 (参数)</p>
+<p>HTTP 响应报文 </p>
+<p>协议 / 版本 状态码 原因短语<br>响应头</p>
+<p>响应体 (json 数据)</p>
+]]></content> -->
+      <content type="html"><![CDATA[HTTP 请求报文 请求方法 路径 协议 / 版本请求头 请求体 (参数) HTTP 响应报文 协议 / 版本 状态码 原因短语响应头 响应体 (json 数据)]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[HTTP 状态码]]></title>
+      <url>http://ldqblog.me/2017/10/27/HTTP-%E7%8A%B6%E6%80%81%E7%A0%81/</url>
+      <!-- <content type="html"><![CDATA[<h2 id="状态码分类"><a href="#状态码分类" class="headerlink" title="状态码分类"></a>状态码分类</h2><p>100-199 : 指定客户端做某些操作<br>200-299 : 表示请求成功<br>300-399 : 关于资源的位置信息<br>400-499 : 客户端错误<br>500-599 : 服务端错误  </p>
+<p>100(继续): 客户端请求是否可以在后续的请求中发送附件，服务端允许<br>101(转换协议): 其上的头信息变为一个不同的协议</p>
+<p>200 OK / 正常</p>
+<p>301 永久重定向<br>302 重定向<br>304 缓存 </p>
+<p>404 找不到资源<br>403 请求被拒绝</p>
+<p>502 网关错误<br>504 网关超时</p>
+]]></content> -->
+      <content type="html"><![CDATA[状态码分类100-199 : 指定客户端做某些操作200-299 : 表示请求成功300-399 : 关于资源的位置信息400-499 : 客户端错误500-599 : 服务端错误 100(继续): 客户端请求是否可以在后续的请求中发送附件，服务端允许101(转换协议): 其上的头信息变为一个不同的协议 200 OK / 正常 301 永久重定向302 重定向304 缓存 404 找不到资源403 请求被拒绝 502 网关错误504 网关超时]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[HTTP 缓存]]></title>
       <url>http://ldqblog.me/2017/10/27/HTTP%E7%BC%93%E5%AD%98/</url>
       <!-- <content type="html"><![CDATA[<p>HTTP 通过一些请求和响应头来设置缓存</p>
