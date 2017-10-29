@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://ldqblog.me/2017/10/27/HTTP-%E7%8A%B6%E6%80%81%E7%A0%81/</loc>
+    <lastmod>2017-10-29T11:22:34.000Z</lastmod>
+    <data>
+        <display>
+        <title>HTTP 状态码</title>
+        <pubTime>2017-10-27T12:56:03.000Z</pubTime>
+        
+        <tag>HTTP</tag>
+         
+        <tag>前端</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://ldqblog.me/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://ldqblog.me/2017/10/27/GitHub-Flow/</loc>
     <lastmod>2017-10-27T13:45:47.980Z</lastmod>
     <data>
@@ -32,28 +54,6 @@
         <display>
         <title>HTTP 请求报文和响应报文</title>
         <pubTime>2017-10-27T13:20:52.000Z</pubTime>
-        
-        <tag>HTTP</tag>
-         
-        <tag>前端</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术" url="http://ldqblog.me/categories/%E6%8A%80%E6%9C%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ldqblog.me/2017/10/27/HTTP-%E7%8A%B6%E6%80%81%E7%A0%81/</loc>
-    <lastmod>2017-10-27T13:19:09.000Z</lastmod>
-    <data>
-        <display>
-        <title>HTTP 状态码</title>
-        <pubTime>2017-10-27T12:56:03.000Z</pubTime>
         
         <tag>HTTP</tag>
          
