@@ -95,23 +95,23 @@
 <blockquote>
 <p>ETag / if-None-Match</p>
 </blockquote>
-<p>响应头：ETag MD5</p>
-<p>请求头：if-None-Match MD5</p>
+<p>响应头：ETag hash 值(取文件的 hashCode 或 MD5) </p>
+<p>请求头：if-None-Match hash 值(取文件的 hashCode 或 MD5) </p>
 <p>两个的值相同</p>
 <p>Last-Modified 只能精准到秒<br>ETag 通过 MD5 来验证，能精准到字节级别，优先级高</p>
 <h2 id="设置某个日期过期"><a href="#设置某个日期过期" class="headerlink" title="设置某个日期过期"></a>设置某个日期过期</h2><p>响应头</p>
 <p>Expires 过期时间的 GMT 时间</p>
 <p>Cache-Control  max-age = 从现在起距离过期时间的秒数</p>
 <p>Last-Modified 服务器资源最后修改的 GMT 时间</p>
-<p>ETag  文件 MD5</p>
+<p>ETag  hash 值(取文件的 hashCode 或 MD5) </p>
 <p>请求头</p>
 <p>if-Modified-Since 服务器资源最后修改的 GMT 时间</p>
-<p>if-None-Match 文件 MD5</p>
+<p>if-None-Match hash 值(取文件的 hashCode 或 MD5) </p>
 <p>GMT 时间</p>
 <pre><code>new Date(&#39;2017-10-27 20:46:02&#39;)
 Fri Oct 27 2017 20:46:02 GMT+0800 (中国标准时间)
 </code></pre>]]></content> -->
-      <content type="html"><![CDATA[HTTP 通过一些请求和响应头来设置缓存 常见的有 Expires / Cache-Control / Last-Modified / Etag 强缓存不会向服务器发起请求 Expires / Cache-Control Expires HTTP/1.0 版本的标准值为过期时间 Cache-Control HTTP/1.1 版本的标准 max-age: 相对时间的秒数smax-age: 相对时间的秒数, 但仅适用于共享缓存，在私有缓存中被忽略public: 响应可以被任何对象 (客户端，代理服务器) 缓存private: 响应只能被单个用户缓存, 是非共享的，不能被代理服务器缓存no-cache: 强制所有用户在请求时，向服务器发起请求no-store: 禁止缓存，每次请求都要向服务器重新获取数据 Cache-Control 优先级高于 Expires 相对时间比绝对时间准 不经常改变的文件: 给 max-age 设置一个较大的值，一般设置 max-age=31536000 标准中规定 max-age 的值最大不超过一年，所以设成 max-age=31536000。至于过期内容，缓存区会将一段时间没有使用的文件删除掉。 可能经常需要变动的文件: Cache-Control: no-cache / max-age=0 协商缓存会向服务器发起请求 Last-Modified / if-Modified-Since 响应头：Last-Modified GMT 时间 请求头：if-Modified-Since GMT 时间 两个的值相同 请求时服务端会将 if-Modified-Since 的时间和资源最后修改时间做比较 如果响应头中有 Last-Modified , 没有 Expires 或 Cache-Control 时，浏览器会有自己的算法来推算出缓存时间，不同浏览器不同，所以 Last-Modified 要配合Expires / Cache-Control 使用 ETag / if-None-Match 响应头：ETag MD5 请求头：if-None-Match MD5 两个的值相同 Last-Modified 只能精准到秒ETag 通过 MD5 来验证，能精准到字节级别，优先级高 设置某个日期过期响应头 Expires 过期时间的 GMT 时间 Cache-Control max-age = 从现在起距离过期时间的秒数 Last-Modified 服务器资源最后修改的 GMT 时间 ETag 文件 MD5 请求头 if-Modified-Since 服务器资源最后修改的 GMT 时间 if-None-Match 文件 MD5 GMT 时间 new Date(&#39;2017-10-27 20:46:02&#39;) Fri Oct 27 2017 20:46:02 GMT+0800 (中国标准时间)]]></content>
+      <content type="html"><![CDATA[HTTP 通过一些请求和响应头来设置缓存 常见的有 Expires / Cache-Control / Last-Modified / Etag 强缓存不会向服务器发起请求 Expires / Cache-Control Expires HTTP/1.0 版本的标准值为过期时间 Cache-Control HTTP/1.1 版本的标准 max-age: 相对时间的秒数smax-age: 相对时间的秒数, 但仅适用于共享缓存，在私有缓存中被忽略public: 响应可以被任何对象 (客户端，代理服务器) 缓存private: 响应只能被单个用户缓存, 是非共享的，不能被代理服务器缓存no-cache: 强制所有用户在请求时，向服务器发起请求no-store: 禁止缓存，每次请求都要向服务器重新获取数据 Cache-Control 优先级高于 Expires 相对时间比绝对时间准 不经常改变的文件: 给 max-age 设置一个较大的值，一般设置 max-age=31536000 标准中规定 max-age 的值最大不超过一年，所以设成 max-age=31536000。至于过期内容，缓存区会将一段时间没有使用的文件删除掉。 可能经常需要变动的文件: Cache-Control: no-cache / max-age=0 协商缓存会向服务器发起请求 Last-Modified / if-Modified-Since 响应头：Last-Modified GMT 时间 请求头：if-Modified-Since GMT 时间 两个的值相同 请求时服务端会将 if-Modified-Since 的时间和资源最后修改时间做比较 如果响应头中有 Last-Modified , 没有 Expires 或 Cache-Control 时，浏览器会有自己的算法来推算出缓存时间，不同浏览器不同，所以 Last-Modified 要配合Expires / Cache-Control 使用 ETag / if-None-Match 响应头：ETag hash 值(取文件的 hashCode 或 MD5) 请求头：if-None-Match hash 值(取文件的 hashCode 或 MD5) 两个的值相同 Last-Modified 只能精准到秒ETag 通过 MD5 来验证，能精准到字节级别，优先级高 设置某个日期过期响应头 Expires 过期时间的 GMT 时间 Cache-Control max-age = 从现在起距离过期时间的秒数 Last-Modified 服务器资源最后修改的 GMT 时间 ETag hash 值(取文件的 hashCode 或 MD5) 请求头 if-Modified-Since 服务器资源最后修改的 GMT 时间 if-None-Match hash 值(取文件的 hashCode 或 MD5) GMT 时间 new Date(&#39;2017-10-27 20:46:02&#39;) Fri Oct 27 2017 20:46:02 GMT+0800 (中国标准时间)]]></content>
     </entry>
     
     <entry>

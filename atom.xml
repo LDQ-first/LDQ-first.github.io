@@ -141,7 +141,7 @@
     <link href="http://ldqblog.me/2017/10/27/HTTP%E7%BC%93%E5%AD%98/"/>
     <id>http://ldqblog.me/2017/10/27/HTTP缓存/</id>
     <published>2017-10-27T11:49:31.000Z</published>
-    <updated>2017-10-27T12:48:34.000Z</updated>
+    <updated>2017-10-29T11:44:36.000Z</updated>
     
     <content type="html"><![CDATA[<p>HTTP 通过一些请求和响应头来设置缓存</p>
 <p>常见的有 Expires / Cache-Control / Last-Modified / Etag</p>
@@ -171,18 +171,18 @@
 <blockquote>
 <p>ETag / if-None-Match</p>
 </blockquote>
-<p>响应头：ETag MD5</p>
-<p>请求头：if-None-Match MD5</p>
+<p>响应头：ETag hash 值(取文件的 hashCode 或 MD5) </p>
+<p>请求头：if-None-Match hash 值(取文件的 hashCode 或 MD5) </p>
 <p>两个的值相同</p>
 <p>Last-Modified 只能精准到秒<br>ETag 通过 MD5 来验证，能精准到字节级别，优先级高</p>
 <h2 id="设置某个日期过期"><a href="#设置某个日期过期" class="headerlink" title="设置某个日期过期"></a>设置某个日期过期</h2><p>响应头</p>
 <p>Expires 过期时间的 GMT 时间</p>
 <p>Cache-Control  max-age = 从现在起距离过期时间的秒数</p>
 <p>Last-Modified 服务器资源最后修改的 GMT 时间</p>
-<p>ETag  文件 MD5</p>
+<p>ETag  hash 值(取文件的 hashCode 或 MD5) </p>
 <p>请求头</p>
 <p>if-Modified-Since 服务器资源最后修改的 GMT 时间</p>
-<p>if-None-Match 文件 MD5</p>
+<p>if-None-Match hash 值(取文件的 hashCode 或 MD5) </p>
 <p>GMT 时间</p>
 <pre><code>new Date(&#39;2017-10-27 20:46:02&#39;)
 Fri Oct 27 2017 20:46:02 GMT+0800 (中国标准时间)
@@ -2625,11 +2625,11 @@ app.listen(3000);
     </summary>
     
     
-      <category term="test" scheme="http://ldqblog.me/tags/test/"/>
-    
       <category term="music" scheme="http://ldqblog.me/tags/music/"/>
     
       <category term="video" scheme="http://ldqblog.me/tags/video/"/>
+    
+      <category term="test" scheme="http://ldqblog.me/tags/test/"/>
     
   </entry>
   
