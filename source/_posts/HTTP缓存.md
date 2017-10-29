@@ -78,9 +78,9 @@ Expires / Cache-Control 使用
 > ETag / if-None-Match
 
 
-响应头：ETag MD5
+响应头：ETag hash值(取文件的hashCode或MD5) 
 
-请求头：if-None-Match MD5
+请求头：if-None-Match hash值(取文件的hashCode或MD5) 
 
 两个的值相同
 
@@ -105,7 +105,7 @@ Cache-Control  max-age=从现在起距离过期时间的秒数
 Last-Modified 服务器资源最后修改的GMT时间
 
 
-ETag  文件MD5
+ETag  hash值(取文件的hashCode或MD5) 
 
 
 
@@ -114,7 +114,7 @@ ETag  文件MD5
 
 if-Modified-Since 服务器资源最后修改的GMT时间
 
-if-None-Match 文件MD5
+if-None-Match hash值(取文件的hashCode或MD5) 
 
 
 GMT时间
