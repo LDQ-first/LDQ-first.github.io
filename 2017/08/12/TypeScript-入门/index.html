@@ -1,4 +1,272 @@
-<!DOCTYPE html><html style="display:none" lang="zh"><head><meta charset="utf-8"><script>window.materialVersion="1.5.0",window.oldVersion=["codestartv1","1.3.4","1.4.0","1.4.0b1"]</script><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://busuanzi.ibruce.info"><title> TypeScript 入门 | LDQ的博客</title><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta name="renderer" content="webkit"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="//upload-images.jianshu.io"><link rel="dns-prefetch" href="//source.unsplash.com"><link rel="dns-prefetch" href="//github.com"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="rgba(33,150,243 ,1)"><meta name="author" content="ldq"><meta name="description" itemprop="description" content="TypeScript 入门"><meta name="keywords" content="LDQ-first 博客 前端,前端,TypeScript"><script>window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}},lsloader.removeLS=function(e){try{localStorage.removeItem(e)}catch(e){}},lsloader.setLS=function(e,t){try{localStorage.setItem(e,t)}catch(e){}},lsloader.getLS=function(e){var t="";try{t=localStorage.getItem(e)}catch(e){t=""}return t},versionString="/*"+(window.materialVersion||"unknownVersion")+"*/",lsloader.clean=function(){try{for(var e=[],t=0;t<localStorage.length;t++)e.push(localStorage.key(t));e.forEach(function(e){var t=lsloader.getLS(e);window.oldVersion&&window.oldVersion.reduce(function(e,n){return e||-1!==t.indexOf("/*"+n+"*/")},!1)&&lsloader.removeLS(e)})}catch(e){}},lsloader.clean(),lsloader.load=function(e,t,n,s){"boolean"==typeof n&&(s=n,n=void 0),s=s||!1,n=n||function(){};var a;if((a=this.getLS(e))&&-1===a.indexOf(versionString))return this.removeLS(e),void this.requestResource(e,t,n,s);if(a){if(a.split(versionString)[0]!=t)return console.log("reload:"+t),this.removeLS(e),void this.requestResource(e,t,n,s);a=a.split(versionString)[1],s?(this.jsRunSequence.push({name:e,code:a}),this.runjs(t,e,a)):(document.getElementById(e).appendChild(document.createTextNode(a)),n())}else this.requestResource(e,t,n,s)},lsloader.requestResource=function(e,t,n,s){var a=this;s?this.iojs(t,e,function(e,t,n){a.setLS(t,e+versionString+n),a.runjs(e,t,n)}):this.iocss(t,e,function(n){document.getElementById(e).appendChild(document.createTextNode(n)),a.setLS(e,t+versionString+n)},n)},lsloader.iojs=function(e,t,n){var s=this;s.jsRunSequence.push({name:t,code:""});try{var a=new XMLHttpRequest;a.open("get",e,!0),a.onreadystatechange=function(){if(4==a.readyState){if((a.status>=200&&a.status<300||304==a.status)&&""!=a.response)return void n(e,t,a.response);s.jsfallback(e,t)}},a.send(null)}catch(n){s.jsfallback(e,t)}},lsloader.iocss=function(e,t,n,s){var a=this;try{var o=new XMLHttpRequest;o.open("get",e,!0),o.onreadystatechange=function(){if(4==o.readyState){if((o.status>=200&&o.status<300||304==o.status)&&""!=o.response)return n(o.response),void s();a.cssfallback(e,t,s)}},o.send(null)}catch(n){a.cssfallback(e,t,s)}},lsloader.iofonts=function(e,t,n,s){var a=this;try{var o=new XMLHttpRequest;o.open("get",e,!0),o.onreadystatechange=function(){if(4==o.readyState){if((o.status>=200&&o.status<300||304==o.status)&&""!=o.response)return n(o.response),void s();a.cssfallback(e,t,s)}},o.send(null)}catch(n){a.cssfallback(e,t,s)}},lsloader.runjs=function(e,t,n){if(t&&n)for(var s in this.jsRunSequence)this.jsRunSequence[s].name==t&&(this.jsRunSequence[s].code=n);if(this.jsRunSequence[0]&&this.jsRunSequence[0].code&&"failed"!=this.jsRunSequence[0].status)(o=document.createElement("script")).appendChild(document.createTextNode(this.jsRunSequence[0].code)),o.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(o),this.jsRunSequence.shift(),this.jsRunSequence.length>0&&this.runjs();else if(this.jsRunSequence[0]&&"failed"==this.jsRunSequence[0].status){var a=this,o=document.createElement("script");o.src=this.jsRunSequence[0].path,o.type="text/javascript",this.jsRunSequence[0].status="loading",o.onload=function(){a.jsRunSequence.shift(),a.jsRunSequence.length>0&&a.runjs()},document.body.appendChild(o)}},lsloader.tagLoad=function(e,t){this.jsRunSequence.push({name:t,code:"",path:e,status:"failed"}),this.runjs()},lsloader.jsfallback=function(e,t){if(!this.jsnamemap[t]){this.jsnamemap[t]=t;for(var n in this.jsRunSequence)this.jsRunSequence[n].name==t&&(this.jsRunSequence[n].code="",this.jsRunSequence[n].status="failed",this.jsRunSequence[n].path=e);this.runjs()}},lsloader.cssfallback=function(e,t,n){if(!this.cssnamemap[t]){this.cssnamemap[t]=1;var s=document.createElement("link");s.type="text/css",s.href=e,s.rel="stylesheet",s.onload=s.onerror=n;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(s,a)}},lsloader.runInlineScript=function(e,t){var n=document.getElementById(t).innerText;this.jsRunSequence.push({name:e,code:n}),this.runjs()},lsloader.loadCombo=function(e){var t="",n={};for(var s in e){var a=this.getLS(e[s].name);if(a)var o=a.split(versionString)[0],i=a.split(versionString)[1];else o="";o==e[s].path?this.jsRunSequence.push({name:e[s].name,code:i,path:e[s].path}):(this.jsRunSequence.push({name:e[s].name,code:null,path:e[s].path,status:"comboloading"}),n[e[s].name]=!0,t+=(""==t?"":";")+e[s].path)}var u=this;if(t){var r=new XMLHttpRequest;r.open("get",combo+t,!0),r.onreadystatechange=function(){if(4==r.readyState)if(r.status>=200&&r.status<300||304==r.status){if(""!=r.response)return void u.runCombo(r.response,n)}else{for(var e in u.jsRunSequence)n[u.jsRunSequence[e].name]&&(u.jsRunSequence[e].status="failed");u.runjs()}},r.send(null)}this.runjs()},lsloader.runCombo=function(e,t){(e=e.split("/*combojs*/")).shift();for(var n in this.jsRunSequence)t[this.jsRunSequence[n].name]&&e[0]&&(this.jsRunSequence[n].status="comboJS",this.jsRunSequence[n].code=e[0],this.setLS(this.jsRunSequence[n].name,this.jsRunSequence[n].path+versionString+e[0]),e.shift());this.runjs()}</script><script>function Queue(){this.dataStore=[],this.offer=function(e){this.debug&&console.log("Offered a Queued Function."),"function"==typeof e?this.dataStore.push(e):console.log("You must offer a function.")},this.poll=function(){return this.debug&&console.log("Polled a Queued Function."),this.dataStore.shift()},this.execNext=function(){var e=this.poll();void 0!==e&&(this.debug&&console.log("Run a Queued Function."),e())},this.debug=!1,this.startDebug=function(){this.debug=!0}}var queue=new Queue</script><link rel="icon shortcut" type="image/ico" href="/img/favicon.png"><link rel="icon" sizes="192x192" href="/img/favicon.png"><link rel="apple-touch-icon" href="/img/favicon.png"><meta name="apple-mobile-web-app-title" content="Title"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="480"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="apple-mobile-web-app-title" content="LDQ的博客"> <!--[if lte IE 9]><link rel="stylesheet" href="/css/ie-blocker.css"><script src="/js/ie-blocker.zhCN.js"></script><![endif]--><style id="material_css"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style id="style_css"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("style_css","/css/style.min.css?hPxZBPbdOqoIB0dVmdSVpw==",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style id="prettify_css"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style id="prettify_theme"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("prettify_theme","/css/prettify/tranquil-heart.min.css?ul3p9I9MsbOxK0L+BHzDDg==",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style>body,html{font-family:Roboto,"Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;overflow-x:hidden!important}code{font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace}a{color:#00838f}#scheme-Paradox .hot_tags-count,#scheme-Paradox .sidebar-colored .sidebar-badge,#scheme-Paradox .sidebar-colored .sidebar-header,#scheme-Paradox .sidebar_archives-count,#search-form-label:after,#search-label,.mdl-card__media{background-color:rgba(33,150,243 ,1)!important}#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus,#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover{color:rgba(33,150,243 ,1)!important}#ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a,#post_entry-right-info,.sidebar-colored .sidebar-nav li:hover>a,.sidebar-colored .sidebar-nav li:hover>a i,.sidebar-colored .sidebar-nav li>a:focus i,.sidebar-colored .sidebar-nav li>a:hover,.sidebar-colored .sidebar-nav li>a:hover i,.sidebar-colored .sidebar-nav>.open>a,.sidebar-colored .sidebar-nav>.open>a:focus,.sidebar-colored .sidebar-nav>.open>a:hover{color:rgba(33,150,243 ,1)!important}.toTop{background:rgba(239,83,80 ,1)!important}.material-layout .material-index>.material-nav,.material-layout .material-post>.material-nav,.material-nav a{color:rgba(239,83,80 ,1)}#scheme-Paradox .MD-burger-layer{background-color:rgba(239,83,80 ,1)}#scheme-Paradox #post-toc-trigger-btn{color:rgba(239,83,80 ,1)}.post-toc a:hover{color:#00838f;text-decoration:underline}</style><style>body{background-image:url(https://source.unsplash.com/random/)}</style><style>.fade{transition:all .8s linear;-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0);-o-transform:translate3d(0,0,0);transform:translate3d(0,0,0);opacity:1}.fade.out{opacity:0}</style><link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet"><link rel="stylesheet" href="https://cdn.bootcss.com/material-design-icons/3.0.1/iconfont/material-icons.min.css"><script>lsloader.load("jq_js","https://cdn.bootcss.com/jquery/2.2.1/jquery.min.js",!0)</script><meta property="og:url" content="http://ldq-first.github.io"><meta property="og:type" content="blog"><meta property="og:title" content="TypeScript 入门 | LDQ的博客"><meta property="og:image" content="http://ldq-first.github.io/img/favicon.png"><meta property="og:description" content="TypeScript 入门"><meta property="og:article:tag" content="前端"><meta property="og:article:tag" content="TypeScript"><meta property="article:published_time" content="Sat Aug 12 2017 15:13:38 GMT+0800"><meta property="article:modified_time" content="Thu Oct 12 2017 17:14:53 GMT+0800"><meta name="twitter:title" content="TypeScript 入门 | LDQ的博客"><meta name="twitter:description" content="TypeScript 入门"><meta name="twitter:image" content="http://ldq-first.github.io/img/favicon.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:url" content="http://ldq-first.github.io"><link rel="canonical" href="http://ldq-first.github.io/2017/08/12/TypeScript-入门/index.html"><script type="application/ld+json">
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.0 -->
+    <script>
+        window.materialVersion = "1.5.0"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Title -->
+    
+    <title>
+        
+            TypeScript 入门 | 
+        
+        LDQ的博客
+    </title>
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <link rel="dns-prefetch" href="//upload-images.jianshu.io" />
+    <link rel="dns-prefetch" href="//source.unsplash.com" />
+    <link rel="dns-prefetch" href="//github.com" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="theme-color" content="rgba(33,150,243 ,1)">
+    <meta name="author" content="ldq">
+    <meta name="description" itemprop="description" content="TypeScript 入门">
+    <meta name="keywords" content="LDQ-first 博客 前端,前端,TypeScript">
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="LDQ的博客">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?hPxZBPbdOqoIB0dVmdSVpw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/tranquil-heart.min.css?ul3p9I9MsbOxK0L+BHzDDg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: rgba(33,150,243 ,1) !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: rgba(33,150,243 ,1) !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: rgba(33,150,243 ,1) !important;
+  }
+
+  .toTop {
+    background: rgba(239,83,80 ,1) !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: rgba(239,83,80 ,1);
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: rgba(239,83,80 ,1);
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: rgba(239,83,80 ,1);
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(https://source.unsplash.com/random/);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icon -->
+
+    <link rel="stylesheet" href="https://cdn.bootcss.com/material-design-icons/3.0.1/iconfont/material-icons.min.css">
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","https://cdn.bootcss.com/jquery/2.2.1/jquery.min.js", true)</script>
+    
+
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://ldq-first.github.io">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="TypeScript 入门 | LDQ的博客">
+    <meta property="og:image" content="http://ldq-first.github.io/img/favicon.png" />
+    <meta property="og:description" content="TypeScript 入门">
+    <meta property="og:article:tag" content="前端"> <meta property="og:article:tag" content="TypeScript"> 
+
+    
+        <meta property="article:published_time" content="Sat Aug 12 2017 15:13:38 GMT+0800" />
+        <meta property="article:modified_time" content="Thu Oct 12 2017 17:14:53 GMT+0800" />
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="TypeScript 入门 | LDQ的博客">
+    <meta name="twitter:description" content="TypeScript 入门">
+    <meta name="twitter:image" content="http://ldq-first.github.io/img/favicon.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="http://ldq-first.github.io" />
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://ldq-first.github.io/2017/08/12/TypeScript-入门/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -26,15 +294,263 @@
     "keywords": ",前端,TypeScriptLDQ-first 博客 前端",
     "description": "TypeScript 入门",
 }
-</script><script src="//cdn.bootcss.com/aplayer/1.6.0/APlayer.min.js"></script></head><body id="scheme-Paradox" class="lazy"><div class="material-layout mdl-js-layout has-drawer is-upgraded"><main class="material-layout__content" id="main"><div id="top"></div> <button class="MD-burger-icon sidebar-toggle"><span class="MD-burger-layer"></span></button> <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon"> <i class="material-icons">format_list_numbered</i></button><ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh;overflow-y:scroll"><ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#TypeScript-入门"><span class="post-toc-number">1.</span> <span class="post-toc-text">TypeScript 入门</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#网站"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">网站</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#很多项目开始使用-TypeScript"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">很多项目开始使用 TypeScript</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装完后运行-tsc-v-查看是否正确安装"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">安装完后运行 tsc -v 查看是否正确安装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看帮助"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">查看帮助</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置文件"><span class="post-toc-number">1.3.4.</span> <span class="post-toc-text">配置文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#支持-TypeScript-的文本编辑器和-IDE"><span class="post-toc-number">1.3.5.</span> <span class="post-toc-text">支持 TypeScript 的文本编辑器和 IDE</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#将-TypeScrip-编译成-JavaScript"><span class="post-toc-number">1.3.6.</span> <span class="post-toc-text">将 TypeScrip 编译成 JavaScript</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#介绍一下第一种方法"><span class="post-toc-number">1.3.7.</span> <span class="post-toc-text">介绍一下第一种方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#静态类型"><span class="post-toc-number">1.3.8.</span> <span class="post-toc-text">静态类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据类型"><span class="post-toc-number">1.3.9.</span> <span class="post-toc-text">数据类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Interfaces-接口"><span class="post-toc-number">1.3.10.</span> <span class="post-toc-text">Interfaces 接口</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#类"><span class="post-toc-number">1.3.11.</span> <span class="post-toc-text">类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#泛型"><span class="post-toc-number">1.3.12.</span> <span class="post-toc-text">泛型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#函数"><span class="post-toc-number">1.3.13.</span> <span class="post-toc-text">函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#高级类型"><span class="post-toc-number">1.3.14.</span> <span class="post-toc-text">高级类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#模块化"><span class="post-toc-number">1.3.15.</span> <span class="post-toc-text">模块化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第三方声明文件"><span class="post-toc-number">1.3.16.</span> <span class="post-toc-text">第三方声明文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考资料"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">参考资料</span></a></li></ol></li></ol></ul><div class="material-post_container"><div class="material-post mdl-grid"><div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col"><div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50"><script type="text/ls-javascript" id="post-thumbnail-script">
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+    
+        <script src="//cdn.bootcss.com/aplayer/1.6.0/APlayer.min.js"></script>
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#TypeScript-入门"><span class="post-toc-number">1.</span> <span class="post-toc-text">TypeScript 入门</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#网站"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">网站</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#很多项目开始使用-TypeScript"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">很多项目开始使用 TypeScript</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装完后运行-tsc-v-查看是否正确安装"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">安装完后运行 tsc -v 查看是否正确安装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看帮助"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">查看帮助</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置文件"><span class="post-toc-number">1.3.4.</span> <span class="post-toc-text">配置文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#支持-TypeScript-的文本编辑器和-IDE"><span class="post-toc-number">1.3.5.</span> <span class="post-toc-text">支持 TypeScript 的文本编辑器和 IDE</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#将-TypeScrip-编译成-JavaScript"><span class="post-toc-number">1.3.6.</span> <span class="post-toc-text">将 TypeScrip 编译成 JavaScript</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#介绍一下第一种方法"><span class="post-toc-number">1.3.7.</span> <span class="post-toc-text">介绍一下第一种方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#静态类型"><span class="post-toc-number">1.3.8.</span> <span class="post-toc-text">静态类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据类型"><span class="post-toc-number">1.3.9.</span> <span class="post-toc-text">数据类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Interfaces-接口"><span class="post-toc-number">1.3.10.</span> <span class="post-toc-text">Interfaces 接口</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#类"><span class="post-toc-number">1.3.11.</span> <span class="post-toc-text">类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#泛型"><span class="post-toc-number">1.3.12.</span> <span class="post-toc-text">泛型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#函数"><span class="post-toc-number">1.3.13.</span> <span class="post-toc-text">函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#高级类型"><span class="post-toc-number">1.3.14.</span> <span class="post-toc-text">高级类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#模块化"><span class="post-toc-number">1.3.15.</span> <span class="post-toc-text">模块化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第三方声明文件"><span class="post-toc-number">1.3.16.</span> <span class="post-toc-text">第三方声明文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考资料"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">参考资料</span></a></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
     var randomNum = Math.floor(Math.random() * 19 + 1);
 
     $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-</script><p class="article-headline-p"> TypeScript 入门</p></div><div class="mdl-color-text--grey-700 mdl-card__supporting-text meta"><div id="author-avatar"> <img src="/img/pikachu.svg" width="44px" height="44px" alt="Author Avatar"></div><div> <strong>ldq</strong> <span>8月 12, 2017</span></div><div class="section-spacer"></div> <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"> <i class="material-icons" role="presentation">devices other</i> <span class="visuallyhidden">devices other</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button"><li class="mdl-menu__item">在其它设备中阅读本文章</li> <img src="https://pan.baidu.com/share/qrcode?w=246&h=246&url=http://ldq-first.github.io/2017/08/12/TypeScript-入门/"></ul> <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"> <i class="material-icons" role="presentation">bookmark</i> <span class="visuallyhidden">bookmark</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button"><li class="mdl-menu__item"> <a class="post_tag-link" href="/tags/TypeScript/">TypeScript</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/前端/">前端</a></li></ul> <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"> <i class="material-icons" role="presentation">share</i> <span class="visuallyhidden">share</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button"><a class="post_share-link" href="#"><li class="mdl-menu__item"><span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span> &nbsp;浏览量</span></li></a><a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=TypeScript 入门&url=http://ldq-first.github.io/2017/08/12/TypeScript-入门/index.html&pic=http://ldq-first.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank"><li class="mdl-menu__item"> 分享到微博</li></a><a class="post_share-link" href="https://twitter.com/intent/tweet?text=TypeScript 入门&url=http://ldq-first.github.io/2017/08/12/TypeScript-入门/index.html&via=ldq" target="_blank"><li class="mdl-menu__item"> 分享到 Twitter</li></a><a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://ldq-first.github.io/2017/08/12/TypeScript-入门/index.html" target="_blank"><li class="mdl-menu__item"> 分享到 Facebook</li></a><a class="post_share-link" href="https://plus.google.com/share?url=http://ldq-first.github.io/2017/08/12/TypeScript-入门/index.html" target="_blank"><li class="mdl-menu__item"> 分享到 Google+</li></a></ul></div><div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out"><h1 id="TypeScript-入门"><a href="#TypeScript-入门" class="headerlink" title="TypeScript 入门"></a>TypeScript 入门</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>JavaScript 是一门弱类型语言，没有类型检测，这让 JavaScript 很灵活，但也更容易出错</p><blockquote><p>TypeScript 是一种由微软开发的自由和开源的编程语言。它是 JavaScript 的一个超集，而且本质上向这个语言添加了可选的静态类型和基于类的面向对象编程。</p></blockquote><h2 id="网站"><a href="#网站" class="headerlink" title="网站"></a>网站</h2><blockquote><p>官网<br><a href="http://www.typescriptlang.org/" target="_blank" rel="external">TypeScript</a><br>中文文档<br><a href="https://www.tslang.cn/index.html" target="_blank" rel="external">tslang</a><br>查看编译后的结果<br><a href="http://www.typescriptlang.org/play/index.html" target="_blank" rel="external">typescriptlang</a></p></blockquote><h2 id="很多项目开始使用-TypeScript"><a href="#很多项目开始使用-TypeScript" class="headerlink" title="很多项目开始使用 TypeScript"></a>很多项目开始使用 TypeScript</h2><blockquote><p>Angular</p><div class="github-widget" data-repo="angular/angular"></div><p>VSCode</p><div class="github-widget" data-repo="Microsoft/vscode"></div><p>RxJS</p><div class="github-widget" data-repo="Reactive-Extensions/RxJS"></div></blockquote><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><pre><code>npm install -g typescript
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                TypeScript 入门
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/pikachu.svg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>ldq</strong>
+        <span>8月 12, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="https://pan.baidu.com/share/qrcode?w=246&h=246&url=http://ldq-first.github.io/2017/08/12/TypeScript-入门/">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/TypeScript/">TypeScript</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/前端/">前端</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=TypeScript 入门&url=http://ldq-first.github.io/2017/08/12/TypeScript-入门/index.html&pic=http://ldq-first.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=TypeScript 入门&url=http://ldq-first.github.io/2017/08/12/TypeScript-入门/index.html&via=ldq" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://ldq-first.github.io/2017/08/12/TypeScript-入门/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://ldq-first.github.io/2017/08/12/TypeScript-入门/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="TypeScript-入门"><a href="#TypeScript-入门" class="headerlink" title="TypeScript 入门"></a>TypeScript 入门</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>JavaScript 是一门弱类型语言，没有类型检测，这让 JavaScript 很灵活，但也更容易出错</p>
+<blockquote>
+<p>TypeScript 是一种由微软开发的自由和开源的编程语言。它是 JavaScript 的一个超集，而且本质上向这个语言添加了可选的静态类型和基于类的面向对象编程。  </p>
+</blockquote>
+<h2 id="网站"><a href="#网站" class="headerlink" title="网站"></a>网站</h2><blockquote>
+<p>官网<br><a href="http://www.typescriptlang.org/" target="_blank" rel="external">TypeScript</a><br>中文文档<br><a href="https://www.tslang.cn/index.html" target="_blank" rel="external">tslang</a><br>查看编译后的结果<br><a href="http://www.typescriptlang.org/play/index.html" target="_blank" rel="external">typescriptlang</a></p>
+</blockquote>
+<h2 id="很多项目开始使用-TypeScript"><a href="#很多项目开始使用-TypeScript" class="headerlink" title="很多项目开始使用 TypeScript"></a>很多项目开始使用 TypeScript</h2><blockquote>
+<p>Angular</p>
+<div class="github-widget" data-repo="angular/angular"></div>
+
+<p>VSCode</p>
+<div class="github-widget" data-repo="Microsoft/vscode"></div>
+
+<p>RxJS</p>
+<div class="github-widget" data-repo="Reactive-Extensions/RxJS"></div>
+
+</blockquote>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><pre><code>npm install -g typescript
 </code></pre><h3 id="安装完后运行-tsc-v-查看是否正确安装"><a href="#安装完后运行-tsc-v-查看是否正确安装" class="headerlink" title="安装完后运行 tsc -v 查看是否正确安装"></a>安装完后运行 tsc -v 查看是否正确安装</h3><pre><code>tsc -v
 Version 2.4.2
-</code></pre><h3 id="查看帮助"><a href="#查看帮助" class="headerlink" title="查看帮助"></a>查看帮助</h3><p>tsc -h 或 tsc –help 查看帮助</p><pre><code>$ tsc -h
+</code></pre><h3 id="查看帮助"><a href="#查看帮助" class="headerlink" title="查看帮助"></a>查看帮助</h3><p>tsc -h 或 tsc –help 查看帮助</p>
+<pre><code>$ tsc -h
 Version 2.4.2
 Syntax:  tsc [options] [file ...]
 
@@ -43,8 +559,24 @@ Examples: tsc hello.ts
           tsc @args.txt
 Options:
 ...
-</code></pre><h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>生成默认的配置文件 tsconfig.json</p><pre><code>tsc init
-</code></pre><ul><li>配置 es6</li></ul><p><img src="http://upload-images.jianshu.io/upload_images/3563580-084ac9734f4aceab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><h3 id="支持-TypeScript-的文本编辑器和-IDE"><a href="#支持-TypeScript-的文本编辑器和-IDE" class="headerlink" title="支持 TypeScript 的文本编辑器和 IDE"></a>支持 TypeScript 的文本编辑器和 IDE</h3><p>通过本身或插件支持 TypeScript 的语法、智能提示、纠错等</p><ul><li>VSCode 微软开发的轻量级编辑器，内置支持 TypeScript</li><li>Sublime Text 有相关插件</li><li>WebStorm 新版内置支持 TypeScript</li><li>其他包括 Vim，Atom，Emacs 等</li></ul><h3 id="将-TypeScrip-编译成-JavaScript"><a href="#将-TypeScrip-编译成-JavaScript" class="headerlink" title="将 TypeScrip 编译成 JavaScript"></a>将 TypeScrip 编译成 JavaScript</h3><p>TypeScript 的文件类型是. ts 文件或 JSX 中的. tsx 文件，不能直接运行在浏览器中，需要编译成. js 文件</p><p>方法：</p><ol><li><p>用命令行工具进行编译</p><pre><code>
+</code></pre><h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>生成默认的配置文件 tsconfig.json</p>
+<pre><code>tsc init
+</code></pre><ul>
+<li>配置 es6</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/3563580-084ac9734f4aceab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="支持-TypeScript-的文本编辑器和-IDE"><a href="#支持-TypeScript-的文本编辑器和-IDE" class="headerlink" title="支持 TypeScript 的文本编辑器和 IDE"></a>支持 TypeScript 的文本编辑器和 IDE</h3><p>通过本身或插件支持 TypeScript 的语法、智能提示、纠错等</p>
+<ul>
+<li>VSCode 微软开发的轻量级编辑器，内置支持 TypeScript</li>
+<li>Sublime Text 有相关插件</li>
+<li>WebStorm 新版内置支持 TypeScript</li>
+<li>其他包括 Vim，Atom，Emacs 等</li>
+</ul>
+<h3 id="将-TypeScrip-编译成-JavaScript"><a href="#将-TypeScrip-编译成-JavaScript" class="headerlink" title="将 TypeScrip 编译成 JavaScript"></a>将 TypeScrip 编译成 JavaScript</h3><p>TypeScript 的文件类型是. ts 文件或 JSX 中的. tsx 文件，不能直接运行在浏览器中，需要编译成. js 文件</p>
+<p>方法：</p>
+<ol>
+<li><p>用命令行工具进行编译</p>
+<pre><code>
 Syntax:  tsc [options] [file ...]
 
 Examples: tsc hello.ts
@@ -52,14 +584,26 @@ Examples: tsc hello.ts
         tsc --outFile file.js file.ts
 
         tsc @args.txt
-</code></pre><p>最后一个的作用是从一个文件中插入命令行选项和文件</p><pre><code>
+</code></pre><p>最后一个的作用是从一个文件中插入命令行选项和文件</p>
+<pre><code>
 @&lt;file&gt;    Insert command line options and files from a file.
-</code></pre></li><li><p>在 VSCode 或其他文本编辑器和 IDE 上操作</p></li><li><p>使用自动化构建工具，如 gulp， webpack 等</p></li></ol><h3 id="介绍一下第一种方法"><a href="#介绍一下第一种方法" class="headerlink" title="介绍一下第一种方法"></a>介绍一下第一种方法</h3><p>下面的命令行把 TypeScript 文件 main.ts 编译为 JavaScript 版本的 main.js。如果 main.js 已经存在的话会被覆盖。</p><pre><code>    tsc main.ts
-</code></pre><p>可以同时编译多个文件</p><pre><code>tsc main.ts other.ts
+</code></pre></li>
+<li><p>在 VSCode 或其他文本编辑器和 IDE 上操作</p>
+</li>
+<li><p>使用自动化构建工具，如 gulp， webpack 等</p>
+</li>
+</ol>
+<h3 id="介绍一下第一种方法"><a href="#介绍一下第一种方法" class="headerlink" title="介绍一下第一种方法"></a>介绍一下第一种方法</h3><p>下面的命令行把 TypeScript 文件 main.ts 编译为 JavaScript 版本的 main.js。如果 main.js 已经存在的话会被覆盖。</p>
+<pre><code>    tsc main.ts
+</code></pre><p>可以同时编译多个文件</p>
+<pre><code>tsc main.ts other.ts
 
 tsc *.ts
-</code></pre><p>还可以通过 –watch 或 - w 来自动编译 (修改后能自动转成. js 文件)</p><pre><code>tsc main.ts --watch
-</code></pre><h3 id="静态类型"><a href="#静态类型" class="headerlink" title="静态类型"></a>静态类型</h3><p>TypeScript 可以声明变量类型，这样编译器就可以确保赋值时不会产生类型错误<br>如果省略了类型声明，TypeScript 将会从代码中自动推测出正确的类型。</p><p>在变量，函数声明时可以定义自己的类型</p><pre><code>var burger: string = &#39;hamburger&#39;,    // String 
+</code></pre><p>还可以通过 –watch 或 - w 来自动编译 (修改后能自动转成. js 文件)</p>
+<pre><code>tsc main.ts --watch
+</code></pre><h3 id="静态类型"><a href="#静态类型" class="headerlink" title="静态类型"></a>静态类型</h3><p>TypeScript 可以声明变量类型，这样编译器就可以确保赋值时不会产生类型错误<br>如果省略了类型声明，TypeScript 将会从代码中自动推测出正确的类型。</p>
+<p>在变量，函数声明时可以定义自己的类型</p>
+<pre><code>var burger: string = &#39;hamburger&#39;,    // String 
     calories: number = 300,          // Numeric
     tasty: boolean = true;            // Boolean
 
@@ -68,7 +612,8 @@ function speak(food: string, energy: number): void {
 }
 
 speak(burger, calories);
-</code></pre><p>编译后变量声明都会被移除</p><pre><code>var burger = &#39;hamburger&#39;,
+</code></pre><p>编译后变量声明都会被移除</p>
+<pre><code>var burger = &#39;hamburger&#39;,
     calories = 300, 
     tasty = true; 
 
@@ -77,41 +622,67 @@ function speak(food, energy) {
 }
 
 speak(burger, calories);
-</code></pre><p>如果输入的类型有错，TypeScript 会有代码警告<br>但还是会转成 js 文件</p><p>ts 文件</p><pre><code>var carNum: Number = &#39;10&#39;
+</code></pre><p>如果输入的类型有错，TypeScript 会有代码警告<br>但还是会转成 js 文件</p>
+<p>ts 文件</p>
+<pre><code>var carNum: Number = &#39;10&#39;
 </code></pre><pre><code>$ tsc err.ts --watch
 err.ts(1,5): error TS2322: Type &#39;&quot;10&quot;&#39; is not assignable to type &#39;Number&#39;.
 10:36:46 - Compilation complete. Watching for file changes.
-</code></pre><p>js 文件</p><pre><code>var carNum = &#39;10&#39;;
-</code></pre><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><ul><li>Number ( 数值 ) - 包括整型，浮点型等</li></ul><pre><code>let decimal: number = 6;
+</code></pre><p>js 文件</p>
+<pre><code>var carNum = &#39;10&#39;;
+</code></pre><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><ul>
+<li>Number ( 数值 ) - 包括整型，浮点型等</li>
+</ul>
+<pre><code>let decimal: number = 6;
 let hex: number = 0xf00d;
 let binary: number = 0b1010;
 let octal: number = 0o744;
-</code></pre><ul><li>String （字符串）- 包括单双引号的字符串</li></ul><pre><code>let color: string = &quot;blue&quot;;
+</code></pre><ul>
+<li>String （字符串）- 包括单双引号的字符串</li>
+</ul>
+<pre><code>let color: string = &quot;blue&quot;;
 color = &#39;red&#39;;
 let sentence: string = `Hello, my name is ${ fullName }.
 I&#39;ll be ${ age + 1 } years old next month.`;
-</code></pre><ul><li>Boolean （布尔）- true ,false, 不可用其他类型如数字, 空字符串，否则会报错</li></ul><pre><code>let isDone: boolean = false
-</code></pre><ul><li>Array （数组）- 有两种语法：my_arr: number[ ] 或者 my_arr: Array<number></number></li></ul><pre><code>let list: number[] = [1, 2, 3]
+</code></pre><ul>
+<li>Boolean （布尔）- true ,false, 不可用其他类型如数字, 空字符串，否则会报错 </li>
+</ul>
+<pre><code>let isDone: boolean = false
+</code></pre><ul>
+<li>Array （数组）- 有两种语法：my_arr: number[ ] 或者 my_arr: Array<number></number></li>
+</ul>
+<pre><code>let list: number[] = [1, 2, 3]
 
 let list: Array&lt;number&gt; = [1, 2, 3]
-</code></pre><ul><li>Tuple ( 元组 ) - 数组中包含不同的类型，有顺序</li></ul><pre><code>let x: [string, number];
+</code></pre><ul>
+<li>Tuple ( 元组 ) - 数组中包含不同的类型，有顺序</li>
+</ul>
+<pre><code>let x: [string, number];
 x = [&quot;hello&quot;, 10]; // OK
 x = [10, &quot;hello&quot;]; // Error
-</code></pre><p>使用不是该数据类型的方法会报错</p><pre><code>console.log(x[0].substr(1)); // OK
+</code></pre><p>使用不是该数据类型的方法会报错</p>
+<pre><code>console.log(x[0].substr(1)); // OK
 console.log(x[1].substr(1)); // Error, &#39;number&#39; does not have &#39;substr&#39;
-</code></pre><p>新赋值的类型必须是定义时规定的类型</p><pre><code>x[3] = &quot;world&quot;; // OK, &#39;string&#39; can be assigned to &#39;string | number&#39;
+</code></pre><p>新赋值的类型必须是定义时规定的类型</p>
+<pre><code>x[3] = &quot;world&quot;; // OK, &#39;string&#39; can be assigned to &#39;string | number&#39;
 
 console.log(x[5].toString()); // OK, &#39;string&#39; and &#39;number&#39; both have &#39;toString&#39;
 
 x[6] = true; // Error, &#39;boolean&#39; isn&#39;t&#39;string | number&#39;
-</code></pre><ul><li>Enum （枚举类型）- 它用于声明一组命名的常数，当一个变量有几种可能的取值时，可以将它定义为枚举类型。</li></ul><p>让代码更有语义化, 可读性</p><pre><code>enum Color {Red, Green, Blue}
+</code></pre><ul>
+<li>Enum （枚举类型）- 它用于声明一组命名的常数，当一个变量有几种可能的取值时，可以将它定义为枚举类型。</li>
+</ul>
+<p>让代码更有语义化, 可读性</p>
+<pre><code>enum Color {Red, Green, Blue}
 let c: Color = Color.Green;
-</code></pre><p>枚举类型的数字默认从 0 开始，可以自己设置</p><pre><code>enum Color {Red = 1, Green, Blue}
+</code></pre><p>枚举类型的数字默认从 0 开始，可以自己设置</p>
+<pre><code>enum Color {Red = 1, Green, Blue}
 let c: Color = Color.Green;
 
 enum Color {Red = 1, Green = 2, Blue = 4}
 let c: Color = Color.Green;
-</code></pre><p>当不知道 enum 类型的第 N 项是什么名称时，可以用 N 来代替</p><pre><code>enum Color {Red = 1, Green, Blue}
+</code></pre><p>当不知道 enum 类型的第 N 项是什么名称时，可以用 N 来代替</p>
+<pre><code>enum Color {Red = 1, Green, Blue}
 let colorName: string = Color[2];
 
 alert(colorName);
@@ -123,7 +694,11 @@ alert(colorName);
 })(Color || (Color = {}));
 var colorName = Color[2];
 alert(colorName);
-</code></pre><ul><li>Any （任意）- 任何类型都可以（Never 类型除外）</li></ul><p>关闭类型检查</p><pre><code>let notSure: any = 4;
+</code></pre><ul>
+<li>Any （任意）- 任何类型都可以（Never 类型除外）</li>
+</ul>
+<p>关闭类型检查</p>
+<pre><code>let notSure: any = 4;
 notSure = &quot;maybe a string instead&quot;;
 notSure = false; // okay, definitely a boolean
 </code></pre><pre><code>let notSure: any = 4;
@@ -135,13 +710,28 @@ prettySure.toFixed(); // Error: Property &#39;toFixed&#39; doesn&#39;t exist on 
 </code></pre><pre><code>let list: any[] = [1, true, &quot;free&quot;];
 
 list[1] = 100;
-</code></pre><ul><li>Void （空）- 用在不返回任何值的函数中</li></ul><pre><code>function warnUser(): void {
+</code></pre><ul>
+<li>Void （空）- 用在不返回任何值的函数中</li>
+</ul>
+<pre><code>function warnUser(): void {
     alert(&quot;This is my warning message&quot;);
 }
-</code></pre><p>可以用来标识 undefined 和 null</p><pre><code>let unusable: void = undefined;
-</code></pre><ul><li>Null and Undefined</li></ul><pre><code>let u: undefined = undefined;
+</code></pre><p>可以用来标识 undefined 和 null</p>
+<pre><code>let unusable: void = undefined;
+</code></pre><ul>
+<li>Null and Undefined</li>
+</ul>
+<pre><code>let u: undefined = undefined;
 let n: null = null;
-</code></pre><p>默认为其他类型的亚类型，就是可以匹配其他类型<br>使用 –strictNullChecks 标识，就只匹配 null 、undefined、void<br>可以使用 string | null | undefined 类型来只匹配 string 、 null 、 undefined 三种类型</p><blockquote><p>官方鼓励使用 –strictNullChecks</p></blockquote><ul><li>Never - 表示值从未发生</li></ul><p>Any 类型不能匹配 Never</p><pre><code>// Function returning never must have unreachable end point
+</code></pre><p>默认为其他类型的亚类型，就是可以匹配其他类型<br>使用 –strictNullChecks 标识，就只匹配 null 、undefined、void<br>可以使用 string | null | undefined 类型来只匹配 string 、 null 、 undefined 三种类型</p>
+<blockquote>
+<p>官方鼓励使用 –strictNullChecks</p>
+</blockquote>
+<ul>
+<li>Never - 表示值从未发生</li>
+</ul>
+<p>Any 类型不能匹配 Never</p>
+<pre><code>// Function returning never must have unreachable end point
 function error(message: string): never {
     throw new Error(message);
 }
@@ -156,13 +746,24 @@ function infiniteLoop(): never {
     while (true) {
     }
 }
-</code></pre><ul><li>Type assertions</li></ul><p>“angle-bracket” syntax</p><pre><code>let someValue: any = &quot;this is a string&quot;;
+</code></pre><ul>
+<li>Type assertions</li>
+</ul>
+<p>“angle-bracket” syntax</p>
+<pre><code>let someValue: any = &quot;this is a string&quot;;
 
 let strLength: number = (&lt;string&gt;someValue).length;
-</code></pre><p>as -syntax</p><pre><code>let someValue: any = &quot;this is a string&quot;;
+</code></pre><p>as -syntax</p>
+<pre><code>let someValue: any = &quot;this is a string&quot;;
 
 let strLength: number = (someValue as string).length;
-</code></pre><p>一般情况下，两种写法等价，但在 JSX 中，只能用 as -style</p><blockquote><p>官方文档中关于数据类型的介绍 <a href="http://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" rel="external">Basic Types</a></p></blockquote><h3 id="Interfaces-接口"><a href="#Interfaces-接口" class="headerlink" title="Interfaces 接口"></a>Interfaces 接口</h3><p>接口会根据一个对象是否符合某种特定的数据结构来进行类型检查</p><p>只在开发是有效，编译后删除</p><pre><code>interface Food {
+</code></pre><p>一般情况下，两种写法等价，但在 JSX 中，只能用 as -style</p>
+<blockquote>
+<p>官方文档中关于数据类型的介绍 <a href="http://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" rel="external">Basic Types</a></p>
+</blockquote>
+<h3 id="Interfaces-接口"><a href="#Interfaces-接口" class="headerlink" title="Interfaces 接口"></a>Interfaces 接口</h3><p>接口会根据一个对象是否符合某种特定的数据结构来进行类型检查</p>
+<p>只在开发是有效，编译后删除</p>
+<pre><code>interface Food {
     name: string;
     calories: number;
 }
@@ -177,7 +778,8 @@ var ice_cream = {
 }
 
 speak(ice_cream);
-</code></pre><p>属性的顺序并不重要。我们只需必要的属性存在并且是正确的类型。如果哪里有遗漏，类型错误，或者命名不同的话，编译器都会报警告信息。</p><pre><code>interface Food {
+</code></pre><p>属性的顺序并不重要。我们只需必要的属性存在并且是正确的类型。如果哪里有遗漏，类型错误，或者命名不同的话，编译器都会报警告信息。</p>
+<pre><code>interface Food {
     name: string;
     calories: number;
 }
@@ -196,14 +798,19 @@ speak(ice_cream);
 </code></pre><pre><code>main.ts(16,7): error TS2345: Argument of type &#39;{ nmae: string; calories: number; } 
 is not assignable to parameter of type &#39;Food&#39;. 
 Property &#39;name&#39; is missing in type &#39;{ nmae: string; calories: number; }&#39;.
-</code></pre><p>接口可以在属性后面添加？表示可选<br>可以添加 [propName: 类型] : any 表示可以添加任何某种类型的属性</p><pre><code>interface Person {    name: string;
+</code></pre><p>接口可以在属性后面添加？表示可选<br>可以添加 [propName:  类型] : any 表示可以添加任何某种类型的属性</p>
+<pre><code>interface Person {    name: string;
     age?: number;
     [propName: string]: any;
 }
 
 const preson: Person = { name: &#39;Tom&#39;, age: 20}
 const student: Person = { name: &#39;Tom&#39;}
-</code></pre><ul><li>类实现接口</li></ul><p>关键字 implements</p><pre><code>interface ClockInterface {
+</code></pre><ul>
+<li>类实现接口</li>
+</ul>
+<p>关键字 implements</p>
+<pre><code>interface ClockInterface {
     currentTime: Date;
 }
 
@@ -223,7 +830,17 @@ class Clock implements ClockInterface {
     }
     constructor(h: number, m: number) { }
 }
-</code></pre><blockquote><p>官方文档有更详细的介绍 <a href="http://www.typescriptlang.org/docs/handbook/interfaces.html" target="_blank" rel="external">interfaces</a></p></blockquote><h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><p>包括了构造器、继承，抽象类，接口，构造函数、setters、getters、public、private、protected、readonly、static 等</p><p>ES6 中也有实现</p><ul><li>属性<br>默认为 public<br>private 只有自己可以用<br>protected 自己和子类可用<br>readonly 只读 (原理 object.freeze)</li><li>抽象类 不能实例化</li></ul><p>实现继承</p><pre><code>class Menu {
+</code></pre><blockquote>
+<p>官方文档有更详细的介绍 <a href="http://www.typescriptlang.org/docs/handbook/interfaces.html" target="_blank" rel="external">interfaces</a></p>
+</blockquote>
+<h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><p>包括了构造器、继承，抽象类，接口，构造函数、setters、getters、public、private、protected、readonly、static 等</p>
+<p>ES6 中也有实现</p>
+<ul>
+<li>属性<br>默认为 public<br>private 只有自己可以用<br>protected 自己和子类可用<br>readonly 只读 (原理 object.freeze)</li>
+<li>抽象类 不能实例化</li>
+</ul>
+<p>实现继承</p>
+<pre><code>class Menu {
   // Our properties:
   // By default they are public, but can also be private or protected.
   items: Array&lt;string&gt;;  // The items in the menu, an array of strings.
@@ -276,7 +893,11 @@ var menu_for_children = new HappyMeal([&quot;candy&quot;,&quot;drink&quot;,&quot
 
 // This time the log message will begin with the special introduction.
 menu_for_children.list();
-</code></pre><blockquote><p>阅读官方文档，获得更多信息 <a href="http://www.typescriptlang.org/docs/handbook/classes.html" target="_blank" rel="external">classes</a></p></blockquote><h3 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h3><p>泛型是允许同一个函数接受不同类型参数的一种模板。相比于使用 any 类型，使用泛型来创建可复用的组件要更好，因为泛型会保留参数类型。</p><pre><code>function genericFunc&lt;T&gt;(argument: T): T[] {    
+</code></pre><blockquote>
+<p>阅读官方文档，获得更多信息 <a href="http://www.typescriptlang.org/docs/handbook/classes.html" target="_blank" rel="external">classes</a></p>
+</blockquote>
+<h3 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h3><p>泛型是允许同一个函数接受不同类型参数的一种模板。相比于使用 any 类型，使用泛型来创建可复用的组件要更好，因为泛型会保留参数类型。</p>
+<pre><code>function genericFunc&lt;T&gt;(argument: T): T[] {    
   var arrayOfT: T[] = [];    // Create empty array of type T.
   arrayOfT.push(argument);  // Push, now arrayOfT = [argument].
   return arrayOfT;
@@ -289,10 +910,16 @@ console.log(typeof arrayFromString[0])  // String
 var arrayFromNumber = genericFunc(42);
 console.log(arrayFromNumber[0]);        // 42
 console.log(typeof arrayFromNumber[0])  // number
-</code></pre><ul><li>带泛型的函数类型</li></ul><pre><code>let f: () =&gt; any = function() {}
+</code></pre><ul>
+<li>带泛型的函数类型</li>
+</ul>
+<pre><code>let f: () =&gt; any = function() {}
 
 let f: &lt;T&gt;(arg: T) =&gt; T = function() {}
-</code></pre><ul><li>带泛型的接口</li></ul><pre><code>interface Gen&lt;T&gt; {    (arg: T) : T
+</code></pre><ul>
+<li>带泛型的接口</li>
+</ul>
+<pre><code>interface Gen&lt;T&gt; {    (arg: T) : T
 }
 
 function fn&lt;T&gt;(arg: T): T {
@@ -302,7 +929,10 @@ function fn&lt;T&gt;(arg: T): T {
 let id: Gen&lt;number&gt; = fn;
 
 Gen(2)
-</code></pre><ul><li>带泛型的类</li></ul><pre><code>class Gen&lt;T&gt; {    value: T
+</code></pre><ul>
+<li>带泛型的类 </li>
+</ul>
+<pre><code>class Gen&lt;T&gt; {    value: T
     add: (x: T, y: T) =&gt; T
 }
 
@@ -312,7 +942,10 @@ myGenNum.value = 0
 myGenNum.add = (x, y) =&gt; x + y
 
 myGenNum.add(2,3)
-</code></pre><ul><li>泛型约束</li></ul><pre><code>interface Length {    
+</code></pre><ul>
+<li>泛型约束</li>
+</ul>
+<pre><code>interface Length {    
     length: number
 }
 
@@ -322,39 +955,460 @@ function fn&lt;T extends Length&gt;(arg: T): T {
 }
 
 fn&lt;string&gt;(&quot;hello&quot;)
-</code></pre><blockquote><p>官方文档介绍了更多关于泛型类，泛型类与接口绑定等例子<br><a href="http://www.typescriptlang.org/docs/handbook/generics.html" target="_blank" rel="external">generics</a></p></blockquote><h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><pre><code>function add(x: number, y: number): number {
+</code></pre><blockquote>
+<p>官方文档介绍了更多关于泛型类，泛型类与接口绑定等例子<br><a href="http://www.typescriptlang.org/docs/handbook/generics.html" target="_blank" rel="external">generics</a></p>
+</blockquote>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><pre><code>function add(x: number, y: number): number {
     return x + y;
 }
 
 let myAdd = function(x: number, y: number): number { return x+y; };
-</code></pre><ul><li>箭头函数</li></ul><pre><code>// myAdd has the full function type
+</code></pre><ul>
+<li>箭头函数</li>
+</ul>
+<pre><code>// myAdd has the full function type
 let myAdd = function(x: number, y: number): number { return  x + y; };
 
 // The parameters &#39;x&#39; and &#39;y&#39; have the type number
 let myAdd: (baseValue:number, increment:number) =&gt; number =
     function(x, y) { return x + y; };
-</code></pre><p>参数可选</p><pre><code>function buildName(firstName: string, lastName?: string) {
+</code></pre><p>参数可选</p>
+<pre><code>function buildName(firstName: string, lastName?: string) {
     // ...
 }
-</code></pre><p>剩余参数</p><pre><code>function buildName(firstName: string, ...restOfName: string[]) {
+</code></pre><p>剩余参数</p>
+<pre><code>function buildName(firstName: string, ...restOfName: string[]) {
     return firstName + &quot;&quot; + restOfName.join(&quot; &quot;);
 }
 
 let employeeName = buildName(&quot;Joseph&quot;, &quot;Samuel&quot;, &quot;Lucas&quot;, &quot;MacKinzie&quot;);
-</code></pre><blockquote><p>官方文档 <a href="http://www.typescriptlang.org/docs/handbook/functions.html" target="_blank" rel="external">functions</a></p></blockquote><h3 id="高级类型"><a href="#高级类型" class="headerlink" title="高级类型"></a>高级类型</h3><ul><li>联合</li></ul><pre><code>function padLeft(value: string, padding: string | number) {
+</code></pre><blockquote>
+<p>官方文档 <a href="http://www.typescriptlang.org/docs/handbook/functions.html" target="_blank" rel="external">functions</a></p>
+</blockquote>
+<h3 id="高级类型"><a href="#高级类型" class="headerlink" title="高级类型"></a>高级类型</h3><ul>
+<li>联合</li>
+</ul>
+<pre><code>function padLeft(value: string, padding: string | number) {
     // ...
 }
 
 let indentedString = padLeft(&quot;Hello world&quot;, true); // errors during compilation
-</code></pre><blockquote><p>官方文档 <a href="http://www.typescriptlang.org/docs/handbook/advanced-types.html" target="_blank" rel="external">Advanced Types</a></p></blockquote><h3 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h3><p>如：require.js （AMD 规范）</p><p>exporter.ts</p><pre><code>var sayHi = function(): void {
+</code></pre><blockquote>
+<p>官方文档 <a href="http://www.typescriptlang.org/docs/handbook/advanced-types.html" target="_blank" rel="external">Advanced Types</a></p>
+</blockquote>
+<h3 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h3><p>如：require.js （AMD 规范）</p>
+<p>exporter.ts</p>
+<pre><code>var sayHi = function(): void {
     console.log(&quot;Hello!&quot;);
 }
 
 export = sayHi;
-</code></pre><p>importer.ts</p><pre><code>import sayHi = require(&#39;./exporter&#39;);
+</code></pre><p>importer.ts</p>
+<pre><code>import sayHi = require(&#39;./exporter&#39;);
 sayHi();
-</code></pre><p>引入 require.js，查看官方文档 <a href="http://requirejs.org/docs/start.html#add" target="_blank" rel="external">requirejs</a></p><pre><code>tsc --module amd *.ts
-</code></pre><blockquote><p>更多模块化的内容，可查看官方文档 <a href="http://www.typescriptlang.org/docs/handbook/modules.html" target="_blank" rel="external">modules</a></p></blockquote><h3 id="第三方声明文件"><a href="#第三方声明文件" class="headerlink" title="第三方声明文件"></a>第三方声明文件</h3><p>声明文件用来是说明第三方 JavaScript 库是否和 TypeScript 兼容<br>一个声明文件包含. d.ts 扩展名和关于该库的多种信息，还有 API</p><p>声明文件通常是手写的，但也可以用其他人写好的<br><a href="http://definitelytyped.org/" target="_blank" rel="external">DefinitelyTyped</a></p><ul><li>The repository for high quality TypeScript type definitions<br>也有一个用来管理 TypeScript 定义的 Node.js 流行模块，叫 Typings。</li></ul><blockquote><p>官方文档 <a href="http://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html" target="_blank" rel="external">introduction</a></p></blockquote><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p> <strong>三十分钟学会 TypeScript</strong>: <a href="http://web.jobbole.com/87535/" target="_blank" rel="external">http://web.jobbole.com/87535/</a><br> <strong>官方文档</strong> : <a href="http://www.typescriptlang.org/docs/home.html" target="_blank" rel="external">http://www.typescriptlang.org/docs/home.html</a><br> <strong>中文文档</strong> : <a href="https://www.tslang.cn/index.html" target="_blank" rel="external">https://www.tslang.cn/index.html</a></p><blockquote style="margin:2em 0 0;padding:.5em 1em;border-left:3px solid #f44336;background-color:#f5f5f5;list-style:none"><p><strong><div class="fa-license"> <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a></div></strong><br> <strong>本文链接：</strong><a href="http://ldq-first.github.io/2017/08/12/TypeScript-入门/">http://ldq-first.github.io/2017/08/12/TypeScript-入门/</a></p></blockquote></div><div id="gitment-comment"><div id="container"></div></div><style>#gitment-comment{background-color:#eee;padding:2pc}</style><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"><script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script><script>var gitment=new Gitment({owner:"LDQ-first",repo:"ldq-first.github.io",oauth:{client_id:"20b5b063fd83c9fee396",client_secret:"98c7739adae2875d0818a788a78a5df4fcaaa724"}});gitment.render("container")</script></div><nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col"> <a href="/2017/08/15/Vue版商城-一/" id="post_nav-newer" class="prev-content"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation"> <i class="material-icons">arrow_back</i></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 新篇</a><div class="section-spacer"></div> <a href="/2017/08/10/Koa-入门/" id="post_nav-older" class="next-content">旧篇 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation"> <i class="material-icons">arrow_forward</i></button></a></nav></div></div><div class="sidebar-overlay"></div><aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation"><div id="sidebar-main"><div class="sidebar-header header-cover" style="background-image:url(/img/05.gif)"><div class="top-bar"></div> <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display:initial" data-upgraded=",MaterialButton,MaterialRipple"> <i class="material-icons">clear_all</i><span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button><div class="sidebar-image"> <img src="/img/pikachu.svg" alt="ldq's avatar"></div> <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">178848890@qq.com<b class="caret"></b></a></div><ul class="nav sidebar-nav"><li class="dropdown"><ul id="settings-dropdown" class="dropdown-menu"><li> <a href="#" target="_blank" title="Email Me"><i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i> Email Me</a></li></ul></li><li id="sidebar-first-li"> <a href="/"><i class="material-icons sidebar-material-icons">home</i> 主页</a></li><li class="dropdown"> <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown"><i class="material-icons sidebar-material-icons">inbox</i> 归档<b class="caret"></b></a><ul class="dropdown-menu"><li> <a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/11/">十一月 2016<span class="sidebar_archives-count">1</span></a></li></ul></li><li class="dropdown"> <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown"><i class="material-icons sidebar-material-icons">chrome_reader_mode</i> 分类<b class="caret"></b></a><ul class="dropdown-menu"><li> <a class="sidebar_archives-link" href="/categories/test/">test<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/test/图片/">图片<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/技术/">技术<span class="sidebar_archives-count">26</span></a></li><li><a class="sidebar_archives-link" href="/categories/技术/hexo/">hexo<span class="sidebar_archives-count">1</span></a></li></ul></li><li> <a href="/about" title="关于"><i class="material-icons sidebar-material-icons">person</i> 关于</a></li><li> <a href="/tags" title="标签"><i class="material-icons sidebar-material-icons">bookmark</i> 标签</a></li><li class="divider"></li><li> <a href="/music" title="音乐盒"><i class="material-icons sidebar-material-icons">music_note</i> 音乐盒</a></li></ul><div class="sidebar-divider"></div><a href="https://github.com/viosey/hexo-theme-material" class="sidebar-footer-text-a" target="_blank"><div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple"> 主题 - Material <span class="sidebar-badge badge-circle">i</span></div></a></div> <span id="footer-image"><a href="#" target="_blank" title="upyun_logo"><img src="/img/08.gif" alt="upyun_logo"></a></span></aside><div id="back-to-top" class="toTop-wrap"> <a href="#top" class="toTop"><i class="material-icons footer_top-i">expand_less</i></a></div><footer class="mdl-mini-footer" id="bottom"><div class="mdl-mini-footer--left-section sns-list"> <a href="https://github.com/LDQ-first" target="_blank"><button class="mdl-mini-footer--social-btn social-btn footer-sns-github"> <span class="visuallyhidden">Github</span></button></a></div><div id="copyright"> Copyright&nbsp;©&nbsp;2016&nbsp;-<script type="text/javascript">var fd=new Date;document.write("&nbsp;"+fd.getFullYear()+"&nbsp;")</script>LDQ的博客<br><div class="fa-hosted"> Hosted by <a href="https://pages.coding.me" style="font-weight:700;text-decoration:none" target="_blank" title="静态网站触及全球">Coding Pages</a>, <a href="https://pages.github.com/" target="_blank" style="font-weight:700;text-decoration:none" title="Websites for you and your projects">GitHub Pages</a></div><div class="fa-license"> <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a></div></div><div class="mdl-mini-footer--right-section"><div><div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div><div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div></div></div><script src="/js/player.min.js"></script></footer><script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==",!0)</script><script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==",!0)</script><script>lsloader.load("np_js","https://cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js",!0)</script><script type="text/ls-javascript" id="NProgress-script">
+</code></pre><p>引入 require.js，查看官方文档 <a href="http://requirejs.org/docs/start.html#add" target="_blank" rel="external">requirejs</a></p>
+<pre><code>tsc --module amd *.ts
+</code></pre><blockquote>
+<p>更多模块化的内容，可查看官方文档 <a href="http://www.typescriptlang.org/docs/handbook/modules.html" target="_blank" rel="external">modules</a></p>
+</blockquote>
+<h3 id="第三方声明文件"><a href="#第三方声明文件" class="headerlink" title="第三方声明文件"></a>第三方声明文件</h3><p>声明文件用来是说明第三方 JavaScript 库是否和 TypeScript 兼容<br>一个声明文件包含. d.ts 扩展名和关于该库的多种信息，还有 API</p>
+<p>声明文件通常是手写的，但也可以用其他人写好的<br><a href="http://definitelytyped.org/" target="_blank" rel="external">DefinitelyTyped</a></p>
+<ul>
+<li>The repository for high quality TypeScript type definitions<br>也有一个用来管理 TypeScript 定义的 Node.js 流行模块，叫 Typings。</li>
+</ul>
+<blockquote>
+<p>官方文档 <a href="http://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html" target="_blank" rel="external">introduction</a></p>
+</blockquote>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><strong> 三十分钟学会 TypeScript</strong>: <a href="http://web.jobbole.com/87535/" target="_blank" rel="external">http://web.jobbole.com/87535/</a><br><strong> 官方文档 </strong>: <a href="http://www.typescriptlang.org/docs/home.html" target="_blank" rel="external">http://www.typescriptlang.org/docs/home.html</a><br><strong> 中文文档 </strong>: <a href="https://www.tslang.cn/index.html" target="_blank" rel="external">https://www.tslang.cn/index.html</a></p>
+
+        
+                <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
+                    <p><strong>
+                         
+                            <div class="fa-license"> <span>许可协议:</span><i class="fa fa-creative-commons"></i>  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"  title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> </div>
+                        </strong>
+                        <br>
+                        <strong>本文链接：</strong><a href="http://ldq-first.github.io/2017/08/12/TypeScript-入门/">http://ldq-first.github.io/2017/08/12/TypeScript-入门/</a>
+                    </p>
+                </blockquote>
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 gitcoment -->
+<div id="gitment-comment">
+    <!-- Gitment 评论框 -->
+<div id="container"></div>
+</div>
+<style>
+    #gitment-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+        //id: '页面 ID', // 可选。默认为 location.href
+        owner: 'LDQ-first',
+        repo: 'ldq-first.github.io',
+        oauth: {
+            client_id: '20b5b063fd83c9fee396',
+            client_secret: '98c7739adae2875d0818a788a78a5df4fcaaa724',
+        },
+    })
+    gitment.render('container')
+</script>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2017/08/15/Vue版商城-一/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/08/10/Koa-入门/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/05.gif);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/pikachu.svg" alt="ldq's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        178848890@qq.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/11/">十一月 2016<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/test/">test<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/test/图片/">图片<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/技术/">技术<span class="sidebar_archives-count">26</span></a></li><li><a class="sidebar_archives-link" href="/categories/技术/hexo/">hexo<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/about" title="关于">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                关于
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/tags" title="标签">
+                
+                    <i class="material-icons sidebar-material-icons">bookmark</i>
+                
+                标签
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+        <li>
+            <a href="/music" title="音乐盒">
+                
+                    <i class="material-icons sidebar-material-icons">music_note</i>
+                
+                音乐盒
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+    <span id="footer-image">
+        <a href="#" target="_blank" title="upyun_logo">
+            <img src="/img/08.gif" alt="upyun_logo"><!--
+     --></a>
+    </span>
+
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/LDQ-first" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2016&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>LDQ的博客
+            
+                <br>
+                
+                    <div class="fa-hosted"> Hosted by <a href="https://pages.coding.me" style="font-weight: bold;text-decoration: none" target="_blank" title="静态网站触及全球">Coding Pages</a>, <a href="https://pages.github.com/" target="_blank" style="font-weight: bold;text-decoration: none" title="Websites for you and your projects">GitHub Pages</a> </div> <div class="fa-license"> <span>许可协议:</span><i class="fa fa-creative-commons"></i>  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"  title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> </div>
+                
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+    
+        <script src="/js/player.min.js"></script>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","https://cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
     NProgress.configure({
         showSpinner: true
     });
@@ -373,7 +1427,51 @@ sayHi();
         NProgress.done();
         $('.fade').removeClass('out');
     }, 800);
-</script><script>lsloader.load("sm_js","/js/smoothscroll.js?lOy/ACj5suSNi7ZVFVbpFQ==",!0)</script><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>var agent=navigator.userAgent.toLowerCase();agent.indexOf("ucbrowser")>0&&(document.write('<link rel="stylesheet" href="/css/uc.css">'),alert("由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。"))</script><script>lsloader.load("prettify_js","https://cdn.bootcss.com/prettify/r298/prettify.min.js",!0)</script><script type="text/ls-javascript" id="window-load">
+</script>
+
+
+
+    
+        <script>lsloader.load("sm_js","/js/smoothscroll.js?lOy/ACj5suSNi7ZVFVbpFQ==", true)</script>
+    
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+   <!-- Gitment -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","https://cdn.bootcss.com/prettify/r298/prettify.min.js", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
     $(window).on('load', function() {
         // Post_Toc parent position fixed
         $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
@@ -388,7 +1486,15 @@ sayHi();
         
     
     
-</script><script type="text/ls-javascript" id="lazy-load">
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
     // Offer LazyLoad
     queue.offer(function(){
         $('.lazy').lazyload({
@@ -402,4 +1508,26 @@ sayHi();
             queue.execNext();
         },200);
     });
-</script><script>!function(){for(var e=document.querySelectorAll('script[type="text/ls-javascript"]'),r=0;r<e.length;++r){var o=e[r];lsloader.runInlineScript(o.id,o.id)}}(),console.log("\n %c © Material Theme | Version: 1.5.0 | https://github.com/viosey/hexo-theme-material %c \n","color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;","color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;")</script></main></div></body></html>
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

@@ -2625,11 +2625,11 @@ app.listen(3000);
     </summary>
     
     
+      <category term="test" scheme="http://ldq-first.github.io/tags/test/"/>
+    
       <category term="music" scheme="http://ldq-first.github.io/tags/music/"/>
     
       <category term="video" scheme="http://ldq-first.github.io/tags/video/"/>
-    
-      <category term="test" scheme="http://ldq-first.github.io/tags/test/"/>
     
   </entry>
   
