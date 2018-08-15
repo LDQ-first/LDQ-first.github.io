@@ -7,3 +7,4 @@ db.json
 node_modules
 qiniu.js 
 others.md
+.vscode

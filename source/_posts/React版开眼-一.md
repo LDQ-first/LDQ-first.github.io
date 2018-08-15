@@ -16,7 +16,7 @@ categories:
 
 ## 预览地址
 
-[预览地址](http://ldqblog.me/react-eyepetizer/dist/#/)
+[预览地址](http://ldq-first.github.io/react-eyepetizer/dist/#/)
 
 
 ## 源码
@@ -25,7 +25,7 @@ categories:
 
 ## 手机可访问二维码
 
-![React版开眼](http://ldqblog.me/react-eyepetizer/static/img/QR/mobile.png)
+![React版开眼](http://ldq-first.github.io/react-eyepetizer/static/img/QR/mobile.png)
 
 
 
@@ -84,26 +84,26 @@ categories:
 
 
 
-<a href="http://ldqblog.me/react-eyepetizer/static/result/index.gif">index</a>
+<a href="http://ldq-first.github.io/react-eyepetizer/static/result/index.gif">index</a>
 
-![index](http://ldqblog.me/react-eyepetizer/static/result/shortcut/index.jpg)
-
-
-
-<a href="http://ldqblog.me/react-eyepetizer/static/result/hot.gif">hot</a>
-
-![hot](http://ldqblog.me/react-eyepetizer/static/result/shortcut/hot.jpg)
-
-
-<a href="http://ldqblog.me/react-eyepetizer/static/result/search.gif">search</a>
-
-![search](http://ldqblog.me/react-eyepetizer/static/result/shortcut/search.jpg)
+![index](http://ldq-first.github.io/react-eyepetizer/static/result/shortcut/index.jpg)
 
 
 
-<a href="http://ldqblog.me/react-eyepetizer/static/result/detail.gif">detail</a>
+<a href="http://ldq-first.github.io/react-eyepetizer/static/result/hot.gif">hot</a>
 
-![detail](http://ldqblog.me/react-eyepetizer/static/result/shortcut/detail.jpg)
+![hot](http://ldq-first.github.io/react-eyepetizer/static/result/shortcut/hot.jpg)
+
+
+<a href="http://ldq-first.github.io/react-eyepetizer/static/result/search.gif">search</a>
+
+![search](http://ldq-first.github.io/react-eyepetizer/static/result/shortcut/search.jpg)
+
+
+
+<a href="http://ldq-first.github.io/react-eyepetizer/static/result/detail.gif">detail</a>
+
+![detail](http://ldq-first.github.io/react-eyepetizer/static/result/shortcut/detail.jpg)
 
 
 > [更多效果图](https://github.com/LDQ-first/react-eyepetizer/tree/master/static/result)

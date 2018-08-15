@@ -11,7 +11,7 @@ categories:
 ---
 
 
-**[预览地址](http://ldqblog.me/vue-animating-resume/dist/)**
+**[预览地址](http://ldq-first.github.io/vue-animating-resume/dist/)**
 
 
 

@@ -10,7 +10,7 @@ categories:
     - 技术
 ---
 
-**[预览地址](http://ldqblog.me/react-animating-resume/build/)**
+**[预览地址](http://ldq-first.github.io/react-animating-resume/build/)**
 
 ## 技术
 

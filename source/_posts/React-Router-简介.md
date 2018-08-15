@@ -14,7 +14,7 @@ categories:
 # React-Router
 
 
-[学习React-Router的例子](http://ldqblog.me/learn-react-router/build/)
+[学习React-Router的例子](http://ldq-first.github.io/learn-react-router/build/)
 
 [源码](https://github.com/LDQ-first/learn-react-router)
 

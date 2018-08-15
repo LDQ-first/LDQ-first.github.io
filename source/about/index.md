@@ -26,9 +26,9 @@ date: 2017-01-14 23:54:43
 
 
 - Github：[Github](https://github.com/LDQ-first)
-- 博客：[博客](http://ldqblog.me/)
-- vue版pdf简历：[vue版pdf简历](http://ldqblog.me/vue-pdf-resume/dist/#/)
-- react版简历：[react版简历](http://ldqblog.me/react-resume/dist/#/)
+- 博客：[博客](http://ldq-first.github.io/)
+- vue版pdf简历：[vue版pdf简历](http://ldq-first.github.io/vue-pdf-resume/dist/#/)
+- react版简历：[react版简历](http://ldq-first.github.io/react-resume/dist/#/)
 
 
 

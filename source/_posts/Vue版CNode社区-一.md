@@ -19,11 +19,11 @@ categories:
 
 ## 预览地址
 
-[预览地址](http://ldqblog.me/vue-CNode/dist/#/)
+[预览地址](http://ldq-first.github.io/vue-CNode/dist/#/)
 
 ## 手机可访问二维码
 
-![Vue版CNode](http://ldqblog.me/vue-CNode/static/img/mobile.png)  
+![Vue版CNode](http://ldq-first.github.io/vue-CNode/static/img/mobile.png)  
 
 ## 源码
 [GitHub](https://github.com/LDQ-first/vue-CNode)
@@ -62,19 +62,19 @@ categories:
 
 ### 项目结构
 
-![项目结构思维导图](http://ldqblog.me/vue-CNode/static/img/项目结构.jpg)
+![项目结构思维导图](http://ldq-first.github.io/vue-CNode/static/img/项目结构.jpg)
 
 
 
 ### 效果图
 
-![001](http://ldqblog.me/vue-CNode/static/result/001.jpg)  
+![001](http://ldq-first.github.io/vue-CNode/static/result/001.jpg)  
 
-![002](http://ldqblog.me/vue-CNode/static/result/002.jpg)  
+![002](http://ldq-first.github.io/vue-CNode/static/result/002.jpg)  
 
-![003](http://ldqblog.me/vue-CNode/static/result/003.jpg)  
+![003](http://ldq-first.github.io/vue-CNode/static/result/003.jpg)  
 
-![004](http://ldqblog.me/vue-CNode/static/result/004.jpg)  
+![004](http://ldq-first.github.io/vue-CNode/static/result/004.jpg)  
 
 
 ## 成果
@@ -117,7 +117,7 @@ vuex 没有分模块
 ---
 
 ## 下一篇
-[Vue版CNode社区(二)](http://ldqblog.me/2017/06/22/Vue%E7%89%88CNode%E7%A4%BE%E5%8C%BA-%E4%BA%8C/)
+[Vue版CNode社区(二)](http://ldq-first.github.io/2017/06/22/Vue%E7%89%88CNode%E7%A4%BE%E5%8C%BA-%E4%BA%8C/)
 
 
 

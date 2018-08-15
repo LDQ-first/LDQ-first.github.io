@@ -35,7 +35,7 @@ categories:
 
 
 
-![注意](http://ldqblog.me/Vue-shop/static/font/%E6%B3%A8%E6%84%8F.svg)
+![注意](http://ldq-first.github.io/Vue-shop/static/font/%E6%B3%A8%E6%84%8F.svg)
 
 <h2 style="font-size: 26px; color: red;">注意存在的问题</h2>
 <p style="font-size: 24px; line-height: 1.5; font-weight: bold;"> 
@@ -90,7 +90,7 @@ categories:
 
 ### 效果图
 
-![01](http://ldqblog.me/img/VShop/01.jpg) 
+![01](http://ldq-first.github.io/img/VShop/01.jpg) 
 
 
 

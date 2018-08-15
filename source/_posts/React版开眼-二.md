@@ -133,7 +133,7 @@ React.js使用了virtual dom，virtual dom通过diff修改dom，来实现高效�
 
 
 
-![000](http://ldqblog.me/img/Immutable/000.gif)
+![000](http://ldq-first.github.io/img/Immutable/000.gif)
 
 
 
