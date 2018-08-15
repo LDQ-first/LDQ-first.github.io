@@ -5,7 +5,7 @@
     
     <entry>
       <title><![CDATA[GitHub Flow]]></title>
-      <url>http://ldqblog.me/2017/10/27/GitHub-Flow/</url>
+      <url>http://ldq-first.github.io/2017/10/27/GitHub-Flow/</url>
       <!-- <content type="html"><![CDATA[<h2 id="Git-FLow"><a href="#Git-FLow" class="headerlink" title="Git FLow"></a>Git FLow</h2><p>五条分支</p>
 <p>两条长期分支</p>
 <ul>
@@ -40,7 +40,7 @@
     
     <entry>
       <title><![CDATA[HTTP 请求报文和响应报文]]></title>
-      <url>http://ldqblog.me/2017/10/27/HTTP-%E8%AF%B7%E6%B1%82%E6%8A%A5%E6%96%87%E5%92%8C%E5%93%8D%E5%BA%94%E6%8A%A5%E6%96%87/</url>
+      <url>http://ldq-first.github.io/2017/10/27/HTTP-%E8%AF%B7%E6%B1%82%E6%8A%A5%E6%96%87%E5%92%8C%E5%93%8D%E5%BA%94%E6%8A%A5%E6%96%87/</url>
       <!-- <content type="html"><![CDATA[<p>HTTP 请求报文 </p>
 <p>请求方法 路径 协议 / 版本<br>请求头</p>
 <p>请求体 (参数)</p>
@@ -53,7 +53,7 @@
     
     <entry>
       <title><![CDATA[HTTP 状态码]]></title>
-      <url>http://ldqblog.me/2017/10/27/HTTP-%E7%8A%B6%E6%80%81%E7%A0%81/</url>
+      <url>http://ldq-first.github.io/2017/10/27/HTTP-%E7%8A%B6%E6%80%81%E7%A0%81/</url>
       <!-- <content type="html"><![CDATA[<h2 id="状态码分类"><a href="#状态码分类" class="headerlink" title="状态码分类"></a>状态码分类</h2><p>100-199 : 指定客户端做某些操作<br>200-299 : 表示请求成功<br>300-399 : 关于资源的位置信息<br>400-499 : 客户端错误<br>500-599 : 服务端错误  </p>
 <p>100(继续): 客户端请求是否可以在后续的请求中发送附件，服务端允许<br>101(转换协议): 根据头信息变为一个不同的协议</p>
 <p>200 OK / 正常</p>
@@ -66,7 +66,7 @@
     
     <entry>
       <title><![CDATA[HTTP 缓存]]></title>
-      <url>http://ldqblog.me/2017/10/27/HTTP%E7%BC%93%E5%AD%98/</url>
+      <url>http://ldq-first.github.io/2017/10/27/HTTP%E7%BC%93%E5%AD%98/</url>
       <!-- <content type="html"><![CDATA[<p>HTTP 通过一些请求和响应头来设置缓存</p>
 <p>常见的有 Expires / Cache-Control / Last-Modified / Etag</p>
 <h2 id="强缓存"><a href="#强缓存" class="headerlink" title="强缓存"></a>强缓存</h2><p>不会向服务器发起请求</p>
@@ -116,7 +116,7 @@ Fri Oct 27 2017 20:46:02 GMT+0800 (中国标准时间)
     
     <entry>
       <title><![CDATA[react 生命周期]]></title>
-      <url>http://ldqblog.me/2017/09/26/React-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</url>
+      <url>http://ldq-first.github.io/2017/09/26/React-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</url>
       <!-- <content type="html"><![CDATA[<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><ul>
 <li>每个生命周期钩子的调用例子讲解的比较详细</li>
 </ul>
@@ -149,7 +149,7 @@ componentWillReceiveProps  - 每次数据更新时执行一次
     
     <entry>
       <title><![CDATA[React 版开眼 (二)]]></title>
-      <url>http://ldqblog.me/2017/09/25/React%E7%89%88%E5%BC%80%E7%9C%BC-%E4%BA%8C/</url>
+      <url>http://ldq-first.github.io/2017/09/25/React%E7%89%88%E5%BC%80%E7%9C%BC-%E4%BA%8C/</url>
       <!-- <content type="html"><![CDATA[<h1 id="React-版开眼技术详情"><a href="#React-版开眼技术详情" class="headerlink" title="React 版开眼技术详情"></a>React 版开眼技术详情</h1><h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><p>配合 React-Router 4 , Redux, Immutable, Reselect 使用</p>
 <p>React 层面分为路由组件（views 文件夹中）<br>和非路由组件（components 文件夹中）</p>
 <p>利用 Redux 进行路由组件的状态管理，<br>利用 Redux-think（让 dispatch 接受函数做参数），<br> async/await（处理异步）<br>与 componentWillMount 等生命周期实现 api 请求</p>
@@ -191,7 +191,7 @@ var Obj = defaultObj.mergeDeep(initObj) // 深 merge
 <h3 id="为什么要在-React-js-中使用-Immutable-js"><a href="#为什么要在-React-js-中使用-Immutable-js" class="headerlink" title="为什么要在 React.js 中使用 Immutable.js"></a>为什么要在 React.js 中使用 Immutable.js</h3><p>React.js 是一个 UI = f(states) 的框架，为了解决更新的问题，<br>React.js 使用了 virtual dom，virtual dom 通过 diff 修改 dom，来实现高效的 dom 更新。<br>但是当 state 更新时，如果数据没变，也会去做 virtual dom 的 diff，这就产生了浪费。</p>
 <p>可以利用 PureRenderMixin，但 PureRenderMixin 只是简单的浅比较，不使用于多层比较</p>
 <p>所以使用 Immutable.js 实现 Immutable Data</p>
-<p><img src="http://ldqblog.me/img/Immutable/000.gif" alt="000"></p>
+<p><img src="http://ldq-first.github.io/img/Immutable/000.gif" alt="000"></p>
 <h2 id="Reselect-避免不必要的-stroe-更新"><a href="#Reselect-避免不必要的-stroe-更新" class="headerlink" title="Reselect(避免不必要的 stroe 更新)"></a>Reselect(避免不必要的 stroe 更新)</h2><p>mapStateToProps 也被叫做 selector，在 store 发生变化的时候就会被调用，<br>而不管是不是 selector 关心的数据发生改变它都会被调用，<br>所以如果 selector 计算量非常大，每次更新都重新计算可能会带来性能问题。</p>
 <p>Reselect 能帮你省去这些没必要的重新计算。<br>Reselect 提供 createSelector 函数来创建可记忆的 selector。</p>
 <p>createSelector 接收一个 input-selectors 数组和一个转换函数作为参数。</p>
@@ -229,10 +229,10 @@ static get propTypes() {
     
     <entry>
       <title><![CDATA[React 版开眼 (一)]]></title>
-      <url>http://ldqblog.me/2017/09/23/React%E7%89%88%E5%BC%80%E7%9C%BC-%E4%B8%80/</url>
-      <!-- <content type="html"><![CDATA[<h1 id="React-版开眼介绍"><a href="#React-版开眼介绍" class="headerlink" title="React 版开眼介绍"></a>React 版开眼介绍</h1><h2 id="预览地址"><a href="#预览地址" class="headerlink" title="预览地址"></a>预览地址</h2><p><a href="http://ldqblog.me/react-eyepetizer/dist/#/">预览地址</a></p>
+      <url>http://ldq-first.github.io/2017/09/23/React%E7%89%88%E5%BC%80%E7%9C%BC-%E4%B8%80/</url>
+      <!-- <content type="html"><![CDATA[<h1 id="React-版开眼介绍"><a href="#React-版开眼介绍" class="headerlink" title="React 版开眼介绍"></a>React 版开眼介绍</h1><h2 id="预览地址"><a href="#预览地址" class="headerlink" title="预览地址"></a>预览地址</h2><p><a href="http://ldq-first.github.io/react-eyepetizer/dist/#/">预览地址</a></p>
 <h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><p><a href="https://github.com/LDQ-first/react-eyepetizer" target="_blank" rel="external">GitHub</a></p>
-<h2 id="手机可访问二维码"><a href="#手机可访问二维码" class="headerlink" title="手机可访问二维码"></a>手机可访问二维码</h2><p><img src="http://ldqblog.me/react-eyepetizer/static/img/QR/mobile.png" alt="React 版开眼"></p>
+<h2 id="手机可访问二维码"><a href="#手机可访问二维码" class="headerlink" title="手机可访问二维码"></a>手机可访问二维码</h2><p><img src="http://ldq-first.github.io/react-eyepetizer/static/img/QR/mobile.png" alt="React 版开眼"></p>
 <hr>
 <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>做 React 版开眼的原因：</p>
 <pre><code>1. 学习 React 全家桶
@@ -258,14 +258,14 @@ static get propTypes() {
 <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ul>
 <li>后端 json 数据的过滤比较繁琐，<br>考虑是否有优化方法</li>
 </ul>
-<h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><p><a href="http://ldqblog.me/react-eyepetizer/static/result/index.gif">index</a></p>
-<p><img src="http://ldqblog.me/react-eyepetizer/static/result/shortcut/index.jpg" alt="index"></p>
-<p><a href="http://ldqblog.me/react-eyepetizer/static/result/hot.gif">hot</a></p>
-<p><img src="http://ldqblog.me/react-eyepetizer/static/result/shortcut/hot.jpg" alt="hot"></p>
-<p><a href="http://ldqblog.me/react-eyepetizer/static/result/search.gif">search</a></p>
-<p><img src="http://ldqblog.me/react-eyepetizer/static/result/shortcut/search.jpg" alt="search"></p>
-<p><a href="http://ldqblog.me/react-eyepetizer/static/result/detail.gif">detail</a></p>
-<p><img src="http://ldqblog.me/react-eyepetizer/static/result/shortcut/detail.jpg" alt="detail"></p>
+<h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><p><a href="http://ldq-first.github.io/react-eyepetizer/static/result/index.gif">index</a></p>
+<p><img src="http://ldq-first.github.io/react-eyepetizer/static/result/shortcut/index.jpg" alt="index"></p>
+<p><a href="http://ldq-first.github.io/react-eyepetizer/static/result/hot.gif">hot</a></p>
+<p><img src="http://ldq-first.github.io/react-eyepetizer/static/result/shortcut/hot.jpg" alt="hot"></p>
+<p><a href="http://ldq-first.github.io/react-eyepetizer/static/result/search.gif">search</a></p>
+<p><img src="http://ldq-first.github.io/react-eyepetizer/static/result/shortcut/search.jpg" alt="search"></p>
+<p><a href="http://ldq-first.github.io/react-eyepetizer/static/result/detail.gif">detail</a></p>
+<p><img src="http://ldq-first.github.io/react-eyepetizer/static/result/shortcut/detail.jpg" alt="detail"></p>
 <blockquote>
 <p><a href="https://github.com/LDQ-first/react-eyepetizer/tree/master/static/result" target="_blank" rel="external">更多效果图</a></p>
 </blockquote>
@@ -384,7 +384,7 @@ static get propTypes() {
     
     <entry>
       <title><![CDATA[Webpack 简介]]></title>
-      <url>http://ldqblog.me/2017/09/02/Webpack-%E7%AE%80%E4%BB%8B/</url>
+      <url>http://ldq-first.github.io/2017/09/02/Webpack-%E7%AE%80%E4%BB%8B/</url>
       <!-- <content type="html"><![CDATA[<h2 id="Webpack"><a href="#Webpack" class="headerlink" title="Webpack"></a>Webpack</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><blockquote>
 <p>一切皆模块的思想<br>将前端的资源通过各种 loader 处理成浏览器可使用的资源</p>
 </blockquote>
@@ -668,7 +668,7 @@ npm install --save moment
     
     <entry>
       <title><![CDATA[glup 简介]]></title>
-      <url>http://ldqblog.me/2017/09/01/glup-%E7%AE%80%E4%BB%8B/</url>
+      <url>http://ldq-first.github.io/2017/09/01/glup-%E7%AE%80%E4%BB%8B/</url>
       <!-- <content type="html"><![CDATA[<h2 id="glup"><a href="#glup" class="headerlink" title="glup"></a>glup</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><pre><code>
 打造前端工作流
 打包，压缩，合并，git，远程操作
@@ -820,8 +820,8 @@ gulp-useref
     
     <entry>
       <title><![CDATA[React 版动态简历]]></title>
-      <url>http://ldqblog.me/2017/08/23/React%E7%89%88%E5%8A%A8%E6%80%81%E7%AE%80%E5%8E%86/</url>
-      <!-- <content type="html"><![CDATA[<p><strong><a href="http://ldqblog.me/react-animating-resume/build/">预览地址</a></strong></p>
+      <url>http://ldq-first.github.io/2017/08/23/React%E7%89%88%E5%8A%A8%E6%80%81%E7%AE%80%E5%8E%86/</url>
+      <!-- <content type="html"><![CDATA[<p><strong><a href="http://ldq-first.github.io/react-animating-resume/build/">预览地址</a></strong></p>
 <h2 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h2><ul>
 <li>React  前端框架</li>
 <li>ES6/7 采用最新 JS 语法</li>
@@ -846,8 +846,8 @@ gulp-useref
     
     <entry>
       <title><![CDATA[Vue 版动态简历]]></title>
-      <url>http://ldqblog.me/2017/08/20/Vue%E7%89%88%E5%8A%A8%E6%80%81%E7%AE%80%E5%8E%86/</url>
-      <!-- <content type="html"><![CDATA[<p><strong><a href="http://ldqblog.me/vue-animating-resume/dist/">预览地址</a></strong></p>
+      <url>http://ldq-first.github.io/2017/08/20/Vue%E7%89%88%E5%8A%A8%E6%80%81%E7%AE%80%E5%8E%86/</url>
+      <!-- <content type="html"><![CDATA[<p><strong><a href="http://ldq-first.github.io/vue-animating-resume/dist/">预览地址</a></strong></p>
 <h2 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h2><ul>
 <li>Vue  前端框架</li>
 <li>ES6/7 采用最新 JS 语法</li>
@@ -870,7 +870,7 @@ gulp-useref
     
     <entry>
       <title><![CDATA[Vue 版商城 (二)]]></title>
-      <url>http://ldqblog.me/2017/08/18/Vue%E7%89%88%E5%95%86%E5%9F%8E-%E4%BA%8C/</url>
+      <url>http://ldq-first.github.io/2017/08/18/Vue%E7%89%88%E5%95%86%E5%9F%8E-%E4%BA%8C/</url>
       <!-- <content type="html"><![CDATA[<h1 id="Vue-版商城技术详情"><a href="#Vue-版商城技术详情" class="headerlink" title="Vue 版商城技术详情"></a>Vue 版商城技术详情</h1><h2 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h2><p>Vue 配合 Vue-Router，Vuex</p>
 <p>实现路由跳转，路由过渡，状态管理</p>
 <p>Vue-lazyload<br>头像图片懒加载</p>
@@ -1270,12 +1270,12 @@ router.post(&#39;/login&#39;, (req, res, next) =&gt; {
     
     <entry>
       <title><![CDATA[Vue 版商城 (一)]]></title>
-      <url>http://ldqblog.me/2017/08/15/Vue%E7%89%88%E5%95%86%E5%9F%8E-%E4%B8%80/</url>
+      <url>http://ldq-first.github.io/2017/08/15/Vue%E7%89%88%E5%95%86%E5%9F%8E-%E4%B8%80/</url>
       <!-- <content type="html"><![CDATA[<h1 id="Vue-版商城介绍"><a href="#Vue-版商城介绍" class="headerlink" title="Vue 版商城介绍"></a>Vue 版商城介绍</h1><h2 id="预览地址"><a href="#预览地址" class="headerlink" title="预览地址"></a>预览地址</h2><p><a href="http://39.108.141.131/vueshop/#/" target="_blank" rel="external">预览地址</a></p>
 <h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><blockquote>
 <p>部署在阿里云<br>采用 Nginx 进行代理转发<br>PM2 做守护进程</p>
 </blockquote>
-<p><img src="http://ldqblog.me/Vue-shop/static/font/%E6%B3%A8%E6%84%8F.svg" alt="注意"></p>
+<p><img src="http://ldq-first.github.io/Vue-shop/static/font/%E6%B3%A8%E6%84%8F.svg" alt="注意"></p>
 <p></p><h2 style="font-size: 26px; color: red;"> 注意存在的问题 </h2><p></p>
 <p style="font-size: 24px; line-height: 1.5; font-weight: bold;"><br>    由于域名没有备案，所以用 ip 访问，防止被阿里云封 &lt; br&gt;<br>    由于没有使用 Https[国内的免费证书都要备案域名]<br><br>    Chrome，Firefox 等遇到 &lt;input type=”password”&gt; 会报不安全 &lt; br&gt;<br>    并非代码本身有问题 &lt; br&gt;<br></p>
 
@@ -1308,7 +1308,7 @@ router.post(&#39;/login&#39;, (req, res, next) =&gt; {
 <li><strong>Echarts</strong>: [ 数据可视化显示 ]</li>
 <li><strong>Svg-captcha</strong>: [ 验证码 ]</li>
 </ul>
-<h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><p><img src="http://ldqblog.me/img/VShop/01.jpg" alt="01"> </p>
+<h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><p><img src="http://ldq-first.github.io/img/VShop/01.jpg" alt="01"> </p>
 <h2 id="成果"><a href="#成果" class="headerlink" title="成果"></a>成果</h2><p>实现登录，注册，<br>添加删除购物车，添加删除地址，<br>完成订单，查看订单详情，<br>下拉刷新</p>
 <p>阿里云部署</p>
 <ol>
@@ -1329,7 +1329,7 @@ router.post(&#39;/login&#39;, (req, res, next) =&gt; {
     
     <entry>
       <title><![CDATA[TypeScript 入门]]></title>
-      <url>http://ldqblog.me/2017/08/12/TypeScript-%E5%85%A5%E9%97%A8/</url>
+      <url>http://ldq-first.github.io/2017/08/12/TypeScript-%E5%85%A5%E9%97%A8/</url>
       <!-- <content type="html"><![CDATA[<h1 id="TypeScript-入门"><a href="#TypeScript-入门" class="headerlink" title="TypeScript 入门"></a>TypeScript 入门</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>JavaScript 是一门弱类型语言，没有类型检测，这让 JavaScript 很灵活，但也更容易出错</p>
 <blockquote>
 <p>TypeScript 是一种由微软开发的自由和开源的编程语言。它是 JavaScript 的一个超集，而且本质上向这个语言添加了可选的静态类型和基于类的面向对象编程。  </p>
@@ -1828,7 +1828,7 @@ sayHi();
     
     <entry>
       <title><![CDATA[Koa 入门]]></title>
-      <url>http://ldqblog.me/2017/08/10/Koa-%E5%85%A5%E9%97%A8/</url>
+      <url>http://ldq-first.github.io/2017/08/10/Koa-%E5%85%A5%E9%97%A8/</url>
       <!-- <content type="html"><![CDATA[<h1 id="Koa-入门"><a href="#Koa-入门" class="headerlink" title="Koa 入门"></a>Koa 入门</h1><h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><blockquote>
 <p>Node 版本必须 7.6 以上</p>
 </blockquote>
@@ -2301,7 +2301,7 @@ app.listen(3000);
     
     <entry>
       <title><![CDATA[music video test]]></title>
-      <url>http://ldqblog.me/2017/07/31/music-video-test/</url>
+      <url>http://ldq-first.github.io/2017/07/31/music-video-test/</url>
       <!-- <content type="html"><![CDATA[<h3 id="歌曲"><a href="#歌曲" class="headerlink" title="歌曲"></a>歌曲</h3><div class="aplayer" data-id="31673404" data-server="netease" data-type="song"></div>
 
 <h3 id="歌单"><a href="#歌单" class="headerlink" title="歌单"></a>歌单</h3><div class="aplayer" data-id="11100236" data-server="netease" data-type="playlist" data-mode="random"></div>
@@ -2314,7 +2314,7 @@ app.listen(3000);
     
     <entry>
       <title><![CDATA[Redux 简介]]></title>
-      <url>http://ldqblog.me/2017/07/23/Redux-%E7%AE%80%E4%BB%8B/</url>
+      <url>http://ldq-first.github.io/2017/07/23/Redux-%E7%AE%80%E4%BB%8B/</url>
       <!-- <content type="html"><![CDATA[<h1 id="Redux"><a href="#Redux" class="headerlink" title="Redux"></a>Redux</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><pre><code>
 redux react-redux
 
@@ -2561,8 +2561,8 @@ redux-logger
     
     <entry>
       <title><![CDATA[React-Router 简介]]></title>
-      <url>http://ldqblog.me/2017/07/15/React-Router-%E7%AE%80%E4%BB%8B/</url>
-      <!-- <content type="html"><![CDATA[<h1 id="React-Router"><a href="#React-Router" class="headerlink" title="React-Router"></a>React-Router</h1><p><a href="http://ldqblog.me/learn-react-router/build/">学习 React-Router 的例子</a></p>
+      <url>http://ldq-first.github.io/2017/07/15/React-Router-%E7%AE%80%E4%BB%8B/</url>
+      <!-- <content type="html"><![CDATA[<h1 id="React-Router"><a href="#React-Router" class="headerlink" title="React-Router"></a>React-Router</h1><p><a href="http://ldq-first.github.io/learn-react-router/build/">学习 React-Router 的例子</a></p>
 <p><a href="https://github.com/LDQ-first/learn-react-router" target="_blank" rel="external">源码</a></p>
 ]]></content> -->
       <content type="html"><![CDATA[React-Router学习 React-Router 的例子 源码]]></content>
@@ -2570,7 +2570,7 @@ redux-logger
     
     <entry>
       <title><![CDATA[React 简介]]></title>
-      <url>http://ldqblog.me/2017/07/13/React-%E7%AE%80%E4%BB%8B/</url>
+      <url>http://ldq-first.github.io/2017/07/13/React-%E7%AE%80%E4%BB%8B/</url>
       <!-- <content type="html"><![CDATA[<h1 id="React-简介"><a href="#React-简介" class="headerlink" title="React 简介"></a>React 简介</h1><blockquote>
 <p>React.js 是一个 UI = f(states) 的框架，为了解决更新的问题，<br>React.js 使用了 virtual dom，virtual dom 通过 diff 修改 dom，来实现高效的 dom 更新。</p>
 </blockquote>
@@ -2710,7 +2710,7 @@ my-app
     
     <entry>
       <title><![CDATA[vue 生命周期]]></title>
-      <url>http://ldqblog.me/2017/06/25/Vue-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</url>
+      <url>http://ldq-first.github.io/2017/06/25/Vue-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</url>
       <!-- <content type="html"><![CDATA[<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><h3 id="生命周期钩子的函数"><a href="#生命周期钩子的函数" class="headerlink" title="生命周期钩子的函数"></a>生命周期钩子的函数</h3><p>实例化</p>
 <p>beforeCreate<br>实例初始化之后，数据观测 (data observer) 和 event/watcher 事件配置之前</p>
 <p>created<br>实例创建完成后</p>
@@ -2747,7 +2747,7 @@ my-app
     
     <entry>
       <title><![CDATA[Vuex 简介]]></title>
-      <url>http://ldqblog.me/2017/06/24/Vuex-%E7%AE%80%E4%BB%8B/</url>
+      <url>http://ldq-first.github.io/2017/06/24/Vuex-%E7%AE%80%E4%BB%8B/</url>
       <!-- <content type="html"><![CDATA[<h2 id="Vuex"><a href="#Vuex" class="headerlink" title="Vuex"></a>Vuex</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>vue 组件通过 dispatch 来触发 actions [这步可省略， 一般用于处理异步]<br>actions 再通过 commit 触发 mutations , 改变 store 上的 state<br>最终改变 vue 组件 的 view </p>
 <p>常与 computed 结合 </p>
 <p>state 是唯一数据来源</p>
@@ -2915,7 +2915,7 @@ api 更简洁
     
     <entry>
       <title><![CDATA[Vue 版 CNode 社区 (二)]]></title>
-      <url>http://ldqblog.me/2017/06/22/Vue%E7%89%88CNode%E7%A4%BE%E5%8C%BA-%E4%BA%8C/</url>
+      <url>http://ldq-first.github.io/2017/06/22/Vue%E7%89%88CNode%E7%A4%BE%E5%8C%BA-%E4%BA%8C/</url>
       <!-- <content type="html"><![CDATA[<h1 id="Vue-版-CNode-社区技术详情"><a href="#Vue-版-CNode-社区技术详情" class="headerlink" title="Vue 版 CNode 社区技术详情"></a>Vue 版 CNode 社区技术详情</h1><h2 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h2><p>Vue 配合 Vue-Router，Vuex</p>
 <p>实现路由跳转，路由过渡，状态管理</p>
 <p>Vue-lazyload<br>头像图片懒加载</p>
@@ -3071,9 +3071,9 @@ api 更简洁
     
     <entry>
       <title><![CDATA[Vue 版 CNode 社区 (一)]]></title>
-      <url>http://ldqblog.me/2017/06/20/Vue%E7%89%88CNode%E7%A4%BE%E5%8C%BA-%E4%B8%80/</url>
-      <!-- <content type="html"><![CDATA[<h1 id="Vue-版-CNode-社区介绍"><a href="#Vue-版-CNode-社区介绍" class="headerlink" title="Vue 版 CNode 社区介绍"></a>Vue 版 CNode 社区介绍</h1><h2 id="预览地址"><a href="#预览地址" class="headerlink" title="预览地址"></a>预览地址</h2><p><a href="http://ldqblog.me/vue-CNode/dist/#/">预览地址</a></p>
-<h2 id="手机可访问二维码"><a href="#手机可访问二维码" class="headerlink" title="手机可访问二维码"></a>手机可访问二维码</h2><p><img src="http://ldqblog.me/vue-CNode/static/img/mobile.png" alt="Vue 版 CNode">  </p>
+      <url>http://ldq-first.github.io/2017/06/20/Vue%E7%89%88CNode%E7%A4%BE%E5%8C%BA-%E4%B8%80/</url>
+      <!-- <content type="html"><![CDATA[<h1 id="Vue-版-CNode-社区介绍"><a href="#Vue-版-CNode-社区介绍" class="headerlink" title="Vue 版 CNode 社区介绍"></a>Vue 版 CNode 社区介绍</h1><h2 id="预览地址"><a href="#预览地址" class="headerlink" title="预览地址"></a>预览地址</h2><p><a href="http://ldq-first.github.io/vue-CNode/dist/#/">预览地址</a></p>
+<h2 id="手机可访问二维码"><a href="#手机可访问二维码" class="headerlink" title="手机可访问二维码"></a>手机可访问二维码</h2><p><img src="http://ldq-first.github.io/vue-CNode/static/img/mobile.png" alt="Vue 版 CNode">  </p>
 <h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><p><a href="https://github.com/LDQ-first/vue-CNode" target="_blank" rel="external">GitHub</a></p>
 <hr>
 <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>做 Vue 版 CNode 社区的原因：</p>
@@ -3099,11 +3099,11 @@ api 更简洁
 <li><strong>Canvas</strong>: [ 首页 loading 效果，按钮的波纹效果 ]</li>
 <li><strong>loaclStorge</strong>: [ 本地存储用户信息 ]</li>
 </ul>
-<h3 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h3><p><img src="http://ldqblog.me/vue-CNode/static/img / 项目结构. jpg" alt="项目结构思维导图"></p>
-<h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><p><img src="http://ldqblog.me/vue-CNode/static/result/001.jpg" alt="001">  </p>
-<p><img src="http://ldqblog.me/vue-CNode/static/result/002.jpg" alt="002">  </p>
-<p><img src="http://ldqblog.me/vue-CNode/static/result/003.jpg" alt="003">  </p>
-<p><img src="http://ldqblog.me/vue-CNode/static/result/004.jpg" alt="004">  </p>
+<h3 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h3><p><img src="http://ldq-first.github.io/vue-CNode/static/img / 项目结构. jpg" alt="项目结构思维导图"></p>
+<h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><p><img src="http://ldq-first.github.io/vue-CNode/static/result/001.jpg" alt="001">  </p>
+<p><img src="http://ldq-first.github.io/vue-CNode/static/result/002.jpg" alt="002">  </p>
+<p><img src="http://ldq-first.github.io/vue-CNode/static/result/003.jpg" alt="003">  </p>
+<p><img src="http://ldq-first.github.io/vue-CNode/static/result/004.jpg" alt="004">  </p>
 <h2 id="成果"><a href="#成果" class="headerlink" title="成果"></a>成果</h2><p>实现了<br>登录 (使用官方提供的 access token 方法登录)，<br>回复，发帖，（支持 Markdown）<br>滚动加载更多，（监听 scroll 事件）<br>收藏，点赞，<br>查看消息，（支持已读消息和未读消息）<br>更换主题色，(利用 Vuex，四种主题色可更换)<br>退出登录<br>查看个人信息</p>
 <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ul>
 <li>没有下拉刷新</li>
@@ -3113,7 +3113,7 @@ api 更简洁
 </ul>
 <h2 id="未来"><a href="#未来" class="headerlink" title="未来"></a>未来</h2><p>改善问题<br>优化代码</p>
 <hr>
-<h2 id="下一篇"><a href="#下一篇" class="headerlink" title="下一篇"></a>下一篇</h2><p><a href="http://ldqblog.me/2017/06/22/Vue%E7%89%88CNode%E7%A4%BE%E5%8C%BA-%E4%BA%8C/">Vue 版 CNode 社区 (二)</a></p>
+<h2 id="下一篇"><a href="#下一篇" class="headerlink" title="下一篇"></a>下一篇</h2><p><a href="http://ldq-first.github.io/2017/06/22/Vue%E7%89%88CNode%E7%A4%BE%E5%8C%BA-%E4%BA%8C/">Vue 版 CNode 社区 (二)</a></p>
 <p><strong> 感谢 CNode 社区提供 API 供人学习 </strong></p>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><strong>Vue 文档 </strong>: <a href="https://cn.vuejs.org/v2/guide/" target="_blank" rel="external">https://cn.vuejs.org/v2/guide/</a><br><strong>CNode API</strong>: <a href="https://cnodejs.org/api" target="_blank" rel="external">https://cnodejs.org/api</a></p>
 ]]></content> -->
@@ -3122,7 +3122,7 @@ api 更简洁
     
     <entry>
       <title><![CDATA[Vue-Router 简介]]></title>
-      <url>http://ldqblog.me/2017/06/18/Vue-Router-%E7%AE%80%E4%BB%8B/</url>
+      <url>http://ldq-first.github.io/2017/06/18/Vue-Router-%E7%AE%80%E4%BB%8B/</url>
       <!-- <content type="html"><![CDATA[<h1 id="Vue-Router-简介"><a href="#Vue-Router-简介" class="headerlink" title="Vue-Router 简介"></a>Vue-Router 简介</h1><h2 id="前端路由"><a href="#前端路由" class="headerlink" title="前端路由"></a>前端路由</h2><blockquote>
 <p>指根据不同的 url 展示不同的内容或页面</p>
 </blockquote>
@@ -3349,7 +3349,7 @@ new Vue({
     
     <entry>
       <title><![CDATA[Vue 简介]]></title>
-      <url>http://ldqblog.me/2017/06/06/Vue-%E7%AE%80%E4%BB%8B/</url>
+      <url>http://ldq-first.github.io/2017/06/06/Vue-%E7%AE%80%E4%BB%8B/</url>
       <!-- <content type="html"><![CDATA[<h1 id="Vue-简介"><a href="#Vue-简介" class="headerlink" title="Vue 简介"></a>Vue 简介</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote>
 <p>Vue 是一套构建用户界面的渐进式 MVVM 框架<br>Vue 的核心库只关注视图层，将路由交给 Vue-Router ，状态管理交给 Vuex </p>
 </blockquote>
@@ -3430,7 +3430,7 @@ proxyTable: {
     
     <entry>
       <title><![CDATA[Promise 简介]]></title>
-      <url>http://ldqblog.me/2017/05/28/Promise-%E7%AE%80%E4%BB%8B/</url>
+      <url>http://ldq-first.github.io/2017/05/28/Promise-%E7%AE%80%E4%BB%8B/</url>
       <!-- <content type="html"><![CDATA[<h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h2><p>Promise 对象用于一个异步操作的最终完成（或失败）及其结果值的表示。</p>
 <p> 简单点说就是处理异步请求。</p>
 <h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><pre><code>
@@ -3623,7 +3623,7 @@ const writeFile = (url, data ) =&gt; {
     
     <entry>
       <title><![CDATA[test description]]></title>
-      <url>http://ldqblog.me/2017/02/02/test-description/</url>
+      <url>http://ldq-first.github.io/2017/02/02/test-description/</url>
       <!-- <content type="html"><![CDATA[<ul>
 <li>在 scaffolds/post.md 文件中添加 description</li>
 </ul>
@@ -3637,7 +3637,7 @@ const writeFile = (url, data ) =&gt; {
     
     <entry>
       <title><![CDATA[Hello World]]></title>
-      <url>http://ldqblog.me/2017/01/17/hello-world/</url>
+      <url>http://ldq-first.github.io/2017/01/17/hello-world/</url>
       <!-- <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;
 </code></pre>
@@ -3657,7 +3657,7 @@ const writeFile = (url, data ) =&gt; {
     
     <entry>
       <title><![CDATA[photoTest]]></title>
-      <url>http://ldqblog.me/2017/01/13/photoTest/</url>
+      <url>http://ldq-first.github.io/2017/01/13/photoTest/</url>
       <!-- <content type="html"><![CDATA[<ul>
 <li>测试图片功能</li>
 </ul>
@@ -3668,7 +3668,7 @@ const writeFile = (url, data ) =&gt; {
     
     <entry>
       <title><![CDATA[第一篇 Hexo 文章]]></title>
-      <url>http://ldqblog.me/2016/11/05/%E7%AC%AC%E4%B8%80%E7%AF%87Hexo%E6%96%87%E7%AB%A0/</url>
+      <url>http://ldq-first.github.io/2016/11/05/%E7%AC%AC%E4%B8%80%E7%AF%87Hexo%E6%96%87%E7%AB%A0/</url>
       <!-- <content type="html"><![CDATA[<ul>
 <li>第一次写 Hexo 博客</li>
 </ul>

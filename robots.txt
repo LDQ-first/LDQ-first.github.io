@@ -7,5 +7,5 @@ Allow: /music/
 Allow: /favorite/ 
 Disallow: /js/
 Disallow: /css/
-Sitemap: https://ldqblog.me/sitemap.xml
-Sitemap: https://ldqblog.me/baidusitemap.xml
+Sitemap: https://ldq-first.github.io/sitemap.xml
+Sitemap: https://ldq-first.github.io/baidusitemap.xml
