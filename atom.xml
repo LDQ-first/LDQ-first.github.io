@@ -201,9 +201,9 @@ Fri Oct 27 2017 20:46:02 GMT+0800 (中国标准时间)
     
       <category term="HTTP" scheme="http://ldq-first.github.io/tags/HTTP/"/>
     
-      <category term="前端" scheme="http://ldq-first.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="缓存" scheme="http://ldq-first.github.io/tags/%E7%BC%93%E5%AD%98/"/>
+    
+      <category term="前端" scheme="http://ldq-first.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
@@ -2625,11 +2625,11 @@ app.listen(3000);
     </summary>
     
     
-      <category term="test" scheme="http://ldq-first.github.io/tags/test/"/>
-    
       <category term="music" scheme="http://ldq-first.github.io/tags/music/"/>
     
       <category term="video" scheme="http://ldq-first.github.io/tags/video/"/>
+    
+      <category term="test" scheme="http://ldq-first.github.io/tags/test/"/>
     
   </entry>
   
